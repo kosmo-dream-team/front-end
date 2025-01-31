@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
+import Signup from "./pages/signup/signup"; // signup.jsx 불러오기
+import "./style/scss/style.scss"; // 스타일 적용
+import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 

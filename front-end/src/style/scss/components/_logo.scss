@@ -1,0 +1,39 @@
+@use '../abstracts/mixin' as mixin;
+
+.favicon { /* 파비콘 관련 컨테이너 */
+    width: 12rem; /* 너비: 12rem (120px) */
+    height: 3rem; /* 높이: 3rem (30px) */
+    
+    @include mixin.favicon-layout-sign; /* 파비콘 레이아웃 믹스인 적용 */
+   
+  
+    .favicon-text { /* 내부 텍스트 영역 */
+      width: 13.9rem; /* 너비: 13.9rem (139px) */
+      height: 4.1rem; /* 높이: 4.1rem (41px) */
+      position: absolute; /* 절대 위치 배치 */
+      text-align: right; /* 텍스트 오른쪽 정렬 */
+      color: #ff9191; /* 글자 색상 */
+      font-size: 2.3rem; /* 폰트 크기: 2.3rem (23px) */
+      font-weight: 700; /* 폰트 두께: 700 */
+      line-height: 2.4rem; /* 줄 높이: 2.4rem (24px) */
+      left: -1.9rem; /* 왼쪽에서 -1.9rem (-19px) 지점 */
+      top: -0.8rem; /* 위에서 -0.8rem (-8px) 지점 */
+    }
+  
+    .favicon-line { /* 구분선(라인) 영역 */
+      width: 11.7rem; /* 너비: 11.7rem (117px) */
+      height: 0.3rem; /* 높이: 0.3rem (3px) */
+      position: absolute; /* 절대 위치 배치 */
+      left: 0.1rem; /* 왼쪽에서 0.1rem (1px) 지점 */
+      top: 2.3rem; /* 위에서 2.3rem (23px) 지점 */
+      border-radius: 10rem; /* 모서리 둥글림: 10rem */
+  
+      .favicon-line-gradient { /* 그라디언트 배경 라인 */
+        width: 100%; /* 너비: 100% */
+        height: 100%; /* 높이: 100% */
+        background: linear-gradient(90deg, #f8f0f0 0%, #e8b3b3 100%, #ff0000 100%); /* 그라디언트 색상 */
+        border-radius: 4rem; /* 모서리 둥글림: 4rem */
+      }
+    }
+  }
+  

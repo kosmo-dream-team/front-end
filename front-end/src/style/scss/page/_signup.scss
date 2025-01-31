@@ -1,0 +1,287 @@
+// src/style/scss/pages/_signup.scss
+
+@import "../abstracts/_variable";
+
+
+
+/* 상단 로고( DREAM ON ) 등 전체 컨테이너 */
+.signup-container {
+  width: 144rem;      /* 1440px -> 144rem */
+  height: 90rem;      /* 900px -> 90rem */
+  position: relative;
+  background: #fff;
+  border-radius: 1.5rem; /* 15px -> 1.5rem */
+  overflow: hidden;
+
+  /* 좌측 상단 로고 영역 */
+ 
+}
+
+/* 오른쪽 큰 이미지 + 문구 영역 */
+.signup-right {
+  width: 73.5rem;      /* 735px -> 73.5rem */
+  height: 85.9rem;     /* 859px -> 85.9rem */
+  position: absolute;
+  left: 70.5rem;       /* 705px -> 70.5rem */
+  top: 2.1rem;         /* 21px -> 2.1rem */
+
+  .signup-right-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #fff;
+    border-radius: 3rem; /* 30px -> 3rem */
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    img {
+      width: 73.5rem;
+      height: 88rem;   /* 880px -> 88rem */
+      object-fit: cover; /* 예시 */
+    }
+  }
+
+  .signup-right-text1 {
+    width: 39.6rem;    /* 396px -> 39.6rem */
+    height: 9.4rem;    /* 94px -> 9.4rem */
+    position: absolute;
+    left: 7.6rem;      /* 76px -> 7.6rem */
+    top: 66.9rem;      /* 669px -> 66.9rem */
+
+    .big-title {
+      position: absolute;
+      color: #fff;
+      font-size: 4rem;   /* 40px -> 4rem */
+      font-weight: 600;
+      word-wrap: break-word;
+    }
+    .small-title {
+      position: absolute;
+      width: 100%;
+      top: 6.4rem;       /* 64px -> 6.4rem */
+      color: #fff;
+      font-size: 2rem;   /* 20px -> 2rem */
+      font-weight: 300;
+      word-wrap: break-word;
+    }
+  }
+
+  .signup-right-subtitle {
+    position: absolute;
+    left: 56.3rem;    /* 563px -> 56.3rem */
+    top: 2.4rem;      /* 24px -> 2.4rem */
+    color: #fff;
+    font-size: 1.5rem; /* 15px -> 1.5rem */
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+}
+
+/* 왼쪽 회원가입 폼 영역 */
+.signup-left {
+  width: 43.1rem;   /* 431px -> 43.1rem */
+  height: 56.1rem;  /* 561px -> 56.1rem */
+  position: absolute;
+  left: 12.2rem;    /* 122px -> 12.2rem */
+  top: 15rem;       /* 150px -> 15rem */
+
+  /* 회원가입 상단 부분 */
+  .signup-top {
+    width: 100%;
+    height: 49.8rem;   /* 498px -> 49.8rem */
+    position: relative;
+
+    .signup-title-area {
+      width: 30.8rem;  /* 308px -> 30.8rem */
+      height: 12.1rem; /* 121px -> 12.1rem */
+      position: absolute;
+
+      .signup-title {
+        color: #000;
+        font-size: 3rem;     /* 30px -> 3rem */
+        font-weight: 500;
+        word-wrap: break-word;
+      }
+
+      .signup-subinfo {
+        width: 30.8rem;
+        height: 5.4rem;      /* 54px -> 5.4rem */
+        position: absolute;
+        top: 6.7rem;         /* 67px -> 6.7rem */
+
+        .already {
+          width: 30.8rem;
+          color: #000;
+          font-size: 1.6rem;   /* 16px -> 1.6rem */
+          font-weight: 400;
+          word-wrap: break-word;
+          position: absolute;
+        }
+        .goto-login {
+          width: 30.8rem;
+          position: absolute;
+          top: 3rem;         /* 30px -> 3rem */
+          color: #ff9191;
+          font-size: 1.6rem;  /* 16px -> 1.6rem */
+          font-weight: 600;
+          word-wrap: break-word;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .signup-form-area {
+      width: 100%;
+      height: 32.5rem;   /* 325px -> 32.5rem */
+      position: absolute;
+      top: 17.3rem;      /* 173px -> 17.3rem */
+
+      form {
+        /* form 전체 레이아웃 */
+        display: flex;
+        flex-direction: column;
+
+        .input-wrapper {
+          width: 100%;
+          position: relative;
+          margin-bottom: 2rem; /* 20px -> 2rem */
+          
+          label {
+            display: block;
+            color: #999;
+            font-size: 1.3rem; /* 13px -> 1.3rem */
+            font-weight: 500;
+            margin-bottom: 0.8rem;  /* 8px -> 0.8rem */
+          }
+
+          input {
+            width: 100%;
+            border: none;
+            border-bottom: 0.2rem solid #000; /* 2px -> 0.2rem */
+            outline: none;
+            font-size: 1.6rem;   /* 16px -> 1.6rem */
+            font-weight: 400;
+            padding: 0.4rem 0;   /* 예시 (4px -> 0.4rem) */
+          }
+          &.password {
+            input {
+              border-bottom-color: #999;
+            }
+          }
+        }
+
+        .options {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 3rem; /* 30px -> 3rem */
+
+          .remember-me {
+            display: flex;
+            align-items: center;
+
+            input[type="checkbox"] {
+              margin-right: 0.5rem; /* 5px -> 0.5rem */
+            }
+            label {
+              color: #000;
+              font-size: 1.2rem; /* 12px -> 1.2rem */
+              font-weight: 300;
+              cursor: pointer;
+            }
+          }
+
+          .forgot-pw {
+            color: #4d4d4d;
+            font-size: 1.2rem; /* 12px -> 1.2rem */
+            font-weight: 300;
+            cursor: pointer;
+          }
+        }
+
+        .signup-button {
+          width: 42.9rem;  /* 429px -> 42.9rem */
+          height: 5.3rem;  /* 53px -> 5.3rem */
+          background: #ff9191;
+          box-shadow: 0 0.4rem 2.6rem rgba(0, 0, 0, 0.25); /* 0px 4px 26px -> 0 0.4rem 2.6rem */
+          border-radius: 3.2rem; /* 32px -> 3.2rem */
+          border: none;
+          cursor: pointer;
+
+          span {
+            color: #fff;
+            font-size: 1.7rem;   /* 17px -> 1.7rem */
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .other-method {
+    position: absolute;
+    left: 15.2rem;  /* 152px -> 15.2rem */
+    top: 53.7rem;   /* 537px -> 53.7rem */
+    color: #b5b5b5;
+    font-size: 1.6rem;  /* 16px -> 1.6rem */
+    font-weight: 500;
+    word-wrap: break-word;
+  }
+}
+
+/* 소셜 로그인 버튼 (구글 예시) */
+.social-google {
+  width: 11.6rem;   /* 116px -> 11.6rem */
+  height: 6.155rem; /* 61.55px -> 6.155rem */
+  position: absolute;
+  left: 28.1rem;    /* 281px -> 28.1rem */
+  top: 73.1rem;     /* 731px -> 73.1rem */
+  cursor: pointer;
+
+  .google-icon-blocks {
+    width: 4.372rem;   /* 43.72px -> 4.372rem */
+    height: 4.774rem;  /* 47.74px -> 4.774rem */
+    position: absolute;
+    left: 7.228rem;    /* 72.28px -> 7.228rem */
+    top: 0.56rem;      /* 5.6px -> 0.56rem */
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    /* 구글 로고 흉내내는 컬러 박스들 */
+    .red-box {
+      width: 3.049rem;    /* 30.49px -> 3.049rem */
+      height: 1.675rem;   /* 16.75px -> 1.675rem */
+      background: #eb4335;
+    }
+    .yellow-box {
+      width: 0.841rem;    /* 8.41px -> 0.841rem */
+      height: 1.885rem;   /* 18.85px -> 1.885rem */
+      background: #fbbc05;
+    }
+    .blue-box {
+      width: 1.874rem;    /* 18.74px -> 1.874rem */
+      height: 1.963rem;   /* 19.63px -> 1.963rem */
+      background: #4285f4;
+    }
+    .green-box {
+      width: 3.036rem;    /* 30.36px -> 3.036rem */
+      height: 1.676rem;   /* 16.76px -> 1.676rem */
+      background: #34a853;
+    }
+  }
+
+  .google-img {
+    width: 5.672rem;   /* 56.72px -> 5.672rem */
+    height: 6.155rem;  /* 61.55px -> 6.155rem */
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+  }
+}
