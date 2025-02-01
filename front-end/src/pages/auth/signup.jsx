@@ -111,7 +111,7 @@ function Signup() {
                     className="forgot-pw"
                     onClick={() => alert('비밀번호 찾기 페이지로 이동')}
                   >
-                    Forgot Password ?
+                    비밀번호를 잊으셨나요?
                   </div>
                 </div>
                 {/* 가입하기 버튼 */}

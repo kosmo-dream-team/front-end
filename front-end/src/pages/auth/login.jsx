@@ -70,19 +70,8 @@
                    placeholder="비밀번호를 입력해주세요"
                  />
                </div>
-               
-               <div className="input-wrapper password">
-                 <label htmlFor="password">비밀번호 재입력</label>
-                 <input
-                   type="password"
-                   id="password"
-                   name="password"
-                   value={formData.password}
-                   onChange={handleChange}
-                   placeholder="비밀번호를 다시 입력해주세요"
-                 />
-               </div>
- 
+
+             
                {/* 옵션, 비밀번호 찾기 */}
                <div className="options">
                  <div className="remember-me">
@@ -97,7 +86,7 @@
                    className="forgot-pw"
                    onClick={() => alert('비밀번호 찾기 페이지로 이동')}
                  >
-                   Forgot Password ?
+                   비밀번호를 잊으셨나요?
                  </div>
                </div>
  
