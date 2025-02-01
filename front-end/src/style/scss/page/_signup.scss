@@ -135,7 +135,9 @@
   max-width: 35.92rem;  
   margin: 12.5rem auto 0;  /* 상단 여백은 그대로, 좌우 중앙 정렬 */
 }
-
+.signup-form input {
+  margin-bottom: 1rem;
+}
 .signup-left .signup-top {
   width: 100%;
   /* height는 콘텐츠에 따라 auto 처리 */
@@ -188,7 +190,7 @@
 
 .signup-left .signup-top .signup-form-area {
   width: 100%;
-  margin-top: 14.41rem;
+
   padding: 0 1rem;
 }
 
@@ -202,9 +204,6 @@
   margin-bottom: 1.67rem;
 }
 
-#email {
-  margin-bottom: 2.5rem;
-}
 
 .signup-left .signup-top .signup-form-area form .input-wrapper label {
   display: block;
@@ -347,100 +346,8 @@
     
   }
 
-  .signup-container {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0.5rem;
-  }
   .signup-right-img-container{
     display: none;
   }
-  .signup-left-form-container,
-  .signup-right-img-container,
-  .signup-right,
-  .signup-left {
-    width: 90%;
-    max-width: 100%;
-    margin: 1rem auto;
-  }
   
-  .signup-right {
-    margin-top: 1rem;
-  }
-  
-  .signup-left {
-    margin: 2rem auto;
-  }
-  
-  .signup-left .signup-top .signup-title-area {
-    max-width: 90%;
-  }
-  
-  .signup-left .signup-top .signup-title-area .signup-title {
-    font-size: 2rem;
-  }
-  
-  .signup-left .signup-top .signup-title-area .signup-subinfo {
-    max-width: 90%;
-  }
-  
-  .signup-left .signup-top .signup-form-area {
-    margin-top: 2rem;
-  }
-  
-  .signup-left .signup-top .signup-form-area form .signup-button {
-    max-width: 100%;
-  }
-  
-  .signup-right-text1 .big-title {
-    font-size: 2.5rem;
-  }
-  
-  .signup-right-text1 .small-title {
-    font-size: 1.25rem;
-    margin-top: 4rem;
-  }
-  
-  .signup-right-subtitle {
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .social-google {
-    width: 8rem;
-    height: 4rem;
-    margin: 1rem auto;
-  }
-  
-  .social-google .google-icon-blocks {
-    left: 5rem;
-    top: 0.3rem;
-    width: 3rem;
-    height: 3.5rem;
-  }
-  
-  .social-google .google-icon-blocks .red-box {
-    width: 2rem;
-    height: 1.2rem;
-  }
-  
-  .social-google .google-icon-blocks .yellow-box {
-    width: 0.6rem;
-    height: 1.3rem;
-  }
-  
-  .social-google .google-icon-blocks .blue-box {
-    width: 1.4rem;
-    height: 1.5rem;
-  }
-  
-  .social-google .google-icon-blocks .green-box {
-    width: 2.3rem;
-    height: 1.2rem;
-  }
-  
-  .social-google .google-img {
-    width: 4rem;
-    height: 4rem;
-  }
 }
