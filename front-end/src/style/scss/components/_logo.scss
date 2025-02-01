@@ -1,39 +1,51 @@
-@use '../abstracts/mixin' as mixin;
+.favicon-text {
+  width: 13.9rem;         // 기존 너비 유지
+  height: 4.1rem;         // 기존 높이 유지
+  margin-left: -1.9rem;   // 원래 left: -1.9rem 효과
+  margin-top: -0.8rem;    // 원래 top: -0.8rem 효과
+  /* 텍스트와 라인 사이 간격 줄이기 위해 아래 여백 추가 */
+  margin-bottom: -1rem;   // 이 값을 조정해서 간격을 더 줄이거나 늘릴 수 있음
+  
+  text-align: right;      // 텍스트 오른쪽 정렬
+  color: #ff9191;
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
 
-.favicon { /* 파비콘 관련 컨테이너 */
-    width: 12rem; /* 너비: 12rem (120px) */
-    height: 3rem; /* 높이: 3rem (30px) */
-    
-    @include mixin.favicon-layout-sign; /* 파비콘 레이아웃 믹스인 적용 */
-   
+.favicon-line {
+  width: 11.7rem;
+  height: 0.3rem;
+  margin-left: 0.1rem;
+  /* 상단 여백을 음수로 조정하여 텍스트에 더 가깝게 배치 */
+  margin-top: -0.5rem;    // 이 값을 조정해서 간격을 미세하게 조정
   
-    .favicon-text { /* 내부 텍스트 영역 */
-      width: 13.9rem; /* 너비: 13.9rem (139px) */
-      height: 4.1rem; /* 높이: 4.1rem (41px) */
-      position: absolute; /* 절대 위치 배치 */
-      text-align: right; /* 텍스트 오른쪽 정렬 */
-      color: #ff9191; /* 글자 색상 */
-      font-size: 2.3rem; /* 폰트 크기: 2.3rem (23px) */
-      font-weight: 700; /* 폰트 두께: 700 */
-      line-height: 2.4rem; /* 줄 높이: 2.4rem (24px) */
-      left: -1.9rem; /* 왼쪽에서 -1.9rem (-19px) 지점 */
-      top: -0.8rem; /* 위에서 -0.8rem (-8px) 지점 */
-    }
-  
-    .favicon-line { /* 구분선(라인) 영역 */
-      width: 11.7rem; /* 너비: 11.7rem (117px) */
-      height: 0.3rem; /* 높이: 0.3rem (3px) */
-      position: absolute; /* 절대 위치 배치 */
-      left: 0.1rem; /* 왼쪽에서 0.1rem (1px) 지점 */
-      top: 2.3rem; /* 위에서 2.3rem (23px) 지점 */
-      border-radius: 10rem; /* 모서리 둥글림: 10rem */
-  
-      .favicon-line-gradient { /* 그라디언트 배경 라인 */
-        width: 100%; /* 너비: 100% */
-        height: 100%; /* 높이: 100% */
-        background: linear-gradient(90deg, #f8f0f0 0%, #e8b3b3 100%, #ff0000 100%); /* 그라디언트 색상 */
-        border-radius: 4rem; /* 모서리 둥글림: 4rem */
-      }
-    }
+  border-radius: 10rem;
+
+  .favicon-line-gradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #f8f0f0 0%, #e8b3b3 100%, #ff0000 100%);
+    border-radius: 4rem;
+  }
+}
+
+/* 휴대폰 사이즈 등 작은 화면에서 적용 */
+@media (max-width: 768px) {
+  .favicon-text {
+    width: 11rem;           // 기존보다 약 20% 축소
+    height: 3.2rem;         // 기존보다 축소
+    margin-left: -1.5rem;    // 미세 조정
+    margin-top: -0.6rem;     // 미세 조정
+    margin-bottom: -0.8rem;  // 간격을 약간 줄임
+    font-size: 1.8rem;       // 폰트 사이즈 축소
+    line-height: 2rem;       // 줄 높이 축소
   }
   
+  .favicon-line {
+    width: 10rem;           // 너비 축소
+    height: 0.25rem;        // 높이 축소
+    margin-left: 0.1rem;     // 그대로 유지
+    margin-top: -0.3rem;     // 텍스트와의 간격을 더 줄임
+  }
+}

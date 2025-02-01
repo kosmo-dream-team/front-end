@@ -18,6 +18,10 @@ function Signup() {
   return (
     <div className='signup-container'>
     <div className="signup-left-form-container">
+
+
+      {/* 왼쪽 회원가입 폼 영역 */}
+      <div className="signup-left">
       {/* 상단 로고 */}
       <div className="favicon">
         <div className="favicon-text">DREAM ON</div>
@@ -25,10 +29,6 @@ function Signup() {
           <div className="favicon-line-gradient"/>
         </div>
       </div>
-
-
-      {/* 왼쪽 회원가입 폼 영역 */}
-      <div className="signup-left">
         <div className="signup-top">
           <div className="signup-title-area">
             <div className="signup-title">회원가입</div>
@@ -118,17 +118,17 @@ function Signup() {
       {/* 오른쪽 이미지+텍스트 영역 */}
       
       <div className="signup-right-img-container">
-        <div className="signup-right-bg">
+       
           <img className='signup-img'
             src={sign01}
             alt="signup"
           />
-        </div>
         <div className="signup-right-text1">
           <div className="big-title">작은 손길, 큰 변화</div>
           <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>
         </div>
         <div className="signup-right-subtitle">드림온 프로젝트</div>
+       
       </div>
      </div>
   );

@@ -8,14 +8,12 @@
     justify-content: center;
     align-items: center;
   }
-
   @mixin favicon-layout-sign {
-    position: absolute; /* 절대 위치 배치 */
-    left: 4.2rem; /* 왼쪽에서 4.2rem (42px) 지점 */
-    top: 3.1rem; /* 위에서 3.1rem (31px) 지점 */
-    background: rgba(255, 255, 255, 0); /* 투명 배경 */
+    // 기존 left, top 대신 padding으로 위치 조정(필요 시)
+    padding-left: 4.2rem;  // 원래 left: 4.2rem의 역할
+    padding-top: 3.1rem;   // 원래 top: 3.1rem의 역할
+    background: transparent; // rgba(255,255,255,0)와 동일
   }
-
   @mixin img-mw-100{
     max-width: 100%;
   }
