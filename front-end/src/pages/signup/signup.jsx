@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../../style/scss/style.scss";
-
+import sign01 from '../../assets/img/sign01.png'
 function Signup() {
   const [formData, setFormData] = useState({ email: '', password: '' });
 
@@ -16,7 +16,8 @@ function Signup() {
   };
 
   return (
-    <div className="signup-container">
+    <div className='signup-container'>
+    <div className="signup-left-form-container">
       {/* 상단 로고 */}
       <div className="favicon">
         <div className="favicon-text">DREAM ON</div>
@@ -25,20 +26,6 @@ function Signup() {
         </div>
       </div>
 
-      {/* 오른쪽 이미지+텍스트 영역 */}
-      <div className="signup-right">
-        <div className="signup-right-bg">
-          <img
-            src="https://via.placeholder.com/735x880"
-            alt="signup"
-          />
-        </div>
-        <div className="signup-right-text1">
-          <div className="big-title">작은 손길, 큰 변화</div>
-          <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>
-        </div>
-        <div className="signup-right-subtitle">드림온 프로젝트</div>
-      </div>
 
       {/* 왼쪽 회원가입 폼 영역 */}
       <div className="signup-left">
@@ -60,7 +47,7 @@ function Signup() {
               {/* 이메일 */}
               <div className="input-wrapper">
                 <label htmlFor="email">이메일</label>
-                <input
+                <input className='input-email'
                   type="email"
                   id="email"
                   name="email"
@@ -125,7 +112,25 @@ function Signup() {
           alt="google-login"
         />
       </div>
+
     </div>
+    
+      {/* 오른쪽 이미지+텍스트 영역 */}
+      
+      <div className="signup-right-img-container">
+        <div className="signup-right-bg">
+          <img className='signup-img'
+            src={sign01}
+            alt="signup"
+          />
+        </div>
+        <div className="signup-right-text1">
+          <div className="big-title">작은 손길, 큰 변화</div>
+          <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>
+        </div>
+        <div className="signup-right-subtitle">드림온 프로젝트</div>
+      </div>
+     </div>
   );
 }
 

@@ -8,5 +8,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Favicon/>
     {/* <Signup /> App.jsx 대신 Signup.jsx만 렌더링 */}
+    <Signup />
   </React.StrictMode>
 );

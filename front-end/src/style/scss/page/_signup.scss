@@ -2,35 +2,49 @@
 
 @import "../abstracts/_variable";
 
+.signup-container{
+  display: inline-flex;
+}
 
-
-/* 상단 로고( DREAM ON ) 등 전체 컨테이너 */
-.signup-container {
-  width: 144rem;      /* 1440px -> 144rem */
-  height: 90rem;      /* 900px -> 90rem */
+// 상단 로고( DREAM ON ) 등 전체 컨테이너
+.signup-left-form-container {
+  width: 60rem;       /* 144rem → 120rem (1440px → 1200px) */
+  height: 75rem;       /* 90rem → 75rem (900px → 750px) */
   position: relative;
   background: #fff;
-  border-radius: 1.5rem; /* 15px -> 1.5rem */
+  border-radius: 1.25rem; /* 1.5rem → 1.25rem (15px → 12.5px) */
   overflow: hidden;
-
-  /* 좌측 상단 로고 영역 */
- 
 }
+.signup-right-img-container{
+  margin-top: 1.5rem;
+  width: 60rem;       /* 144rem → 120rem (1440px → 1200px) */
+  height: 60rem;       /* 90rem → 75rem (900px → 750px) */
+  position: relative;
+  background: #fff;
+  border-radius: 1.25rem; /* 1.5rem → 1.25rem (15px → 12.5px) */
+  overflow: hidden;
+  img {
+   max-width: 100%; 
+  }
+}
+
+
+
 
 /* 오른쪽 큰 이미지 + 문구 영역 */
 .signup-right {
-  width: 73.5rem;      /* 735px -> 73.5rem */
-  height: 85.9rem;     /* 859px -> 85.9rem */
+  width: 61.25rem;    /* 73.5rem → 61.25rem (735px → 612.5px) */
+  height: 71.58rem;   /* 85.9rem → 71.58rem (859px → 약 715.8px) */
   position: absolute;
-  left: 70.5rem;       /* 705px -> 70.5rem */
-  top: 2.1rem;         /* 21px -> 2.1rem */
+  left: 58.75rem;     /* 70.5rem → 58.75rem */
+  top: 1.75rem;       /* 2.1rem → 1.75rem */
 
   .signup-right-bg {
     width: 100%;
     height: 100%;
     position: absolute;
     background: #fff;
-    border-radius: 3rem; /* 30px -> 3rem */
+    border-radius: 2.5rem; /* 3rem → 2.5rem */
     overflow: hidden;
     display: inline-flex;
     flex-direction: column;
@@ -38,32 +52,32 @@
     align-items: center;
 
     img {
-      width: 73.5rem;
-      height: 88rem;   /* 880px -> 88rem */
-      object-fit: cover; /* 예시 */
+      width: 61.25rem;  /* 73.5rem → 61.25rem */
+      height: 73.33rem; /* 88rem → 73.33rem (880px → 733.3px) */
+      object-fit: cover;
     }
   }
 
   .signup-right-text1 {
-    width: 39.6rem;    /* 396px -> 39.6rem */
-    height: 9.4rem;    /* 94px -> 9.4rem */
+    width: 33rem;    /* 39.6rem → 33rem  (396px → 330px) */
+    height: 7.83rem; /* 9.4rem → 7.83rem (94px → 78.3px) */
     position: absolute;
-    left: 7.6rem;      /* 76px -> 7.6rem */
-    top: 66.9rem;      /* 669px -> 66.9rem */
+    left: 6.33rem;   /* 7.6rem → 6.33rem */
+    top: 55.75rem;   /* 66.9rem → 약 55.75rem */
 
     .big-title {
       position: absolute;
       color: #fff;
-      font-size: 4rem;   /* 40px -> 4rem */
+      font-size: 3.33rem; /* 4rem → 약 3.33rem (40px → 33.3px) */
       font-weight: 600;
       word-wrap: break-word;
     }
     .small-title {
       position: absolute;
       width: 100%;
-      top: 6.4rem;       /* 64px -> 6.4rem */
+      top: 5.33rem;    /* 6.4rem → 5.33rem */
       color: #fff;
-      font-size: 2rem;   /* 20px -> 2rem */
+      font-size: 1.67rem; /* 2rem → 1.67rem */
       font-weight: 300;
       word-wrap: break-word;
     }
@@ -71,217 +85,457 @@
 
   .signup-right-subtitle {
     position: absolute;
-    left: 56.3rem;    /* 563px -> 56.3rem */
-    top: 2.4rem;      /* 24px -> 2.4rem */
+    left: 46.92rem;  /* 56.3rem → 46.92rem */
+    top: 2rem;       /* 2.4rem → 2rem */
     color: #fff;
-    font-size: 1.5rem; /* 15px -> 1.5rem */
+    font-size: 1.25rem; /* 1.5rem → 1.25rem */
     font-weight: 400;
     word-wrap: break-word;
   }
 }
-
 /* 왼쪽 회원가입 폼 영역 */
 .signup-left {
-  width: 43.1rem;   /* 431px -> 43.1rem */
-  height: 56.1rem;  /* 561px -> 56.1rem */
-  position: absolute;
-  left: 12.2rem;    /* 122px -> 12.2rem */
-  top: 15rem;       /* 150px -> 15rem */
+  width: 35.92rem;  
+  height: 46.75rem; 
+  /* position: absolute;  제거 */
+  /* left: 10.17rem;      제거 */
+  /* top: 12.5rem;        제거 */
 
-  /* 회원가입 상단 부분 */
-  .signup-top {
-    width: 100%;
-    height: 49.8rem;   /* 498px -> 49.8rem */
-    position: relative;
+  /* 대신 바깥 쪽 여백(margin)으로 간격 조절 */
+  /* 가령 상단 12.5rem, 좌측 10.17rem 간격을 주고 싶다면 */
+  margin: 12.5rem 0 0 10.17rem;
+}
 
-    .signup-title-area {
-      width: 30.8rem;  /* 308px -> 30.8rem */
-      height: 12.1rem; /* 121px -> 12.1rem */
-      position: absolute;
+.signup-left .signup-top {
+  width: 100%;
+  height: 41.5rem;
+  /* position: relative;  제거 */
 
-      .signup-title {
-        color: #000;
-        font-size: 3rem;     /* 30px -> 3rem */
-        font-weight: 500;
-        word-wrap: break-word;
-      }
+  /* 아래쪽 요소와 간격을 주고 싶다면 margin-bottom 등을 활용 */
+  /* margin-bottom: 1.5rem; // 예시 */
+}
 
-      .signup-subinfo {
-        width: 30.8rem;
-        height: 5.4rem;      /* 54px -> 5.4rem */
-        position: absolute;
-        top: 6.7rem;         /* 67px -> 6.7rem */
+.signup-left .signup-top .signup-title-area {
+  width: 25.67rem;  
+  height: 10.08rem; 
+  /* position: absolute; 제거 */
 
-        .already {
-          width: 30.8rem;
-          color: #000;
-          font-size: 1.6rem;   /* 16px -> 1.6rem */
-          font-weight: 400;
-          word-wrap: break-word;
-          position: absolute;
-        }
-        .goto-login {
-          width: 30.8rem;
-          position: absolute;
-          top: 3rem;         /* 30px -> 3rem */
-          color: #ff9191;
-          font-size: 1.6rem;  /* 16px -> 1.6rem */
-          font-weight: 600;
-          word-wrap: break-word;
-          cursor: pointer;
-        }
-      }
-    }
+  /* 절대 위치 대신 margin으로 내부/외부 간격 조절 */
+  /* 예: 부모와의 간격, 가운데 정렬 등을 원하면 */
+  /* margin: 0 auto 2rem auto; // 예시 */
+}
 
-    .signup-form-area {
-      width: 100%;
-      height: 32.5rem;   /* 325px -> 32.5rem */
-      position: absolute;
-      top: 17.3rem;      /* 173px -> 17.3rem */
+.signup-left .signup-top .signup-title-area .signup-title {
+  color: #000;
+  font-size: 2.5rem; 
+  font-weight: 500;
+  word-wrap: break-word;
+  /* 필요 시 아래 공간 확보 */
+  /* margin-bottom: 0.5rem; */
+}
 
-      form {
-        /* form 전체 레이아웃 */
-        display: flex;
-        flex-direction: column;
+.signup-left .signup-top .signup-title-area .signup-subinfo {
+  width: 25.67rem; 
+  height: 4.5rem;  
+  /* position: absolute; 제거 */
+  /* top: 5.58rem;      제거 */
 
-        .input-wrapper {
-          width: 100%;
-          position: relative;
-          margin-bottom: 2rem; /* 20px -> 2rem */
-          
-          label {
-            display: block;
-            color: #999;
-            font-size: 1.3rem; /* 13px -> 1.3rem */
-            font-weight: 500;
-            margin-bottom: 0.8rem;  /* 8px -> 0.8rem */
-          }
+  /* margin-top으로 간격을 대체 */
+  margin-top: 2rem; 
+}
 
-          input {
-            width: 100%;
-            border: none;
-            border-bottom: 0.2rem solid #000; /* 2px -> 0.2rem */
-            outline: none;
-            font-size: 1.6rem;   /* 16px -> 1.6rem */
-            font-weight: 400;
-            padding: 0.4rem 0;   /* 예시 (4px -> 0.4rem) */
-          }
-          &.password {
-            input {
-              border-bottom-color: #999;
-            }
-          }
-        }
+.signup-left .signup-top .signup-title-area .signup-subinfo .already {
+  width: 25.67rem;
+  color: #000;
+  font-size: 1.33rem; 
+  font-weight: 400;
+  word-wrap: break-word;
+}
 
-        .options {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 3rem; /* 30px -> 3rem */
+.signup-left .signup-top .signup-title-area .signup-subinfo .goto-login {
+  width: 25.67rem;
+  /* top: 2.5rem; 제거 (절대배치가 아니므로) */
+  margin-top: 2.5rem;
+  color: #ff9191;
+  font-size: 1.33rem; 
+  font-weight: 600;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+.goto-login {
+  
+}
+.signup-left .signup-top .signup-form-area {
+  width: 100%;
+  height: 27.08rem;
+  /* position: absolute; 제거 */
+  /* top: 14.41rem;     제거 */
 
-          .remember-me {
-            display: flex;
-            align-items: center;
+  /* margin-top을 통해 간격 조절 */
+  margin-top: 14.41rem;
+}
 
-            input[type="checkbox"] {
-              margin-right: 0.5rem; /* 5px -> 0.5rem */
-            }
-            label {
-              color: #000;
-              font-size: 1.2rem; /* 12px -> 1.2rem */
-              font-weight: 300;
-              cursor: pointer;
-            }
-          }
+.signup-left .signup-top .signup-form-area form {
+  display: flex;
+  flex-direction: column;
+}
 
-          .forgot-pw {
-            color: #4d4d4d;
-            font-size: 1.2rem; /* 12px -> 1.2rem */
-            font-weight: 300;
-            cursor: pointer;
-          }
-        }
+.signup-left .signup-top .signup-form-area form .input-wrapper {
+  width: 100%;
+  /* position: relative; // label, input 안에서 필요하면 유지 */
+  margin-bottom: 1.67rem; 
+}
 
-        .signup-button {
-          width: 42.9rem;  /* 429px -> 42.9rem */
-          height: 5.3rem;  /* 53px -> 5.3rem */
-          background: #ff9191;
-          box-shadow: 0 0.4rem 2.6rem rgba(0, 0, 0, 0.25); /* 0px 4px 26px -> 0 0.4rem 2.6rem */
-          border-radius: 3.2rem; /* 32px -> 3.2rem */
-          border: none;
-          cursor: pointer;
+#email{
+  margin-bottom: 2.5rem;
+}
+.signup-left .signup-top .signup-form-area form .input-wrapper label {
+  display: block;
+  color: #999;
+  font-size: 1.08rem; 
+  font-weight: 500;
+  margin-bottom: 0.67rem; 
+}
 
-          span {
-            color: #fff;
-            font-size: 1.7rem;   /* 17px -> 1.7rem */
-            font-weight: 500;
-          }
-        }
-      }
-    }
-  }
+.signup-left .signup-top .signup-form-area form .input-wrapper input {
+  width: 100%;
+  border: none;
+  border-bottom: 0.17rem solid #000;
+  outline: none;
+  font-size: 1.33rem;  
+  font-weight: 400;
+  padding: 0.33rem 0;
+}
 
-  .other-method {
-    position: absolute;
-    left: 15.2rem;  /* 152px -> 15.2rem */
-    top: 53.7rem;   /* 537px -> 53.7rem */
-    color: #b5b5b5;
-    font-size: 1.6rem;  /* 16px -> 1.6rem */
-    font-weight: 500;
-    word-wrap: break-word;
-  }
+.signup-left .signup-top .signup-form-area form .input-wrapper.password input {
+  border-bottom-color: #999;
+}
+
+.signup-left .signup-top .signup-form-area form .options {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.signup-left .signup-top .signup-form-area form .options .remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.signup-left .signup-top .signup-form-area form .options .remember-me input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.signup-left .signup-top .signup-form-area form .options .remember-me label {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.signup-left .signup-top .signup-form-area form .options .forgot-pw {
+  color: #4d4d4d;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.signup-left .signup-top .signup-form-area form .signup-button {
+  width: 35.75rem;  
+  height: 4.42rem;  
+  background: #ff9191;
+  box-shadow: 0 0.33rem 2.17rem rgba(0, 0, 0, 0.25);
+  border-radius: 2.67rem;
+  border: none;
+  cursor: pointer;
+
+  /* 버튼을 중앙 정렬하고 싶다면
+     display: block; margin: 0 auto; 등 적용 가능 */
+}
+
+.signup-left .signup-top .signup-form-area form .signup-button span {
+  color: #fff;
+  font-size: 1.42rem;  
+  font-weight: 500;
+}
+
+.signup-left .other-method {
+  /* position: absolute; 제거 */
+  /* left: 12.67rem;     제거 */
+  /* top: 38rem;         제거 */
+  color: #b5b5b5;
+  font-size: 1.33rem;
+  font-weight: 500;
+  word-wrap: break-word;
+
+  /* 문서 흐름 내에서 간격을 주고 싶다면 */
+  margin-top: 2rem; 
 }
 
 /* 소셜 로그인 버튼 (구글 예시) */
 .social-google {
-  width: 11.6rem;   /* 116px -> 11.6rem */
-  height: 6.155rem; /* 61.55px -> 6.155rem */
-  position: absolute;
-  left: 28.1rem;    /* 281px -> 28.1rem */
-  top: 73.1rem;     /* 731px -> 73.1rem */
+  width: 9.67rem;    
+  height: 5.13rem;   
+  /* position: absolute; 제거 */
+  /* left: 23.42rem;     제거 */
+  /* top: 60.92rem;      제거 */
   cursor: pointer;
 
-  .google-icon-blocks {
-    width: 4.372rem;   /* 43.72px -> 4.372rem */
-    height: 4.774rem;  /* 47.74px -> 4.774rem */
-    position: absolute;
-    left: 7.228rem;    /* 72.28px -> 7.228rem */
-    top: 0.56rem;      /* 5.6px -> 0.56rem */
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+  /* margin 등으로 원하는 위치에 배치 */
+  margin: 2rem 0 0 23.42rem; 
+  /* 혹은 중앙 배치를 원하면 margin: 2rem auto; 등으로 조정 가능 */
 
-    /* 구글 로고 흉내내는 컬러 박스들 */
-    .red-box {
-      width: 3.049rem;    /* 30.49px -> 3.049rem */
-      height: 1.675rem;   /* 16.75px -> 1.675rem */
-      background: #eb4335;
-    }
-    .yellow-box {
-      width: 0.841rem;    /* 8.41px -> 0.841rem */
-      height: 1.885rem;   /* 18.85px -> 1.885rem */
-      background: #fbbc05;
-    }
-    .blue-box {
-      width: 1.874rem;    /* 18.74px -> 1.874rem */
-      height: 1.963rem;   /* 19.63px -> 1.963rem */
-      background: #4285f4;
-    }
-    .green-box {
-      width: 3.036rem;    /* 30.36px -> 3.036rem */
-      height: 1.676rem;   /* 16.76px -> 1.676rem */
-      background: #34a853;
-    }
-  }
-
-  .google-img {
-    width: 5.672rem;   /* 56.72px -> 5.672rem */
-    height: 6.155rem;  /* 61.55px -> 6.155rem */
-    position: absolute;
-    left: 0;
-    top: 0;
-    object-fit: cover;
-  }
+  /* 내부 아이콘을 위해 필요한 경우만 */
+  position: relative; 
 }
+
+.social-google .google-icon-blocks {
+  width: 3.64rem;    
+  height: 3.98rem;   
+  position: absolute;  
+  left: 6.02rem;     
+  top: 0.47rem;      
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.social-google .google-icon-blocks .red-box {
+  width: 2.54rem;   
+  height: 1.4rem;   
+  background: #eb4335;
+}
+
+.social-google .google-icon-blocks .yellow-box {
+  width: 0.7rem;    
+  height: 1.57rem;  
+  background: #fbbc05;
+}
+
+.social-google .google-icon-blocks .blue-box {
+  width: 1.56rem;   
+  height: 1.64rem;  
+  background: #4285f4;
+}
+
+.social-google .google-icon-blocks .green-box {
+  width: 2.53rem;   
+  height: 1.4rem;   
+  background: #34a853;
+}
+
+.social-google .google-img {
+  width: 4.73rem;   
+  height: 5.13rem;  
+  position: absolute; 
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+
+// /* 왼쪽 회원가입 폼 영역 */
+// .signup-left {
+//   width: 35.92rem;   /* 43.1rem → 35.92rem */
+//   height: 46.75rem;  /* 56.1rem → 46.75rem */
+//   position: absolute;
+//   left: 10.17rem;    /* 12.2rem → 10.17rem */
+//   top: 12.5rem;      /* 15rem → 12.5rem */
+
+//   .signup-top {
+//     width: 100%;
+//     height: 41.5rem;   /* 49.8rem → 41.5rem */
+//     position: relative;
+
+//     .signup-title-area {
+//       width: 25.67rem;  /* 30.8rem → 25.67rem */
+//       height: 10.08rem; /* 12.1rem → 10.08rem */
+//       position: absolute;
+
+//       .signup-title {
+//         color: #000;
+//         font-size: 2.5rem; /* 3rem → 2.5rem */
+//         font-weight: 500;
+//         word-wrap: break-word;
+//       }
+
+//       .signup-subinfo {
+//         width: 25.67rem;  /* 30.8rem → 25.67rem */
+//         height: 4.5rem;   /* 5.4rem → 4.5rem */
+//         position: absolute;
+//         top: 5.58rem;     /* 6.7rem → 5.58rem */
+
+//         .already {
+//           width: 25.67rem;
+//           color: #000;
+//           font-size: 1.33rem; /* 1.6rem → 1.33rem */
+//           font-weight: 400;
+//           word-wrap: break-word;
+//           position: absolute;
+//         }
+//         .goto-login {
+//           width: 25.67rem;
+//           position: absolute;
+//           top: 2.5rem;      /* 3rem → 2.5rem */
+//           color: #ff9191;
+//           font-size: 1.33rem; /* 1.6rem → 1.33rem */
+//           font-weight: 600;
+//           word-wrap: break-word;
+//           cursor: pointer;
+//         }
+//       }
+//     }
+
+//     .signup-form-area {
+//       width: 100%;
+//       height: 27.08rem;  /* 32.5rem → 27.08rem */
+//       position: absolute;
+//       top: 14.41rem;     /* 17.3rem → 14.41rem */
+
+//       form {
+//         display: flex;
+//         flex-direction: column;
+
+//         .input-wrapper {
+//           width: 100%;
+//           position: relative;
+//           margin-bottom: 1.67rem; /* 2rem → 1.67rem */
+          
+//           label {
+//             display: block;
+//             color: #999;
+//             font-size: 1.08rem; /* 1.3rem → 1.08rem */
+//             font-weight: 500;
+//             margin-bottom: 0.67rem;  /* 0.8rem → 0.67rem */
+//           }
+
+//           input {
+//             width: 100%;
+//             border: none;
+//             border-bottom: 0.17rem solid #000; /* 0.2rem → 0.17rem */
+//             outline: none;
+//             font-size: 1.33rem;   /* 1.6rem → 1.33rem */
+//             font-weight: 400;
+//             padding: 0.33rem 0;   /* 0.4rem → 0.33rem */
+//           }
+//           &.password {
+//             input {
+//               border-bottom-color: #999;
+//             }
+//           }
+//         }
+
+//         .options {
+//           width: 100%;
+//           display: flex;
+//           justify-content: space-between;
+//           align-items: center;
+//           margin-bottom: 2.5rem; /* 3rem → 2.5rem */
+
+//           .remember-me {
+//             display: flex;
+//             align-items: center;
+
+//             input[type="checkbox"] {
+//               margin-right: 0.5rem;
+//             }
+//             label {
+//               color: #000;
+//               font-size: 1rem; /* 1.2rem → 1rem */
+//               font-weight: 300;
+//               cursor: pointer;
+//             }
+//           }
+
+//           .forgot-pw {
+//             color: #4d4d4d;
+//             font-size: 1rem; /* 1.2rem → 1rem */
+//             font-weight: 300;
+//             cursor: pointer;
+//           }
+//         }
+
+//         .signup-button {
+//           width: 35.75rem;  /* 42.9rem → 35.75rem */
+//           height: 4.42rem;  /* 5.3rem → 4.42rem */
+//           background: #ff9191;
+//           box-shadow: 0 0.33rem 2.17rem rgba(0, 0, 0, 0.25); /* (0 0.4rem 2.6rem) → (0 0.33rem 2.17rem) */
+//           border-radius: 2.67rem; /* 3.2rem → 2.67rem */
+//           border: none;
+//           cursor: pointer;
+
+//           span {
+//             color: #fff;
+//             font-size: 1.42rem;   /* 1.7rem → 1.42rem */
+//             font-weight: 500;
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   .other-method {
+//     position: absolute;
+//     left: 12.67rem;  /* 15.2rem → 12.67rem */
+//     top: 38rem;   /* 53.7rem → 44.75rem */
+//     color: #b5b5b5;
+//     font-size: 1.33rem;  /* 1.6rem → 1.33rem */
+//     font-weight: 500;
+//     word-wrap: break-word;
+//   }
+// }
+
+// /* 소셜 로그인 버튼 (구글 예시) */
+// .social-google {
+//   width: 9.67rem;    /* 11.6rem → 9.67rem */
+//   height: 5.13rem;   /* 6.155rem → 5.13rem */
+//   position: absolute;
+//   left: 23.42rem;    /* 28.1rem → 23.42rem */
+//   top: 60.92rem;     /* 73.1rem → 60.92rem */
+//   cursor: pointer;
+
+//   .google-icon-blocks {
+//     width: 3.64rem;    /* 4.372rem → 3.64rem */
+//     height: 3.98rem;   /* 4.774rem → 3.98rem */
+//     position: absolute;
+//     left: 6.02rem;     /* 7.228rem → 6.02rem */
+//     top: 0.47rem;      /* 0.56rem → 0.47rem */
+//     display: inline-flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+
+//     /* 구글 로고 흉내내는 컬러 박스들 */
+//     .red-box {
+//       width: 2.54rem;   /* 3.049rem → 2.54rem */
+//       height: 1.4rem;   /* 1.675rem → 1.4rem */
+//       background: #eb4335;
+//     }
+//     .yellow-box {
+//       width: 0.7rem;    /* 0.841rem → 0.7rem */
+//       height: 1.57rem;  /* 1.885rem → 1.57rem */
+//       background: #fbbc05;
+//     }
+//     .blue-box {
+//       width: 1.56rem;   /* 1.874rem → 1.56rem */
+//       height: 1.64rem;  /* 1.963rem → 1.64rem */
+//       background: #4285f4;
+//     }
+//     .green-box {
+//       width: 2.53rem;   /* 3.036rem → 2.53rem */
+//       height: 1.4rem;   /* 1.676rem → 1.4rem */
+//       background: #34a853;
+//     }
+//   }
+
+//   .google-img {
+//     width: 4.73rem;   /* 5.672rem → 4.73rem */
+//     height: 5.13rem;  /* 6.155rem → 5.13rem */
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     object-fit: cover;
+//   }
+// }
