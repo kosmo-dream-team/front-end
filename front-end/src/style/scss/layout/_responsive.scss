@@ -1,28 +1,29 @@
-$breakpoint-mobile: 480px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
-  
-  /* 반응형 디자인 */
+
 
   // 모바일
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: 479px) {
     
-
+    html {
+      font-size: 40%; 
+    }
+   
    
   }
 
   // 태블릿
-  @media (max-width: $breakpoint-tablet) {
+@media (min-width: 768px) and (max-width: 1023px){
     
-    * {
+  html {
       font-size: 50%; //8px
     }
    
   }
 
-  // 데스크탑탑
-  @media (max-width: $breakpoint-desktop) {
+  // 데스크탑
+  @media (max-width:1024) {
     
-
+    html {
+      font-size: 62.5%; /* 1rem = 10px */
+    }
    
   }

@@ -5,8 +5,10 @@ export default defineConfig({
   css: {
     preprocessorOptions: {  
       scss: {
-        additionalData: 
-        `@use "abstracts/index" as *;`
+        additionalData: `
+        @use "abstracts/mixin" as mixin2;
+        @use "abstracts/variable" as var;
+        `
       }
     }
   }

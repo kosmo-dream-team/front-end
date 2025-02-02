@@ -29,23 +29,3 @@
     border-radius: 4rem;
   }
 }
-
-/* 휴대폰 사이즈 등 작은 화면에서 적용 */
-@media (max-width: 768px) {
-  .favicon-text {
-    width: 11rem;           // 기존보다 약 20% 축소
-    height: 3.2rem;         // 기존보다 축소
-    margin-left: -1.5rem;    // 미세 조정
-    margin-top: -0.6rem;     // 미세 조정
-    margin-bottom: -0.8rem;  // 간격을 약간 줄임
-    font-size: 1.8rem;       // 폰트 사이즈 축소
-    line-height: 2rem;       // 줄 높이 축소
-  }
-  
-  .favicon-line {
-    width: 10rem;           // 너비 축소
-    height: 0.25rem;        // 높이 축소
-    margin-left: 0.1rem;     // 그대로 유지
-    margin-top: -0.3rem;     // 텍스트와의 간격을 더 줄임
-  }
-}

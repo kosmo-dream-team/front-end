@@ -17,3 +17,8 @@
   @mixin img-mw-100{
     max-width: 100%;
   }
+
+  @mixin grid-center() {
+    display: grid;
+    place-items: center;
+  }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import "../../style/scss/style.scss";
 import sign01 from '../../assets/img/sign01.png';
-
+import googleLogo from '../../assets/img/google-logo.svg';
+import kakaoLogo from '../../assets/img/kakao-logo.svg';
 function Signup() {
   // 이메일, 이름, 비밀번호, 비밀번호 재입력 필드를 위한 상태 관리
   const [formData, setFormData] = useState({
@@ -124,18 +125,10 @@ function Signup() {
           <div className="other-method">다른 방법으로 가입</div>
         </div>
         {/* 소셜 로그인 (구글 예시) */}
-        <div className="social-google" onClick={() => alert('구글 로그인')}>
-          <div className="google-icon-blocks">
-            <div className="red-box" />
-            <div className="yellow-box" />
-            <div className="blue-box" />
-            <div className="green-box" />
-          </div>
-          <img
-            className="google-img"
-            src="https://via.placeholder.com/57x62"
-            alt="google-login"
-          />
+        <div className="social-google">
+       <img src={kakaoLogo} alt=""onClick={() => alert('카카오 로그인')} />
+        
+        <img src={googleLogo} alt=""  onClick={() => alert('구글 로그인')}/>
         </div>
       </div>
       {/* 오른쪽 이미지+텍스트 영역 */}
