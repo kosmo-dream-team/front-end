@@ -112,7 +112,9 @@ function Signup() {
                     className="forgot-pw"
                     onClick={() => alert('비밀번호 찾기 페이지로 이동')}
                   >
+                    <a href="/find-password">
                     비밀번호를 잊으셨나요?
+                    </a>
                   </div>
                 </div>
                 {/* 가입하기 버튼 */}
@@ -125,15 +127,15 @@ function Signup() {
           <div className="other-method">다른 방법으로 가입</div>
         </div>
         {/* 소셜 로그인 (구글 예시) */}
-        <div className="social-google">
-       <img src={kakaoLogo} alt=""onClick={() => alert('카카오 로그인')} />
+        <div className="social-login">
+       <img src={kakaoLogo} alt="카카오로 로그인"onClick={() => alert('카카오 로그인')} />
         
-        <img src={googleLogo} alt=""  onClick={() => alert('구글 로그인')}/>
+        <img src={googleLogo} alt="구글로 로그인"  onClick={() => alert('구글 로그인')}/>
         </div>
       </div>
       {/* 오른쪽 이미지+텍스트 영역 */}
       <div className="signup-right-img-container">
-        <img className="signup-img" src={sign01} alt="signup" />
+        <img className="signup-img" src={sign01} alt="웃는 아이의 이미지" />
         <div className="signup-right-text1">
           <div className="big-title">작은 손길, 큰 변화</div>
           <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>

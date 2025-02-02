@@ -1,6 +1,8 @@
  import React, { useState } from 'react';
  import "../../style/scss/style.scss";
  import sign01 from '../../assets/img/sign01.png'
+ import googleLogo from '../../assets/img/google-logo.svg';
+import kakaoLogo from '../../assets/img/kakao-logo.svg';
  
  function login() {
    const [formData, setFormData] = useState({ email: '', password: '' });
@@ -86,7 +88,8 @@
                    className="forgot-pw"
                    onClick={() => alert('비밀번호 찾기 페이지로 이동')}
                  >
-                   비밀번호를 잊으셨나요?
+                  <a href="/find-password">
+                   비밀번호를 잊으셨나요?</a>
                  </div>
                </div>
  
@@ -101,19 +104,11 @@
        </div>
  
        {/* 소셜 로그인(구글) 예시 */}
-       <div className="social-google" onClick={() => alert('구글 로그인')}>
-         <div className="google-icon-blocks">
-           <div className="red-box" />
-           <div className="yellow-box" />
-           <div className="blue-box" />
-           <div className="green-box" />
-         </div>
-         <img
-           className="google-img"
-           src="https://via.placeholder.com/57x62"
-           alt="google-login"
-         />
-       </div>
+       <div className="social-login">
+             <img src={kakaoLogo} alt="카카오로 로그인하기"onClick={() => alert('카카오 로그인')} />
+              
+              <img src={googleLogo} alt="구글로 로그인하기"  onClick={() => alert('구글 로그인')}/>
+              </div>
  
      </div>
      
@@ -123,10 +118,10 @@
         
            <img className='signup-img'
              src={sign01}
-             alt="signup"
+             alt="웃는 아이의 이미지"
            />
          <div className="signup-right-text1">
-           <div className="big-title">작은 손길, 큰 변화</div>
+           <div className="big-title" >작은 손길, 큰 변화</div>
            <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>
          </div>
          <div className="signup-right-subtitle">드림온 프로젝트</div>
