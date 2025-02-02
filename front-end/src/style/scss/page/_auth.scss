@@ -28,7 +28,7 @@
 
 .signup-right-img-container {
   
-  width: 100%;
+  
   max-width: 60rem;       /* 최대 너비 60rem */
   max-height: 73rem ;
   margin-top: 1.5rem;
@@ -36,9 +36,11 @@
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
+ 
   img {
+    width: 100%;
     display: block;
-   
+    
     height: auto;
    
   }
