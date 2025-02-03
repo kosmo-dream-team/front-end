@@ -1,7 +1,7 @@
 @use "../abstracts/variable" as var;
 @use "../abstracts/mixin" as mixin;
 
-.header {
+.layout__header {
     margin: 0 auto;
     width: 120rem;
   height: 70px;
@@ -11,7 +11,7 @@
   background: #D9D9D9;
   margin-bottom: 2rem;
 }
-.main-container {
+.layout__main-container {
     margin: 0 auto;
     width: 120rem;
     height: 300rem;
@@ -23,7 +23,7 @@
   }
   
   
-  .left-panel {
+  .layout__left-panel {
     width: 70rem;
    
     height: auto;
@@ -35,37 +35,37 @@
         margin-bottom: 3rem;
     }
 
-    .main-banner {
+    .layout__main-banner {
         height: 25rem;
         background: black;
 
     }
-    .my-help-category {
+    .layout__my-help-category {
         
         height: 17.4rem;
         background: black;
        
     }
-    .top-campaign {
+    .layout__top-campaign {
         
         height: 37.15rem;
        
         background: black;
 
     }
-    .main-campaign-list{
+    .layout__main-campaign-list{
         background: black;
         
         height: 40rem;}
   }
   
-  .right-panel {
+  .layout__right-panel {
     width: 36rem;
 
     
     
     background: #002FFF;
-    .first-section{
+    .layout__first-section{
         height: 53.1rem;
         background: black;
         
@@ -74,29 +74,29 @@
     & > div{
         margin-bottom: 6rem;
     }
-    .total-donation{
+    .layout__total-donation{
         height:25rem;
         
         background: red;
     }
-    .donation-review{
+    .layout__donation-review{
         height:28.1rem;
         background: violet;
 
     }
     
-    .new-campaign{
+    .layout__new-campaign{
         height: 39.3rem;
 
         background: linear-gradient(90deg, #FF9191 0%, rgba(255, 93, 100, 0.80) 100%);
         
     }
-    .social-link{ 
+    .layout__social-link{ 
         height: 47.7rem;
         background-color: #002FFF;
         background:#FF0000;
     }
-    .receive-donation{
+    .layout__receive-donation{
 
         margin: 0 auto;
         width: 295px;
