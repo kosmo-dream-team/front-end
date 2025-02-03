@@ -12,7 +12,7 @@ function mainPage(){
     {/* 나의 도움이 필요한 모금함(카테고리) */ }
     <div className="layout__my-help-category">컴포넌트 꽂는곳</div>
     {/* 가장 많이 기부중인 모금함 */}
-    <div className="layout__top-campaign">컴포넌트 꽂는곳</div>
+    <div className="layout__top-campaign">컴포넌트 꽂는곳123123</div>
 
     {/* 후원 리스트 */}
     <div className="layout__main-campaign-list">컴포넌트 꽂는곳</div>
