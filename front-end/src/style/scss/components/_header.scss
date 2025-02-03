@@ -1,0 +1,206 @@
+/* HeaderNav.css */
+
+/* 최상위 컨테이너 */
+.header-nav-container {
+  width: 1800px;
+  height: 69px;
+  position: relative;
+}
+
+/* 내부 영역 (내비게이션 전체) */
+.header-nav-inner {
+  width: 1120px;
+  height: 70px;
+  position: absolute;
+  left: 339px;
+  top: 0;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+}
+
+/* 로고 영역 */
+.logo-area {
+  width: 120px;
+  height: 30px;
+  position: relative;
+  background: rgba(255, 255, 255, 0);
+}
+
+.logo-text {
+  width: 139px;
+  height: 41px;
+  position: absolute;
+  left: -19px;
+  top: -8px;
+  text-align: right;
+  color: #ff9191;
+  font-size: 23px;
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+.logo-underline {
+  width: 117px;
+  height: 3px;
+  position: absolute;
+  left: 1px;
+  top: 23px;
+  border-radius: 100px;
+}
+
+.logo-underline-inner {
+  width: 117px;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(90deg, #f8f0f0 0%, #e8b3b3 100%, #ff0000 100%);
+  border-radius: 40px;
+}
+
+/* 내비게이션 메뉴 영역 */
+.nav-menu {
+  width: 601px;
+  height: 70px;
+  position: relative;
+}
+
+/* 공통 내비게이션 아이템 */
+.nav-item {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 22px 14px 24px 14px;
+}
+
+/* 홈: border-bottom 강조 */
+.nav-item.home {
+  width: 43px;
+  left: 56px;
+  top: -1px;
+  border-bottom: 2px solid #393939;
+}
+
+/* 회사 소개 */
+.nav-item.company {
+  width: 75px;
+  height: 24px;
+  left: 122px;
+  top: 22px;
+  color: #444444;
+  font-size: 16px;
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+/* 캠페인 */
+.nav-item.campaign {
+  width: 70px;
+  height: 24px;
+  left: 220px;
+  top: 22px;
+  color: #444444;
+  font-size: 16px;
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+/* 기부 통계 */
+.nav-item.donation {
+  width: 99.53px;
+  left: 281px;
+  top: 0;
+}
+
+.nav-item.donation .nav-text {
+  color: #444444;
+  font-size: 16px;
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+/* 기부 통계의 점 */
+.nav-item.donation .dot {
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: 80px;
+  top: 24px;
+  background: #ff5a72;
+  border-radius: 2px;
+}
+
+/* 게시판 & Tip (첫 번째) */
+.nav-item.board1 {
+  width: 117px;
+  left: 385px;
+  top: -1px;
+}
+
+.nav-item.board1 .nav-text {
+  color: #444444;
+  font-size: 16px;
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+/* 게시판 & Tip (두 번째) */
+.nav-item.board2 {
+  width: 117px;
+  left: 385px;
+  top: -1px;
+}
+
+.nav-item.board2 .nav-text {
+  color: #444444;
+  font-size: 16px;
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+/* 마이페이지 */
+.nav-item.mypage {
+  width: 102px;
+  left: 513px;
+  top: 0;
+}
+
+.nav-item.mypage .nav-text {
+  color: #444444;
+  font-size: 16px;
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+/* 오른쪽 추가 영역 */
+.right-area {
+  width: 115px;
+  align-self: stretch;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.right-area .placeholder {
+  width: 99.53px;
+  padding: 22px 14px 24px 14px;
+}
