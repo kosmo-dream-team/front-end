@@ -19,6 +19,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     
     {/* <Signup /> App.jsx 대신 Signup.jsx만 렌더링 */}
-  <Footer />
+  <Signup />
   </React.StrictMode>
 );
