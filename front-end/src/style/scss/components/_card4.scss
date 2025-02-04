@@ -1,0 +1,212 @@
+.donation-sharing {
+  width: 375px;
+  height: 477px;
+  padding-left: 19px;
+  padding-right: 19px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* 제목 영역 */
+.donation-sharing__title {
+  align-self: stretch;
+}
+
+.donation-sharing__title-bold {
+  color: black;
+  font-size: 24px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  line-height: 30px;
+  word-wrap: break-word;
+}
+
+.donation-sharing__title-regular {
+  color: black;
+  font-size: 24px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  word-wrap: break-word;
+}
+
+/* 카드 컨테이너 */
+.donation-sharing__cards {
+  align-self: stretch;
+  height: 435px;
+  padding: 29px 21px;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.07);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+/* 공통 카드 스타일 */
+.donation-sharing__card {
+  align-self: stretch;
+  padding: 20px 20px 21px 20px;
+  /* 위:20, 우:20, 아래:21, 좌:20 */
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 카드별 배경색 */
+.donation-sharing__card--pink {
+  background: #FFB6CB;
+}
+
+.donation-sharing__card--c4d3f3 {
+  background: #C4D3F3;
+}
+
+.donation-sharing__card--b6e2eb {
+  background: #B6E2EB;
+}
+
+.donation-sharing__card--ffd9e3 {
+  background: #FFD9E3;
+}
+
+/* 카드 텍스트 */
+.donation-sharing__card-text {
+  color: #202020;
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+/* 카드 아이콘 공통 */
+.donation-sharing__card-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* --- 카드1: 단색 아이콘 --- */
+.donation-sharing__card-icon-inner {
+  align-self: stretch;
+  height: 48px;
+}
+
+.donation-sharing__card-icon-inner--white {
+  background: white;
+}
+
+/* --- 카드2: 페이스북 스타일 아이콘 --- */
+.donation-sharing__card-icon-image {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.donation-sharing__card-icon-image--facebook::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 47.71px;
+  background: #3B5998;
+}
+
+/* --- 카드3: 간단 아이콘 --- */
+.donation-sharing__card-icon-image--card3 {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.donation-sharing__card-icon-image--card3::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 48px;
+  height: 33.82px;
+  background: #C4302B;
+}
+
+/* --- 카드4: 복합 아이콘 --- */
+.donation-sharing__card-icon-image--card4 {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.donation-sharing__card-icon-image--card4 .donation-sharing__card-icon-image-bg {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 48px;
+  height: 43.35px;
+}
+
+.donation-sharing__card-icon-image--card4 .donation-sharing__card-icon-image-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 43.35px;
+  background: black;
+}
+
+.donation-sharing__card-icon-image--card4 .donation-sharing__card-icon-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 43.36px;
+}
+
+/* 카드4 아이콘 내부 요소들 */
+.donation-sharing__icon-element {
+  position: absolute;
+}
+
+.donation-sharing__icon-element--1 {
+  width: 3.30px;
+  height: 3.22px;
+  left: 8.82px;
+  top: 16px;
+  background: #2DB400;
+}
+
+.donation-sharing__icon-element--2 {
+  width: 3.56px;
+  height: 3.47px;
+  left: 25.02px;
+  top: 15.83px;
+  background: #2DB400;
+}
+
+.donation-sharing__icon-element--3 {
+  width: 48px;
+  height: 43.36px;
+  left: 0;
+  top: 0;
+  background: #2DB400;
+}
+
+.donation-sharing__icon-element--4 {
+  width: 3.48px;
+  height: 3.39px;
+  left: 35.99px;
+  top: 15.87px;
+  background: #2DB400;
+}

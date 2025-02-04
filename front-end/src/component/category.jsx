@@ -2,7 +2,7 @@
 import React from "react";
 import ".././style/scss/style.scss";
 
-const DonationBox = () => {
+const Category = () => {
   return (
     <div className="donation-box">
       <div className="donation-box-title">
@@ -53,4 +53,4 @@ const DonationBox = () => {
   );
 };
 
-export default DonationBox;
+export default Category;

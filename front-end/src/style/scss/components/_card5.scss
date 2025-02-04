@@ -1,0 +1,103 @@
+.donation-suggestion {
+  width: 295px;
+  height: 248px;
+  position: relative;
+  background: white;
+}
+
+/* 그라데이션 오버레이 */
+.donation-suggestion__overlay {
+  width: 295px;
+  height: 248px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(90deg, #ff9191 0%, rgba(255, 93, 100, 0.80) 100%);
+  border-radius: 10px;
+  border: 1px solid #9e9a9a;
+}
+
+/* 텍스트 */
+.donation-suggestion__text {
+  position: absolute;
+  left: 44px;
+  top: 111px;
+  color: black;
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+/* 아이콘 영역 */
+.donation-suggestion__icon-container {
+  position: absolute;
+  left: 124px;
+  top: 46px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.donation-suggestion__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.donation-suggestion__icon-bg {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #454545;
+}
+
+.donation-suggestion__icon-line {
+  width: 13.68px;
+  height: 1.41px;
+  position: absolute;
+  left: 17.16px;
+  top: 37.45px;
+  background: #454545;
+}
+
+/* 버튼 영역 */
+.donation-suggestion__button-container {
+  width: 231px;
+  height: 49px;
+  position: absolute;
+  left: 32px;
+  top: 152px;
+}
+
+.donation-suggestion__button-bg {
+  width: 232px;
+  height: 48px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  background: #fbefef;
+  border-radius: 10px;
+}
+
+.donation-suggestion__button-text {
+  width: 279px;
+  height: 70px;
+  position: absolute;
+  left: 39px;
+  top: -10px;
+  color: black;
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  word-wrap: break-word;
+}
