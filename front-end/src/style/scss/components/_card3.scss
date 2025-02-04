@@ -1,0 +1,237 @@
+.campaign-section {
+  width: 373.72px;
+  height: 393px;
+  padding-left: 18px;
+  padding-right: 18px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* 헤더 영역 */
+.campaign-section__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.campaign-section__title {
+  width: 222.72px;
+  height: 30px;
+  color: black;
+  font-size: 24px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  line-height: 30px;
+  word-wrap: break-word;
+}
+
+.campaign-section__view-all {
+  display: flex;
+  padding-top: 2px;
+  padding-bottom: 7px;
+  align-items: center;
+  gap: 2px;
+}
+
+.campaign-section__view-all-text {
+  text-align: center;
+  color: #787778;
+  font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.campaign-section__view-all-icon {
+  width: 14px;
+  height: 13.3px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.campaign-section__arrow-wrapper {
+  width: 14px;
+  height: 13.3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.campaign-section__arrow {
+  position: relative;
+  width: 4.96px;
+  height: 9.33px;
+  left: 5px;
+  top: 2px;
+  border: 1px solid #858585;
+}
+
+/* 슬라이더 영역 */
+.campaign-section__slider {
+  width: 337px;
+  padding: 29px 21px 43px 21px;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.07);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.campaign-slider-container {
+  width: 295px;
+  height: 279px;
+  position: relative;
+}
+
+.campaign-slider__track {
+  width: 1635px;
+  position: absolute;
+  left: -335px;
+  top: 0;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.campaign-slider__spacer {
+  width: 295px;
+  height: 279px;
+  position: relative;
+}
+
+/* 캠페인 아이템들 (세로로 배치) */
+.campaign-items {
+  width: 295px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 9px;
+  align-self: stretch;
+}
+
+/* 개별 캠페인 아이템 */
+.campaign-item {
+  width: 295px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* 캠페인 이미지 */
+.campaign-item__image {
+  width: 114px;
+  height: 83px;
+  position: relative;
+  border-radius: 5px;
+}
+
+/* 캠페인 상세정보 컨테이너 */
+.campaign-item__details {
+  width: 167px;
+  height: 83px;
+  position: relative;
+}
+
+/* 캠페인 제목 (절대 배치) */
+.campaign-item__title {
+  position: absolute;
+  width: 167px;
+  height: 36px;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #202020;
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 350;
+  line-height: 18px;
+  word-wrap: break-word;
+}
+
+/* 후원기관명 */
+.campaign-item__sponsor {
+  position: absolute;
+  left: 0;
+  top: 37px;
+  height: 19px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #8A8A8A;
+  font-size: 13px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 350;
+  word-wrap: break-word;
+}
+
+/* 진행율 (왼쪽 상단 고정) */
+.campaign-item__donation-percent {
+  position: absolute;
+  width: 30.45px;
+  height: 17px;
+  left: 0;
+  top: 66.5px;
+  color: #FF6D73;
+  font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+/* 모금액 (오른쪽 정렬) */
+.campaign-item__donation-amount {
+  position: absolute;
+  top: 67px;
+  right: 0;
+  text-align: right;
+  color: #202020;
+  /* 폰트 사이즈는 아이템마다 다를 수 있으므로 기본값 설정 */
+  font-size: 13.45px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+/* 진행바 컨테이너 */
+.campaign-item__progress-bg {
+  position: absolute;
+  width: 167px;
+  height: 2px;
+  left: 0;
+  top: 62px;
+  background: #E9E9E9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* 진행바 (내부 채워진 부분) */
+.campaign-item__progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  background: #FF6D73;
+  border-radius: 2px;
+}
+
+/* (필요 시) 진행바 길이가 짧은 경우 추가 클래스 */
+.campaign-item__progress-bar.short {
+  /* width는 인라인 스타일로 개별 조정 */
+}

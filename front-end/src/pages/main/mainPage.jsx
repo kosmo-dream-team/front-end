@@ -1,10 +1,11 @@
 import React from 'react';
-
+import  Header  from "../../component/header";
  import "../../style/scss/style.scss";
 function mainPage(){
   return (
     <div style={{justifyContent: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
-      <div className="layout__header">컴포넌트</div>
+      <div className="layout__header">
+        <Header /></div>
     <div className="layout__main-container">
       <div className="layout__left-panel">
         {/* 메인 배너너 */}
@@ -40,3 +41,6 @@ function mainPage(){
 };
 
 export default mainPage;
+
+
+
