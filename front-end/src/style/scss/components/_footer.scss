@@ -1,0 +1,291 @@
+.donation-footer {
+  width: 1200px;
+  height: 180px;
+  position: relative;
+  background: white;
+  border-top: 1px solid #EEEEEE;
+}
+
+/* ─── 빈 스페이서 ────────────────────────────────────────── */
+.donation-footer__spacer {
+  width: 115px;
+  height: 18px;
+  position: absolute;
+  left: 400px;
+  top: 41px;
+}
+
+/* ─── 네비게이션 영역 ───────────────────────────────────── */
+.donation-footer__nav {
+  width: 434.09px;
+  height: 33.97px;
+  position: absolute;
+  left: 131px;
+  top: 94px;
+}
+
+.donation-footer__nav-group {
+  position: absolute;
+  height: 33.97px;
+}
+
+/* © Dream On Corp. */
+.donation-footer__nav-group--corp {
+  width: 119.75px;
+  left: 0;
+  top: 0;
+}
+
+/* 고객센터 */
+.donation-footer__nav-group--support {
+  width: 71.67px;
+  left: 119.75px;
+  top: 0;
+}
+
+/* 문의하기 */
+.donation-footer__nav-group--inquire {
+  width: 71.67px;
+  left: 191.42px;
+  top: 0;
+}
+
+/* 이용약관 */
+.donation-footer__nav-group--terms {
+  width: 71.67px;
+  left: 263.09px;
+  top: 0;
+}
+
+/* 네비게이션 텍스트 (공통 스타일) */
+.donation-footer__nav-text {
+  position: absolute;
+  top: 5px;
+  color: #444444;
+  font-size: 14px;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  line-height: 21.98px;
+  word-wrap: break-word;
+}
+
+/* 개별 좌측 위치 조정 */
+.donation-footer__nav-group--corp .donation-footer__nav-text {
+  left: 0;
+}
+
+.donation-footer__nav-group--support .donation-footer__nav-text {
+  left: 0.25px;
+}
+
+.donation-footer__nav-group--inquire .donation-footer__nav-text {
+  left: -0.42px;
+}
+
+.donation-footer__nav-group--terms .donation-footer__nav-text {
+  left: -0.09px;
+}
+
+/* 네비게이션 도트 (공통 스타일) */
+.donation-footer__nav-dot {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  top: 15.98px;
+  background: #444444;
+  border-radius: 2px;
+}
+
+.donation-footer__nav-group--corp .donation-footer__nav-dot {
+  left: 107.75px;
+}
+
+.donation-footer__nav-group--support .donation-footer__nav-dot {
+  left: 59.67px;
+}
+
+.donation-footer__nav-group--inquire .donation-footer__nav-dot {
+  left: 59.67px;
+}
+
+.donation-footer__nav-group--terms .donation-footer__nav-dot {
+  left: 59.68px;
+}
+
+/* 개인정보처리방침 */
+.donation-footer__nav-privacy {
+  width: 132px;
+  height: 22px;
+  position: absolute;
+  left: 335px;
+  top: 5px;
+  color: #444444;
+  font-size: 14px;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+  line-height: 21.98px;
+  word-wrap: break-word;
+}
+
+/* ─── 소셜 아이콘 영역 ───────────────────────────────────── */
+.donation-footer__social {
+  position: absolute;
+  left: 1017px;
+  top: 93px;
+  padding: 6px 5px 7.97px 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.donation-footer__social-icon {
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* 첫번째 아이콘 */
+.donation-footer__social-icon-inner {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.donation-footer__social-icon-bg-wrapper {
+  position: absolute;
+  width: 20px;
+  height: 18.33px;
+  left: 0;
+  top: 1px;
+}
+
+.donation-footer__social-icon-bg {
+  width: 20px;
+  height: 18.33px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: white;
+}
+
+.donation-footer__social-icon-overlay {
+  width: 20px;
+  height: 18.33px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #444444;
+}
+
+.donation-footer__social-icon-line {
+  width: 1.46px;
+  height: 2.17px;
+  position: absolute;
+  left: 7.17px;
+  top: 7.43px;
+  background: #444444;
+}
+
+/* 두번째 아이콘 (작은 아이콘) */
+.donation-footer__social-icon-inner--small {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.donation-footer__social-icon-bg-small-wrapper {
+  position: absolute;
+  width: 10.13px;
+  height: 18px;
+  left: 4.72px;
+  top: 1px;
+}
+
+.donation-footer__social-icon-bg-small {
+  width: 10.13px;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: white;
+}
+
+.donation-footer__social-icon-bg-small-overlay {
+  width: 10.13px;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #444444;
+}
+
+/* 세번째 아이콘 (원형 아이콘) */
+.donation-footer__social-icon-inner--circle {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.donation-footer__social-icon-bg-circle-wrapper {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 1px;
+  top: 1px;
+}
+
+.donation-footer__social-icon-bg-circle {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: white;
+}
+
+.donation-footer__social-icon-bg-circle-overlay {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #444444;
+}
+
+.donation-footer__social-icon-circle-overlay {
+  width: 9.50px;
+  height: 9.50px;
+  position: absolute;
+  left: 5.50px;
+  top: 5.50px;
+  background: #444444;
+}
+
+.donation-footer__social-icon-dot {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  left: 14px;
+  top: 4px;
+  background: #444444;
+}
+
+/* ─── 타이틀 영역 ───────────────────────────────────────── */
+.donation-footer__title {
+  width: 228px;
+  position: absolute;
+  left: 131px;
+  top: 59px;
+  color: black;
+  font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  line-height: 21.98px;
+  word-wrap: break-word;
+}

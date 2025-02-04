@@ -1,0 +1,101 @@
+.card {
+  width: 36rem;
+  height: 25rem;
+  padding: 3.4rem 2.6rem 2.9rem 2.6rem;
+  background: #ff9191;
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.1rem;
+  position: relative; // 절대 위치 자식(img)을 위한 부모 설정
+}
+
+.card-title-container {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.card-title {
+  color: #202020;
+  font-size: 2rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 70;
+  line-height: 3rem;
+  word-wrap: break-word;
+}
+
+.card-date-container {
+  align-self: stretch;
+  height: 6.5rem;
+  padding: 1.2rem 0 4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.card-date {
+  align-self: stretch;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.3rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 40;
+  line-height: 1.3rem;
+  word-wrap: break-word;
+}
+
+.card-donation {
+  align-self: stretch;
+  height: 6rem;
+  padding: 2.1rem 2rem;
+  background: white;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.donation-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.donation-text {
+  color: #444444;
+  font-size: 1.6rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 70;
+  line-height: 1.6rem;
+  word-wrap: break-word;
+}
+
+.donation-amount-container {
+  flex: 1 1 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.donation-amount {
+  align-self: stretch;
+  text-align: right;
+  color: #202020;
+  font-size: 1.8rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 70;
+  line-height: 1.8rem;
+  word-wrap: break-word;
+}
+
+.card-image {
+  width: 10.5rem;
+  height: 13.3rem;
+  position: absolute;
+  left: 23.5rem;
+  top: 1.9rem;
+}
