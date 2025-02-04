@@ -1,0 +1,24 @@
+@use "../abstracts/mixin" as mixin;
+
+.regist-type-title {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  @include mixin.font-style(white, "xxl", "bold");
+  color: #ff9191;
+
+  text-align: center;
+}
+.regist-type-container {
+  @include mixin.flex-center;
+}
+.regist-type {
+  @include mixin.font-style(white, "lg", "bold");
+  @include mixin.vertical-center;
+
+  border-style: none;
+  margin-right: 6rem;
+  width: 30.2rem;
+  height: 30.2rem;
+
+  background: radial-gradient(50% 50% at 50% 50%, #f47e7e 0%, #e78e8e 100%);
+}
