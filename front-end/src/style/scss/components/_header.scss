@@ -8,11 +8,11 @@
 .navigation-bar__content {
   width: 1120px;
   height: 70px;
-  position: absolute;
+
   left: 339px;
   top: 0;
   display: inline-flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 0;
 }

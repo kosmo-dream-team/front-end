@@ -1,24 +1,68 @@
 // Flexbox Center
-  // Box Shadow
-  @mixin box-shadow($color: rgba(0, 0, 0, 0.1), $x: 0, $y: 2px, $blur: 4px) {
-    box-shadow: $x $y $blur $color;
-  }
-  @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  @mixin favicon-layout-sign {
-    // 기존 left, top 대신 padding으로 위치 조정(필요 시)
-    padding-left: 4.2rem;  // 원래 left: 4.2rem의 역할
-    padding-top: 3.1rem;   // 원래 top: 3.1rem의 역할
-    background: transparent; // rgba(255,255,255,0)와 동일
-  }
-  @mixin img-mw-100{
-    max-width: 100%;
-  }
+// Box Shadow
 
-  @mixin grid-center() {
-    display: grid;
-    place-items: center;
+@use "./variable" as var;
+@mixin box-shadow($color: rgba(0, 0, 0, 0.1), $x: 0, $y: 2px, $blur: 4px) {
+  box-shadow: $x $y $blur $color;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin favicon-layout-sign {
+  // 기존 left, top 대신 padding으로 위치 조정(필요 시)
+  padding-left: 4.2rem; // 원래 left: 4.2rem의 역할
+  padding-top: 3.1rem; // 원래 top: 3.1rem의 역할
+  background: transparent; // rgba(255,255,255,0)와 동일
+}
+@mixin img-mw-100 {
+  max-width: 100%;
+}
+
+//true로 할경우 수평정렬
+//아무것도 안넣으면 수직정렬
+@mixin vertical-center($inline: false) {
+  @if $inline == true {
+    display: inline-flex;
+  } @else {
+    display: flex;
   }
+  flex-direction: column;
+  align-items: center; // 수직(열 방향) 중앙 정렬
+  justify-content: center; // 세로 방향 콘텐츠도 중앙에 모음
+}
+
+@mixin grid-center() {
+  display: grid;
+  place-items: center;
+}
+
+@mixin font-style($color, $size, $weight) {
+  color: $color;
+  @if $size == "xxl" {
+    font-size: var.$font-size-xxl;
+  }
+  @if $size == "xl" {
+    font-size: var.$font-size-xl;
+  } @else if $size == "lg" {
+    font-size: var.$font-size-lg;
+  } @else if $size == "md" {
+    font-size: var.$font-size-md;
+  } @else if $size == "sm" {
+    font-size: var.$font-size-sm;
+  } @else if $size == "xs" {
+    font-size: var.$font-size-xs;
+  } @else if $size == "xxs" {
+    font-size: var.$font-size-xxs;
+  } @else {
+    font-size: $size;
+  }
+  @if $weight == "bold" {
+    font-weight: bold;
+  } @else if $weight == "light" {
+    font-weight: light;
+  } @else if $weight == "normal" {
+    font-weight: normal;
+  }
+}

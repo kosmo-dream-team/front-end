@@ -1,5 +1,6 @@
 @use "../abstracts/variable" as var;
 @use "../abstracts/mixin" as mixin;
+
 .favicon{
   position: absolute;
 
@@ -290,7 +291,7 @@
 }
 
 /* 소셜 로그인 버튼 (구글 예시) */
-.social-google {
+.social-login {
  
   @include mixin.flex-center;
   height: 6.13rem;
