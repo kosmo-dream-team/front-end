@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import googleLogo from "../../assets/img/google-logo.svg";
+import kakaoLogo from "../../assets/img/kakao-logo.svg";
+import sign01 from "../../assets/img/sign01.png";
+import sign02 from "../../assets/img/아동.png";
+import useImageStore from "../../store/useImgStore";
 import "../../style/scss/style.scss";
-import sign01 from '../../assets/img/sign01.png';
-import googleLogo from '../../assets/img/google-logo.svg';
-import kakaoLogo from '../../assets/img/kakao-logo.svg';
-import { Link } from 'react-router-dom';
-
-
+import ImageSwiper from "./ImageSwiper";
 function Signup() {
+  const { setImages } = useImageStore();
+
+  useEffect(() => {
+    // 이미지 파일 상대 경로 배열 설정
+    setImages([sign01, sign02, "/images/image3.jpg"]);
+  }, [setImages]);
   // 이메일, 이름, 비밀번호, 비밀번호 재입력 필드를 위한 상태 관리
   const [formData, setFormData] = useState({
-    email: '',
-    name: '',
-    password: '',
-    confirmPassword: ''
+    email: "",
+    name: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e) => {
@@ -23,17 +31,13 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (formData.email == '') {
-        alert("이메일을 입력해주세요.")
+    if (formData.email == "") {
+      alert("이메일을 입력해주세요.");
+    } else if (formData.name == "") {
+      alert("이름을 입력해주세요");
+    } else if (formData.password == "") {
+      alert("패스워드를 입력해주세요");
     }
-    else if (formData.name == '') {
-      alert("이름을 입력해주세요")
-    }
-    
-    else if (formData.password == '') {
-      alert("패스워드를 입력해주세요")
-    }
-    
 
     // 2. 이메일 형식 검증 (간단한 정규식 사용)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -72,7 +76,7 @@ function Signup() {
                 <div className="already">이미 계정이 있으신가요?</div>
                 <div
                   className="goto-login"
-                  onClick={() => alert('로그인 페이지로 이동')}
+                  onClick={() => alert("로그인 페이지로 이동")}
                 >
                   로그인 하기
                 </div>
@@ -131,25 +135,21 @@ function Signup() {
                 {/* 옵션 및 비밀번호 찾기 영역 */}
                 <div className="options">
                   <div className="remember-me">
-                    <input
-                      type="checkbox"
-                      id="rememberMe"
-                      name="rememberMe"
-                    />
+                    <input type="checkbox" id="rememberMe" name="rememberMe" />
                     <label htmlFor="rememberMe">Remember me</label>
                   </div>
                   <div
                     className="forgot-pw"
-                    onClick={() => alert('비밀번호 찾기 페이지로 이동')}
+                    onClick={() => alert("비밀번호 찾기 페이지로 이동")}
                   >
                     <a href="/find-password">비밀번호를 잊으셨나요?</a>
                   </div>
                 </div>
                 {/* 가입하기 버튼 */}
                 <button type="submit" className="signup-button">
-                  
-                    <Link to="/"><span>가입하기</span></Link>
-                   
+                  <Link to="/">
+                    <span>가입하기</span>
+                  </Link>
                 </button>
               </form>
             </div>
@@ -161,18 +161,18 @@ function Signup() {
           <img
             src={kakaoLogo}
             alt="카카오로 로그인"
-            onClick={() => alert('카카오 로그인')}
+            onClick={() => alert("카카오 로그인")}
           />
           <img
             src={googleLogo}
             alt="구글로 로그인"
-            onClick={() => alert('구글 로그인')}
+            onClick={() => alert("구글 로그인")}
           />
         </div>
       </div>
       {/* 오른쪽 이미지+텍스트 영역 */}
       <div className="signup-right-img-container">
-        <img className="signup-img" src={sign01} alt="웃는 아이의 이미지" />
+        <ImageSwiper className="signup-img" />
         <div className="signup-right-text1">
           <div className="big-title">작은 손길, 큰 변화</div>
           <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>
