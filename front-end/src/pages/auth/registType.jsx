@@ -1,8 +1,7 @@
+import { Link } from "react-router-dom";
 import applicant from "../../assets/img/applicant.png";
 import donor from "../../assets/img/donor.png";
 import "../../style/scss/style.scss";
-import { Link } from 'react-router-dom';
-
 
 function RegistType() {
   return (
