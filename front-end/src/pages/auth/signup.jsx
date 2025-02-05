@@ -3,6 +3,9 @@ import "../../style/scss/style.scss";
 import sign01 from '../../assets/img/sign01.png';
 import googleLogo from '../../assets/img/google-logo.svg';
 import kakaoLogo from '../../assets/img/kakao-logo.svg';
+import { Link } from 'react-router-dom';
+
+
 function Signup() {
   // 이메일, 이름, 비밀번호, 비밀번호 재입력 필드를 위한 상태 관리
   const [formData, setFormData] = useState({
@@ -19,8 +22,35 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('회원가입 폼 제출:', formData);
-    // 여기에 회원가입 처리 로직 추가
+
+    if (formData.email == '') {
+        alert("이메일을 입력해주세요.")
+    }
+    else if (formData.name == '') {
+      alert("이름을 입력해주세요")
+    }
+    
+    else if (formData.password == '') {
+      alert("패스워드를 입력해주세요")
+    }
+    
+
+    // 2. 이메일 형식 검증 (간단한 정규식 사용)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert("유효한 이메일 주소를 입력해 주세요.");
+      return;
+    }
+
+    // 3. 비밀번호와 비밀번호 재입력이 일치하는지 확인
+    if (formData.password !== formData.confirmPassword) {
+      alert("비밀번호와 비밀번호 재입력이 일치하지 않습니다.");
+      return;
+    }
+
+    // 모든 검증이 통과하면 실제 회원가입 처리 로직 실행
+    console.log("회원가입 폼 제출:", formData);
+    // 여기에 서버로 데이터를 전송하는 로직 추가
   };
 
   return (
@@ -49,7 +79,7 @@ function Signup() {
               </div>
             </div>
             <div className="signup-form-area">
-              <form onSubmit={handleSubmit} className='signup-form'>
+              <form onSubmit={handleSubmit} className="signup-form">
                 {/* 이메일 */}
                 <div className="input-wrapper">
                   <label htmlFor="email">이메일</label>
@@ -112,14 +142,14 @@ function Signup() {
                     className="forgot-pw"
                     onClick={() => alert('비밀번호 찾기 페이지로 이동')}
                   >
-                    <a href="/find-password">
-                    비밀번호를 잊으셨나요?
-                    </a>
+                    <a href="/find-password">비밀번호를 잊으셨나요?</a>
                   </div>
                 </div>
                 {/* 가입하기 버튼 */}
                 <button type="submit" className="signup-button">
-                  <span>가입하기</span>
+                  
+                    <Link to="/"><span>가입하기</span></Link>
+                   
                 </button>
               </form>
             </div>
@@ -128,9 +158,16 @@ function Signup() {
         </div>
         {/* 소셜 로그인 (구글 예시) */}
         <div className="social-login">
-       <img src={kakaoLogo} alt="카카오로 로그인"onClick={() => alert('카카오 로그인')} />
-        
-        <img src={googleLogo} alt="구글로 로그인"  onClick={() => alert('구글 로그인')}/>
+          <img
+            src={kakaoLogo}
+            alt="카카오로 로그인"
+            onClick={() => alert('카카오 로그인')}
+          />
+          <img
+            src={googleLogo}
+            alt="구글로 로그인"
+            onClick={() => alert('구글 로그인')}
+          />
         </div>
       </div>
       {/* 오른쪽 이미지+텍스트 영역 */}

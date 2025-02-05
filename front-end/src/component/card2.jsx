@@ -1,4 +1,3 @@
-import React from 'react';
 import ".././style/scss/style.scss";
 
 const Card2 = () => {
@@ -27,23 +26,9 @@ const Card2 = () => {
           </div>
         </div>
         <div className="review-card__right-content">
-          <div className="review-card__right-title-container">
-            <div className="review-card__right-title">
-              긴 터널의 끝, 빛이 보여요.
-            </div>
-          </div>
+          <div className="review-card__right-title-container"></div>
           <div className="review-card__right-description-container">
-            <div className="review-card__right-description">
-              선우의 엄마는 어릴 적 교통사고로 인한 우측 편마비로
-              <br />
-              일상생활은 물론, 선우 돌봄과 근로활동에 큰 어려움이
-              <br />
-              있었습니다. 엄마는 힘든 상황에서도 선우에게 좋은 엄
-              <br />
-              마가 되기 위해 양육자의 역할을 공부하고 일자리를 알
-              <br />
-              아보는 등 꾸준히 노력해 왔습니다. 하지만 2인 기준 
-            </div>
+            <div className="review-card__right-description"></div>
           </div>
         </div>
       </div>

@@ -7,9 +7,20 @@ import MainPage from './pages/main/mainPage';
 import CategoryPage from './pages/category/categoryPage';
 import Login from "./pages/auth/login";
 import Signup from "./pages/auth/signup";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Card3 from './component/card3';
+
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <Signup /> App.jsx 대신 Signup.jsx만 렌더링 */}
-    <Signup />
+   <Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/registType" element={<RegistType />} />
+        <Route path="/registType/signup" element={<Signup />} />
+      </Routes>
+    </Router>
+    <Card3/>
   </React.StrictMode>
 );
