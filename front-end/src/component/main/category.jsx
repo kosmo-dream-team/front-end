@@ -1,6 +1,6 @@
 // src/DonationBox.jsx
 import React from "react";
-import ".././style/scss/style.scss";
+import "../.././style/scss/style.scss";
 
 const Category = () => {
   return (

@@ -12,7 +12,9 @@ function Signup() {
     email: '',
     name: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    phone: '',
+    gender: ''
   });
 
   const handleChange = (e) => {
@@ -32,6 +34,12 @@ function Signup() {
     
     else if (formData.password == '') {
       alert("패스워드를 입력해주세요")
+    }
+    else if (formData.phone == '') {
+      alert("전화번호를 입력해주세요.")
+    }
+    else if (formData.gender == ''){
+      alert("성별을 선택해주세요.")
     }
     
 
@@ -92,6 +100,33 @@ function Signup() {
                     placeholder="이메일을 입력해주세요"
                   />
                 </div>
+                {/* 성별 선택 */}
+            <div className="input-wrapper">
+              <label>성별</label>
+              <div className="gender-options">
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    checked={formData.gender === 'male'}
+                    onChange={handleChange}
+                  />
+                  남자
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    checked={formData.gender === 'female'}
+                    onChange={handleChange}
+                  />
+                  여자
+                </label>
+              </div>
+            </div>
+
                 {/* 이름 */}
                 <div className="input-wrapper">
                   <label htmlFor="name">이름</label>
@@ -102,6 +137,17 @@ function Signup() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="이름을 입력해주세요"
+                  />
+                </div>
+                <div className="input-wrapper">
+                  <label htmlFor="name">전화번호</label>
+                  <input
+                    type="phone"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="전화번호를 입력해주세요"
                   />
                 </div>
                 {/* 비밀번호 */}
@@ -148,7 +194,7 @@ function Signup() {
                 {/* 가입하기 버튼 */}
                 <button type="submit" className="signup-button">
                   
-                    <Link to="/"><span>가입하기</span></Link>
+                    <Link to="/" className='regist-type-link'><span>가입하기</span></Link>
                    
                 </button>
               </form>
