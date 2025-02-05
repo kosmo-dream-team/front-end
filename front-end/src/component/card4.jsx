@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import ".././style/scss/style.scss";
 
 const Card4 = () => {
@@ -6,7 +6,9 @@ const Card4 = () => {
     <div className="donation-sharing">
       {/* 제목 영역 */}
       <div className="donation-sharing__title">
-        <span className="donation-sharing__title-bold">기부를 함께 나눠요 </span>
+        <span className="donation-sharing__title-bold">
+          기부를 함께 나눠요{" "}
+        </span>
         <span className="donation-sharing__title-regular">💖</span>
       </div>
 

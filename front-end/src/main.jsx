@@ -14,13 +14,13 @@ import Card3 from './component/card3';
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <Signup /> App.jsx 대신 Signup.jsx만 렌더링 */}
-   {/* <Router>
+   <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/registType" element={<RegistType />} />
         <Route path="/registType/signup" element={<Signup />} />
       </Routes>
-    </Router> */}
+    </Router>
     <Card3/>
   </React.StrictMode>
 );

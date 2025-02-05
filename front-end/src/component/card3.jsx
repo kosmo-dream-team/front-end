@@ -1,6 +1,5 @@
-import React from 'react';
+import arrowRight from ".././assets/img/arrow-right.svg";
 import ".././style/scss/style.scss";
-
 const Card3 = () => {
   return (
     <div className="campaign-section">
@@ -9,11 +8,8 @@ const Card3 = () => {
         <div className="campaign-section__title">새로운 캠페인이에요</div>
         <div className="campaign-section__view-all">
           <div className="campaign-section__view-all-text">전체보기</div>
-          <div className="campaign-section__view-all-icon">
-            <div className="campaign-section__arrow-wrapper">
-              <div className="campaign-section__arrow" />
-            </div>
-          </div>
+
+          <img src={arrowRight} alt="" />
         </div>
       </div>
 
@@ -35,9 +31,7 @@ const Card3 = () => {
                 />
                 <div className="campaign-item__details">
                   <div className="campaign-item__title">
-                    병원비 걱정없이 치료받고 싶
-                    <br />
-                    어요.
+                    병원비 걱정없이 치료받고 싶어요.
                   </div>
                   <div className="campaign-item__sponsor">
                     한국백혈병어린이재단
@@ -45,7 +39,7 @@ const Card3 = () => {
                   <div className="campaign-item__progress-bg">
                     <div
                       className="campaign-item__progress-bar"
-                      style={{ width: '46.75px' }}
+                      style={{ width: "46.75px" }}
                     />
                   </div>
                   <div className="campaign-item__donation-percent">28%</div>
@@ -65,13 +59,9 @@ const Card3 = () => {
                 />
                 <div className="campaign-item__details">
                   <div className="campaign-item__title">
-                    1년간 준비해온 아이들의 발
-                    <br />
-                    표회를 지원해주세요
+                    1년간 준비해온 아이들의 발표회를 지원해주세요
                   </div>
-                  <div className="campaign-item__sponsor">
-                    양지지역아동센터
-                  </div>
+                  <div className="campaign-item__sponsor">양지지역아동센터</div>
                   <div className="campaign-item__progress-bg" />
                   <div className="campaign-item__donation-percent">0%</div>
                   <div className="campaign-item__donation-amount">
@@ -93,12 +83,12 @@ const Card3 = () => {
                     사각지대 맞춤 돌봄 서비스
                   </div>
                   <div className="campaign-item__sponsor">
-                    서대문한마음돌봄 사회적협동…
+                    서대문한마음돌봄 사회적협
                   </div>
                   <div className="campaign-item__progress-bg">
                     <div
                       className="campaign-item__progress-bar short"
-                      style={{ width: '3.33px' }}
+                      style={{ width: "3.33px" }}
                     />
                   </div>
                   <div className="campaign-item__donation-percent">2%</div>

@@ -1,11 +1,13 @@
+@use "../abstracts/mixin" as mixin;
+
 .campaign-section {
-  width: 373.72px;
-  height: 393px;
-  padding-left: 18px;
-  padding-right: 18px;
+  width: 37.372rem; /* 373.72px → 37.372rem */
+  height: 39.3rem; /* 393px → 39.3rem */
+  padding-left: 1.8rem; /* 18px → 1.8rem */
+  padding-right: 1.8rem; /* 18px → 1.8rem */
   display: inline-flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 2rem; /* 50px → 5rem */
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -19,36 +21,39 @@
 }
 
 .campaign-section__title {
-  width: 222.72px;
-  height: 30px;
+  width: 22.272rem; /* 222.72px → 22.272rem */
+  height: 3rem; /* 30px → 3rem */
   color: black;
-  font-size: 24px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 2.4rem; /* 24px → 2.4rem */
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
-  line-height: 30px;
+  line-height: 3rem; /* 30px → 3rem */
   word-wrap: break-word;
 }
 
 .campaign-section__view-all {
-  display: flex;
-  padding-top: 2px;
-  padding-bottom: 7px;
-  align-items: center;
-  gap: 2px;
+  display: inline-flex;
+  padding-top: 0.2rem; /* 2px → 0.2rem */
+  padding-bottom: 0.7rem; /* 7px → 0.7rem */
+  gap: 0.2rem; /* 2px → 0.2rem */
+  img {
+    margin-top: 0.2rem;
+    margin-left: 0.2rem;
+  }
 }
 
 .campaign-section__view-all-text {
   text-align: center;
   color: #787778;
-  font-size: 14px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.4rem; /* 14px → 1.4rem */
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
   word-wrap: break-word;
 }
 
 .campaign-section__view-all-icon {
-  width: 14px;
-  height: 13.3px;
+  width: 1.4rem; /* 14px → 1.4rem */
+  height: 1.33rem; /* 13.3px → 1.33rem */
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -56,8 +61,8 @@
 }
 
 .campaign-section__arrow-wrapper {
-  width: 14px;
-  height: 13.3px;
+  width: 1.4rem; /* 14px → 1.4rem */
+  height: 1.33rem; /* 13.3px → 1.33rem */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,21 +71,21 @@
 
 .campaign-section__arrow {
   position: relative;
-  width: 4.96px;
-  height: 9.33px;
-  left: 5px;
-  top: 2px;
-  border: 1px solid #858585;
+  width: 0.496rem; /* 4.96px → 0.496rem */
+  height: 0.933rem; /* 9.33px → 0.933rem */
+  left: 0.5rem; /* 5px → 0.5rem */
+  top: 0.2rem; /* 2px → 0.2rem */
+  border: 0.1rem solid #858585; /* 1px → 0.1rem */
 }
 
 /* 슬라이더 영역 */
 .campaign-section__slider {
-  width: 337px;
-  padding: 29px 21px 43px 21px;
+  width: 33.7rem; /* 337px → 33.7rem */
+  padding: 2.9rem 2.1rem 4.3rem 2.1rem; /* 29px 21px 43px 21px */
   background: rgba(255, 255, 255, 0);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.07);
-  border-radius: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.10);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.07); /* 0px 10px 20px → 0 1rem 2rem */
+  border-radius: 1.5rem; /* 15px → 1.5rem */
+  border: 0.1rem solid rgba(0, 0, 0, 0.1); /* 1px → 0.1rem */
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -88,66 +93,66 @@
 }
 
 .campaign-slider-container {
-  width: 295px;
-  height: 279px;
+  width: 29.5rem; /* 295px → 29.5rem */
+  height: 27.9rem; /* 279px → 27.9rem */
   position: relative;
 }
 
 .campaign-slider__track {
-  width: 1635px;
+  width: 163.5rem; /* 1635px → 163.5rem */
   position: absolute;
-  left: -335px;
+  left: -33.5rem; /* -335px → -33.5rem */
   top: 0;
   display: inline-flex;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 40px;
+  gap: 4rem; /* 40px → 4rem */
 }
 
 .campaign-slider__spacer {
-  width: 295px;
-  height: 279px;
+  width: 29.5rem; /* 295px → 29.5rem */
+  height: 27.9rem; /* 279px → 27.9rem */
   position: relative;
 }
 
 /* 캠페인 아이템들 (세로로 배치) */
 .campaign-items {
-  width: 295px;
+  width: 29.5rem; /* 295px → 29.5rem */
   display: inline-flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 0.9rem; /* 9px → 0.9rem */
   align-self: stretch;
 }
 
 /* 개별 캠페인 아이템 */
 .campaign-item {
-  width: 295px;
+  width: 29.5rem; /* 295px → 29.5rem */
   display: inline-flex;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 14px;
+  gap: 1.4rem; /* 14px → 1.4rem */
 }
 
 /* 캠페인 이미지 */
 .campaign-item__image {
-  width: 114px;
-  height: 83px;
+  width: 11.4rem; /* 114px → 11.4rem */
+  height: 8.3rem; /* 83px → 8.3rem */
   position: relative;
-  border-radius: 5px;
+  border-radius: 0.5rem; /* 5px → 0.5rem */
 }
 
 /* 캠페인 상세정보 컨테이너 */
 .campaign-item__details {
-  width: 167px;
-  height: 83px;
+  width: 16.7rem; /* 167px → 16.7rem */
+  height: 8.3rem; /* 83px → 8.3rem */
   position: relative;
 }
 
 /* 캠페인 제목 (절대 배치) */
 .campaign-item__title {
   position: absolute;
-  width: 167px;
-  height: 36px;
+  width: 16.7rem; /* 167px → 16.7rem */
+  height: 3.6rem; /* 36px → 3.6rem */
   left: 0;
   top: 0;
   display: inline-flex;
@@ -155,10 +160,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   color: #202020;
-  font-size: 15px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.5rem; /* 15px → 1.5rem */
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 350;
-  line-height: 18px;
+  line-height: 1.8rem; /* 18px → 1.8rem */
   word-wrap: break-word;
 }
 
@@ -166,17 +171,17 @@
 .campaign-item__sponsor {
   position: absolute;
   left: 0;
-  top: 37px;
-  height: 19px;
-  padding-top: 2px;
-  padding-bottom: 1px;
+  top: 3.7rem; /* 37px → 3.7rem */
+  height: 1.9rem; /* 19px → 1.9rem */
+  padding-top: 0.2rem; /* 2px → 0.2rem */
+  padding-bottom: 0.1rem; /* 1px → 0.1rem */
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  color: #8A8A8A;
-  font-size: 13px;
-  font-family: 'Noto Sans KR', sans-serif;
+  color: #8a8a8a;
+  font-size: 1.3rem; /* 13px → 1.3rem */
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 350;
   word-wrap: break-word;
 }
@@ -184,13 +189,13 @@
 /* 진행율 (왼쪽 상단 고정) */
 .campaign-item__donation-percent {
   position: absolute;
-  width: 30.45px;
-  height: 17px;
+  width: 3.045rem; /* 30.45px → 3.045rem */
+  height: 1.7rem; /* 17px → 1.7rem */
   left: 0;
-  top: 66.5px;
-  color: #FF6D73;
-  font-size: 14px;
-  font-family: 'Noto Sans KR', sans-serif;
+  top: 6.65rem; /* 66.5px → 6.65rem */
+  color: #ff6d73;
+  font-size: 1.4rem; /* 14px → 1.4rem */
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
   word-wrap: break-word;
 }
@@ -198,13 +203,12 @@
 /* 모금액 (오른쪽 정렬) */
 .campaign-item__donation-amount {
   position: absolute;
-  top: 67px;
+  top: 6.7rem; /* 67px → 6.7rem */
   right: 0;
   text-align: right;
   color: #202020;
-  /* 폰트 사이즈는 아이템마다 다를 수 있으므로 기본값 설정 */
-  font-size: 13.45px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.345rem; /* 13.45px → 1.345rem */
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
   word-wrap: break-word;
 }
@@ -212,12 +216,12 @@
 /* 진행바 컨테이너 */
 .campaign-item__progress-bg {
   position: absolute;
-  width: 167px;
-  height: 2px;
+  width: 16.7rem; /* 167px → 16.7rem */
+  height: 0.2rem; /* 2px → 0.2rem */
   left: 0;
-  top: 62px;
-  background: #E9E9E9;
-  border-radius: 4px;
+  top: 6.2rem; /* 62px → 6.2rem */
+  background: #e9e9e9;
+  border-radius: 0.4rem; /* 4px → 0.4rem */
   overflow: hidden;
 }
 
@@ -226,12 +230,12 @@
   position: absolute;
   left: 0;
   top: 0;
-  height: 2px;
-  background: #FF6D73;
-  border-radius: 2px;
+  height: 0.2rem; /* 2px → 0.2rem */
+  background: #ff6d73;
+  border-radius: 0.2rem; /* 2px → 0.2rem */
 }
 
 /* (필요 시) 진행바 길이가 짧은 경우 추가 클래스 */
 .campaign-item__progress-bar.short {
-  /* width는 인라인 스타일로 개별 조정 */
+  /* width는 인라인 스타일 등으로 개별 조정 가능 */
 }

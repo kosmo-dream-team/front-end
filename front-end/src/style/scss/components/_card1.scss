@@ -1,15 +1,15 @@
 .card {
-  width: 36rem;
-  height: 25rem;
-  padding: 3.4rem 26rem 29rem 26rem;
+  width: 360px;
+  height: 250px;
+  padding: 34px 26px 29px 26px;
   background: #ff9191;
-  border-top-left-radius: 12rem;
-  border-top-right-radius: 12rem;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1px;
   position: relative; // 절대 위치 자식(img)을 위한 부모 설정
 }
 
@@ -21,17 +21,17 @@
 
 .card-title {
   color: #202020;
-  font-size: 20rem;
+  font-size: 20px;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 700;
-  line-height: 30rem;
+  line-height: 30px;
   word-wrap: break-word;
 }
 
 .card-date-container {
   align-self: stretch;
-  height: 65rem;
-  padding: 12rem 0 40rem 0;
+  height: 65px;
+  padding: 12px 0 40px 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -41,35 +41,35 @@
 .card-date {
   align-self: stretch;
   color: rgba(0, 0, 0, 0.5);
-  font-size: 13rem;
+  font-size: 13px;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
-  line-height: 13rem;
+  line-height: 13px;
   word-wrap: break-word;
 }
 
 .card-donation {
   align-self: stretch;
-  height: 60rem;
-  padding: 21rem 20rem;
+  height: 60px;
+  padding: 21px 20px;
   background: white;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 8rem;
+  gap: 8px;
 }
 
 .donation-icon {
-  width: 18rem;
-  height: 18rem;
+  width: 18px;
+  height: 18px;
 }
 
 .donation-text {
   color: #444444;
-  font-size: 16rem;
+  font-size: 16px;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 700;
-  line-height: 16rem;
+  line-height: 16px;
   word-wrap: break-word;
 }
 
@@ -85,17 +85,17 @@
   align-self: stretch;
   text-align: right;
   color: #202020;
-  font-size: 18rem;
+  font-size: 18px;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 700;
-  line-height: 18rem;
+  line-height: 18px;
   word-wrap: break-word;
 }
 
 .card-image {
-  width: 105rem;
-  height: 133rem;
+  width: 105px;
+  height: 133px;
   position: absolute;
-  left: 235rem;
-  top: 19rem;
+  left: 235px;
+  top: 19px;
 }
