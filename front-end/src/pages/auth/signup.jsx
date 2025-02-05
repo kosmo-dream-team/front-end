@@ -5,6 +5,7 @@ import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";
 import sign02 from "../../assets/img/아동.png";
+import card1 from "../../assets/img/Card1.png";
 import useImageStore from "../../store/useImgStore";
 import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
@@ -13,14 +14,19 @@ function Signup() {
 
   useEffect(() => {
     // 이미지 파일 상대 경로 배열 설정
-    setImages([sign01, sign02, "/images/image3.jpg"]);
+    setImages([sign01, sign02, card1]);
   }, [setImages]);
   // 이메일, 이름, 비밀번호, 비밀번호 재입력 필드를 위한 상태 관리
   const [formData, setFormData] = useState({
-    email: "",
-    name: "",
-    password: "",
-    confirmPassword: "",
+
+    email: '',
+    name: '',
+    password: '',
+    confirmPassword: '',
+    phone: '',
+    gender: ''
+
+
   });
 
   const handleChange = (e) => {
@@ -39,6 +45,15 @@ function Signup() {
       alert("패스워드를 입력해주세요");
     }
 
+
+
+    else if (formData.phone == '') {
+      alert("전화번호를 입력해주세요.")
+    }
+    else if (formData.gender == ''){
+      alert("성별을 선택해주세요.")
+    }
+    
     // 2. 이메일 형식 검증 (간단한 정규식 사용)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
@@ -96,6 +111,33 @@ function Signup() {
                     placeholder="이메일을 입력해주세요"
                   />
                 </div>
+                {/* 성별 선택 */}
+            <div className="input-wrapper">
+              <label>성별</label>
+              <div className="gender-options">
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    checked={formData.gender === 'male'}
+                    onChange={handleChange}
+                  />
+                  남자
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    checked={formData.gender === 'female'}
+                    onChange={handleChange}
+                  />
+                  여자
+                </label>
+              </div>
+            </div>
+
                 {/* 이름 */}
                 <div className="input-wrapper">
                   <label htmlFor="name">이름</label>
@@ -106,6 +148,17 @@ function Signup() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="이름을 입력해주세요"
+                  />
+                </div>
+                <div className="input-wrapper">
+                  <label htmlFor="name">전화번호</label>
+                  <input
+                    type="phone"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="전화번호를 입력해주세요"
                   />
                 </div>
                 {/* 비밀번호 */}
@@ -147,9 +200,9 @@ function Signup() {
                 </div>
                 {/* 가입하기 버튼 */}
                 <button type="submit" className="signup-button">
-                  <Link to="/">
-                    <span>가입하기</span>
-                  </Link>
+                 
+                    <Link to="/" className='regist-type-link'><span>가입하기</span></Link>
+                   
                 </button>
               </form>
             </div>

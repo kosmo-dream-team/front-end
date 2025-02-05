@@ -1,6 +1,9 @@
 import React from 'react';
-import  Header  from "../../component/header";
- import "../../style/scss/style.scss";
+import Header from "../../component/main/header";
+import { Campain1 } from '../../component/main/campain1';
+import Category from '../../component/main/category';
+import "../../style/scss/style.scss";
+
 function mainPage(){
   return (
     <div style={{justifyContent: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
@@ -11,7 +14,7 @@ function mainPage(){
         {/* 메인 배너너 */}
     <div className="layout__main-banner">컴포넌트 꽂는곳</div>
     {/* 나의 도움이 필요한 모금함(카테고리) */ }
-    <div className="layout__my-help-category">컴포넌트 꽂는곳</div>
+    <div className="layout__my-help-category"></div>
     {/* 가장 많이 기부중인 모금함 */}
     <div className="layout__top-campaign">컴포넌트 꽂는곳123123</div>
 
