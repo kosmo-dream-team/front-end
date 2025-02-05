@@ -1,0 +1,66 @@
+.donation-info {
+  width: 700px;
+  height: 96px;
+  position: relative;
+  background: white;
+
+  .donation-amount {
+    width: 96px;
+    height: 38px;
+    position: absolute;
+    left: 578px;
+    top: 33px;
+    color: #FF9191;
+    font-size: 24.8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+
+  .total-donation {
+    width: 74px;
+    height: 21px;
+    position: absolute;
+    left: 374px;
+    top: 40px;
+    color: #535054;
+    font-size: 14.3px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+
+  .divider {
+    width: 2px;
+    height: 62px;
+    position: absolute;
+    left: 348px;
+    top: 17px;
+  }
+
+  .my-amount {
+    width: 37px;
+    height: 28px;
+    position: absolute;
+    left: 286px;
+    top: 37px;
+    color: #FF9191;
+    font-size: 22.2px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+
+  .my-balance {
+    width: 100px;
+    height: 21px;
+    position: absolute;
+    left: 26px;
+    top: 40px;
+    color: #605C62;
+    font-size: 14.3px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+}

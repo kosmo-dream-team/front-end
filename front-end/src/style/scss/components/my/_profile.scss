@@ -1,0 +1,87 @@
+.my-component {
+  width: 360px;
+  height: 583px;
+  position: relative;
+  background: #fff;
+
+  .profile-wrapper {
+    width: 177px;
+    height: 145px;
+    position: absolute;
+    left: 91px;
+    top: 63px;
+    background: rgba(0, 0, 0, 0);
+
+    .profile-content {
+      width: 173px;
+      height: 144px;
+      position: absolute;
+      left: 1px;
+      top: 0;
+
+      .background-box {
+        width: 173px;
+        height: 144px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #848B91;
+        border: 1px solid #7D848A;
+      }
+
+      .user-info {
+        width: 51px;
+        height: 39px;
+        position: absolute;
+        left: 62.33px;
+        top: 85px;
+        color: #D8D9DD;
+        font-size: 11.7px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        line-height: 17.52px;
+        word-wrap: break-word;
+      }
+
+      .profile-img {
+        width: 57px;
+        height: 58px;
+        position: absolute;
+        left: 58px;
+        top: 24px;
+        border-radius: 29px;
+      }
+    }
+  }
+
+  .my-home {
+    width: 68px;
+    /* 기준 너비 */
+    height: 18px;
+    position: absolute;
+    left: 146px;
+    top: 240px;
+    text-align: center;
+    color: #FF9191;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+
+  .additional-box {
+    width: 420px;
+    /* my-home과 동일한 너비 */
+    height: 249px;
+    position: absolute;
+    left: -30px;
+    /* my-home과 동일한 위치 */
+    top: 220px;
+    /* my-home의 bottom(240 + 18) + 여백 (0) */
+
+    .profile-img2 {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
