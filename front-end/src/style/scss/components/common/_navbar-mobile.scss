@@ -89,6 +89,9 @@
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
+    &:first-of-type {
+      margin-top: 33px;
+    }
     &:hover {
       transition: background-color 0.35s ease;
       background-color: var.$color-primary;
