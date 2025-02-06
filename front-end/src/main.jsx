@@ -13,20 +13,25 @@ import AdminPage from "./pages/admin/admin";
 import Stats from "./component/stats/stats";
 import Card from "./component/campain/Card";
 import Article from "./component/campain/Article";
+import MonthlyDonationChart from "./component/stats/MonthlyDonation";
+
+
 
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <Signup /> App.jsx 대신 Signup.jsx만 렌더링 */}
-    {/* <Router>
+     {/* <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/registType" element={<RegistType />} />
         <Route path="/registType/signup" element={<Signup />} />
       </Routes>
-    </Router>  */}
-    <Card />
+    </Router>   */}
+    <MonthlyDonationChart />
+    
+    
     
   
     

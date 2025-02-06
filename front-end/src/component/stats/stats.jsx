@@ -1,10 +1,15 @@
 
 import "../.././style/scss/style.scss";
+import Card1 from "../../assets/img/Card1.png"
 
 const Stats = () => {
   return (
+
     <div className="donation-stats">
+      <img className="donation-img" 
+        src={Card1}/>      
       <h1>기부 통계</h1>
+      
       <div className="stats-container">
         <div className="stat-item">
           <h2>총 기부금</h2>

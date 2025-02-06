@@ -1,12 +1,6 @@
 @use "../abstracts/variable" as var;
 @use "../abstracts/mixin" as mixin;
 
-.favicon {
-  position: absolute;
-
-  top: 4rem;
-}
-
 .signup-container {
   display: flex;
   flex-wrap: wrap;

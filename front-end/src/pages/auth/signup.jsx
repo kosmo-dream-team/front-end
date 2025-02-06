@@ -1,11 +1,14 @@
 import  { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 import axios from "axios"; 
+
+import card1 from "../../assets/img/Card1.png";
+
 import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";
 import sign02 from "../../assets/img/아동.png";
-import card1 from "../../assets/img/Card1.png";
 import useImageStore from "../../store/useImgStore";
 import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
@@ -46,6 +49,7 @@ function Signup() {
       return;
     } else if (formData.password === "") {
       alert("패스워드를 입력해주세요");
+
       return;
     } else if (formData.phone === "") {
       alert("전화번호를 입력해주세요.");
@@ -56,6 +60,7 @@ function Signup() {
     }
     
     // 이메일 형식 검증 (간단한 정규식 사용)
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       alert("유효한 이메일 주소를 입력해 주세요.");
@@ -71,7 +76,7 @@ function Signup() {
     // 모든 검증이 통과하면 실제 회원가입 API 요청 실행
     try {
       
-      const response = await axios.post("http://localhost:8080/api/signup", formData);
+      const response = await axios.post("http://localhost:8586/api/signup", formData);
 
       console.log("회원가입 성공:", response.data);
       // 회원가입 성공 후 추가 작업 (예: 페이지 이동) 처리
@@ -147,6 +152,7 @@ function Signup() {
                     </label>
                   </div>
                 </div>
+
                 {/* 이름 */}
                 <div className="input-wrapper">
                   <label htmlFor="name">이름</label>
