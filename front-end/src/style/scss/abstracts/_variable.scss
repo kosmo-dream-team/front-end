@@ -2,66 +2,66 @@
 $font-size-root: 10px; // 기본 폰트 크기 (1rem = 10px)
 $primary-color: #3498db;
 // 일반 크기
-$font-size-xxl: 4rem;    // 40px
-$font-size-xl: 3rem;     // 30px
-$font-size-lg: 2.25rem;  // 22.5px
-$font-size-md: 1.6rem;   // 16px
-$font-size-sm: 1.4rem;   // 14px
-$font-size-xs: 1.2rem;   // 12px
-$font-size-xxs: 1rem;    // 10px
+$font-size-xxl: 4rem; // 40px
+$font-size-xl: 3rem; // 30px
+$font-size-lg: 2.25rem; // 22.5px
+$font-size-md: 1.6rem; // 16px
+$font-size-sm: 1.4rem; // 14px
+$font-size-xs: 1.2rem; // 12px
+$font-size-xxs: 1rem; // 10px
 
 // 헤딩(Heading)
-$font-size-h1: 3rem;    // 30px
+$font-size-h1: 3rem; // 30px
 $font-size-h2: 2.25rem; // 22.5px
 $font-size-h3: 1.75rem; // 17.5px
-$font-size-h4: 1.5rem;  // 15px
+$font-size-h4: 1.5rem; // 15px
 $font-size-h5: 1.25rem; // 12.5px
-$font-size-h6: 1rem;    // 10px
+$font-size-h6: 1rem; // 10px
 
 // 본문(Paragraph)
-$font-size-body: 1rem;        // 10px
+$font-size-body: 1rem; // 10px
 $font-size-body-sm: 0.875rem; // 8.75px
-$font-size-caption: 0.75rem;  // 7.5px
+$font-size-caption: 0.75rem; // 7.5px
 
 // 버튼(Button)
-$font-size-button: 1rem;        // 10px
+$font-size-button: 1rem; // 10px
 $font-size-button-sm: 0.875rem; // 8.75px
 
 // 네비게이션(Navigation)
-$font-size-nav: 1rem;        // 10px
+$font-size-nav: 1rem; // 10px
 $font-size-nav-sm: 0.875rem; // 8.75px
 
 // 푸터(Footer)
-$font-size-footer: 0.75rem;   // 7.5px
+$font-size-footer: 0.75rem; // 7.5px
 
 // 반응형 폰트 크기 (Responsive)
 $font-size-h1-responsive: clamp(2rem, 5vw, 3rem); // 최소 20px, 최대 30px
-$font-size-body-responsive: clamp(1rem, 2.5vw, 1.5rem);  // 최소 10px, 최대 15px
+$font-size-body-responsive: clamp(1rem, 2.5vw, 1.5rem); // 최소 10px, 최대 15px
 
 // Font Weights
-$font-weight-thin: 100;         // Thin
-$font-weight-light: 300;        // Light
-$font-weight-regular: 400;      // Regular
-$font-weight-md: 500;           // Medium
-$font-weight-sbold: 600;           // Semi-bold
-$font-weight-bold: 700;         // Bold
-$font-weight-xbold: 800;           // Extra-bold
-$font-weight-black: 900;        // Black
+$font-weight-thin: 100; // Thin
+$font-weight-light: 300; // Light
+$font-weight-regular: 400; // Regular
+$font-weight-md: 500; // Medium
+$font-weight-sbold: 600; // Semi-bold
+$font-weight-bold: 700; // Bold
+$font-weight-xbold: 800; // Extra-bold
+$font-weight-black: 900; // Black
 
 // Font Families
-$font-family-sans: 'Arial', 'Helvetica', sans-serif;
-$font-family-serif: 'Times New Roman', serif;
-$font-family-mono: 'Courier New', monospace;
-$font-family-custom: 'Roboto', sans-serif; // 사용자 정의
+$font-family-sans: "Arial", "Helvetica", sans-serif;
+$font-family-serif: "Times New Roman", serif;
+$font-family-mono: "Courier New", monospace;
+$font-family-custom: "Roboto", sans-serif; // 사용자 정의
 
 // Spacing Variables
-$spacing-sm: 1rem;  // 작은 간격
-$spacing-md: 2rem;  // 중간 간격
-$spacing-lg: 5rem;  // 큰 간격
+$spacing-sm: 1rem; // 작은 간격
+$spacing-md: 2rem; // 중간 간격
+$spacing-lg: 5rem; // 큰 간격
 
 // Color Variables
-$color-primary: #f37a6b;         // 주요 색상
-$color-secondary: #555;         // 보조 텍스트 색상
-$color-primary-light: #fff;     // 주요 색상 대비 밝은 색
-$color-background: #f9f9fb;     // 배경색
-$color-border: #ccc;            // 경계선 색상
+$color-primary: #ff9191; // 주요 색상
+$color-secondary: #d9d9d9; // 보조 텍스트 색상
+$color-primary-light: #fff; // 주요 색상 대비 밝은 색
+$color-background: #f9f9fb; // 배경색
+$color-border: #ccc; // 경계선 색상

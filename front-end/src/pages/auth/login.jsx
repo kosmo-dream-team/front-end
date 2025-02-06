@@ -3,7 +3,6 @@ import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";
 import "../../style/scss/style.scss";
-import ImageSwiper from "./ImageSwiper";
 function login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
@@ -115,8 +114,6 @@ function login() {
       {/* 오른쪽 이미지+텍스트 영역 */}
 
       <div className="signup-right-img-container">
-        <ImageSwiper />
-        {/** */}{" "}
         <img className="signup-img" src={sign01} alt="웃는 아이의 이미지" />
         <div className="signup-right-text1">
           <div className="big-title">작은 손길, 큰 변화</div>
