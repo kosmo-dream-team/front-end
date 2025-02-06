@@ -1,0 +1,213 @@
+.card {
+  width: 290px;
+  height: 429px;
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #CBCBCB;
+  font-family: 'Noto Sans KR', sans-serif;
+  overflow: hidden; // 혹시 내용이 넘칠 경우를 대비
+
+  /* 제목 */
+  &__title {
+    position: absolute;
+    top: 31px;
+    left: 21px;
+    width: 240.34px;
+    height: 25px;
+    color: #242424;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    word-wrap: break-word;
+  }
+
+  /* 진행률(%) */
+  &__percent {
+    position: absolute;
+    top: 81.5px;
+    left: 21px;
+    width: 32.98px;
+    height: 19px;
+    color: #FF6D73;
+    font-size: 15px;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+
+  /* D-Day */
+  &__d-day {
+    position: absolute;
+    top: 76px;
+    left: 243.55px;
+    width: 25.65px;
+    height: 30px;
+    color: #202020;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 30px;
+    word-wrap: break-word;
+  }
+
+  /* 모금액 */
+  &__donation {
+    position: absolute;
+    top: 126px;
+    left: 159.19px;
+    width: 110.01px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+
+    &-amount {
+      color: #202020;
+      font-size: 23px;
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+
+    &-currency {
+      color: #202020;
+      font-size: 23px;
+      font-weight: 500;
+      word-wrap: break-word;
+    }
+  }
+
+  /* 목표액 */
+  &__goal {
+    position: absolute;
+    top: 158px;
+    left: 153.09px;
+    width: 116.11px;
+    height: 20px;
+    color: #9E9999;
+    font-size: 16px;
+    font-weight: 500;
+    word-wrap: break-word;
+  }
+
+  /* 진행바 */
+  &__progress {
+    position: absolute;
+    top: 111px;
+    left: 21px;
+    width: 248px;
+    height: 5px;
+    background: #E8E8E8;
+    border-radius: 2.5px;
+
+    &-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 104.16px;
+      height: 5px;
+      background: #FF6D73;
+      border-radius: 2.5px;
+    }
+  }
+
+  /* 정보 섹션 */
+  &__info {
+    position: absolute;
+    top: 199px;
+    left: 21px;
+    width: 248px;
+    height: 145px;
+    border-top: 1px solid #E6E6E6;
+
+    /* 공통 정보 아이템 - 링크 스타일 */
+    &-item {
+      position: absolute;
+      width: 70.7px;
+      height: 20px;
+
+      &--tax {
+        top: 26px;
+      }
+
+      &--transfer {
+        top: 102px;
+      }
+
+      .card__info-link {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 71.01px;
+        height: 16px;
+        color: rgba(32, 32, 32, 0.8);
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: underline;
+        line-height: 20px;
+        word-wrap: break-word;
+      }
+    }
+
+    /* 정보 섹션 내부 행 */
+    &-section {
+      position: absolute;
+      top: 51px;
+      left: 0;
+      width: 248px;
+      height: 36px;
+    }
+
+    .card__info-row {
+      position: absolute;
+      left: 0;
+      width: 248px;
+      height: 18px;
+
+      .card__bullet {
+        position: absolute;
+        top: 8px;
+        left: 2px;
+        width: 3px;
+        height: 3px;
+        background: rgba(32, 32, 32, 0.8);
+        border-radius: 1.5px;
+      }
+
+      .card__info-text {
+        position: absolute;
+        top: 1px;
+        left: 10px;
+        width: auto;
+        height: 16px;
+        color: rgba(32, 32, 32, 0.8);
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 18px;
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  /* 기부하기 버튼 */
+  &__donate-button {
+    position: absolute;
+    top: 364px;
+    left: 1px;
+    width: 288px;
+    height: 64px;
+    background: #FF6D73;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    .card__donate-text {
+      position: absolute;
+      top: 23.5px;
+      left: 114.72px;
+      width: 59.66px;
+      height: 20px;
+      text-align: center;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+  }
+}

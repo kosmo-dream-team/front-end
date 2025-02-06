@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import "../.././style/scss/style.scss";
 
 const ProfileEditForm = () => {
-  // 변경 가능한 필드에 대한 상태 관리 (초기값은 예시입니다)
-  const [email, setEmail] = useState('user@example.com');
-  const [phone, setPhone] = useState('01012345678');
+  // 변경 가능한 필드에 대한 상태 관리 
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
 
   // 이름과 성별은 변경할 수 없는 값 (예시)

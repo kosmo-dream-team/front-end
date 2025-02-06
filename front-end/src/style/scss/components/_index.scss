@@ -1,21 +1,7 @@
-@forward "board";
-@forward "button";
-@forward "dialog";
-@forward "form";
-@forward "tab";
-@forward "table";
-@forward "typography";
-@forward "logo";
-@forward "list";
-@forward "header";
-@forward "category";
-@forward "campain1";
-@forward "card1";
-@forward "card2";
-@forward "card3";
-@forward "card4";
-@forward "card5";
-@forward "footer";
-@forward "./my/index";
-
+@forward "./category/index";
+@forward "./common/index";
+@forward "./main/index";
+@forward "./stats/stats.scss";
+@forward "./campain/card.scss";
+@forward "./campain/article.scss";
 

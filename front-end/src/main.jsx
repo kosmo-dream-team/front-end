@@ -10,6 +10,10 @@ import Profile from "./component/my/profile";
 import DonationInfo from "./component/my/DonationInfo";
 import ProfileEditForm from "./component/my/ProfileEditForm";
 import AdminPage from "./pages/admin/admin";
+import Stats from "./component/stats/stats";
+import Card from "./component/campain/Card";
+import Article from "./component/campain/Article";
+
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -21,8 +25,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/registType" element={<RegistType />} />
         <Route path="/registType/signup" element={<Signup />} />
       </Routes>
-    </Router> */}
-  <AdminPage />
+    </Router>  */}
+    <Card />
+    
+  
     
 
   </React.StrictMode>
