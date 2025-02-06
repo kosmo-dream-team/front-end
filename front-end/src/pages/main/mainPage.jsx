@@ -1,7 +1,7 @@
-import Navbar from "../../component/common/NavbarDesktop";
+import Navbar from "../../component/common/navbar/Navbar";
 import "../../style/scss/style.scss";
 
-function mainPage() {
+function MainPage() {
   return (
     <div
       style={{
@@ -11,9 +11,8 @@ function mainPage() {
         flexDirection: "column",
       }}
     >
-      <div className="layout__header">
-        <Navbar />
-      </div>
+      <Navbar />
+
       <div className="layout__main-container">
         <div className="layout__left-panel">
           {/* 메인 배너너 */}
@@ -41,4 +40,4 @@ function mainPage() {
   );
 }
 
-export default mainPage;
+export default MainPage;

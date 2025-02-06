@@ -2,21 +2,21 @@
 // @use '../abstracts/variable' as var;
 
 /* 모바일: 최대 너비 767px */
-@media (max-width: 479px) {
-  .layout__header {
-    display: none;
-  }
-  .navbar-mobile {
-    display: block;
-  }
-}
+// @media (max-width: 479px) {
+//   .layout__header {
+//     display: none;
+//   }
+//   .navbar-mobile {
+//     display: block;
+//   }
+// }
 
-/* 태블릿 및 데스크탑: 최소 너비 768px */
-@media (min-width: 480px) {
-  .layout__header {
-    display: block;
-  }
-  .navbar-mobile {
-    display: none;
-  }
-}
+// /* 태블릿 및 데스크탑: 최소 너비 768px */
+// @media (min-width: 480px) {
+//   .layout__header {
+//     display: block;
+//   }
+//   .navbar-mobile {
+//     display: none;
+//   }
+// }

@@ -1,131 +1,123 @@
-html.open {
-  overflow: hidden;
-}
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
 
-#menu.open {
-  left: 0px;
-}
+.navbar-mobile {
+  .mobile_btn {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    font-size: 12px;
+  }
 
-.page_cover.open {
-  display: block;
-}
+  input[id="hamburger"] {
+    display: none;
+  }
+  input[id="hamburger"] + label {
+    display: block;
+    width: 60px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+  }
+  input[id="hamburger"] + label span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    border-radius: 30px;
+    background: #000;
+    transition: all 0.35s;
+  }
+  input[id="hamburger"] + label span:nth-child(1) {
+    top: 0;
+  }
+  input[id="hamburger"] + label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  input[id="hamburger"] + label span:nth-child(3) {
+    bottom: 0;
+  }
+  input[id="hamburger"]:checked + label {
+    z-index: 99;
+  }
+  input[id="hamburger"]:checked + label span {
+    background: black;
+  }
+  input[id="hamburger"]:checked + label span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  input[id="hamburger"]:checked + label span:nth-child(2) {
+    opacity: 0;
+  }
+  input[id="hamburger"]:checked + label span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+  div[class="sidebar"] {
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 98;
+    transition: all 0.35s;
+  }
 
-.btn {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  background-image: url("http://s1.daumcdn.net/cfs.tistory/custom/blog/204/2048858/skin/images/menu.png");
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
+  input[id="hamburger"]:checked + label + div {
+    left: 0;
+  }
 
-.close {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  background-image: url("http://s1.daumcdn.net/cfs.tistory/custom/blog/204/2048858/skin/images/close.png");
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
+  .nav_mobile {
+    position: absolute;
+    top: 119px;
+    width: 100%;
+  }
 
-#menu {
-  width: 150px;
-  height: 100%;
-  position: fixed;
-  top: 0px;
-  left: -202px;
-  z-index: 10;
-  border: 1px solid #c9c9c9;
-  background-color: white;
-  text-align: center;
-  font-weight: bold;
-  transition: All 0.2s ease;
-  -webkit-transition: All 0.2s ease;
-  -moz-transition: All 0.2s ease;
-  -o-transition: All 0.2s ease;
-  padding-top: 50px;
-  padding-left: 0px;
-  padding-right: 40px;
-}
+  .sidebar .nav_mobile li {
+    color: black;
+    position: relative;
+    float: left;
+    width: 100%;
+    list-style-type: none;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    &:hover {
+      transition: background-color 0.35s ease;
+      background-color: var.$color-primary;
+    }
+  }
 
-#menu a {
-  padding: 0;
-  text-decoration: none;
-  font-size: 18px;
-  color: #25a4cd;
-  display: block;
-  transition: 0.3s;
-}
+  .sidebar a {
+    padding: 0;
+    text-decoration: none;
+    display: block;
+  }
 
-#menu.open {
-  left: 0px;
-}
+  .sidebar li a {
+    display: block;
+    font-weight: bold;
+    line-height: 40px;
+    margin: 0px;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.4s;
+  }
 
-.page_cover.open {
-  display: block;
-}
-
-.page_cover {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 4;
-  display: none;
-}
-
-#menu ul {
-  width: 190px;
-  margin: 0;
-  padding: 0;
-}
-
-#menu ul.nav li {
-  position: relative;
-  float: left;
-  width: 100%;
-  list-style-type: none;
-  font-size: 18px;
-}
-
-#menu ul.nav li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  line-height: 50px;
-  text-indent: 20px;
-  text-align: left;
-  color: #25a4cd;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-#menu ul.nav li a:hover {
-  background: #eee;
-}
-
-#menu ul.nav li .sub_mobile a {
-  position: relative;
-  float: left;
-  display: block;
-  width: 100%;
-  z-index: 999;
-  background: #ccc;
-}
-
-#menu ul.nav li .sub_mobile a:hover {
-  background: #787878;
-  color: #fff;
-  z-index: 999;
+  .sidebar li a:hover,
+  .sidebar ul li:hover a {
+    text-decoration: none;
+    color: #eee;
+    padding: 0;
+    margin: 0;
+    border: 0px;
+  }
 }
