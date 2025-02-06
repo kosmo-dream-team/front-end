@@ -1,29 +1,20 @@
-
-
-  // 모바일
-  @media (max-width: 479px) {
-    
-    html {
-      font-size: 40%; 
-    }
-   
-   
-  }
-
-  // 태블릿
-@media (min-width: 768px) and (max-width: 1023px){
-    
+/* 모바일: 최대 너비 479px */
+@media (max-width: 479px) {
   html {
-      font-size: 50%; //8px
-    }
-   
+    font-size: 40%;
   }
+}
 
-  // 데스크탑
-  @media (max-width:1024) {
-    
-    html {
-      font-size: 62.5%; /* 1rem = 10px */
-    }
-   
+/* 태블릿: 480px ~ 1023px */
+@media (min-width: 480px) and (max-width: 1023px) {
+  html {
+    font-size: 50%; /* 8px */
   }
+}
+
+/* 데스크탑: 1024px 이상 */
+@media (min-width: 1024px) {
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
+  }
+}

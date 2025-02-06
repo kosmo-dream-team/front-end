@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";

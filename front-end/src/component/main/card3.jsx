@@ -1,5 +1,5 @@
-import arrowRight from ".././assets/img/arrow-right.svg";
-import ".././style/scss/style.scss";
+import arrowRight from "../../assets/img/arrow-right.svg";
+import "../.././style/scss/style.scss";
 const Card3 = () => {
   return (
     <div className="campaign-section">

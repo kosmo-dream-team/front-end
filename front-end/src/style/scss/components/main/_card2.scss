@@ -1,4 +1,4 @@
-@use "../abstracts/mixin" as mixin;
+@use "../../abstracts/mixin" as mixin;
 
 .review-card {
   @include mixin.box-shadow();
