@@ -1,12 +1,12 @@
 .favicon-text {
-  width: 13.9rem;         // 기존 너비 유지
-  height: 4.1rem;         // 기존 높이 유지
-  margin-left: -1.9rem;   // 원래 left: -1.9rem 효과
-  margin-top: -0.8rem;    // 원래 top: -0.8rem 효과
+  width: 13.9rem; // 기존 너비 유지
+  height: 4.1rem; // 기존 높이 유지
+  margin-left: -1.9rem; // 원래 left: -1.9rem 효과
+  margin-top: -0.8rem; // 원래 top: -0.8rem 효과
   /* 텍스트와 라인 사이 간격 줄이기 위해 아래 여백 추가 */
-  margin-bottom: -1rem;   // 이 값을 조정해서 간격을 더 줄이거나 늘릴 수 있음
-  
-  text-align: right;      // 텍스트 오른쪽 정렬
+  margin-bottom: -1rem; // 이 값을 조정해서 간격을 더 줄이거나 늘릴 수 있음
+
+  text-align: right; // 텍스트 오른쪽 정렬
   color: #ff9191;
   font-size: 2.3rem;
   font-weight: 700;
@@ -18,8 +18,8 @@
   height: 0.3rem;
   margin-left: 0.1rem;
   /* 상단 여백을 음수로 조정하여 텍스트에 더 가깝게 배치 */
-  margin-top: -0.5rem;    // 이 값을 조정해서 간격을 미세하게 조정
-  
+  margin-top: -0.5rem; // 이 값을 조정해서 간격을 미세하게 조정
+
   border-radius: 10rem;
 
   .favicon-line-gradient {

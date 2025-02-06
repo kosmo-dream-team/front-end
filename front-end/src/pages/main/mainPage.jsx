@@ -1,4 +1,4 @@
-import Navbar from "../../component/common/Navbar";
+import Navbar from "../../component/common/NavbarDesktop";
 import "../../style/scss/style.scss";
 
 function mainPage() {
