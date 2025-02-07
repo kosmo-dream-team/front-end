@@ -1,0 +1,173 @@
+/* Container */
+.main-campaign-list {
+  width: 70rem; /* 700px */
+  height: 40rem; /* 400px */
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* 이미지 */
+.main-campaign-list__img {
+  width: 70rem; /* 700px */
+  height: 34.9rem; /* 349px */
+  position: relative;
+}
+
+/* 오버레이 (그라데이션) */
+.main-campaign-list__overlay {
+  width: 70rem; /* 700px */
+  height: 24rem; /* 240px */
+  position: relative;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border-top-left-radius: 1rem; /* 10px */
+  border-top-right-radius: 1rem; /* 10px */
+}
+
+/* 카테고리 (예: 아동 / 청소년) */
+.main-campaign-list__category {
+  padding: 0.4rem 1rem; /* top/bottom: 4px, left/right: 10px */
+  background: #ff6996;
+  border-radius: 5rem; /* 50px */
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.main-campaign-list__category-text {
+  color: white;
+  font-size: 1.3rem; /* 13px */
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+/* 인용문 (캠페인 제목) */
+.main-campaign-list__quote {
+  width: 50rem; /* 229.73px */
+
+  color: white;
+  font-size: 2rem; /* 20px */
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  line-height: 2.8rem; /* 28px */
+  word-wrap: break-word;
+  margin-top: 1rem; /* 필요에 따라 간격 조절 */
+}
+
+/* 기한 표시 (D-16) */
+.main-campaign-list__deadline {
+  height: 2.3rem; /* 23px */
+  padding: 0rem 0.9rem; /* top/bottom: 3px, left/right: 9px */
+  border-radius: 5rem; /* 50px */
+  border: 0.1rem solid rgba(255, 255, 255, 0.7); /* 1px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 0.5rem; /* 필요에 따라 간격 조절 */
+}
+
+.main-campaign-list__deadline-text {
+  color: white;
+  font-size: 1.42rem; /* 약 14.16px */
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+/* 수혜자명 */
+.main-campaign-list__beneficiary {
+  height: 2rem; /* 20px */
+  padding-top: 0.2rem; /* 2px */
+  padding-bottom: 0.1rem; /* 1px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 0rem; /* 필요에 따라 간격 조절 */
+}
+
+.main-campaign-list__beneficiary-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.4rem; /* 14px */
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 350;
+  word-wrap: break-word;
+}
+
+/* 진행 영역 (하단) */
+.main-campaign-list__progress-wrapper {
+  width: 70rem; /* 700px */
+  height: 7.2rem; /* 72px */
+  position: relative;
+  background: white;
+  margin-top: 1rem; /* 필요에 따라 간격 조절 */
+}
+
+/* 진행 퍼센트 */
+.main-campaign-list__progress-percent {
+  width: 3.486rem; /* 34.86px */
+  height: 2rem; /* 20px */
+  position: absolute;
+  left: 3.2rem; /* 32px */
+  top: 3rem; /* 30px */
+  color: #ff6d73;
+  font-size: 1.6rem; /* 16px */
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+/* 기부금액 영역 */
+.main-campaign-list__amount {
+  width: 8.64rem; /* 86.4px */
+  height: 2rem; /* 20px */
+  position: absolute;
+  left: 58.2rem; /* 582px */
+  top: 2.6rem; /* 26px */
+  text-align: right;
+}
+
+.main-campaign-list__amount span {
+  color: #202020;
+  font-size: 1.59rem; /* 약 15.88px */
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+/* 진행바 컨테이너 */
+.main-campaign-list__progress-bar {
+  width: 63.6rem; /* 636px */
+  height: 0.3rem; /* 3px */
+  padding-right: 42.613rem; /* 426.13px */
+  position: absolute;
+  left: 3.2rem; /* 32px */
+  top: 2rem; /* 20px */
+  background: #e9e9e9;
+  border-radius: 0.4rem; /* 4px */
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* 진행바 채움 */
+.main-campaign-list__progress-fill {
+  width: 20.987rem; /* 209.87px */
+  height: 0.3rem; /* 3px */
+  background: #ff6d73;
+  border-radius: 0.2rem; /* 2px */
+}
+.layout__main-campaign-list__content {
+  padding: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* 자식들을 좌측, 우측에 배치 */
+  align-items: end;
+}
