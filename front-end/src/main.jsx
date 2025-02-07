@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Card3 from "./component/main/card3";
 import RegistType from "./pages/auth/registType";
 import Signup from "./pages/auth/signup";
-import MainPage from "./pages/main/mainPage";
+import MainCategory from "./pages/main/mainPage";
 import "./style/scss/style.scss"; // 글로벌 스타일 적용
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <Signup /> App.jsx 대신 Signup.jsx만 렌더링 */}
     <Router>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/ca" element={<MainCategory />} />
         <Route path="/registType" element={<RegistType />} />
         <Route path="/registType/signup" element={<Signup />} />
       </Routes>

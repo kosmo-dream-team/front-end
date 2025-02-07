@@ -1,7 +1,31 @@
-// Flexbox Center
-// Box Shadow
-
 @use "./variable" as var;
+
+//자식 요소들이 부유할 때 부모 요소가 그 높이를 잃지 않도록 하기
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//안보이게 숨기기 + 최우선 설정
+@mixin hidden {
+  display: none !important;
+}
+//안보이게 숨기지만 접근은 가능하게.(클릭 등등)
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @mixin box-shadow(
   $color: rgba(0, 0, 0, 0.2),
   $x: 0,
@@ -42,15 +66,16 @@
   display: grid;
   place-items: center;
 }
-@mixin no-link-style(){
-    text-decoration: none;
-      /* 밑줄 제거 */
-      color: inherit;
-      /* 부모 요소의 색상을 상속 */
-      outline: none;
-      /* 클릭 시 테두리 제거 */
+@mixin no-link-style() {
+  text-decoration: none;
+  /* 밑줄 제거 */
+  color: inherit;
+  /* 부모 요소의 색상을 상속 */
+  outline: none;
+  /* 클릭 시 테두리 제거 */
 }
-@mixin font-style($color, $size, $weight) {
+//디폴트 값 설정
+@mixin font-style($color: "black", $size: "md", $weight: "normal") {
   color: $color;
   @if $size == "xxl" {
     font-size: var.$font-size-xxl;
@@ -76,5 +101,36 @@
     font-weight: light;
   } @else if $weight == "normal" {
     font-weight: normal;
+  }
+}
+
+//폰트 설정 추가
+@mixin font-family($family: "Noto Sans KR") {
+  @if family == "noto-sans" {
+    font-family: $family, sans-serif;
+  } @else if $family == "gothic-a1" {
+    font-family: $family, sans-serif;
+  } @else if $family == "hanna" {
+    font-family: $family, serif;
+  } @else if $family == "jeju-gothic" {
+    font-family: $family, serif;
+  } @else if $family == "jeju-hallasan" {
+    font-family: $family, serif;
+  } @else if $family == "jeju-myeongjo" {
+    font-family: $family, serif;
+  } @else if $family == "ko-pub-batang" {
+    font-family: $family, serif;
+  } @else if $family == "nanum-brush" {
+    font-family: $family, serif;
+  } @else if $family == "nanum-gothic" {
+    font-family: $family, sans-serif;
+  } @else if $family == "nanum-coding" {
+    font-family: $family, monospace;
+  } @else if $family == "nanum-myeongjo" {
+    font-family: $family, serif;
+  } @else if $family == "nanum-pen" {
+    font-family: $family, serif;
+  } @else {
+    font-family: $family;
   }
 }
