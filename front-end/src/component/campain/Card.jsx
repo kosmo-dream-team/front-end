@@ -16,6 +16,7 @@ const Card = () => {
 
       {/* D-Day */}
       <div className="card__d-day">
+        
         D-5
       </div>
 
@@ -27,7 +28,8 @@ const Card = () => {
 
       {/* 목표액 */}
       <div className="card__goal">
-        2,165,000원 목표
+        2,165,00000000000000<br />
+         원 목표
       </div>
 
       {/* 진행바 */}
@@ -49,17 +51,19 @@ const Card = () => {
             <div className="card__bullet" />
             <div className="card__info-text">일반기부금</div>
           </div>
-          <div className="card__info-row" style={{ top: 18 }}>
+          <div className="card__info-row" style={{ top: 9 }}>
+            <div className="card__bullet" />
+            <div className="card__info-text">모금 전달 안내</div>
+          </div>
+           <div className="card__info-row" style={{ top: 18 }}>
             <div className="card__bullet" />
             <div className="card__info-text">2025년 연말정산 대상</div>
           </div>
         </div>
 
         {/* 모금 전달 안내 */}
+          
         <div className="card__info-item card__info-item--transfer">
-          <div className="card__info-link">
-            모금 전달 안내
-          </div>
         </div>
 
         <div className="card__info-row" style={{ top: 127 }}>

@@ -1,4 +1,8 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
 .monthly-donation-chart {
+  
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -8,9 +12,8 @@
   text-align: center;
 
   h2 {
+    @include mixin.font-style(#555,"xl", noraml);
     margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
   }
 
   p {

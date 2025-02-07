@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import "../.././style/scss/style.scss";
 
 const ProfileEditForm = () => {
@@ -6,15 +6,38 @@ const ProfileEditForm = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
-
-  // 이름과 성별은 변경할 수 없는 값 (예시)
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [gender, setGender] = useState('');
+  // 이름은 수정 불가
   const name = '홍길동';
-  const gender = '남자';
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 폼 제출 시 처리할 로직 (API 호출 등)
-    console.log('제출된 값:', { email, phone, password });
+
+    // 이름을 제외한 필드 빈값 검증
+     if (email === "") {
+      alert("이메일을 입력해주세요.");
+      return;
+    } else if (password === "") {
+      alert("패스워드를 입력해주세요");
+
+      return;
+    } else if (phone === "") {
+      alert("전화번호를 입력해주세요.");
+      return;
+    } else if (gender === "") {
+      alert("성별을 선택해주세요.");
+      return;
+    }
+
+    // 비밀번호와 비밀번호 재입력이 동일한지 확인
+    if (password !== confirmPassword) {
+      alert('비밀번호가 일치하지 않습니다.');
+      return;
+    }
+
+    // 검증 통과 시 제출 처리 (예: API 호출)
+    console.log('제출된 값:', { email, phone, password, confirmPassword, gender });
   };
 
   return (
@@ -24,8 +47,33 @@ const ProfileEditForm = () => {
         <input type="text" id="name" value={name} readOnly />
       </div>
       <div className="form-group">
-        <label htmlFor="gender">성별</label>
-        <input type="text" id="gender" value={gender} readOnly />
+        <label>성별</label>
+        <div>
+          <label htmlFor="gender-male">
+            <input
+              type="radio"
+              id="gender-male"
+              name="gender"
+              value="남자"
+              checked={gender === '남자'}
+              onChange={(e) => setGender(e.target.value)}
+              required
+            />
+            남자
+          </label>
+          <label htmlFor="gender-female">
+            <input
+              type="radio"
+              id="gender-female"
+              name="gender"
+              value="여자"
+              checked={gender === '여자'}
+              onChange={(e) => setGender(e.target.value)}
+              required
+            />
+            여자
+          </label>
+        </div>
       </div>
       <div className="form-group">
         <label htmlFor="email">이메일</label>
@@ -54,6 +102,16 @@ const ProfileEditForm = () => {
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="confirmPassword">비밀번호 재입력</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
       </div>

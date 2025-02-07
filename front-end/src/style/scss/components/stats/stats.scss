@@ -1,13 +1,18 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
+
 .donation-stats {
+  
   text-align: center;
   padding: 2rem;
   background-color: #f8f8f8;
   min-height: 100vh;
 
   h1 {
+    @include mixin.font-style(#333, "xl", normal);
     margin-bottom: 1.5rem;
-    font-size: 2rem;
-    color: #333;
+    
   }
 
   .donation-img {
@@ -30,15 +35,15 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
       h2 {
-        font-size: 1.2rem;
+        @include mixin.font-style(#555,"xs",noraml);
+        
         margin-bottom: 0.5rem;
         color: #555;
       }
 
       p {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #222;
+        @include mixin.font-style(#222,"md",noraml);
+
       }
     }
   }
