@@ -1,0 +1,32 @@
+@use "../abstracts/mixin" as mixin;
+.regist-type-link {
+  @include mixin.no-link-style();
+}
+.regist-type-title {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  @include mixin.font-style(white, "xxl", "bold");
+  color: #ff9191;
+
+  text-align: center;
+}
+.regist-type-container {
+  @include mixin.flex-center;
+}
+.regist-type {
+  text-decoration: none;
+  /* 밑줄 제거 */
+  color: inherit;
+  /* 부모 요소의 색상을 상속 */
+  outline: none;
+  /* 클릭 시 테두리 제거 */
+  @include mixin.font-style(white, "lg", "bold");
+  @include mixin.vertical-center;
+
+  border-style: none;
+  margin-right: 6rem;
+  width: 30.2rem;
+  height: 30.2rem;
+
+  background: radial-gradient(50% 50% at 50% 50%, #f47e7e 0%, #e78e8e 100%);
+}

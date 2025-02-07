@@ -1,9 +1,3 @@
-@forward "board";
-@forward "button";
-@forward "dialog";
-@forward "form";
-@forward "tab";
-@forward "table";
-@forward "typography";
-@forward "logo";
-@forward "list";
+@forward "./category/index";
+@forward "./common/index";
+@forward "./main/index";

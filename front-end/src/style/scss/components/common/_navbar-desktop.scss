@@ -1,0 +1,90 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
+:root {
+  /* 로고 색상 */
+  --logoColor: #ff4646;
+  /* 텍스트 색상 */
+  --textColor: #ecf0f1;
+  /* 마우스 오버 색상 */
+  --mouseOverColor: #ff4646;
+}
+
+.navbar {
+  @include mixin.flex-center();
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  .favicon {
+    margin-top: 1.5rem;
+    margin-left: 2.5rem;
+  }
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.navbar-logo > a {
+  display: inherit;
+  font-size: 2rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-logo > a > i {
+  padding: 0rem 0.5rem;
+  color: var(--logoColor);
+}
+
+.navbar-logo > a > h1 {
+  margin: 0;
+  color: var(--textColor);
+}
+
+.navbar-menu > ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-menu li {
+  padding: 0.8rem 3rem;
+}
+
+.navbar-menu li:hover {
+  background: var.$color-primary;
+  border-radius: 0.6rem;
+}
+
+/* 메뉴바 이동 텍스트 (마이페이지)*/
+.navbar-menu li > a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+  @include mixin.font-style(black, "md", normal);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  padding: 0.8rem 1.2rem;
+  color: black;
+}
+
+.navbar-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-list {
+  @include mixin.no-link-style;
+  &:hover {
+    background-color: var.$color-primary;
+  }
+}

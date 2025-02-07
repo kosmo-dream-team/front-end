@@ -1,0 +1,155 @@
+.navigation-bar {
+  width: 1800px;
+  height: 69px;
+  position: relative;
+}
+
+/* 내부 컨텐츠 영역 (전체 메뉴와 로고 등) */
+.navigation-bar__content {
+  width: 1120px;
+  height: 70px;
+
+  left: 339px;
+  top: 0;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+
+/* ─── 로고 영역 ─────────────────────────────── */
+.navigation-bar__logo {
+  width: 120px;
+  height: 30px;
+  position: relative;
+  background: transparent;
+}
+
+.navigation-bar__logo-text {
+  width: 139px;
+  height: 41px;
+  position: absolute;
+  left: -19px;
+  top: -8px;
+  text-align: right;
+  color: #ff9191;
+  font-size: 23px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+.navigation-bar__logo-underline-container {
+  width: 117px;
+  height: 3px;
+  position: absolute;
+  left: 1px;
+  top: 23px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.navigation-bar__logo-underline {
+  width: 117px;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(90deg, #f8f0f0 0%, #e8b3b3 100%, #ff0000 100%);
+  border-radius: 40px;
+}
+
+/* ─── 메뉴 영역 ─────────────────────────────── */
+.navigation-bar__menu {
+  width: 601px;
+  height: 70px;
+  position: relative;
+}
+
+/* 공통 메뉴 아이템 스타일 */
+.navigation-bar__menu-item {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 22px 14px 24px 14px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #444444;
+  word-wrap: break-word;
+}
+
+/* 홈 메뉴 – 선택된 항목: border-bottom 적용 */
+.navigation-bar__menu-item--home {
+  width: 43px;
+  left: 56px;
+  top: -1px;
+  border-bottom: 2px solid #393939;
+}
+
+.navigation-bar__menu-item--company {
+  width: 75px;
+  left: 122px;
+  top: 22px;
+}
+
+.navigation-bar__menu-item--campaign {
+  width: 70px;
+  left: 220px;
+  top: 22px;
+}
+
+.navigation-bar__menu-item--statistics {
+  width: 99.53px;
+  left: 281px;
+  top: 0;
+  position: absolute;
+}
+
+.navigation-bar__menu-item--board {
+  width: 117px;
+  left: 385px;
+  top: -1px;
+}
+
+.navigation-bar__menu-item--mypage {
+  width: 102px;
+  left: 513px;
+  top: 0;
+}
+
+/* 메뉴 텍스트 (공통) */
+.navigation-bar__menu-text {
+  color: inherit;
+}
+
+/* 기부 통계 메뉴 – 작은 도트 */
+.navigation-bar__menu-item--statistics .navigation-bar__menu-dot {
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: 80px;
+  top: 24px;
+  background: #ff5a72;
+  border-radius: 2px;
+}
+
+/* ─── 오른쪽 스페이서 (추가 여백) ───────────── */
+.navigation-bar__spacer {
+  width: 115px;
+  align-self: stretch;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.navigation-bar__spacer-inner {
+  width: 99.53px;
+  padding: 22px 14px 24px 14px;
+  /* 내용이 없으므로 내부에 아무것도 표시하지 않습니다. */
+}

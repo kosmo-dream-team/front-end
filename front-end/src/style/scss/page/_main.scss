@@ -2,108 +2,97 @@
 @use "../abstracts/mixin" as mixin;
 
 .layout__header {
-    margin: 0 auto;
-    width: 120rem;
+  margin: 0 auto;
+  width: 120rem;
   height: 70px;
-  
+
   top: 0;
   left: 0;
-  background: #D9D9D9;
+  background: #d9d9d9;
   margin-bottom: 2rem;
 }
 .layout__main-container {
+  margin: 0 auto;
+  width: 120rem;
+  height: 300rem;
+  display: inline-flex;
+
+  background: white;
+}
+
+.layout__left-panel {
+  width: 70rem;
+
+  height: auto;
+
+  background: #ff0000;
+  margin-right: 14rem;
+
+  & > div {
+    margin-bottom: 3rem;
+  }
+
+  .layout__main-banner {
+    height: 25rem;
+    background: pink;
+  }
+  .layout__my-help-category {
+    height: 17.4rem;
+    background: black;
+  }
+  .layout__top-campaign {
+    height: 37.15rem;
+
+    background: black;
+  }
+  .layout__main-campaign-list {
+    background: black;
+
+    height: 40rem;
+  }
+}
+
+.layout__right-panel {
+  width: 36rem;
+
+  background: #002fff;
+  .layout__first-section {
+    height: 53.1rem;
+    background: black;
+  }
+
+  & > div {
+    margin-bottom: 6rem;
+  }
+  .layout__total-donation {
+    height: 25rem;
+
+    background: red;
+  }
+  .layout__donation-review {
+    height: 28.1rem;
+    background: violet;
+  }
+
+  .layout__new-campaign {
+    height: 39.3rem;
+
+    background: linear-gradient(
+      90deg,
+      #ff9191 0%,
+      rgba(255, 93, 100, 0.8) 100%
+    );
+  }
+  .layout__social-link {
+    height: 47.7rem;
+    background-color: #002fff;
+    background: #ff0000;
+  }
+  .layout__receive-donation {
     margin: 0 auto;
-    width: 120rem;
-    height: 300rem;
-    display: inline-flex;
-      
-    
-    background: white;
-    
+    width: 295px;
+    height: 248px;
+    flex-shrink: 0;
+    background-color: #ff9191;
   }
-  
-  
-  .layout__left-panel {
-    width: 70rem;
-   
-    height: auto;
-    
-    background: #FF0000;
-    margin-right: 14rem;
-
-    & > div{
-        margin-bottom: 3rem;
-    }
-
-    .layout__main-banner {
-        height: 25rem;
-        background: black;
-
-    }
-    .layout__my-help-category {
-        
-        height: 17.4rem;
-        background: black;
-       
-    }
-    .layout__top-campaign {
-        
-        height: 37.15rem;
-       
-        background: black;
-
-    }
-    .layout__main-campaign-list{
-        background: black;
-        
-        height: 40rem;}
-  }
-  
-  .layout__right-panel {
-    width: 36rem;
-
-    
-    
-    background: #002FFF;
-    .layout__first-section{
-        height: 53.1rem;
-        background: black;
-        
-    }
-
-    & > div{
-        margin-bottom: 6rem;
-    }
-    .layout__total-donation{
-        height:25rem;
-        
-        background: red;
-    }
-    .layout__donation-review{
-        height:28.1rem;
-        background: violet;
-
-    }
-    
-    .layout__new-campaign{
-        height: 39.3rem;
-
-        background: linear-gradient(90deg, #FF9191 0%, rgba(255, 93, 100, 0.80) 100%);
-        
-    }
-    .layout__social-link{ 
-        height: 47.7rem;
-        background-color: #002FFF;
-        background:#FF0000;
-    }
-    .layout__receive-donation{
-
-        margin: 0 auto;
-        width: 295px;
-        height: 248px;
-        flex-shrink: 0;
-        background-color: #FF9191;
-    }
-   
-  }
-  
+}
