@@ -16,7 +16,9 @@
 .main-campaign-list__img {
   width: 70rem; /* 700px */
   height: 40rem;
+  
 }
+
 
 /* 카테고리 (예: 아동 / 청소년) */
 .main-campaign-list__category {
@@ -39,12 +41,13 @@
 /* 인용문 (캠페인 제목) */
 .main-campaign-list__quote {
   width: 50rem; /* 229.73px */
+
   color: white;
   font-size: 2rem; /* 20px */
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
   line-height: 2.8rem; /* 28px */
-  word-wrap: break-word;
+  
   margin-top: 1rem; /* 필요에 따라 간격 조절 */
 }
 
@@ -71,6 +74,7 @@
 
 /* 수혜자명 */
 .main-campaign-list__beneficiary {
+ 
   height: 2rem; /* 20px */
   padding-top: 0.2rem; /* 2px */
   padding-bottom: 0.1rem; /* 1px */
@@ -101,6 +105,7 @@
   position: relative;
   background: white;
   margin-top: 1rem; /* 필요에 따라 간격 조절 */
+ 
 }
 
 /* 진행 퍼센트 */
@@ -158,8 +163,9 @@
   border-radius: 0.2rem; /* 2px */
 }
 
+
 .layout__main-campaign-list__content {
-  bottom: 8rem;
+bottom: 8rem;
   padding: 3rem;
   width: 100%;
   display: flex;
@@ -168,50 +174,88 @@
   position: absolute;
 }
 
-@media (max-width: 479px) {
-  .main-campaign-list__quote,
-  .main-campaign-list__img,
-  .main-campaign-list__progress-wrapper,
-  .main-campaign-list__progress-percent,
-  .main-campaign-list__amount,
-  .main-campaign-list__progress-bar,
-  .layout__main-campaign-list__content {
-    position: static;
-  }
-  /* 진행 영역 (하단) */
-  .main-campaign-list__progress-wrapper {
-  width: 100%; /* 700px */
-  
-  margin: 0 auto;
-  background: white;
-  margin-top: 1rem; /* 필요에 따라 간격 조절 */
-}
-.main-campaign-list__progress-bar {
-  width: 90vw; /* 636px */
-  // height: 0.3rem; /* 3px */
-  padding-right: 0; /* 426.13px */
-  // position: absolute;
-  // left: 3.2rem; /* 32px */
-  // top: 2rem; /* 20px */
-  // background: #e9e9e9;
-  // border-radius: 0.4rem; /* 4px */
-  // display: inline-flex;
-  // justify-content: flex-start;
-  // align-items: center;
-}
-  
-}
 
 @media (max-width: 479px) {
-  .main-campaign-list__quote{
-    position: static;
-   
-  }
+  
   .main-campaign-list__img {
     width: 100vw;
     height: auto;
+    
+  }
+  .main-campaign-list,
+  .main-campaign-list__progress-wrapper,
+  .main-campaign-list__progress-percent,
+  .main-campaign-list__amount,
+  .main-campaign-list__progress-bar {
     position: static;
   }
- 
+  .main-campaign-list__title{
+    bottom: 0;
+  }
+  .layout__main-campaign-list__content{
+    position: relative;
+    top: 0;
+    padding-left: 5vw;
+    padding-right: vw;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* 자식들을 좌측, 우측에 배치 */
+    overflow: scroll;
+    
+  }
+  .main-campaign-list__quote {
+    width: 100vw; /* 229.73px */
+    margin-left: 1vh;
+    color: black;
+    font-size: 2rem; /* 20px */
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 500;
+    line-height: 2.8rem; /* 28px */
+    
+    margin-top: 1rem; /* 필요에 따라 간격 조절 */
+  }
+  .main-campaign-list__category-text {
+    color: white;
+    font-size: 1.3rem; /* 13px */
+    
+    @include mixin.font-style(white,"xxs",bold);
+    word-wrap: break-word;
+  }
+  .main-campaign-list__beneficiary-text {
+    width: 50vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    font-family: "Noto Sans KR", sans-serif;
+    @include mixin.font-style(black,"xs",normal);
+    font-weight: 350;
+    word-wrap: break-word;
+  }
   
+  .main-campaign-list__category {
+    margin-left: 1vh;
+    margin-top: 1vh;
+    padding: 0.7vh 1.3vh; /* top/bottom: 4px, left/right: 10px */
+    background: #ff6996;
+    border-radius: 1vh; /* 50px */
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .main-campaign-list__progress-bar{
+    
+    width: 100vw;
+    padding-right: 0;
+    
+  }
+  .main-campaign-list__progress-wrapper{
+    .container {
+      grid-template-columns: 1fr; /* 한 줄로 변경 */
+      grid-template-areas:
+          "second"
+          "first"; /* 모바일에서 순서 변경 */
+  }
+  }
 }
