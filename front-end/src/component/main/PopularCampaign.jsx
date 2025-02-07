@@ -6,7 +6,7 @@ export default function PopularCampaign() {
       <div className="popular-campaign__subtitle">
         오늘, 기부 하셨나요? 당신의 마음도 함께 나눠주세요!
       </div>
-
+<div className="popular-campaign__items-wrapper">
       {/* 첫 번째 캠페인 아이템 */}
       <div className="popular-campaign__item popular-campaign__item--first">
         <div className="popular-campaign__item-img-container">
@@ -93,7 +93,7 @@ export default function PopularCampaign() {
         <div className="popular-campaign__item-percent popular-campaign__item-percent--third">
           7%
         </div>
-      </div>
+      </div></div>
     </div>
   );
 }

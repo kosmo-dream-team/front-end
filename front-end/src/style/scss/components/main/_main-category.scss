@@ -25,6 +25,7 @@
 
 /* 카테고리 컨테이너 */
 .donation-card__categories {
+  overflow: overlay;
   display: inline-flex;
   align-self: stretch;
   justify-content: center;
