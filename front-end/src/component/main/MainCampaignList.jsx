@@ -4,13 +4,10 @@ export default function MainCampaignList() {
   return (
     <>
     <div className="main-campaign-list">
-      <img
-        className="main-campaign-list__img"
-        src={baby1}
-        alt="Campaign"
-      />
      
-      <div className="layout__main-campaign-list__content">
+     
+      <div className="layout__main-campaign-list__content"
+      style={{backgroundImage: `url(${baby1})`}}>
         <div className="main-campaign-list__title" >
           <div className="main-campaign-list__category">
             <div className="main-campaign-list__category-text">
@@ -32,11 +29,11 @@ export default function MainCampaignList() {
         <div className="main-campaign-list__progress-bar">
           <div className="main-campaign-list__progress-fill" />
         </div>
+      <div className="abc2222">
         <div className="main-campaign-list__progress-percent">33%</div>
-        <div className="main-campaign-list__amount">
-          <span>1,920,999 원</span>
+        <div className="main-campaign-list__amount">1,920,999 원</div></div>
         </div>
-      </div>
+     
    
     </div>
     </>

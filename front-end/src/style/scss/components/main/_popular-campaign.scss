@@ -1,20 +1,28 @@
-/* Container (1rem = 10px) */
+@use "../../abstracts/mixin" as mixin;
+@use '../../abstracts/variable' as var;
 .popular-campaign {
+  padding: 3rem;
   overflow: auto;
   width: 100%; /* 700px */
   height: 37.15rem; /* 371.5px */
-  position: relative;
+  align-items: center;
+
+  
   background: white;
   box-shadow: 0rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1.2rem; /* 12px */
   
 }
-
+.popular-campaign__items-wrapper{
+  
+  display: inline-flex;
+  
+}
 /* 제목 */
 .popular-campaign__title {
   width: 23.8rem; /* 238px */
   height: 2.8rem; /* 28px */
-  position: absolute;
+  
   left: 3rem; /* 30px */
   top: 1.2rem; /* 12px */
   color: #202020;
@@ -29,7 +37,7 @@
 .popular-campaign__subtitle {
   width: 31.36rem; /* 313.59px ≒ 31.36rem */
   height: 2.4rem; /* 24px */
-  position: absolute;
+  
   left: 3rem; /* 30px */
   top: 5.6rem; /* 56px */
   color: #666666;
@@ -44,7 +52,7 @@
 .popular-campaign__item {
   width: 20rem; /* 199.97px ≒ 20rem */
   height: 24.35rem; /* 243.5px */
-  position: absolute;
+  
   top: 9.6rem; /* 96px */
 }
 
@@ -65,7 +73,7 @@
 .popular-campaign__item-img-container {
   width: 20rem; /* 199.97px */
   height: 13.75rem; /* 137.47px */
-  position: absolute;
+  
   top: 0;
   left: 0;
   border-radius: 0.8rem; /* 8px */
@@ -76,14 +84,14 @@
 .popular-campaign__item-img {
   width: 20rem; /* 199.97px */
   height: 13.75rem; /* 137.47px */
-  position: absolute;
+  
   top: 0;
   left: 0;
 }
 
 /* 캠페인 제목 컨테이너 (첫 번째: 단일행, 나머지: 2줄) */
 .popular-campaign__item-title-container {
-  position: absolute;
+  
   left: 0;
   top: 14.95rem; /* 149.47px ≒ 14.95rem */
   display: inline-flex;
@@ -113,7 +121,7 @@
 /* 기관명 컨테이너 */
 .popular-campaign__item-org-container {
   height: 1.8rem; /* 18px */
-  position: absolute;
+  
   left: 0;
   top: 17.15rem; /* 171.47px ≒ 17.15rem */
   display: inline-flex;
@@ -136,7 +144,7 @@
 .popular-campaign__item-progress-container {
   width: 20rem; /* 199.97px */
   height: 0.2rem; /* 2px */
-  position: absolute;
+  
   left: 0;
   top: 21.75rem; /* 217.47px ≒ 21.75rem */
   background: #d0e3ff;
@@ -168,7 +176,7 @@
 
 /* 기부 금액 텍스트 */
 .popular-campaign__item-amount {
-  position: absolute;
+  
   left: 0;
   top: 22.345rem; /* 223.45px ≒ 22.345rem */
   color: #202020;
@@ -193,7 +201,7 @@
 
 /* 퍼센트 텍스트 */
 .popular-campaign__item-percent {
-  position: absolute;
+  
   top: 22.345rem; /* 223.45px ≒ 22.345rem */
   color: #ff4050;
   font-size: 1.2rem; /* 12px */
@@ -217,3 +225,9 @@
   width: 1.78rem; /* 17.75px ≒ 1.78rem */
   left: 18.242rem; /* 182.42px ≒ 18.24rem */
 }
+
+
+@media (max-width: var.$mobile-max-width){
+  .popular-campaign {
+  
+  }}

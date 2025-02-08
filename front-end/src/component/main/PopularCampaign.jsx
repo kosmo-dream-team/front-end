@@ -1,6 +1,7 @@
 import "../../style/scss/style.scss";
 export default function PopularCampaign() {
   return (
+    
     <div className="popular-campaign">
       <div className="popular-campaign__title">가장 많이 기부 중인 모금함</div>
       <div className="popular-campaign__subtitle">
@@ -34,8 +35,58 @@ export default function PopularCampaign() {
           67%
         </div>
       </div>
-
-      {/* 두 번째 캠페인 아이템 */}
+      <div className="popular-campaign__item popular-campaign__item--first">
+        <div className="popular-campaign__item-img-container">
+          <img
+            className="popular-campaign__item-img"
+            src="https://via.placeholder.com/200x137"
+            alt="캠페인 이미지"
+          />
+        </div>
+        <div className="popular-campaign__item-title-container popular-campaign__item-title-container--small">
+          <div className="popular-campaign__item-title">
+            소녀들은 생리대가 필요합니다
+          </div>
+        </div>
+        <div className="popular-campaign__item-org-container">
+          <div className="popular-campaign__item-org">사단법인 오픈월드</div>
+        </div>
+        <div className="popular-campaign__item-progress-container">
+          <div className="popular-campaign__item-progress popular-campaign__item-progress--first" />
+        </div>
+        <div className="popular-campaign__item-amount popular-campaign__item-amount--first">
+          7,568,291원
+        </div>
+        <div className="popular-campaign__item-percent popular-campaign__item-percent--first">
+          67%
+        </div>
+      </div>  <div className="popular-campaign__item popular-campaign__item--first">
+        <div className="popular-campaign__item-img-container">
+          <img
+            className="popular-campaign__item-img"
+            src="https://via.placeholder.com/200x137"
+            alt="캠페인 이미지"
+          />
+        </div>
+        <div className="popular-campaign__item-title-container popular-campaign__item-title-container--small">
+          <div className="popular-campaign__item-title">
+            소녀들은 생리대가 필요합니다
+          </div>
+        </div>
+        <div className="popular-campaign__item-org-container">
+          <div className="popular-campaign__item-org">사단법인 오픈월드</div>
+        </div>
+        <div className="popular-campaign__item-progress-container">
+          <div className="popular-campaign__item-progress popular-campaign__item-progress--first" />
+        </div>
+        <div className="popular-campaign__item-amount popular-campaign__item-amount--first">
+          7,568,291원
+        </div>
+        <div className="popular-campaign__item-percent popular-campaign__item-percent--first">
+          67%
+        </div>
+      </div>
+      {/* 두 번째 캠페인 아이템
       <div className="popular-campaign__item popular-campaign__item--second">
         <div className="popular-campaign__item-img-container">
           <img
@@ -66,7 +117,7 @@ export default function PopularCampaign() {
       </div>
 
       {/* 세 번째 캠페인 아이템 */}
-      <div className="popular-campaign__item popular-campaign__item--third">
+      {/* <div className="popular-campaign__item popular-campaign__item--third">
         <div className="popular-campaign__item-img-container">
           <img
             className="popular-campaign__item-img"
@@ -93,7 +144,8 @@ export default function PopularCampaign() {
         <div className="popular-campaign__item-percent popular-campaign__item-percent--third">
           7%
         </div>
-      </div></div>
+      </div>*/} 
+      </div> 
     </div>
   );
 }
