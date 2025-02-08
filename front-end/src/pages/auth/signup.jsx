@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import axios from "axios"; 
+
 import card1 from "../../assets/img/Card1.png";
+
 import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";
@@ -9,6 +12,7 @@ import sign02 from "../../assets/img/아동.png";
 import useImageStore from "../../store/useImgStore";
 import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
+
 function Signup() {
   const { setImages } = useImageStore();
 
@@ -16,7 +20,8 @@ function Signup() {
     // 이미지 파일 상대 경로 배열 설정
     setImages([sign01, sign02, card1]);
   }, [setImages]);
-  // 이메일, 이름, 비밀번호, 비밀번호 재입력 필드를 위한 상태 관리
+
+  // 이메일, 이름, 비밀번호, 비밀번호 재입력, 전화번호, 성별 필드를 위한 상태 관리
   const [formData, setFormData] = useState({
     email: "",
     name: "",
@@ -31,37 +36,55 @@ function Signup() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  // await를 사용하기 위해 async 키워드 추가
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.email == "") {
+    // 빈값 검증
+    if (formData.email === "") {
       alert("이메일을 입력해주세요.");
-    } else if (formData.name == "") {
+      return;
+    } else if (formData.name === "") {
       alert("이름을 입력해주세요");
-    } else if (formData.password == "") {
+      return;
+    } else if (formData.password === "") {
       alert("패스워드를 입력해주세요");
-    } else if (formData.phone == "") {
-      alert("전화번호를 입력해주세요.");
-    } else if (formData.gender == "") {
-      alert("성별을 선택해주세요.");
-    }
 
-    // 2. 이메일 형식 검증 (간단한 정규식 사용)
+      return;
+    } else if (formData.phone === "") {
+      alert("전화번호를 입력해주세요.");
+      return;
+    } else if (formData.gender === "") {
+      alert("성별을 선택해주세요.");
+      return;
+    }
+    
+    // 이메일 형식 검증 (간단한 정규식 사용)
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       alert("유효한 이메일 주소를 입력해 주세요.");
       return;
     }
 
-    // 3. 비밀번호와 비밀번호 재입력이 일치하는지 확인
+    // 비밀번호와 비밀번호 재입력이 일치하는지 확인
     if (formData.password !== formData.confirmPassword) {
       alert("비밀번호와 비밀번호 재입력이 일치하지 않습니다.");
       return;
     }
 
-    // 모든 검증이 통과하면 실제 회원가입 처리 로직 실행
-    console.log("회원가입 폼 제출:", formData);
-    // 여기에 서버로 데이터를 전송하는 로직 추가
+    // 모든 검증이 통과하면 실제 회원가입 API 요청 실행
+    try {
+      
+      const response = await axios.post("http://localhost:8586/api/signup", formData);
+
+      console.log("회원가입 성공:", response.data);
+      // 회원가입 성공 후 추가 작업 (예: 페이지 이동) 처리
+      // 예시: history.push("/login");
+    } catch (error) {
+      console.error("회원가입 실패:", error);
+      alert("회원가입에 실패하였습니다. 다시 시도해주세요.");
+    }
   };
 
   return (
@@ -142,8 +165,9 @@ function Signup() {
                     placeholder="이름을 입력해주세요"
                   />
                 </div>
+                {/* 전화번호 */}
                 <div className="input-wrapper">
-                  <label htmlFor="name">전화번호</label>
+                  <label htmlFor="phone">전화번호</label>
                   <input
                     type="phone"
                     id="phone"
@@ -201,7 +225,7 @@ function Signup() {
           </div>
           <div className="other-method">다른 방법으로 가입</div>
         </div>
-        {/* 소셜 로그인 (구글 예시) */}
+        {/* 소셜 로그인 (카카오, 구글 예시) */}
         <div className="social-login">
           <img
             src={kakaoLogo}

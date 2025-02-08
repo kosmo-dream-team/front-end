@@ -1,4 +1,4 @@
-import React from "react";
+
 import "../.././style/scss/style.scss";
 
 export const Campain1 = () => {
