@@ -115,13 +115,11 @@
     .layout__left-panel{
       width: 100vw;
         margin: 0 auto;
+        height: auto;
     }
     
     .layout__main-banner{
-       height: 100%;
-       & > img{
-        height: 100%;
-       }
+       
     }
   
     .layout__right-panel{
