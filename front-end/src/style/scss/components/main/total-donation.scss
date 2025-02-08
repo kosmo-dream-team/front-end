@@ -11,8 +11,9 @@
 background: #FF9191;
 }
 .total-donation-title{
+    align-self: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.5fr;
     
    
 }
@@ -28,9 +29,24 @@ background: #FF9191;
 }
 
 .total-donation-title-img{
-
-    width: 15rem;
-    height: 133px;
+    
 
     
+
+    
+}
+.total-donation-donation-box{
+    display: flex;
+    
+   
+    align-items: center;
+    padding: 2rem;
+    align-self: stretch;
+    background-color: white;
+    justify-content: space-between;
+    @include mixin.font-style(black,xs,normal);
+}
+.total-raised-donation{
+    text-align: end;
+    font-weight: bold;
 }

@@ -1,4 +1,5 @@
 import my1 from "../../assets/img/my1.png"
+import applicant from "../../assets/img/applicant.png"
 export default function TotalDonation() {
 
  return (
@@ -14,8 +15,11 @@ export default function TotalDonation() {
 2025.02.18 기준</div>
 </div></div>
 <div>
-<img src={my1} alt="" className="total-donation-title-img"/></div></div>
+<img src={applicant} alt="" className="total-donation-title-img"/></div></div>
+  <div className="total-donation-donation-box">
+총 기부금 <span className="total-raised-donation"> 1,000,000,000원</span>
 
+  </div>
     </div>
     </>
  )   
