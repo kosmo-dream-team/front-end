@@ -7,7 +7,7 @@ return(
 <div style={{justifyContent: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
       <div className="layout__header">컴포넌트</div>
       <div className="layout__category-hero">컴포넌트 꽂는곳</div>
-      <div className="layout__category">카테고리 꽂는곳</div>
+      <div className="layout__categories">카테고리 꽂는곳</div>
     <div className="layout__main-container">
       <div className="layout__left-panel">
         {/* 메인 배너 */}

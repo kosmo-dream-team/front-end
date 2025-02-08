@@ -25,8 +25,8 @@ function MainPage() {
             </a>
           </div>
           {/* 나의 도움이 필요한 모금함(카테고리) */}
-          <div className="layout__my-help-category">
-            <MainCategory style={{ width: "100%" }} />
+          <div className="layout__main-category">
+            <MainCategory  />
           </div>
           {/* 가장 많이 기부중인 모금함 */}
           <div className="layout__top-campaign">
