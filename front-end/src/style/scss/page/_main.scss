@@ -56,39 +56,42 @@
 }
 
 .layout__right-panel {
-  width: 36rem;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  background: #002fff;
+  
+ 
   .layout__first-section {
-    height: 53.1rem;
-    background: black;
+   
   }
 
   & > div {
     margin-bottom: 6rem;
   }
+ 
   .layout__total-donation {
-    height: 25rem;
+    
 
-    background: red;
+    
   }
   .layout__donation-review {
-    height: 28.1rem;
-    background: violet;
+    
+    
   }
 
   .layout__new-campaign {
-    height: 39.3rem;
+   
 
     background: linear-gradient(
-      90deg,
-      #ff9191 0%,
-      rgba(255, 93, 100, 0.8) 100%
+     
+     
     );
   }
   .layout__social-link {
     height: 47.7rem;
-    background-color: #002fff;
+   
     background: #ff0000;
   }
   .layout__receive-donation {
