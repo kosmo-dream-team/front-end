@@ -7,6 +7,8 @@ import TotalDonation from "../../component/main/TotalDonation";
 import Card2 from "../../component/main/Card2";
 import "../../style/scss/style.scss";
 import Card3 from "../../component/main/Card3";
+import Card4 from "../../component/main/card4";
+import Card5 from "../../component/main/Card5";
 function MainPage() {
   return (
     <div
@@ -48,9 +50,9 @@ function MainPage() {
           </div>
          
           <div className="layout__new-campaign"><Card3/></div>
-          <div className="layout__social-link">컴포넌트 꽂는곳</div>
+          <div className="layout__social-link"><Card4/></div>
 
-          <div className="layout__receive-donation">컴포넌트 꽂는곳</div>
+          <div className="layout__receive-donation"><Card5/></div>
         </div>
       </div>
     </div>

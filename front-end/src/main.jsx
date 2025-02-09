@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Card1 from "./component/main/card1";
-import Card2 from "./component/main/card2";
-import Card3 from "./component/main/card3";
-import Card4 from "./component/main/card4";
+import Card1 from "./component/main/Card1";
+import Card2 from "./component/main/Card2";
+import Card3 from "./component/main/Card3";
+import Card4 from "./component/main/Card4";
 import RegistType from "./pages/auth/registType";
 import Signup from "./pages/auth/signup";
 import MainPage from "./pages/main/mainPage";
