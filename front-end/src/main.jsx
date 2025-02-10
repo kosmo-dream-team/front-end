@@ -16,6 +16,7 @@ import Article from "./component/campain/Article";
 import MonthlyDonationChart from "./component/stats/MonthlyDonation";
 import CategoryPage from "./pages/category/categoryPage";
 import Stats1 from "./pages/stats/Stats";
+import DonationForm from "./pages/donationForm/DonationForm";
 
 
 
@@ -31,7 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/registType/signup" element={<Signup />} />
       </Routes>
     </Router>   } */}
-    <Stats1 />
+    <DonationForm />
     
     
     
