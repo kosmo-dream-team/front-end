@@ -1,6 +1,6 @@
 import baby1 from "../../assets/img/baby1.jpg";
 import "../../style/scss/style.scss";
-export default function MainCampaignList() {
+export default function CategoryList() {
   return (
     <>
       <div className="main-campaign-list">

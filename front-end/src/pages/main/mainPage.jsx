@@ -21,6 +21,7 @@ function MainPage() {
       }}
     >
       <Navbar />
+
       <div className="layout__main-container">
         <div className="layout__left-panel">
           {/* 메인 배너너 */}
