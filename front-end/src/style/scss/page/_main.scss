@@ -14,12 +14,10 @@
 .layout__main-container {
   margin: 0 auto;
   width: 120rem;
-  height: 300rem;
+
   display: inline-flex;
 
   background: white;
-  
-
 }
 
 .layout__left-panel {
@@ -27,7 +25,6 @@
 
   height: auto;
 
-  
   margin-right: 14rem;
 
   & > div {
@@ -36,63 +33,41 @@
 
   .layout__main-banner {
     height: 25rem;
-   @include mixin.box-shadow();
+    @include mixin.box-shadow();
   }
   .layout__main-category {
-    
     @include mixin.box-shadow();
   }
   .layout__top-campaign {
     height: 37.15rem;
     @include mixin.box-shadow();
- 
   }
   .layout__main-campaign-list {
     width: 100%;
-   
-
-    
   }
 }
 
 .layout__right-panel {
-  
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  
- 
   .layout__first-section {
-   
   }
 
   & > div {
     margin-bottom: 6rem;
   }
- 
-  .layout__total-donation {
-    
 
-    
+  .layout__total-donation {
   }
   .layout__donation-review {
-    
-    
   }
 
   .layout__new-campaign {
-   
-
-    background: linear-gradient(
-     
-     
-    );
+    background: linear-gradient();
   }
   .layout__social-link {
-   
-   
-   
   }
   .layout__receive-donation {
     margin: 0 auto;
@@ -103,31 +78,25 @@
   }
 }
 @media (max-width: 768px) {
-    .layout__main-container {
-       display: flex ;
-       flex-direction: column;
-       width: 100%;
-      margin-right: 0px;
-      & > div {
-        margin-bottom: 0rem;
-      }
-    
-      
-      
+  .layout__main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 0px;
+    & > div {
+      margin-bottom: 0rem;
     }
-    .layout__left-panel{
-      width: 100vw;
-        margin: 0 auto;
-        height: auto;
-        
-        
-    }
-    
-    .layout__main-banner{
-       
-    }
-  
-    .layout__right-panel{
-        margin: 0 auto;
-    }
+  }
+  .layout__left-panel {
+    width: 100vw;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .layout__main-banner {
+  }
+
+  .layout__right-panel {
+    margin: 0 auto;
+  }
 }
