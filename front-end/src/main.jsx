@@ -17,7 +17,8 @@ import MonthlyDonationChart from "./component/stats/MonthlyDonation";
 import CategoryPage from "./pages/category/categoryPage";
 import Stats1 from "./pages/stats/Stats";
 import DonationForm from "./pages/donationForm/DonationForm";
-
+import Card2 from "./component/campain/Card2";
+import Comments from "./component/campain/Comments";
 
 
 
@@ -32,7 +33,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/registType/signup" element={<Signup />} />
       </Routes>
     </Router>   } */}
-    <DonationForm />
+    <Comments />
     
     
     
