@@ -1,8 +1,9 @@
-@use "../../abstracts/mixin" as mixin;
 
+@use "../../abstracts/mixin" as mixin;
+@use '../../abstracts/variable' as var;
 .campaign-section {
   width: 37.372rem; /* 373.72px → 37.372rem */
-  height: 39.3rem; /* 393px → 39.3rem */
+  
   padding-left: 1.8rem; /* 18px → 1.8rem */
   padding-right: 1.8rem; /* 18px → 1.8rem */
   display: inline-flex;
@@ -18,11 +19,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+ 
 }
 
 .campaign-section__title {
   width: 22.272rem; /* 222.72px → 22.272rem */
-  height: 3rem; /* 30px → 3rem */
+ 
   color: black;
   font-size: 2.4rem; /* 24px → 2.4rem */
   font-family: "Noto Sans KR", sans-serif;
@@ -70,7 +72,7 @@
 }
 
 .campaign-section__arrow {
-  position: relative;
+  
   width: 0.496rem; /* 4.96px → 0.496rem */
   height: 0.933rem; /* 9.33px → 0.933rem */
   left: 0.5rem; /* 5px → 0.5rem */
@@ -80,7 +82,7 @@
 
 /* 슬라이더 영역 */
 .campaign-section__slider {
-  width: 33.7rem; /* 337px → 33.7rem */
+ 
   padding: 2.9rem 2.1rem 4.3rem 2.1rem; /* 29px 21px 43px 21px */
   background: rgba(255, 255, 255, 0);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.07); /* 0px 10px 20px → 0 1rem 2rem */
@@ -95,24 +97,21 @@
 .campaign-slider-container {
   width: 29.5rem; /* 295px → 29.5rem */
   height: 27.9rem; /* 279px → 27.9rem */
-  position: relative;
+  
 }
 
 .campaign-slider__track {
-  width: 163.5rem; /* 1635px → 163.5rem */
-  position: absolute;
-  left: -33.5rem; /* -335px → -33.5rem */
-  top: 0;
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 4rem; /* 40px → 4rem */
+ 
+  
+
+  
+  
 }
 
 .campaign-slider__spacer {
-  width: 29.5rem; /* 295px → 29.5rem */
-  height: 27.9rem; /* 279px → 27.9rem */
-  position: relative;
+  
+  
+  
 }
 
 /* 캠페인 아이템들 (세로로 배치) */
@@ -137,7 +136,7 @@
 .campaign-item__image {
   width: 11.4rem; /* 114px → 11.4rem */
   height: 8.3rem; /* 83px → 8.3rem */
-  position: relative;
+  
   border-radius: 0.5rem; /* 5px → 0.5rem */
 }
 
@@ -145,12 +144,12 @@
 .campaign-item__details {
   width: 16.7rem; /* 167px → 16.7rem */
   height: 8.3rem; /* 83px → 8.3rem */
-  position: relative;
+  
 }
 
 /* 캠페인 제목 (절대 배치) */
 .campaign-item__title {
-  position: absolute;
+  
   width: 16.7rem; /* 167px → 16.7rem */
   height: 3.6rem; /* 36px → 3.6rem */
   left: 0;
@@ -167,9 +166,12 @@
   word-wrap: break-word;
 }
 
+.new-campaign-item{
+  @include mixin.box-space-between();
+}
 /* 후원기관명 */
 .campaign-item__sponsor {
-  position: absolute;
+  
   left: 0;
   top: 3.7rem; /* 37px → 3.7rem */
   height: 1.9rem; /* 19px → 1.9rem */
@@ -188,23 +190,20 @@
 
 /* 진행율 (왼쪽 상단 고정) */
 .campaign-item__donation-percent {
-  position: absolute;
+  
   width: 3.045rem; /* 30.45px → 3.045rem */
   height: 1.7rem; /* 17px → 1.7rem */
-  left: 0;
-  top: 6.65rem; /* 66.5px → 6.65rem */
+  
   color: #ff6d73;
   font-size: 1.4rem; /* 14px → 1.4rem */
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
   word-wrap: break-word;
 }
-
 /* 모금액 (오른쪽 정렬) */
 .campaign-item__donation-amount {
-  position: absolute;
-  top: 6.7rem; /* 67px → 6.7rem */
-  right: 0;
+  
+ 
   text-align: right;
   color: #202020;
   font-size: 1.345rem; /* 13.45px → 1.345rem */
@@ -215,7 +214,7 @@
 
 /* 진행바 컨테이너 */
 .campaign-item__progress-bg {
-  position: absolute;
+  
   width: 16.7rem; /* 167px → 16.7rem */
   height: 0.2rem; /* 2px → 0.2rem */
   left: 0;
@@ -227,7 +226,7 @@
 
 /* 진행바 (내부 채워진 부분) */
 .campaign-item__progress-bar {
-  position: absolute;
+  
   left: 0;
   top: 0;
   height: 0.2rem; /* 2px → 0.2rem */
@@ -238,4 +237,18 @@
 /* (필요 시) 진행바 길이가 짧은 경우 추가 클래스 */
 .campaign-item__progress-bar.short {
   /* width는 인라인 스타일 등으로 개별 조정 가능 */
+}
+
+.campaign-section__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+@media (max-width: var.$mobile-max-width){
+  .campaign-section__header {
+ 
+    margin-top: 10rem;
+  }
 }
