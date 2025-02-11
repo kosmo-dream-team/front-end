@@ -1,43 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Card3 from "./component/main/card3";
+import Card1 from "./component/main/Card1";
+import Card2 from "./component/main/Card2";
+import Card3 from "./component/main/Card3";
+import Card4 from "./component/main/card4";
 import RegistType from "./pages/auth/registType";
 import Signup from "./pages/auth/signup";
+import CategoryPage from "./pages/category/categoryPage";
 import MainPage from "./pages/main/mainPage";
 import "./style/scss/style.scss"; // 글로벌 스타일 적용
-import Profile from "./component/my/profile";
-import DonationInfo from "./component/my/DonationInfo";
-import ProfileEditForm from "./component/my/ProfileEditForm";
-import AdminPage from "./pages/admin/admin";
-import Stats from "./component/stats/Stats";
-import Card from "./component/campain/Card";
-import Article from "./component/campain/Article";
-import MonthlyDonationChart from "./component/stats/MonthlyDonation";
-import CategoryPage from "./pages/category/categoryPage";
-import Stats1 from "./pages/stats/Stats";
-
-
-
-
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <Signup /> App.jsx 대신 Signup.jsx만 렌더링 */}
-     {/* { <Router>
+    <Router>
       <Routes>
+        <Route path="/category" element={<CategoryPage />} />
+        <Route path="/main/card1" element={<Card1 />} />
+        <Route path="/main/card2" element={<Card2 />} />
+        <Route path="/main/card3" element={<Card3 />} />
+        <Route path="/main/card4" element={<Card4 />} />
         <Route path="/" element={<MainPage />} />
         <Route path="/registType" element={<RegistType />} />
         <Route path="/registType/signup" element={<Signup />} />
       </Routes>
-    </Router>   } */}
-    <Stats1 />
-    
-    
-    
-    
-  
-    
-
+    </Router>
   </React.StrictMode>
 );

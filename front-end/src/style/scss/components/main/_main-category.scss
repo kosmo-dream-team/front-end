@@ -1,0 +1,113 @@
+@use "../../abstracts/mixin" as mixin;
+@use '../../abstracts/variable' as var;
+.donation-card {
+  width: 100%;
+  height: 17.4rem;
+  padding: 2.4rem 3rem 3.2rem 3rem; /* top, right, bottom, left */
+  background: white;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1.2rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Title 스타일 */
+.donation-card__title {
+  color: #202020;
+  font-size: 2rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  line-height: 2.8rem;
+  word-wrap: break-word;
+}
+
+/* 카테고리 컨테이너 */
+.donation-card__categories {
+ 
+  display: inline-flex;
+  align-self: stretch;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* 각 카테고리 박스 */
+.donation-card__category {
+  width: 8rem;
+  padding: 0 1.25rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.donation-card__category:hover {
+  transform: scale(1.05);
+}
+
+/* 선택된 카테고리 스타일 */
+.donation-card__category.selected .donation-card__category-label {
+  background: #d0d0d0; /* 선택 상태 시 배경색 변경 (예시) */
+  border: 0.1rem solid #202020;
+}
+
+/* 카테고리 아이콘 영역 */
+.donation-card__category-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 아이콘 이미지 (필요에 따라 크기 조정) */
+.category-icon-image {
+  width: 100%;
+  height: auto;
+}
+
+/* 카테고리 라벨 영역 */
+.donation-card__category-label {
+  height: 2.8rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+  background: #eeeeee;
+  border-radius: 99.99rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* 라벨 텍스트 */
+.label-text {
+  text-align: center;
+  color: #202020;
+  font-size: 1.3rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.3rem;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
+@media (max-width: var.$mobile-max-width){
+  .donation-card {
+    height: auto;  // 높이를 자동으로 설정합니다.
+    width: 100%;  // 부모 박스가 뷰포트 너비에 맞게 설정됨
+    /* transform 대신 직접 크기 조절을 하는 것도 한 방법입니다. */
+  }
+  
+  .donation-card__categories {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+   
+  }
+  
+}
