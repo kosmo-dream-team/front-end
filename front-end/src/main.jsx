@@ -9,6 +9,7 @@ import RegistType from "./pages/auth/registType";
 import Signup from "./pages/auth/signup";
 import CategoryPage from "./pages/category/categoryPage";
 import MainPage from "./pages/main/mainPage";
+import MyPage from "./pages/mypage/MyPage";
 import "./style/scss/style.scss"; // 글로벌 스타일 적용
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" element={<MainPage />} />
         <Route path="/registType" element={<RegistType />} />
         <Route path="/registType/signup" element={<Signup />} />
+        <Route path="/mypage" element={<MyPage />} />
       </Routes>
     </Router>
   </React.StrictMode>
