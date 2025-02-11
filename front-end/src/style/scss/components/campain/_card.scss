@@ -1,0 +1,220 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
+.card {
+  width: 29rem; // 290px / 10
+  height: 42.9rem; // 429px / 10
+  position: relative;
+  background: #fff;
+  border-radius: 1rem; // 10px / 10
+  border: 0.1rem solid #CBCBCB; // 1px / 10
+  font-family: 'Noto Sans KR', sans-serif;
+  overflow: hidden; // 혹시 내용이 넘칠 경우를 대비
+
+  /* 제목 */
+  &__title {
+    text-overflow: ellipsis;
+    /* 넘치는 텍스트를 ...로 표시 */
+    position: absolute;
+    top: 3.1rem; // 31px / 10
+    left: 2.1rem; // 21px / 10
+    width: 24.034rem; // 240.34px / 10
+    height: 2.5rem; // 25px / 10
+    color: #242424;
+    // mixin.font-style 사용 (폰트 사이즈: 18px → 18px/10 = 1.8rem)
+    @include mixin.font-style(#242424, 1.8rem, "normal");
+    font-weight: 500;
+    line-height: 2.5rem; // 25px / 10
+    word-wrap: break-word;
+  }
+
+  /* 진행률(%) */
+  &__percent {
+    position: absolute;
+    top: 8.15rem; // 81.5px / 10
+    left: 2.1rem; // 21px / 10
+    width: 3.298rem; // 32.98px / 10
+    height: 1.9rem; // 19px / 10
+    color: #FF6D73;
+    @include mixin.font-style(#FF6D73, 1.5rem, "normal"); // 15px → 1.5rem
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+
+  /* D-Day */
+  &__d-day {
+    position: absolute;
+    top: 7.6rem; // 76px / 10
+    right: 0.6rem; // 6px / 10  
+    width: 2.565rem; // 25.65px / 10
+    text-align: right;
+    height: 3rem; // 30px / 10
+    color: #202020;
+    @include mixin.font-style(#202020, 1.5rem, "normal"); // 15px → 1.5rem
+    font-weight: 700;
+    line-height: 3rem; // 30px / 10
+    word-wrap: break-word;
+  }
+
+  /* 모금액 */
+  &__donation {
+    position: absolute;
+    top: 12.6rem; // 126px / 10
+    right: 0.6rem; // 6px / 10  
+    text-align: right;
+    width: 11.001rem; // 110.01px / 10
+    height: 2.8rem; // 28px / 10
+    display: flex;
+    align-items: center;
+
+    &-amount {
+      color: #202020;
+      @include mixin.font-style(#202020, 2.3rem, "normal"); // 23px → 2.3rem
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+
+    &-currency {
+      color: #202020;
+      @include mixin.font-style(#202020, 2.3rem, "normal");
+      font-weight: 500;
+      word-wrap: break-word;
+    }
+  }
+
+  /* 목표액 */
+  &__goal {
+    position: absolute;
+    top: 15.8rem; // 158px / 10
+    right: 0.6rem; // 6px / 10  
+    width: 11.611rem; // 116.11px / 10
+    height: 2rem; // 20px / 10
+    text-align: right;
+    color: #9E9999;
+    @include mixin.font-style(#9E9999, 1.6rem, "normal"); // 16px → 1.6rem
+    font-weight: 500;
+    word-wrap: break-word;
+  }
+
+  /* 진행바 */
+  &__progress {
+    position: absolute;
+    top: 11.1rem; // 111px / 10
+    left: 2.1rem; // 21px / 10
+    width: 24.8rem; // 248px / 10
+    height: 0.5rem; // 5px / 10
+    background: #E8E8E8;
+    border-radius: 0.25rem; // 2.5px / 10
+
+    &-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10.416rem; // 104.16px / 10
+      height: 0.5rem; // 5px / 10
+      background: #FF6D73;
+      border-radius: 0.25rem;
+    }
+  }
+
+  /* 정보 섹션 */
+  &__info {
+    position: absolute;
+    top: 19.9rem; // 199px / 10
+    left: 2.1rem; // 21px / 10
+    width: 24.8rem; // 248px / 10
+    height: 14.5rem; // 145px / 10
+    border-top: 0.1rem solid #E6E6E6; // 1px / 10
+
+    /* 공통 정보 아이템 - 링크 스타일 */
+    &-item {
+      position: absolute;
+      width: 7.07rem; // 70.7px / 10
+      height: 2rem; // 20px / 10
+
+      &--tax {
+        top: 2.6rem; // 26px / 10
+      }
+
+      &--transfer {
+        top: 10.2rem; // 102px / 10
+      }
+
+      .card__info-link {
+        position: absolute;
+        /* 부모의 중앙으로 이동 */
+        width: 7.101rem; // 71.01px / 10
+        height: 1.6rem; // 16px / 10
+        color: rgba(32, 32, 32, 0.8);
+        @include mixin.font-style(rgba(32, 32, 32, 0.8), 1.3rem, "normal"); // 13px → 1.3rem
+        font-weight: 500;
+        text-decoration: underline;
+        line-height: 2rem; // 20px / 10
+        word-wrap: break-word;
+      }
+    }
+
+    /* 정보 섹션 내부 행 */
+    &-section {
+      position: absolute;
+      top: 5.1rem; // 51px / 10
+      left: 0;
+      width: 24.8rem; // 248px / 10
+      height: 3.6rem; // 36px / 10
+    }
+
+    .card__info-row {
+      position: absolute;
+      left: 0;
+      width: 24.8rem; // 248px / 10
+      height: 1.8rem; // 18px / 10
+
+      .card__bullet {
+        position: absolute;
+        top: 0.8rem; // 8px / 10
+        left: 0.2rem; // 2px / 10
+        width: 0.3rem; // 3px / 10
+        height: 0.3rem; // 3px / 10
+        background: rgba(32, 32, 32, 0.8);
+        border-radius: 0.15rem; // 1.5px / 10
+      }
+
+      .card__info-text {
+        position: absolute;
+        top: 0.1rem; // 1px / 10
+        left: 1rem; // 10px / 10
+        width: auto;
+        height: 1.6rem; // 16px / 10
+        color: rgba(32, 32, 32, 0.8);
+        @include mixin.font-style(rgba(32, 32, 32, 0.8), 1.3rem, "normal"); // 13px → 1.3rem
+        font-weight: 500;
+        line-height: 1.8rem; // 18px / 10
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  /* 기부하기 버튼 */
+  &__donate-button {
+    position: absolute;
+    top: 36.4rem; // 364px / 10
+    left: 0.1rem; // 1px / 10
+    width: 28.8rem; // 288px / 10
+    height: 6.4rem; // 64px / 10
+    background: #FF6D73;
+    border-top-left-radius: 0.8rem; // 8px / 10
+    border-top-right-radius: 0.8rem; // 8px / 10
+
+    .card__donate-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* 부모의 중앙으로 이동 */
+      color: #fff;
+      @include mixin.font-style(#fff, 1.7rem, "normal"); // 17px → 1.7rem
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+  }
+}

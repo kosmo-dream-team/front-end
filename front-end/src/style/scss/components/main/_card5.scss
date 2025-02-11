@@ -57,7 +57,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background: #454545;
+  
 }
 
 .donation-suggestion__icon-line {
@@ -73,7 +73,7 @@
 .donation-suggestion__button-container {
   width: 231px;
   height: 49px;
-  position: absolute;
+  position: relative;
   left: 32px;
   top: 152px;
 }
@@ -89,11 +89,11 @@
 }
 
 .donation-suggestion__button-text {
-  width: 279px;
-  height: 70px;
+ 
+  
   position: absolute;
   left: 39px;
-  top: -10px;
+  bottom: 11px;
   color: black;
   font-size: 16px;
   font-family: 'Noto Sans KR', sans-serif;
