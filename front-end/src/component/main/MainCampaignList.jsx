@@ -31,7 +31,7 @@ export default function MainCampaignList() {
           <div className="main-campaign-list__progress-bar">
             <div className="main-campaign-list__progress-fill" />
           </div>
-          <div className="abc2222">
+          <div className="main-campaign-list__progress-info">
             <div className="main-campaign-list__progress-percent">33%</div>
             <div className="main-campaign-list__amount">1,920,999 원</div>
           </div>

@@ -250,3 +250,8 @@
 추가 항목(동물, 환경 등)은 위의 구조와 유사하게
 각 항목별 고유의 클래스명(예: .layer1-animal 등)을 만들어 적용하면 됩니다.
 */
+.category-list-sort-list {
+  @include mixin.font-style(#666666, "sm", normal);
+  margin-left: 1rem;
+  margin-bottom: 0rem;
+}

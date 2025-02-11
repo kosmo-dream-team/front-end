@@ -3,6 +3,13 @@ import "../../style/scss/style.scss";
 export default function CategoryList() {
   return (
     <>
+      <span className="category-list-sort-list" onClick={() => {}}>
+        날짜순
+      </span>
+      <span className="category-list-sort-list" onClick={() => {}}>
+        인기순
+      </span>
+      <div style={{ height: "2rem" }}></div>
       <div className="main-campaign-list">
         <div
           className="layout__main-campaign-list__content"
@@ -31,7 +38,7 @@ export default function CategoryList() {
           <div className="main-campaign-list__progress-bar">
             <div className="main-campaign-list__progress-fill" />
           </div>
-          <div className="abc2222">
+          <div className="main-campaign-list__progress-info">
             <div className="main-campaign-list__progress-percent">33%</div>
             <div className="main-campaign-list__amount">1,920,999 원</div>
           </div>
