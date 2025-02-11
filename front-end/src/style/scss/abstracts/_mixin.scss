@@ -72,7 +72,11 @@
 }
 
 
-
+@mixin box-space-between {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
 
 
 
@@ -101,17 +105,20 @@
 ) {
   box-shadow: $x $y $blur $color;
 }
+//전체 가운데정렬(부모요소한테 넣어야함.)
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+//파비콘 레이아웃
 @mixin favicon-layout-sign {
   // 기존 left, top 대신 padding으로 위치 조정(필요 시)
   padding-left: 4.2rem; // 원래 left: 4.2rem의 역할
   padding-top: 3.1rem; // 원래 top: 3.1rem의 역할
   background: transparent; // rgba(255,255,255,0)와 동일
 }
+//최대 가로크기 100%설정
 @mixin img-mw-100 {
   max-width: 100%;
 }
@@ -172,7 +179,7 @@
 }
 
 //폰트 설정 추가
-@mixin font-family($family: "Noto Sans KR") {
+@mixin font-family($family: "noto-sans") {
   @if family == "noto-sans" {
     font-family: $family, sans-serif;
   } @else if $family == "gothic-a1" {

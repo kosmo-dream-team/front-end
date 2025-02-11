@@ -1,0 +1,71 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
+.profile-edit-form {
+  width: 18.75rem; // 300px / 16
+  height: 35.875rem; // 574px / 16
+  margin: 2.5rem auto; // 40px auto
+  padding: 1.25rem; // 20px / 16
+  background: #ffffff;
+  border: 0.0625rem solid #eaeaea; // 1px / 16
+  border-radius: 0.25rem; // 4px / 16
+  font-family: 'Noto Sans', sans-serif;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.25rem; // 20px / 16
+    @include mixin.font-style(#333, "lg", "normal");
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.9375rem; // 15px / 16
+
+    label {
+      margin-bottom: 0.3125rem; // 5px / 16
+      @include mixin.font-style(#555, 0.875rem, "normal");
+    }
+
+    input {
+      padding: 0.5rem 0.625rem; // 8px 10px / 16
+      font-size: 0.875rem; // 14px / 16
+      border: 0.0625rem solid #ccc; // 1px / 16
+      border-radius: 0.25rem; // 4px / 16
+
+      &:read-only {
+        background: #f5f5f5;
+      }
+    }
+
+    // 라디오 버튼은 기본 input 스타일을 오버라이드합니다.
+    input[type="radio"] {
+      padding: 0; // 불필요한 패딩 제거
+      border: none; // 테두리 제거
+      width: 1rem; // 자연스러운 크기 (16px)
+      height: 1rem;
+      margin-right: 0.3125rem; // 라벨과의 간격 (5px)
+      cursor: pointer;
+      // 기본 브라우저 스타일을 유지 (appearance 재설정)
+      -webkit-appearance: radio;
+      -moz-appearance: radio;
+      appearance: radio;
+    }
+  }
+
+  .save-button {
+    width: 100%;
+    padding: 0.625rem; // 10px / 16
+    @include mixin.font-style(#ffffff, 1rem, "600");
+    font-weight: 600;
+    background: #ff9191;
+    border: none;
+    border-radius: 0.25rem; // 4px / 16
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #ff7b7b;
+    }
+  }
+}

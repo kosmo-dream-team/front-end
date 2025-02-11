@@ -1,0 +1,86 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
+.my-component {
+  width: 22.5rem; // 360px / 16
+  height: 36.4375rem; // 583px / 16
+  position: relative;
+  background: #fff;
+
+  .profile-wrapper {
+    width: 11.0625rem; // 177px
+    height: 9.0625rem; // 145px
+    position: absolute;
+    left: 5.6875rem; // 91px
+    top: 3.9375rem; // 63px
+    background: rgba(0, 0, 0, 0);
+
+    .profile-content {
+      width: 10.8125rem; // 173px
+      height: 9rem; // 144px
+      position: absolute;
+      left: 0.0625rem; // 1px
+      top: 0;
+
+      .background-box {
+        width: 10.8125rem; // 173px
+        height: 9rem; // 144px
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #848B91;
+        border: 0.0625rem solid #7D848A; // 1px
+      }
+
+      .user-info {
+        width: 3.1875rem; // 51px
+        height: 2.4375rem; // 39px
+        position: absolute;
+        left: 3.8956rem; // 62.33px ≒ 3.8956rem
+        top: 5.3125rem; // 85px
+        // 텍스트 관련 스타일은 mixin.font-style로 처리 (폰트 사이즈: 11.7px → 0.7313rem)
+        @include mixin.font-style(#D8D9DD, xxs, "600");
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        line-height: 1.095rem; // 17.52px
+        word-wrap: break-word;
+      }
+
+      .profile-img {
+        width: 3.5625rem; // 57px
+        height: 3.625rem; // 58px
+        position: absolute;
+        left: 3.625rem; // 58px
+        top: 1.5rem; // 24px
+        border-radius: 1.8125rem; // 29px
+      }
+    }
+  }
+
+  .my-home {
+    width: 4.25rem; // 68px
+    height: 1.125rem; // 18px
+    position: absolute;
+    left: 9.125rem; // 146px
+    top: 15rem; // 240px
+    text-align: center;
+    // 텍스트 관련 스타일은 mixin.font-style로 처리 (폰트 사이즈: 16px → 1rem)
+    @include mixin.font-style(#FF9191, xxs, "600");
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+
+  .additional-box {
+    width: 26.25rem; // 420px
+    height: 15.5625rem; // 249px
+    position: absolute;
+    left: -1.875rem; // -30px
+    top: 13.75rem; // 220px
+
+    .profile-img2 {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
