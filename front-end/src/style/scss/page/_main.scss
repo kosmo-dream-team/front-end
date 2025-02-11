@@ -18,6 +18,8 @@
   display: inline-flex;
 
   background: white;
+  
+
 }
 
 .layout__left-panel {
@@ -25,7 +27,7 @@
 
   height: auto;
 
-  background: #ff0000;
+  
   margin-right: 14rem;
 
   & > div {
@@ -34,59 +36,63 @@
 
   .layout__main-banner {
     height: 25rem;
-    background: pink;
+   @include mixin.box-shadow();
   }
-  .layout__my-help-category {
-    height: 17.4rem;
-    background: black;
+  .layout__main-category {
+    
+    @include mixin.box-shadow();
   }
   .layout__top-campaign {
     height: 37.15rem;
-
-    background: black;
+    @include mixin.box-shadow();
+ 
   }
   .layout__main-campaign-list {
-    background: black;
+    width: 100%;
+   
 
-    height: 40rem;
+    
   }
 }
 
 .layout__right-panel {
-  width: 36rem;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  background: #002fff;
+  
+ 
   .layout__first-section {
-    height: 53.1rem;
-    background: black;
+   
   }
 
   & > div {
     margin-bottom: 6rem;
   }
+ 
   .layout__total-donation {
-    height: 25rem;
+    
 
-    background: red;
+    
   }
   .layout__donation-review {
-    height: 28.1rem;
-    background: violet;
+    
+    
   }
 
   .layout__new-campaign {
-    height: 39.3rem;
+   
 
     background: linear-gradient(
-      90deg,
-      #ff9191 0%,
-      rgba(255, 93, 100, 0.8) 100%
+     
+     
     );
   }
   .layout__social-link {
-    height: 47.7rem;
-    background-color: #002fff;
-    background: #ff0000;
+   
+   
+   
   }
   .layout__receive-donation {
     margin: 0 auto;
@@ -95,4 +101,33 @@
     flex-shrink: 0;
     background-color: #ff9191;
   }
+}
+@media (max-width: 768px) {
+    .layout__main-container {
+       display: flex ;
+       flex-direction: column;
+       width: 100%;
+      margin-right: 0px;
+      & > div {
+        margin-bottom: 0rem;
+      }
+    
+      
+      
+    }
+    .layout__left-panel{
+      width: 100vw;
+        margin: 0 auto;
+        height: auto;
+        
+        
+    }
+    
+    .layout__main-banner{
+       
+    }
+  
+    .layout__right-panel{
+        margin: 0 auto;
+    }
 }

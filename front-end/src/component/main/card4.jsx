@@ -1,6 +1,9 @@
 import React from "react";
 import "../.././style/scss/style.scss";
-
+import facebook from "../../assets/img/facebook.svg";
+import instagram from "../../assets/img/instagram.svg";
+import naverblog from "../../assets/img/naverblog.svg";
+import youtube from "../../assets/img/youtube.svg";
 const Card4 = () => {
   return (
     <div className="donation-sharing">
@@ -21,7 +24,7 @@ const Card4 = () => {
             이벤트를 확인할 수 있어요
           </div>
           <div className="donation-sharing__card-icon">
-            <div className="donation-sharing__card-icon-inner donation-sharing__card-icon-inner--white" />
+            <img src={instagram} className="donation-sharing__card-icon-inner" />
           </div>
         </div>
 
@@ -32,7 +35,7 @@ const Card4 = () => {
             모아봐요!
           </div>
           <div className="donation-sharing__card-icon">
-            <div className="donation-sharing__card-icon-image donation-sharing__card-icon-image--facebook" />
+            <img src={facebook} className="donation-sharing__card-icon-image donation-sharing__card-icon-image--facebook" />
           </div>
         </div>
 
@@ -43,7 +46,7 @@ const Card4 = () => {
             어떻게 살고 있을까요?
           </div>
           <div className="donation-sharing__card-icon">
-            <div className="donation-sharing__card-icon-image donation-sharing__card-icon-image--card3" />
+          <img src={youtube} className="donation-sharing__card-icon-inner" />
           </div>
         </div>
 
@@ -56,14 +59,7 @@ const Card4 = () => {
           </div>
           <div className="donation-sharing__card-icon">
             <div className="donation-sharing__card-icon-image donation-sharing__card-icon-image--card4">
-              <div className="donation-sharing__card-icon-image-bg">
-                <div className="donation-sharing__card-icon-image-overlay">
-                  <div className="donation-sharing__icon-element donation-sharing__icon-element--1" />
-                  <div className="donation-sharing__icon-element donation-sharing__icon-element--2" />
-                  <div className="donation-sharing__icon-element donation-sharing__icon-element--3" />
-                  <div className="donation-sharing__icon-element donation-sharing__icon-element--4" />
-                </div>
-              </div>
+            <img src={naverblog} className="donation-sharing__card-icon-inner" />
             </div>
           </div>
         </div>
