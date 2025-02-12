@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";
 import "../../style/scss/style.scss";
-function login() {
+function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
@@ -125,4 +125,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;
