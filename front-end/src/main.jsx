@@ -9,6 +9,8 @@ import RegistType from "./pages/auth/registType";
 import Signup from "./pages/auth/signup";
 import MainPage from "./pages/main/mainPage";
 import "./style/scss/style.scss"; // 글로벌 스타일 적용
+import DonorSignUpForm from "./pages/auth/DonorSignUpForm";
+import ApplicantSignUpForm from "./pages/auth/ApplicantSignUpForm";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -22,7 +24,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/main/card3" element={<Card3 />} />
         <Route path="/main/card4" element={<Card4 />} />
         <Route path="/registType" element={<RegistType />} />
-        <Route path="/registType/signup" element={<Signup />} />
+        <Route path="/registType/signup/donor" element={<DonorSignUpForm />} />
+        <Route path="/registType/signup/applicant" element={<ApplicantSignUpForm />} />
       </Routes>
 
     </Router>
