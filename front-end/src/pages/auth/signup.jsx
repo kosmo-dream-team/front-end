@@ -1,10 +1,8 @@
-import  { useEffect, useState } from "react";
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter"; // 모킹 어댑터 import
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-import axios from "axios"; 
-
 import card1 from "../../assets/img/Card1.png";
-
 import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";
@@ -12,6 +10,13 @@ import sign02 from "../../assets/img/아동.png";
 import useImageStore from "../../store/useImgStore";
 import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
+
+// axios 모킹 설정 (개발 환경에서만 사용)
+// 이 부분은 실제 백엔드가 준비되면 제거하세요.
+const mock = new MockAdapter(axios, { delayResponse: 500 }); // 0.5초 지연 (옵션)
+mock.onPost("http://localhost:8586/api/signup").reply(200, {
+  message: "Mock 회원가입 성공",
+});
 
 function Signup() {
   const { setImages } = useImageStore();
@@ -21,7 +26,7 @@ function Signup() {
     setImages([sign01, sign02, card1]);
   }, [setImages]);
 
-  // 이메일, 이름, 비밀번호, 비밀번호 재입력, 전화번호, 성별 필드를 위한 상태 관리
+  // 입력 필드 관리를 위한 상태값
   const [formData, setFormData] = useState({
     email: "",
     name: "",
@@ -36,53 +41,36 @@ function Signup() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  // await를 사용하기 위해 async 키워드 추가
+  // 가입하기 버튼 클릭 시 API 호출하는 함수
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 빈값 검증
-    if (formData.email === "") {
-      alert("이메일을 입력해주세요.");
-      return;
-    } else if (formData.name === "") {
-      alert("이름을 입력해주세요");
-      return;
-    } else if (formData.password === "") {
-      alert("패스워드를 입력해주세요");
-
-      return;
-    } else if (formData.phone === "") {
-      alert("전화번호를 입력해주세요.");
-      return;
-    } else if (formData.gender === "") {
-      alert("성별을 선택해주세요.");
+    // 필수 항목 검증
+    if (
+      !formData.email ||
+      !formData.name ||
+      !formData.password ||
+      !formData.phone ||
+      !formData.gender
+    ) {
+      alert("필수 항목을 모두 입력해주세요.");
       return;
     }
-    
-    // 이메일 형식 검증 (간단한 정규식 사용)
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      alert("유효한 이메일 주소를 입력해 주세요.");
-      return;
-    }
-
-    // 비밀번호와 비밀번호 재입력이 일치하는지 확인
     if (formData.password !== formData.confirmPassword) {
       alert("비밀번호와 비밀번호 재입력이 일치하지 않습니다.");
       return;
     }
 
-    // 모든 검증이 통과하면 실제 회원가입 API 요청 실행
+    // API 요청 실행 (백엔드가 없더라도 모킹이 동작하여 성공 응답을 반환합니다.)
     try {
-      
-      const response = await axios.post("http://localhost:8586/api/signup", formData);
-
-      console.log("회원가입 성공:", response.data);
-      // 회원가입 성공 후 추가 작업 (예: 페이지 이동) 처리
-      // 예시: history.push("/login");
+      const response = await axios.post(
+        "http://localhost:8586/api/signup",
+        formData
+      );
+      console.log("API 호출 성공:", response.data);
+      console.log("보내진 데이터:", formData);
     } catch (error) {
-      console.error("회원가입 실패:", error);
+      console.error("API 호출 실패:", error);
       alert("회원가입에 실패하였습니다. 다시 시도해주세요.");
     }
   };
@@ -137,6 +125,7 @@ function Signup() {
                         value="male"
                         checked={formData.gender === "male"}
                         onChange={handleChange}
+                        aria-label="남자"
                       />
                       남자
                     </label>
@@ -147,12 +136,12 @@ function Signup() {
                         value="female"
                         checked={formData.gender === "female"}
                         onChange={handleChange}
+                        aria-label="여자"
                       />
                       여자
                     </label>
                   </div>
                 </div>
-
                 {/* 이름 */}
                 <div className="input-wrapper">
                   <label htmlFor="name">이름</label>
@@ -225,7 +214,7 @@ function Signup() {
           </div>
           <div className="other-method">다른 방법으로 가입</div>
         </div>
-        {/* 소셜 로그인 (카카오, 구글 예시) */}
+        {/* 소셜 로그인 영역 */}
         <div className="social-login">
           <img
             src={kakaoLogo}
@@ -239,7 +228,7 @@ function Signup() {
           />
         </div>
       </div>
-      {/* 오른쪽 이미지+텍스트 영역 */}
+      {/* 오른쪽 이미지 및 텍스트 영역 */}
       <div className="signup-right-img-container">
         <ImageSwiper className="signup-img" />
         <div className="signup-right-text1">
