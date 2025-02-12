@@ -6,7 +6,8 @@ import Card2 from "./component/main/Card2";
 import Card3 from "./component/main/Card3";
 import Card4 from "./component/main/card4";
 import RegistType from "./pages/auth/registType";
-import Signup from "./pages/auth/signup";
+import SignupApplicant from "./pages/auth/SignupApplicant";
+import SignupDonor from "./pages/auth/SignupDonor";
 import CategoryPage from "./pages/category/categoryPage";
 import MainPage from "./pages/main/mainPage";
 import MyPage from "./pages/mypage/MyPage";
@@ -24,7 +25,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/main/card4" element={<Card4 />} />
         <Route path="/" element={<MainPage />} />
         <Route path="/registType" element={<RegistType />} />
-        <Route path="/registType/signup" element={<Signup />} />
+        <Route
+          path="/registType/signup/applicant"
+          element={<SignupApplicant />}
+        />
+
+        <Route path="/registType/signup/donor" element={<SignupDonor />} />
+
         <Route path="/mypage" element={<MyPage />} />
       </Routes>
     </Router>
