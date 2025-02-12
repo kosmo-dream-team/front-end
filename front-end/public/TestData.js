@@ -7,4 +7,4 @@ const UserTestData = {
   rank: "골드",
   totalDonationCount: "10000",
   profileImage: "https://picsum.photos/200/300​",
-};
+}``;
