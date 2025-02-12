@@ -12,13 +12,13 @@ import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
 
 // axios 모킹 설정 (개발 환경에서만 사용)
-// 이 부분은 실제 백엔드가 준비되면 제거하세요.
+
 const mock = new MockAdapter(axios, { delayResponse: 500 }); // 0.5초 지연 (옵션)
 mock.onPost("http://localhost:8586/api/signup").reply(200, {
   message: "Mock 회원가입 성공",
 });
 
-function Signup() {
+export default function SignUpApplicant() {
   const { setImages } = useImageStore();
 
   useEffect(() => {
@@ -34,6 +34,7 @@ function Signup() {
     confirmPassword: "",
     phone: "",
     gender: "",
+    userType: "applicant",
   });
 
   const handleChange = (e) => {
@@ -209,6 +210,11 @@ function Signup() {
                     <span>가입하기</span>
                   </Link>
                 </button>
+                <input
+                  type="hidden"
+                  value={formData.usertype}
+                  onChange={handleChange}
+                />
               </form>
             </div>
           </div>
@@ -240,5 +246,3 @@ function Signup() {
     </div>
   );
 }
-
-export default Signup;
