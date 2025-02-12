@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 import DonorSignUpForm from "./DonorSignUpForm";
 import ApplicantSignUpForm from "./ApplicantSignUpForm";
@@ -14,6 +15,7 @@ function SignUp() {
   } else {
     return <div>유효하지 않은 접근입니다.</div>;
   }
+
 }
 
 export default SignUp;

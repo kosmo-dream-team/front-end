@@ -1,0 +1,28 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+.category-hero {
+  @include mixin.vertical-center;
+
+  display: flex;
+}
+.category-hero-applicant-img {
+  width: 10.6rem;
+  height: 10.6rem;
+}
+.categroy-hero-title {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  @include mixin.font-family("noto-sans");
+
+  @include mixin.font-style("black", "xl", "bold");
+  line-height: 24px; /* 88.889% */
+  letter-spacing: -0.1px;
+}
+.category-hero-subtitle {
+  margin-top: 0.4rem;
+  @include mixin.font-style(#444444, "sm", "normal");
+}

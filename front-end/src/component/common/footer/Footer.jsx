@@ -1,6 +1,7 @@
-import React from 'react';
-import "../.././style/scss/style.scss";
-
+import facebookBlack from "../../../assets/img/facebook-black.svg";
+import instagramBlack from "../../../assets/img/instagram-black.svg";
+import kakaoBlack from "../../../assets/img/kakao-black.svg";
+import "../../../style/scss/style.scss";
 const Footer = () => {
   return (
     <div className="donation-footer">
@@ -40,29 +41,38 @@ const Footer = () => {
           <div className="donation-footer__social-icon-inner">
             <div className="donation-footer__social-icon-bg-wrapper">
               <div className="donation-footer__social-icon-bg" />
-              <div className="donation-footer__social-icon-overlay" />
+              <img
+                src={kakaoBlack}
+                className="donation-footer__social-icon-overlay"
+              />
             </div>
             <div className="donation-footer__social-icon-line" />
           </div>
         </div>
         {/* 두번째 아이콘 */}
         <div className="donation-footer__social-icon">
-          <div className="donation-footer__social-icon-inner donation-footer__social-icon-inner--small">
-            <div className="donation-footer__social-icon-bg-small-wrapper">
-              <div className="donation-footer__social-icon-bg-small" />
-              <div className="donation-footer__social-icon-bg-small-overlay" />
+          <div className="donation-footer__social-icon-inner">
+            <div className="donation-footer__social-icon-bg-wrapper">
+              <div className="donation-footer__social-icon-bg" />
+              <img
+                src={instagramBlack}
+                className="donation-footer__social-icon-overlay"
+              />
             </div>
+            <div className="donation-footer__social-icon-line" />
           </div>
         </div>
         {/* 세번째 아이콘 */}
         <div className="donation-footer__social-icon">
-          <div className="donation-footer__social-icon-inner donation-footer__social-icon-inner--circle">
-            <div className="donation-footer__social-icon-bg-circle-wrapper">
-              <div className="donation-footer__social-icon-bg-circle" />
-              <div className="donation-footer__social-icon-bg-circle-overlay" />
+          <div className="donation-footer__social-icon-inner">
+            <div className="donation-footer__social-icon-bg-wrapper">
+              <div className="donation-footer__social-icon-bg" />
+              <img
+                src={facebookBlack}
+                className="donation-footer__social-icon-overlay"
+              />
             </div>
-            <div className="donation-footer__social-icon-circle-overlay" />
-            <div className="donation-footer__social-icon-dot" />
+            <div className="donation-footer__social-icon-line" />
           </div>
         </div>
       </div>

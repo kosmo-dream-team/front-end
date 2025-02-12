@@ -1,8 +1,15 @@
 import baby1 from "../../assets/img/baby1.jpg";
 import "../../style/scss/style.scss";
-export default function MainCampaignList() {
+export default function CategoryList() {
   return (
     <>
+      <span className="category-list-sort-list" onClick={() => {}}>
+        날짜순
+      </span>
+      <span className="category-list-sort-list" onClick={() => {}}>
+        인기순
+      </span>
+      <div style={{ height: "2rem" }}></div>
       <div className="main-campaign-list">
         <div
           className="layout__main-campaign-list__content"

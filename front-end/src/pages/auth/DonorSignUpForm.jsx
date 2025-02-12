@@ -1,6 +1,6 @@
 // Signup.js
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+
 import axios from "axios"; 
 import card1 from "../../assets/img/Card1.png";
 import googleLogo from "../../assets/img/google-logo.svg";
@@ -12,7 +12,7 @@ import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
 
 function DonorSignUpForm() {
-  const { userType } = useParams(); // URL에서 userType 읽기 (예: "applicant" 또는 "donor")
+ 
   const { setImages } = useImageStore();
 
   useEffect(() => {
@@ -27,6 +27,7 @@ function DonorSignUpForm() {
     confirmPassword: "",
     phone: "",
     gender: "",
+    userType: "donor"
   });
 
   const handleChange = (e) => {
@@ -39,14 +40,10 @@ function DonorSignUpForm() {
 
     // 기본 검증 코드 (생략)
 
-    // URL 파라미터의 userType을 formData에 추가
-    const dataToSend = {
-      ...formData,
-      userType,  // URL에서 가져온 userType 값이 여기에 들어갑니다.
-    };
+  
 
     try {
-      const response = await axios.post("http://localhost:8586/api/signup", dataToSend);
+      const response = await axios.post("http://localhost:8586/api/signup");
       console.log("회원가입 성공:", response.data);
       // 추가 작업 (예: 페이지 이동 등)
     } catch (error) {
@@ -80,6 +77,7 @@ function DonorSignUpForm() {
             <div className="signup-form-area">
               <form onSubmit={handleSubmit} className="signup-form">
                 {/* 이메일 입력 */}
+                <input type="hidden" name="" value={formData.userType}  onChange={handleChange} />
                 <div className="input-wrapper">
                   <label htmlFor="email">이메일</label>
                   <input
