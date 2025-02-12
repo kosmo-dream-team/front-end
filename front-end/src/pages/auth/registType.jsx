@@ -17,17 +17,19 @@ function RegistType() {
       <h1 className="regist-type-title">회원가입 유형을 선택해주세요.</h1>
       <div className="regist-type-container">
         <Link to="/registType/signup/donor" className="regist-type-link">
-        <button className="regist-type">
-          기부자
-            <img src={donor} alt="" />         
+
+          <button className="regist-type">
+            기부자
+            <img src={donor} alt="" />
           </button>
         </Link>
-         <Link to="/registType/signup/applicant" className="regist-type-link">
-          <button className="regist-type"> 
-          수혜자 
-          <img src={applicant} alt="" />
+        <Link to="/registType/signup/applicant" className="regist-type-link">
+          <button className="regist-type">
+            수혜자
+            <img src={applicant} alt="" />
+
           </button>
-          </Link>
+        </Link>
       </div>
     </div>
   );

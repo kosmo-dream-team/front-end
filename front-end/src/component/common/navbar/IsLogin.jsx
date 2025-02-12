@@ -19,7 +19,7 @@ function AuthMenu() {
       <Link to="/login" className="nav-list">
         로그인
       </Link>
-      <Link to="/signup" className="nav-list">
+      <Link to="/registType" className="nav-list">
         회원가입
       </Link>
     </>
