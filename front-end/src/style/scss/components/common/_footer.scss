@@ -1,71 +1,74 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
 .donation-footer {
-  width: 1200px;
-  height: 180px;
+  margin-top: 10rem;
+  width: 120rem;
+  height: 18rem;
   position: relative;
   background: white;
-  border-top: 1px solid #EEEEEE;
+  border-top: 0.1rem solid #eeeeee;
 }
 
 /* ─── 빈 스페이서 ────────────────────────────────────────── */
 .donation-footer__spacer {
-  width: 115px;
-  height: 18px;
+  width: 11.5rem;
+  height: 1.8rem;
   position: absolute;
-  left: 400px;
-  top: 41px;
+  left: 40rem;
+  top: 4.1rem;
 }
 
 /* ─── 네비게이션 영역 ───────────────────────────────────── */
 .donation-footer__nav {
-  width: 434.09px;
-  height: 33.97px;
+  width: 43.409rem;
+  height: 3.397rem;
   position: absolute;
-  left: 131px;
-  top: 94px;
+  left: 13.1rem;
+  top: 9.4rem;
 }
 
 .donation-footer__nav-group {
   position: absolute;
-  height: 33.97px;
+  height: 3.397rem;
 }
 
 /* © Dream On Corp. */
 .donation-footer__nav-group--corp {
-  width: 119.75px;
+  width: 11.975rem;
   left: 0;
   top: 0;
 }
 
 /* 고객센터 */
 .donation-footer__nav-group--support {
-  width: 71.67px;
-  left: 119.75px;
+  width: 7.167rem;
+  left: 11.975rem;
   top: 0;
 }
 
 /* 문의하기 */
 .donation-footer__nav-group--inquire {
-  width: 71.67px;
-  left: 191.42px;
+  width: 7.167rem;
+  left: 19.142rem;
   top: 0;
 }
 
 /* 이용약관 */
 .donation-footer__nav-group--terms {
-  width: 71.67px;
-  left: 263.09px;
+  width: 7.167rem;
+  left: 26.309rem;
   top: 0;
 }
 
 /* 네비게이션 텍스트 (공통 스타일) */
 .donation-footer__nav-text {
   position: absolute;
-  top: 5px;
+  top: 0.5rem;
   color: #444444;
-  font-size: 14px;
-  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.4rem;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 400;
-  line-height: 21.98px;
+  line-height: 2.198rem;
   word-wrap: break-word;
 }
 
@@ -75,72 +78,72 @@
 }
 
 .donation-footer__nav-group--support .donation-footer__nav-text {
-  left: 0.25px;
+  left: 0.025rem;
 }
 
 .donation-footer__nav-group--inquire .donation-footer__nav-text {
-  left: -0.42px;
+  left: -0.042rem;
 }
 
 .donation-footer__nav-group--terms .donation-footer__nav-text {
-  left: -0.09px;
+  left: -0.009rem;
 }
 
 /* 네비게이션 도트 (공통 스타일) */
 .donation-footer__nav-dot {
-  width: 2px;
-  height: 2px;
+  width: 0.2rem;
+  height: 0.2rem;
   position: absolute;
-  top: 15.98px;
+  top: 1.598rem;
   background: #444444;
-  border-radius: 2px;
+  border-radius: 0.2rem;
 }
 
 .donation-footer__nav-group--corp .donation-footer__nav-dot {
-  left: 107.75px;
+  left: 10.775rem;
 }
 
 .donation-footer__nav-group--support .donation-footer__nav-dot {
-  left: 59.67px;
+  left: 5.967rem;
 }
 
 .donation-footer__nav-group--inquire .donation-footer__nav-dot {
-  left: 59.67px;
+  left: 5.967rem;
 }
 
 .donation-footer__nav-group--terms .donation-footer__nav-dot {
-  left: 59.68px;
+  left: 5.968rem;
 }
 
 /* 개인정보처리방침 */
 .donation-footer__nav-privacy {
-  width: 132px;
-  height: 22px;
+  width: 13.2rem;
+  height: 2.2rem;
   position: absolute;
-  left: 335px;
-  top: 5px;
+  left: 33.5rem;
+  top: 0.5rem;
   color: #444444;
-  font-size: 14px;
-  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.4rem;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 700;
-  line-height: 21.98px;
+  line-height: 2.198rem;
   word-wrap: break-word;
 }
 
 /* ─── 소셜 아이콘 영역 ───────────────────────────────────── */
 .donation-footer__social {
   position: absolute;
-  left: 1017px;
-  top: 93px;
-  padding: 6px 5px 7.97px 5px;
+  left: 101.7rem;
+  top: 9.3rem;
+  padding: 0.6rem 0.5rem 0.797rem 0.5rem;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
 }
 
 .donation-footer__social-icon {
-  height: 20px;
+  height: 2rem;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -148,8 +151,8 @@
 
 /* 첫번째 아이콘 */
 .donation-footer__social-icon-inner {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -159,15 +162,15 @@
 
 .donation-footer__social-icon-bg-wrapper {
   position: absolute;
-  width: 20px;
-  height: 18.33px;
+  width: 2rem;
+  height: 1.833rem;
   left: 0;
-  top: 1px;
+  top: 0.1rem;
 }
 
 .donation-footer__social-icon-bg {
-  width: 20px;
-  height: 18.33px;
+  width: 2rem;
+  height: 1.833rem;
   position: absolute;
   left: 0;
   top: 0;
@@ -175,41 +178,40 @@
 }
 
 .donation-footer__social-icon-overlay {
-  width: 20px;
-  height: 18.33px;
+  width: 2rem;
+  height: 1.833rem;
   position: absolute;
   left: 0;
   top: 0;
-  background: #444444;
 }
 
 .donation-footer__social-icon-line {
-  width: 1.46px;
-  height: 2.17px;
+  width: 0.146rem;
+  height: 0.217rem;
   position: absolute;
-  left: 7.17px;
-  top: 7.43px;
+  left: 0.717rem;
+  top: 0.743rem;
   background: #444444;
 }
 
 /* 두번째 아이콘 (작은 아이콘) */
 .donation-footer__social-icon-inner--small {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   position: relative;
 }
 
 .donation-footer__social-icon-bg-small-wrapper {
   position: absolute;
-  width: 10.13px;
-  height: 18px;
-  left: 4.72px;
-  top: 1px;
+  width: 1.013rem;
+  height: 1.8rem;
+  left: 0.472rem;
+  top: 0.1rem;
 }
 
 .donation-footer__social-icon-bg-small {
-  width: 10.13px;
-  height: 18px;
+  width: 1.013rem;
+  height: 1.8rem;
   position: absolute;
   left: 0;
   top: 0;
@@ -217,8 +219,8 @@
 }
 
 .donation-footer__social-icon-bg-small-overlay {
-  width: 10.13px;
-  height: 18px;
+  width: 1.013rem;
+  height: 1.8rem;
   position: absolute;
   left: 0;
   top: 0;
@@ -227,22 +229,22 @@
 
 /* 세번째 아이콘 (원형 아이콘) */
 .donation-footer__social-icon-inner--circle {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   position: relative;
 }
 
 .donation-footer__social-icon-bg-circle-wrapper {
   position: absolute;
-  width: 18px;
-  height: 18px;
-  left: 1px;
-  top: 1px;
+  width: 1.8rem;
+  height: 1.8rem;
+  left: 0.1rem;
+  top: 0.1rem;
 }
 
 .donation-footer__social-icon-bg-circle {
-  width: 18px;
-  height: 18px;
+  width: 1.8rem;
+  height: 1.8rem;
   position: absolute;
   left: 0;
   top: 0;
@@ -250,8 +252,8 @@
 }
 
 .donation-footer__social-icon-bg-circle-overlay {
-  width: 18px;
-  height: 18px;
+  width: 1.8rem;
+  height: 1.8rem;
   position: absolute;
   left: 0;
   top: 0;
@@ -259,33 +261,49 @@
 }
 
 .donation-footer__social-icon-circle-overlay {
-  width: 9.50px;
-  height: 9.50px;
+  width: 0.95rem;
+  height: 0.95rem;
   position: absolute;
-  left: 5.50px;
-  top: 5.50px;
+  left: 0.55rem;
+  top: 0.55rem;
   background: #444444;
 }
 
 .donation-footer__social-icon-dot {
-  width: 2px;
-  height: 2px;
+  width: 0.2rem;
+  height: 0.2rem;
   position: absolute;
-  left: 14px;
-  top: 4px;
+  left: 1.4rem;
+  top: 0.4rem;
   background: #444444;
 }
 
 /* ─── 타이틀 영역 ───────────────────────────────────────── */
 .donation-footer__title {
-  width: 228px;
+  width: 22.8rem;
   position: absolute;
-  left: 131px;
-  top: 59px;
+  left: 13.1rem;
+  top: 5.9rem;
   color: black;
-  font-size: 14px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.4rem;
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
-  line-height: 21.98px;
+  line-height: 2.198rem;
   word-wrap: break-word;
+}
+
+@media (max-width: var.$mobile-max-width) {
+  .donation-footer {
+    display: row;
+
+    margin-top: 10rem;
+    width: 100%;
+
+    position: relative;
+    background: white;
+    border-top: 0.1rem solid #eeeeee;
+  }
+  .donation-footer__social {
+    display: none;
+  }
 }

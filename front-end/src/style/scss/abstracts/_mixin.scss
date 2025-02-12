@@ -15,70 +15,13 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-// 반응형 텍스트 크기 설정
-// 반응형 텍스트 크기 설정 믹스인
-// @param {Number} $min-size - 최소 폰트 크기
-// @param {Number} $max-size - 최대 폰트 크기
-// @param {Number} $min-vw - 최소 뷰포트 너비 (기본값: 320px)
-// @param {Number} $max-vw - 최대 뷰포트 너비 (기본값: 1200px)
 
-// 반응형 여백 설정 믹스인
-// @param {Number} $min-margin - 최소 여백
-// @param {Number} $max-margin - 최대 여백
-// @param {Number} $min-vw - 최소 뷰포트 너비 (기본값: 320px)
-// @param {Number} $max-vw - 최대 뷰포트 너비 (기본값: 1200px)
-
-// 반응형 패딩 설정 믹스인
-// @param {Number} $min-padding - 최소 패딩
-// @param {Number} $max-padding - 최대 패딩
-// @param {Number} $min-vw - 최소 뷰포트 너비 (기본값: 320px)
-// @param {Number} $max-vw - 최대 뷰포트 너비 (기본값: 1200px)
-@mixin responsive-text($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
-  font-size: $min-size;
-
-  @media (min-width: $min-vw) {
-    font-size: calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw})));
-  }
-
-  @media (min-width: $max-vw) {
-    font-size: $max-size;
-  }
-}
-
-// 반응형 여백 설정
-@mixin responsive-margin($min-margin, $max-margin, $min-vw: 320px, $max-vw: 1200px) {
-  margin: $min-margin;
-
-  @media (min-width: $min-vw) {
-    margin: calc(#{$min-margin} + (#{$max-margin} - #{$min-margin}) * ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw})));
-  }
-
-  @media (min-width: $max-vw) {
-    margin: $max-margin;
-  }
-}
-
-// 반응형 패딩 설정
-@mixin responsive-padding($min-padding, $max-padding, $min-vw: 320px, $max-vw: 1200px) {
-  padding: $min-padding;
-
-  @media (min-width: $min-vw) {
-    padding: calc(#{$min-padding} + (#{$max-padding} - #{$min-padding}) * ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw})));
-  }
-
-  @media (min-width: $max-vw) {
-    padding: $max-padding;
-  }
-}
-
-
+//박스 자식요소를 양쪽정렬
 @mixin box-space-between {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
 }
-
-
 
 //안보이게 숨기기 + 최우선 설정
 @mixin hidden {
