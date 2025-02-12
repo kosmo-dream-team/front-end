@@ -17,7 +17,7 @@ const useUserProfile = create((set) => ({
       const response = await axios.get("/api/userprofile");
       set({ userProfile: response.data });
     } catch (error) {
-      console.error("Failed to fetch user profile:", error);
+      console.error("유저 api 가져오기 오류 발생", error);
     }
   },
   setUserProfile: (newProfile) =>
