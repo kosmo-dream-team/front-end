@@ -42,11 +42,13 @@ const Card3 = () => {
                       style={{ width: "46.75px" }}
                     />
                   </div>
+                  <div className="new-campaign-item">
                   <div className="campaign-item__donation-percent">28%</div>
                   <div className="campaign-item__donation-amount">
-                    <span>1,140,000</span>
-                    <span>원</span>
+                    <span>1,140,000원</span>
+                    
                   </div>
+                </div>
                 </div>
               </div>
 
@@ -63,11 +65,13 @@ const Card3 = () => {
                   </div>
                   <div className="campaign-item__sponsor">양지지역아동센터</div>
                   <div className="campaign-item__progress-bg" />
-                  <div className="campaign-item__donation-percent">0%</div>
+                  <div className="new-campaign-item">
+                  <div className="campaign-item__donation-percent">28%</div>
                   <div className="campaign-item__donation-amount">
-                    <span>0</span>
-                    <span>원</span>
+                    <span>1,140,000원</span>
+                    
                   </div>
+                </div>
                 </div>
               </div>
 
@@ -91,11 +95,13 @@ const Card3 = () => {
                       style={{ width: "3.33px" }}
                     />
                   </div>
-                  <div className="campaign-item__donation-percent">2%</div>
+                  <div className="new-campaign-item">
+                  <div className="campaign-item__donation-percent">28%</div>
                   <div className="campaign-item__donation-amount">
-                    <span>70,000</span>
-                    <span>원</span>
+                    <span>1,140,000원</span>
+                    
                   </div>
+                </div>
                 </div>
               </div>
             </div>

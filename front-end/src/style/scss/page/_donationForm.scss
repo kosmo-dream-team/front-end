@@ -1,0 +1,65 @@
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+}
+
+.donation-form {
+  max-width: 60rem; // 600px → 60rem
+  margin: 4rem auto; // 40px → 4rem (상하), auto(좌우)
+  padding: 2rem; // 20px → 2rem
+  border: 0.1rem solid #ddd; // 1px → 0.1rem
+  border-radius: 0.5rem; // 5px → 0.5rem
+  background-color: #f9f9f9;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem; // 20px → 2rem
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem; // 15px → 1.5rem
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem; // 5px → 0.5rem
+      font-weight: bold;
+      color: #555;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem 1rem; // 8px 10px → 0.8rem 1rem
+      border: 0.1rem solid #ccc; // 1px → 0.1rem
+      border-radius: 0.3rem; // 3px → 0.3rem
+      font-size: 1.4rem; // 14px → 1.4rem
+
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+    }
+
+    textarea {
+      min-height: 10rem; // 100px → 10rem
+      resize: vertical;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem; // 10px → 1rem
+    background-color: #ff9191;
+    border: none;
+    border-radius: 0.3rem; // 3px → 0.3rem
+    color: #fff;
+    font-size: 1.6rem; // 16px → 1.6rem
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}

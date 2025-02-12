@@ -2,13 +2,13 @@
 
 .review-card {
   @include mixin.box-shadow();
-  width: 36rem; /* 360px → 36rem */
-
+  width: 100%; /* 360px → 36rem */
+  max-width: 364px;
   height: 36rem; /* 281px → 28.1rem */
   padding: 3.1rem 2.6rem 4.6rem 2.6rem; /* 31px 26px 46px 26px */
   background: white;
-  border-top-left-radius: 1.2rem; /* 12px → 1.2rem */
-  border-top-right-radius: 1.2rem; /* 12px → 1.2rem */
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,9 +27,8 @@
 
 /* 콘텐츠 전체 영역 */
 .review-card__content-container {
-  width: 30.8rem; /* 308px → 30.8rem */
-  height: 19.05rem; /* 190.5px → 19.05rem */
-
+  
+ 
   gap: 30rem;
 }
 
