@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 import "../../style/scss/style.scss";
 
 const DonationForm = () => {
   const [formData, setFormData] = useState({
-    title: '',
-    content: '',
-    targetAmount: '',
-    deadline: '',
-    beneficiaryName: '',
-    beneficiaryContact: '',
+    title: "",
+    content: "",
+    targetAmount: "",
+    deadline: "",
+    beneficiaryName: "",
+    beneficiaryContact: "",
     attachment: null,
   });
 
@@ -24,7 +24,7 @@ const DonationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // 여기서 API 호출 등으로 formData를 전송하면 됩니다.
-    console.log('폼 데이터:', formData);
+    console.log("폼 데이터:", formData);
   };
 
   return (
@@ -42,7 +42,7 @@ const DonationForm = () => {
           required
         />
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="content">내용</label>
         <textarea
@@ -54,7 +54,7 @@ const DonationForm = () => {
           required
         ></textarea>
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="targetAmount">목표 금액</label>
         <input
@@ -67,7 +67,7 @@ const DonationForm = () => {
           required
         />
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="deadline">모집 기간</label>
         <input
@@ -79,7 +79,7 @@ const DonationForm = () => {
           required
         />
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="beneficiaryName">수혜자 이름</label>
         <input
@@ -92,7 +92,7 @@ const DonationForm = () => {
           required
         />
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="beneficiaryContact">연락처</label>
         <input
@@ -105,7 +105,7 @@ const DonationForm = () => {
           required
         />
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="attachment">첨부 파일</label>
         <input
@@ -115,7 +115,7 @@ const DonationForm = () => {
           onChange={handleFileChange}
         />
       </div>
-      
+
       <button type="submit">신청하기</button>
     </form>
   );

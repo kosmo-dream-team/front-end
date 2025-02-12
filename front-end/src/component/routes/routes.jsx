@@ -10,16 +10,13 @@ import SignUpApplicant from "../../pages/auth/signupApplicant";
 import SignUpDonor from "../../pages/auth/SignupDonor";
 import MainPage from "../../pages/main/mainPage";
 import MyPage from "../../pages/mypage/MyPage";
-
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<Login />} />
-
-        <Route path="/myPage" element={<MyPage />} />
-
+        <Route path="/pages/mypage" element={<MyPage />} />
         <Route path="/registType" element={<RegistType />} />
         <Route path="/registType/signup/donor" element={<SignUpDonor />} />
         <Route
