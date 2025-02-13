@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom"; // useNavigate 훅 추가
+import  { useState } from "react";
+import { useNavigate } from "react-router-dom"; // useNavigate import 추가
+import axios from "axios"; // axios import 추가
 import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";
@@ -8,7 +8,8 @@ import "../../style/scss/style.scss";
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // 여기서 navigate 선언
+
   // 입력값 변경 시 formData 상태 업데이트
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,8 +25,7 @@ function Login() {
       const response = await axios.post("http://localhost:8586/api/login", formData);
 
       console.log("로그인 성공:", response.data);
-      // 로그인 성공 후 처리 (예: 토큰 저장, 페이지 이동 등)
-   
+      // 로그인 성공 후 최상위 루트("/")로 이동
       navigate("/");
     } catch (error) {
       console.error("로그인 실패:", error);

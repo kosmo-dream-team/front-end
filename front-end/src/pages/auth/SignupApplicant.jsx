@@ -1,7 +1,7 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter"; // 모킹 어댑터 import
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // useNavigate import
 import card1 from "../../assets/img/Card1.png";
 import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
@@ -12,7 +12,6 @@ import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
 
 // axios 모킹 설정 (개발 환경에서만 사용)
-
 const mock = new MockAdapter(axios, { delayResponse: 500 }); // 0.5초 지연 (옵션)
 mock.onPost("http://localhost:8586/api/signup").reply(200, {
   message: "Mock 회원가입 성공",
@@ -20,6 +19,7 @@ mock.onPost("http://localhost:8586/api/signup").reply(200, {
 
 export default function SignUpApplicant() {
   const { setImages } = useImageStore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // 이미지 파일 상대 경로 배열 설정
@@ -70,6 +70,8 @@ export default function SignUpApplicant() {
       );
       console.log("API 호출 성공:", response.data);
       console.log("보내진 데이터:", formData);
+      // API 호출 성공 후 페이지 이동
+      navigate("/");
     } catch (error) {
       console.error("API 호출 실패:", error);
       alert("회원가입에 실패하였습니다. 다시 시도해주세요.");
@@ -206,15 +208,9 @@ export default function SignUpApplicant() {
                 </div>
                 {/* 가입하기 버튼 */}
                 <button type="submit" className="signup-button">
-                  <Link to="/" className="regist-type-link">
-                    <span>가입하기</span>
-                  </Link>
+                  <span>가입하기</span>
                 </button>
-                <input
-                  type="hidden"
-                  value={formData.usertype}
-                  onChange={handleChange}
-                />
+                <input type="hidden" name="userType" value={formData.userType} />
               </form>
             </div>
           </div>
