@@ -1,31 +1,24 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useUserProfile from "../../store/useUserProfile";
 import "../../style/scss/style.scss";
 
 export default function MyPageMenu() {
-  const { profile, fetchProfile, setProfileImage, isLoading, error } =
-    useUserProfile();
-
-  useEffect(() => {
-    fetchProfile();
-  }, [fetchProfile]);
+  // fetchProfile() 호출 제거 → 로그인 시 저장된 상태를 그대로 사용
+  const { profile, setProfileImage, isLoading, error } = useUserProfile();
 
   // 모달 열림 여부 및 새 이미지 URL 관리를 위한 상태
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newImage, setNewImage] = useState(null);
 
-  // 프로필 이미지 또는 '프로필 이미지 변경' 버튼 클릭 시 모달 오픈
   const handleImageClick = () => {
     setIsModalOpen(true);
   };
 
-  // 모달 닫기 (모달 외부 클릭 또는 닫기 버튼)
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setNewImage(null); // 선택한 이미지 초기화
+    setNewImage(null);
   };
 
-  // 파일 선택 시 미리보기 URL 생성
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
@@ -34,7 +27,6 @@ export default function MyPageMenu() {
     }
   };
 
-  // '이미지 변경 저장' 버튼 클릭 시 Zustand 상태 업데이트
   const handleUpdateImage = () => {
     if (newImage) {
       setProfileImage(newImage);
@@ -67,13 +59,12 @@ export default function MyPageMenu() {
         </div>
         <button onClick={handleImageClick}>프로필 이미지 변경</button>
         <div className="mypage-menu-sub-menu-container">
-          <a href="" className="mypage-menu-sub-menu">
+          <a href="#" className="mypage-menu-sub-menu">
             My 홈
           </a>
         </div>
       </div>
 
-      {/* 이미지 업로드 모달 */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
