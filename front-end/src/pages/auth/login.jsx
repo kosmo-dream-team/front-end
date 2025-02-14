@@ -1,12 +1,17 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import sign04 from "../../assets/img/auth1.jpg";
+import sign02 from "../../assets/img/auth7.jpg";
+import sign01 from "../../assets/img/auth8.jpg";
+import sign03 from "../../assets/img/auth9.jpg";
 import googleLogo from "../../assets/img/google-logo.svg";
-import sign01 from "../../assets/img/sign01.png";
+import useImageStore from "../../store/useImgStore";
+import UseLoginStore from "../../store/UseLoginStore";
 import useUserProfile from "../../store/useUserProfile";
 import "../../style/scss/style.scss";
-
+import ImageSwiper from "./ImageSwiper";
 // 로그인 모킹 설정 (개발 환경에서만 사용)
 const mock = new MockAdapter(axios, { delayResponse: 500 });
 mock.onPost("http://localhost:8586/api/login").reply(200, {
@@ -27,7 +32,13 @@ function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const { setProfile } = useUserProfile(); // 프로필 상태를 지정
+  const { setLogin } = UseLoginStore(); // 로그인 상태 업데이트
+  const { setImages } = useImageStore();
 
+  useEffect(() => {
+    // 이미지 파일 상대 경로 배열 설정
+    setImages([sign01, sign02, sign03, sign04]);
+  }, [setImages]);
   // 백엔드와 연동 테스트 할때 주석 해제  ( DB와 로그인 값이 일치하지는지 확인 )
   //=================================================================
   // const { setLogin } = useLoginStore(); // 로그인 상태 업데이트
@@ -73,6 +84,7 @@ function Login() {
 
       setProfile(mappedProfile);
       alert("로그인 성공");
+      setLogin("true");
       navigate("/");
     } catch (error) {
       console.error("로그인 실패:", error);
@@ -163,7 +175,7 @@ function Login() {
         </div>
       </div>
       <div className="signup-right-img-container">
-        <img className="signup-img" src={sign01} alt="웃는 아이의 이미지" />
+        <ImageSwiper className="signup-img" />
         <div className="signup-right-text1">
           <div className="big-title">작은 손길, 큰 변화</div>
           <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>

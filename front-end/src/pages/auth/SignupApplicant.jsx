@@ -2,10 +2,12 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter"; // 모킹 어댑터 import
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate import
-import card1 from "../../assets/img/Card1.png";
+
+import sign04 from "../../assets/img/auth1.jpg";
+import sign02 from "../../assets/img/auth7.jpg";
+import sign01 from "../../assets/img/auth8.jpg";
+import sign03 from "../../assets/img/auth9.jpg";
 import googleLogo from "../../assets/img/google-logo.svg";
-import sign01 from "../../assets/img/sign01.png";
-import sign02 from "../../assets/img/아동.png";
 import useImageStore from "../../store/useImgStore";
 import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
@@ -22,7 +24,7 @@ export default function SignUpApplicant() {
 
   useEffect(() => {
     // 이미지 파일 상대 경로 배열 설정
-    setImages([sign01, sign02, card1]);
+    setImages([sign01, sign02, sign03, sign04]);
   }, [setImages]);
 
   // 입력 필드 관리를 위한 상태값

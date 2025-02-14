@@ -21,8 +21,16 @@ const ImageSwiper = () => {
       }}
     >
       {images.map((src, index) => (
-        <SwiperSlide key={index}>
-          <img src={src} alt={`slide-${index}`} />
+        <SwiperSlide key={index} className="signup-swiper">
+          <img
+            src={src}
+            alt={`slide-${index}`}
+            style={{
+              width: "100%",
+              height: "70rem",
+              objectFit: "cover",
+            }}
+          />
         </SwiperSlide>
       ))}
     </Swiper>
