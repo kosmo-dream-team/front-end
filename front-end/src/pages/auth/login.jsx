@@ -1,6 +1,5 @@
 import { useState } from "react";
 import googleLogo from "../../assets/img/google-logo.svg";
-import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";
 import "../../style/scss/style.scss";
 function Login() {
@@ -97,11 +96,11 @@ function Login() {
 
         {/* 소셜 로그인(구글) 예시 */}
         <div className="social-login">
-          <img
+          {/* <img
             src={kakaoLogo}
             alt="카카오로 로그인하기"
             onClick={() => alert("카카오 로그인")}
-          />
+          /> */}
 
           <img
             src={googleLogo}

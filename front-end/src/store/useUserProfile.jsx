@@ -55,7 +55,7 @@ const useUserProfile = create((set, get) => ({
     }
   },
 
-  // 프로필 업데이트 액션 (전체 데이터 업데이트)
+  // 프로필 업데이트 (전체 데이터 업데이트)
   updateProfile: async (newProfile) => {
     set({ isLoading: true, error: null });
     try {

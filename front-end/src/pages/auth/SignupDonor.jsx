@@ -31,7 +31,7 @@ export default function SignUpDonor() {
     email: "",
     name: "",
     password: "",
-    confirmPassword: "",
+    //   confirmPassword: "",
     phone: "",
     gender: "",
     userType: "donor", // donor 유형 지정
@@ -187,7 +187,7 @@ export default function SignUpDonor() {
                     type="password"
                     id="confirmPassword"
                     name="confirmPassword"
-                    value={formData.confirmPassword}
+                    value=""
                     onChange={handleChange}
                     placeholder="비밀번호를 다시 입력해주세요"
                   />
