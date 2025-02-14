@@ -5,14 +5,14 @@ import "../.././style/scss/style.scss";
 
 // axios 모킹 설정 (개발 중 더미 데이터 확인용)
 // 0.5초 후에 응답하도록 delay 설정
-const mock = new MockAdapter(axios, { delayResponse: 500 });
-mock.onGet("http://localhost:8586/api/profile").reply(200, {
-  nickname: "추꾸신동",
-  contact: "010123123123",
-  email: "orm123123@gmaul.com",
-  age: "1980-01-01", // input type="date"에 맞는 형식
-  gender: "남성",
-});
+// const mock = new MockAdapter(axios, { delayResponse: 500 });
+// mock.onGet("http://localhost:8586/api/profile").reply(200, {
+//   nickname: "추꾸신동",
+//   contact: "010123123123",
+//   email: "orm123123@gmaul.com",
+//   age: "1980-01-01", // input type="date"에 맞는 형식
+//   gender: "남성",
+// });
 
 export default function ProfileEditForm() {
   // API로부터 받아온 프로필 데이터를 저장할 상태

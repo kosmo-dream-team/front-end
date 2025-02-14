@@ -4,20 +4,21 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import "./style/scss/style.scss"; // 글로벌 스타일 적용
+import "./style/scss/style.scss";
 
-// 모킹 어댑터 초기화
+
+// axios-mock-adapter 인스턴스 생성 (응답 지연시간 500ms)
 const mock = new MockAdapter(axios, { delayResponse: 500 });
-mock.onPost("http://localhost:8586/api/signup").reply(200, {
-  message: "Mock 회원가입 성공",
+
+// /donations 엔드포인트에 대한 POST 요청을 목 처리
+mock.onPost("http://localhost:3001/donations").reply((config) => {
+  // 필요하면 config.data를 확인해 요청 데이터를 파싱할 수 있습니다.
+  // 예: const requestData = JSON.parse(config.data) 또는 FormData의 경우 직접 처리
+  return [201, { id: 1, message: "Donation created successfully" }];
 });
 
-// import App from "./App";
-// import Router from "./component/routes/Router"
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-
     <App />
-
   </React.StrictMode>
 );

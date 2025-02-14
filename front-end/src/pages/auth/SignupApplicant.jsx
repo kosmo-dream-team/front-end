@@ -12,10 +12,10 @@ import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
 
 // axios 모킹 설정 (개발 환경에서만 사용)
-const mock = new MockAdapter(axios, { delayResponse: 500 }); // 0.5초 지연 (옵션)
-mock.onPost("http://localhost:8586/api/signup").reply(200, {
-  message: "Mock 회원가입 성공",
-});
+// const mock = new MockAdapter(axios, { delayResponse: 500 }); // 0.5초 지연 (옵션)
+// mock.onPost("http://localhost:8586/api/signup").reply(200, {
+//   message: "Mock 회원가입 성공",
+// });
 
 export default function SignUpApplicant() {
   const { setImages } = useImageStore();

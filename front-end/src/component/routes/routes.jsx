@@ -11,6 +11,7 @@ import SignUpDonor from "../../pages/auth/SignupDonor";
 import MainPage from "../../pages/main/mainPage";
 import MyPage from "../../pages/mypage/MyPage";
 import DonationForm from "../../pages/donationForm/DonationForm";
+import AdminApp from "../../AdminApp";
 
 
 const AppRouter = () => {
@@ -21,13 +22,13 @@ const AppRouter = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/donationForm" element={<DonationForm />}/>
         <Route path="/myPage" element={<MyPage />} />
-
         <Route path="/registType" element={<RegistType />} />
         <Route path="/registType/signup/donor" element={<SignUpDonor />} />
         <Route
           path="/registType/signup/applicant"
           element={<SignUpApplicant />}
         />
+        <Route path="/admin/*" element={<AdminApp />}/>
       </Routes>
     </Router>
   );
