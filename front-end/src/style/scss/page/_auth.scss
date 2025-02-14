@@ -5,6 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   padding: 1rem;
 }
@@ -146,6 +147,7 @@
 }
 
 .signup-left .signup-top .signup-title-area .signup-title {
+  margin-top: 5rem;
   color: #000;
   font-size: 3.5rem;
   font-weight: 500;

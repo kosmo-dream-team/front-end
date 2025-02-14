@@ -30,7 +30,7 @@ function MyPage() {
           </div>
 
           <div className="layout__mypage-myinfo">
-            <ProfileEditForm />`
+            <ProfileEditForm />
           </div>
         </div>
       </div>

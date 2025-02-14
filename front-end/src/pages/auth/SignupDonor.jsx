@@ -2,15 +2,17 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter"; // 모킹 어댑터 import
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate import
-import card1 from "../../assets/img/Card1.png";
 import googleLogo from "../../assets/img/google-logo.svg";
 import kakaoLogo from "../../assets/img/kakao-logo.svg";
-import sign01 from "../../assets/img/sign01.png";
-import sign02 from "../../assets/img/아동.png";
+
+import sign04 from "../../assets/img/auth1.jpg";
+import sign02 from "../../assets/img/auth7.jpg";
+import sign01 from "../../assets/img/auth8.jpg";
+import sign03 from "../../assets/img/auth9.jpg";
+
 import useImageStore from "../../store/useImgStore";
 import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
-
 // axios 모킹 설정 (개발 환경에서만 사용)
 const mock = new MockAdapter(axios, { delayResponse: 500 }); // 0.5초 지연 (옵션)
 mock.onPost("http://localhost:8586/api/signup").reply(200, {
@@ -23,7 +25,7 @@ export default function SignUpDonor() {
 
   useEffect(() => {
     // 이미지 파일 상대 경로 배열 설정
-    setImages([sign01, sign02, card1]);
+    setImages([sign01, sign02, sign03, sign04]);
   }, [setImages]);
 
   // 입력 필드 관리를 위한 상태값
@@ -31,7 +33,7 @@ export default function SignUpDonor() {
     email: "",
     name: "",
     password: "",
-    confirmPassword: "",
+    //   confirmPassword: "",
     phone: "",
     gender: "",
     userType: "donor", // donor 유형 지정
@@ -57,12 +59,13 @@ export default function SignUpDonor() {
       alert("필수 항목을 모두 입력해주세요.");
       return;
     }
+    //비밀번호와 비밀번호 재입력이 일치해야 전송이 가능.
     if (formData.password !== formData.confirmPassword) {
       alert("비밀번호와 비밀번호 재입력이 일치하지 않습니다.");
       return;
     }
 
-    // API 요청 실행 (모킹이 동작하여 성공 응답을 반환합니다.)
+    // API 요청 실행
     try {
       const response = await axios.post(
         "http://localhost:8586/api/signup",
@@ -187,7 +190,7 @@ export default function SignUpDonor() {
                     type="password"
                     id="confirmPassword"
                     name="confirmPassword"
-                    value={formData.confirmPassword}
+                    value=""
                     onChange={handleChange}
                     placeholder="비밀번호를 다시 입력해주세요"
                   />
@@ -236,7 +239,7 @@ export default function SignUpDonor() {
       </div>
       {/* 오른쪽 이미지 및 텍스트 영역 */}
       <div className="signup-right-img-container">
-        <ImageSwiper className="signup-img" />
+        <ImageSwiper />
         <div className="signup-right-text1">
           <div className="big-title">작은 손길, 큰 변화</div>
           <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>
