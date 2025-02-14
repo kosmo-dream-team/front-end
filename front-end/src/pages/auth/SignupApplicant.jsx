@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate import
 import card1 from "../../assets/img/Card1.png";
 import googleLogo from "../../assets/img/google-logo.svg";
-import kakaoLogo from "../../assets/img/kakao-logo.svg";
 import sign01 from "../../assets/img/sign01.png";
 import sign02 from "../../assets/img/아동.png";
 import useImageStore from "../../store/useImgStore";
@@ -222,11 +221,11 @@ export default function SignUpApplicant() {
         </div>
         {/* 소셜 로그인 영역 */}
         <div className="social-login">
-          <img
+          {/* <img
             src={kakaoLogo}
             alt="카카오로 로그인"
             onClick={() => alert("카카오 로그인")}
-          />
+          /> */}
           <img
             src={googleLogo}
             alt="구글로 로그인"

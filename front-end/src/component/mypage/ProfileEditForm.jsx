@@ -46,7 +46,7 @@ export default function ProfileEditForm() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  // 편집 모드 토글
+  // 변경 버튼 클릭시 정보 수정 가능 함수
   const handleEditToggle = (field) => {
     setEditing((prev) => ({ ...prev, [field]: !prev[field] }));
   };
@@ -55,7 +55,7 @@ export default function ProfileEditForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await updateProfile(formData);
-    // 모든 편집 모드를 종료합니다.
+    // 저장 후 편집모드 비활성화
     setEditing({
       name: false,
       phone: false,

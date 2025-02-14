@@ -57,12 +57,13 @@ export default function SignUpDonor() {
       alert("필수 항목을 모두 입력해주세요.");
       return;
     }
+    //비밀번호와 비밀번호 재입력이 일치해야 전송이 가능.
     if (formData.password !== formData.confirmPassword) {
       alert("비밀번호와 비밀번호 재입력이 일치하지 않습니다.");
       return;
     }
 
-    // API 요청 실행 (모킹이 동작하여 성공 응답을 반환합니다.)
+    // API 요청 실행
     try {
       const response = await axios.post(
         "http://localhost:8586/api/signup",

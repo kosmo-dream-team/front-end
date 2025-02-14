@@ -23,15 +23,23 @@ mock.onPost("http://localhost:8586/api/login").reply(200, {
 });
 
 function Login() {
+  // 로그인 폼 데이터 상태
   const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
-  const { setProfile } = useUserProfile(); // 새로 추가한 setProfile 함수 사용
+  const { setProfile } = useUserProfile(); // 프로필 상태를 지정
 
+  // 백엔드와 연동 테스트 할때 주석 해제  ( DB와 로그인 값이 일치하지는지 확인 )
+  //=================================================================
+  // const { setLogin } = useLoginStore(); // 로그인 상태 업데이트
+  //=================================================================
+
+  // 로그인 폼 입력값 변경 시 상태 업데이트
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  // 로그인 폼 체줄시 api로 요청을 보냄
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -39,9 +47,18 @@ function Login() {
         "http://localhost:8586/api/login",
         formData
       );
-      console.log("로그인 성공:", response.data);
+      // 백엔드와 연동 테스트 할때 주석 해제  ( DB와 로그인 값이 일치하지는지 확인 )
+      //=================================================================
+      // if (!response.data.login) {
+      //   setLogin("false");
+      //   alert("로그인 실패. 이메일과 비밀번호를 확인해주세요.");
+      //   return;
+      // }
+      // console.log("로그인 성공:", response.data);
 
-      // 필요시, 로그인 응답 데이터를 store에 맞게 매핑
+      // setLogin(true);
+      //=================================================================
+
       const mappedProfile = {
         name: response.data.nickname,
         password: response.data.password,
@@ -55,11 +72,11 @@ function Login() {
       };
 
       setProfile(mappedProfile);
-      alert("로그인 성공!");
+      alert("로그인 성공");
       navigate("/");
     } catch (error) {
       console.error("로그인 실패:", error);
-      alert("로그인 실패. 다시 시도해주세요.");
+      alert("로그인 실패. 다시 시도해주십시오.");
     }
   };
 
