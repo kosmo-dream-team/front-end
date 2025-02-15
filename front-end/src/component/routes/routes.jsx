@@ -10,6 +10,7 @@ import SignUpApplicant from "../../pages/auth/signupApplicant";
 import SignUpDonor from "../../pages/auth/SignupDonor";
 import MainPage from "../../pages/main/mainPage";
 import MyPage from "../../pages/mypage/MyPage";
+import CampaignPage from "../../pages/campaign/CampaignPage";
 
 const AppRouter = () => {
   return (
@@ -26,6 +27,8 @@ const AppRouter = () => {
           path="/registType/signup/applicant"
           element={<SignUpApplicant />}
         />
+
+        <Route path = "/campaign" element = {<CampaignPage />} />
       </Routes>
     </Router>
   );
