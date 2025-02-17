@@ -3,6 +3,7 @@ import React from 'react';
 import { Edit, SimpleForm, TextInput } from 'react-admin';
 import ApprovalButtons from './ApprovalButtons';
 
+
 const ApplicationEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>

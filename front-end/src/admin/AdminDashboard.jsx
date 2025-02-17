@@ -1,6 +1,5 @@
-// src/admin/AdminDashboard.jsx
-
 import { Card, CardContent, Typography, Grid } from '@mui/material';
+import MonthlyDonationChart from './MonthlyDonationChart';
 
 const AdminDashboard = () => {
   return (
@@ -11,7 +10,7 @@ const AdminDashboard = () => {
         </Typography>
       </Grid>
       
-      {/* 예시 카드 1: 신청 게시글 현황 */}
+      {/* 기존 카드들 */}
       <Grid item xs={12} sm={6} md={4}>
         <Card>
           <CardContent>
@@ -22,8 +21,7 @@ const AdminDashboard = () => {
           </CardContent>
         </Card>
       </Grid>
-
-      {/* 예시 카드 2: 회원 현황 */}
+      
       <Grid item xs={12} sm={6} md={4}>
         <Card>
           <CardContent>
@@ -34,8 +32,7 @@ const AdminDashboard = () => {
           </CardContent>
         </Card>
       </Grid>
-
-      {/* 예시 카드 3: 기타 관리 항목 */}
+      
       <Grid item xs={12} sm={6} md={4}>
         <Card>
           <CardContent>
@@ -43,6 +40,60 @@ const AdminDashboard = () => {
             <Typography variant="body2">
               추가 기능을 여기에 표시합니다.
             </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+      
+      {/* 추가 요구사항 카드 */}
+      <Grid item xs={12} sm={6} md={4}>
+        <Card>
+          <CardContent>
+            <Typography variant="h6">총 기부금</Typography>
+            <Typography variant="body2">
+              1,000,000원
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+      
+      <Grid item xs={12} sm={6} md={4}>
+        <Card>
+          <CardContent>
+            <Typography variant="h6">캠페인 수</Typography>
+            <Typography variant="body2">
+              50
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+      
+      <Grid item xs={12} sm={6} md={4}>
+        <Card>
+          <CardContent>
+            <Typography variant="h6">기부횟수</Typography>
+            <Typography variant="body2">
+              120회
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+      
+      <Grid item xs={12} sm={6} md={4}>
+        <Card>
+          <CardContent>
+            <Typography variant="h6">1인당 평균 기부금액</Typography>
+            <Typography variant="body2">
+              8,333원
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+      
+      <Grid item xs={12} md={8}>
+        <Card>
+          <CardContent>
+            <Typography variant="h6">기부금액 월별 그래프</Typography>
+            <MonthlyDonationChart />
           </CardContent>
         </Card>
       </Grid>
