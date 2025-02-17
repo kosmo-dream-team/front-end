@@ -1,0 +1,105 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+.categories-container {
+  background: var.$color-primary;
+  width: 40rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+.categories-title {
+  text-align: "center";
+
+  @include mixin.font-style(black, "xl", "bold");
+
+  word-wrap: "break-word";
+}
+.categories-subtitle {
+  width: 28.6rem;
+  border-radius: 0.8rem 0.88rem 0rem 0rem;
+  background: #f5f7f9;
+  padding: 2rem;
+  text-align: center;
+  align-items: center;
+  flex-shrink: 0;
+  @include mixin.font-style(black, "md", bold);
+}
+
+.categories-items {
+  width: 28.6rem;
+  display: flex; // flex 컨테이너로 변경
+
+  justify-content: baseline; // 수평 중앙 정렬
+  padding: 2rem 3rem;
+  border: none; // border-style: none 대신 border: none;
+
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+.categories-icon {
+  width: 36px;
+  height: 36px;
+}
+.categories-label {
+  color: #202020;
+  font-family: Inter;
+  font-size: 15.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 154.839% */
+  letter-spacing: -0.1px;
+}
+.categories-sub-label {
+  color: #444;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: start;
+}
+.all-categories-icon {
+}
+.categories-label-wrapper {
+  text-align: start;
+}
+.all-categories-label-wrapper {
+  text-align: center;
+}
+.all-categories-sub-label {
+  color: #444;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+}
+.all-categories-icon {
+  width: 36px;
+  height: 36px;
+}
+.all-categories-label {
+  color: #202020;
+  font-family: Inter;
+  font-size: 15.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 154.839% */
+  letter-spacing: -0.1px;
+}
+.all-categories-items {
+  width: 28.6rem;
+  display: flex; // flex 컨테이너로 변경
+
+  justify-content: center; // 수평 중앙 정렬
+  padding: 2rem 3rem;
+  border: none; // border-style: none 대신 border: none;
+
+  gap: 1rem;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  border-radius: 0.8rem;
+}
+
