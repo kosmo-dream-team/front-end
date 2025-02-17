@@ -1,0 +1,68 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
+
+.card-container {
+  width: 62rem; // 620px / 10
+  height: 14.4rem; // 144px / 10
+  position: relative;
+  background: rgba(255, 109.25, 115.14, 0.20);
+  border-radius: 1rem; // 10px / 10
+  @include mixin.box-shadow(); // 그림자 효과 추가
+}
+
+/* 카드 텍스트 (내부 span에 font-style mixin 적용) */
+.card-text {
+  position: absolute;
+  width: 36.67rem; // 366.70px / 10
+  height: 2rem; // 20px / 10
+  left: 8.934rem; // 89.34px / 10
+  top: 6.35rem; // 63.50px / 10
+
+  /* 공통 텍스트 스타일 */
+  span {
+    @include mixin.font-style(#FF6D73, 1.7rem, normal); // 색상, 폰트크기, 기본 weight 적용
+    font-family: 'Noto Sans KR', sans-serif;
+    word-wrap: break-word;
+  }
+}
+
+/* 일반 텍스트 (font-weight: 500) */
+.card-text--normal {
+  font-weight: 500;
+}
+
+/* 강조 텍스트 (font-weight: 700) */
+.card-text--bold {
+  font-weight: 700;
+}
+
+/* 카드 SVG 래퍼 (원래 위치 지정 그대로) */
+.card-svg-wrapper {
+  position: absolute;
+  left: 46.37rem; // 463.70px / 10
+  top: 2.5rem; // 25px / 10
+}
+
+/* 카드 날짜 컨테이너 (flex-center mixin 적용하여 내부 콘텐츠 가운데 정렬) */
+.card-date-container {
+  width: 62rem; // 620px / 10
+  height: 5rem; // 50px / 10
+  position: relative;
+  border-radius: 1rem; // 10px / 10
+  border: 0.1rem solid rgba(255, 109.25, 115.14, 0.40); // 1px / 10
+  @include mixin.flex-center;
+}
+
+/* 카드 날짜 텍스트 (font-style mixin 적용) */
+.card-date-text {
+  // 기존 절대 위치 속성을 제거하여 flex-center의 가운데 정렬 효과 적용
+  // position: absolute;
+  // left: 2.1rem; // 21px / 10
+  // top: 1.7rem; // 17px / 10
+  // width: 21.464rem; // 214.64px / 10
+  // height: 1.7rem; // 17px / 10
+  @include mixin.font-style(#FF6D73, 1.4rem, normal);
+  font-family: 'Noto Sans KR', sans-serif;
+  word-wrap: break-word;
+}

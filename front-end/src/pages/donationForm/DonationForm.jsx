@@ -1,14 +1,18 @@
+
 import { useState } from "react";
+
 import "../../style/scss/style.scss";
 
 const DonationForm = () => {
   const [formData, setFormData] = useState({
+
     title: "",
     content: "",
     targetAmount: "",
     deadline: "",
     beneficiaryName: "",
     beneficiaryContact: "",
+
     attachment: null,
   });
 
@@ -24,7 +28,9 @@ const DonationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // 여기서 API 호출 등으로 formData를 전송하면 됩니다.
+
     console.log("폼 데이터:", formData);
+
   };
 
   return (

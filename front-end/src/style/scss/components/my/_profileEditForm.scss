@@ -11,6 +11,7 @@
   @include mixin.font-style(#535054, md, "bold");
 }
 
+
 .mypage-myinfo__container {
   padding: 3rem;
   .mypage-myinfo__list-wrapper {
@@ -29,6 +30,7 @@
 .border--dotted {
   border: 0.1rem dashed lightgray;
 
+
   margin: 0rem;
   border-radius: 0.5rem;
 }
@@ -41,9 +43,11 @@
   background: white;
   cursor: pointer;
 
+
   &:hover {
     background: var.$color-primary;
     color: white;
+
   }
 }
 .myinfo-delete {
@@ -52,14 +56,4 @@
   padding: 1rem 2.5rem;
   @include mixin.no-link-style;
 
-  border: 0.15rem #535054;
-  background: none;
-}
-.myinfo-edit-submit {
-  margin-top: 5rem;
-  background-color: var.$color-primary;
-  border: 0.15rem #535054;
-  padding: 1rem 7rem;
-  @include mixin.font-style(white, lg, "bold");
-  margin-left: 2rem;
-}
+

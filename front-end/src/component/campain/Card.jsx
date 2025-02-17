@@ -1,7 +1,7 @@
 
 import "../.././style/scss/style.scss";
 
-const Card = () => {
+const Card2 = () => {
   return (
     <div className="card">
       {/* 제목 */}
@@ -82,4 +82,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Card2;

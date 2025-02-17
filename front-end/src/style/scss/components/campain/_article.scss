@@ -1,174 +1,36 @@
-@use "../../abstracts/mixin" as mixin;
-@use "../../abstracts/variable" as var;
+.campaign-story {
+  width: 62rem; // 620px / 10
+  height: 14.4rem; // 144px / 10
+  padding: 2rem; // 20px
+  background-color: #fff;
+  border-radius: 1rem; // 10px
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; // 20px
 
-.article {
-  width: 44.25rem; // 708px / 16
-  height: 52.25rem; // 836px / 16
-  position: relative;
-  background: transparent;
-
-  .article-inner {
-    width: 44.25rem; // 708px / 16
-    height: 52.25rem; // 836px / 16
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: transparent;
+  &__title {
+    font-size: 2rem; // 20px
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem; // 10px
   }
 
-  .article-bg {
-    width: 44.25rem; // 708px / 16
-    height: 52.25rem; // 836px / 16
-    position: absolute;
-    left: 0;
-    top: 0;
+  &__description {
+    font-size: 1.6rem; // 16px
+    line-height: 2.2rem; // 22px
+    color: #666;
+    margin-bottom: 1.5rem; // 15px
   }
 
-  .article-content {
-    width: 44.25rem; // 708px / 16
-    height: 48.6875rem; // 779px / 16
-    position: absolute;
-    left: 0;
-    top: 3.375rem; // 54px / 16
-    background: transparent;
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; // 10px
 
-    .article-content-img {
-      width: 44.25rem; // 708px / 16
-      height: 24.9375rem; // 399px / 16
-      position: absolute;
-      left: 0;
-      top: 23.75rem; // 380px / 16
-    }
-
-    .article-desc {
-      width: 43.0625rem; // 689px / 16
-      height: 3.625rem; // 58px / 16
-      position: absolute;
-      left: 0.2275rem; // 3.64px / 16 (약)
-      top: 18.0625rem; // 289px / 16
-      @include mixin.font-style(#8b898e, xxs, "normal");
-      font-family: 'Inter', sans-serif;
-      line-height: 1.4725rem; // 23.56px / 16
-      word-wrap: break-word;
-    }
-
-    .article-text {
-      width: 44rem; // 704px / 16
-      height: 5.5rem; // 88px / 16
-      position: absolute;
-      left: 0.239rem; // 3.82px / 16 (약)
-      top: 10.4375rem; // 167px / 16
-      @include mixin.font-style(#8e8c91, xxs, "normal");
-      font-family: 'Inter', sans-serif;
-      line-height: 1.65rem; // 26.41px / 16
-      word-wrap: break-word;
-    }
-
-    .article-quote {
-      width: 39.1875rem; // 627px / 16
-      height: 3.6875rem; // 59px / 16
-      position: absolute;
-      left: 0.25rem; // 4px / 16
-      top: 4.8125rem; // 77px / 16
-      @include mixin.font-style(#8d8b8f,xxs, "600");
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6531rem; // 26.45px / 16
-      word-wrap: break-word;
-    }
-
-    .article-title {
-      width: 28.875rem; // 462px / 16
-      height: 1.625rem; // 26px / 16
-      position: absolute;
-      left: 0.1875rem; // 3px / 16
-      top: 2.0625rem; // 33px / 16
-      @include mixin.font-style(#4c494e, xxs, "600");
-      font-family: 'Inter', sans-serif;
-      word-wrap: break-word;
-    }
-
-    .article-divider {
-      width: 43.6875rem; // 699px / 16
-      height: 0.0625rem; // 1px / 16
-      position: absolute;
-      left: 0.25rem; // 4px / 16
-      top: 0.0625rem; // 1px / 16
-      background: #e5e5e5;
-    }
-
-    .article-small-img {
-      width: 5.25rem; // 84px / 16
-      height: 0.125rem; // 2px / 16
-      position: absolute;
-      left: 0.1875rem; // 3px / 16
-      top: 0;
-    }
-  }
-
-  .article-menu {
-    width: 44.25rem; // 708px / 16
-    height: 3.4375rem; // 55px / 16
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: transparent;
-
-    .menu-item {
-      position: absolute;
-      background: transparent;
-
-      .menu-text {
-        position: absolute;
-        word-wrap: break-word;
-      }
-    }
-
-    .menu-news {
-      width: 4.125rem; // 66px / 16
-      height: 2.625rem; // 42px / 16
-      left: 10.375rem; // 166px / 16
-      top: 0.25rem; // 4px / 16
-
-      .menu-text {
-        width: 1.8125rem; // 29px / 16
-        height: 1.125rem; // 18px / 16
-        left: 1.125rem; // 18px / 16
-        top: 0.6875rem; // 11px / 16
-        @include mixin.font-style(#aaa9aa, xxs, "600");
-        font-family: 'Inter', sans-serif;
-      }
-    }
-
-    .menu-donation {
-      width: 4.875rem; // 78px / 16
-      height: 3.5rem; // 56px / 16
-      left: 5.5625rem; // 89px / 16
-      top: 0;
-
-      .menu-text {
-        width: 3.5rem; // 56px / 16
-        height: 1.1875rem; // 19px / 16
-        left: 0.75rem; // 12px / 16
-        top: 0.875rem; // 14px / 16
-        @include mixin.font-style(#a6a6a9, xxs, "normal");
-        font-family: 'Inter', sans-serif;
-      }
-    }
-
-    .menu-intro {
-      width: 5.625rem; // 90px / 16
-      height: 3.5rem; // 56px / 16
-      left: 0;
-      top: 0;
-
-      .menu-text {
-        width: 3.4375rem; // 55px / 16
-        height: 1.25rem; // 20px / 16
-        left: 1.125rem; // 18px / 16
-        top: 0.875rem; // 14px / 16
-        @include mixin.font-style(#5d5c64, xxs, "600");
-        font-family: 'Inter', sans-serif;
-      }
+    .campaign-story__image {
+      width: 100%;
+      max-width: 30rem; // 300px
+      border-radius: 0.5rem; // 5px
+      object-fit: cover;
     }
   }
 }
