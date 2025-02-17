@@ -2,7 +2,7 @@
 import { create } from "zustand";
 
 const UseLoginStore = create((set) => ({
-  login: false,
+  login: "false",
 
   setLogin: (boolean) => set({ login: boolean }),
 }));

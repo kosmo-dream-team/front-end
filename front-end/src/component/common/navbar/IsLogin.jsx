@@ -1,25 +1,47 @@
 import { Link } from "react-router-dom";
-import UseLoginStore from "../../../store/useLoginStore";
+import useLoginStore from "../../../store/UseLoginStore";
+import useUserProfile from "../../../store/useUserProfile";
 
 function UserMenu() {
+  const { profile } = useUserProfile();
+  const { setLogin } = useLoginStore();
+
+  const logout = () => {
+    setLogin("false"); // 로그인 상태 업데이트
+    window.location.reload();
+  };
+
   return (
     <>
-      <Link to="/profile" className="nav-list">
-        마이페이지
-      </Link>
-      <Link to="/logout" className="nav-list">
+      <div className="nav-list">
+        {profile.rank} 클래스 {profile.name} 님 <br />
+        환영합니다
+      </div>
+      <img
+        className="login-profile-card-img"
+        src={profile.img}
+        alt="Profile"
+        onClick={""}
+        style={{
+          cursor: "pointer",
+          border: "0.3rem solid #ff9191",
+          borderStyle: "outset",
+        }}
+      />
+      <button className="logout-button" onClick={logout}>
         로그아웃
-      </Link>
+      </button>
     </>
   );
 }
+
 function AuthMenu() {
   return (
     <>
       <Link to="/login" className="nav-list">
         로그인
       </Link>
-      <Link to="/signup" className="nav-list">
+      <Link to="/registType" className="nav-list">
         회원가입
       </Link>
     </>
@@ -27,6 +49,6 @@ function AuthMenu() {
 }
 
 export default function IsLogin() {
-  const { login } = UseLoginStore();
-  return login ? <UserMenu /> : <AuthMenu />;
+  const { login } = useLoginStore();
+  return login === "false" ? <AuthMenu /> : <UserMenu />;
 }

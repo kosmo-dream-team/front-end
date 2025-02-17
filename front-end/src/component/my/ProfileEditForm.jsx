@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import "../.././style/scss/style.scss";
 
+//주스텐드로 상태관리가 필요해보임.
 const ProfileEditForm = () => {
   // 변경 가능한 필드에 대한 상태 관리 
   const [email, setEmail] = useState('');
