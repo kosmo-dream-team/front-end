@@ -8,29 +8,27 @@ import Login from "../../pages/auth/login";
 import RegistType from "../../pages/auth/registType";
 import SignUpApplicant from "../../pages/auth/signupApplicant";
 import SignUpDonor from "../../pages/auth/SignupDonor";
+import CampaignPage from "../../pages/campaign/CampaignPage";
 import MainPage from "../../pages/main/mainPage";
 import MyPage from "../../pages/mypage/MyPage";
-import CampaignPage from "../../pages/campaign/CampaignPage";
 
 const AppRouter = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/login" element={<Login />} />
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/login" element={<Login />} />
 
-        <Route path="/myPage" element={<MyPage />} />
+      <Route path="/myPage" element={<MyPage />} />
 
-        <Route path="/registType" element={<RegistType />} />
-        <Route path="/registType/signup/donor" element={<SignUpDonor />} />
-        <Route
-          path="/registType/signup/applicant"
-          element={<SignUpApplicant />}
-        />
+      <Route path="/registType" element={<RegistType />} />
+      <Route path="/registType/signup/donor" element={<SignUpDonor />} />
+      <Route
+        path="/registType/signup/applicant"
+        element={<SignUpApplicant />}
+      />
 
-        <Route path = "/campaign" element = {<CampaignPage />} />
-      </Routes>
-    </Router>
+      <Route path="/campaign" element={<CampaignPage />} />
+    </Routes>
   );
 };
 
