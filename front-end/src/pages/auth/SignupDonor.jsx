@@ -1,25 +1,17 @@
 import axios from "axios";
-import MockAdapter from "axios-mock-adapter"; // 모킹 어댑터 import
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate import
-import googleLogo from "../../assets/img/google-logo.svg";
-import kakaoLogo from "../../assets/img/kakao-logo.svg";
 
 import sign04 from "../../assets/img/auth1.jpg";
 import sign02 from "../../assets/img/auth7.jpg";
 import sign01 from "../../assets/img/auth8.jpg";
 import sign03 from "../../assets/img/auth9.jpg";
-
+import googleLogo from "../../assets/img/google-logo.svg";
 import useImageStore from "../../store/useImgStore";
 import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
-// axios 모킹 설정 (개발 환경에서만 사용)
-const mock = new MockAdapter(axios, { delayResponse: 500 }); // 0.5초 지연 (옵션)
-mock.onPost("http://localhost:8586/api/signup").reply(200, {
-  message: "Mock 회원가입 성공",
-});
 
-export default function SignUpDonor() {
+export default function SignUpApplicant() {
   const { setImages } = useImageStore();
   const navigate = useNavigate();
 
@@ -33,10 +25,10 @@ export default function SignUpDonor() {
     email: "",
     name: "",
     password: "",
-    //   confirmPassword: "",
+    confirmPassword: "",
     phone: "",
     gender: "",
-    userType: "donor", // donor 유형 지정
+    userType: "applicant",
   });
 
   const handleChange = (e) => {
@@ -59,21 +51,25 @@ export default function SignUpDonor() {
       alert("필수 항목을 모두 입력해주세요.");
       return;
     }
-    //비밀번호와 비밀번호 재입력이 일치해야 전송이 가능.
     if (formData.password !== formData.confirmPassword) {
       alert("비밀번호와 비밀번호 재입력이 일치하지 않습니다.");
       return;
     }
 
-    // API 요청 실행
+    // confirmPassword를 제외한 데이터 생성
+    const { confirmPassword, ...submitData } = formData;
+
+    // API 요청 실행 (백엔드가 없더라도 모킹이 동작하여 성공 응답을 반환합니다.)
     try {
+      //"http://localhost:8586/api/signup",
       const response = await axios.post(
-        "http://localhost:8586/api/signup",
-        formData
+        "https://5a444086-c1dc-4892-ad18-bdd46c7aef5f.mock.pstmn.io/api/signup",
+        submitData
       );
       console.log("API 호출 성공:", response.data);
-      console.log("보내진 데이터:", formData);
-      navigate("/"); // 가입 성공 후 페이지 이동
+      console.log("보내진 데이터:", submitData);
+      // API 호출 성공 후 페이지 이동
+      navigate("/");
     } catch (error) {
       console.error("API 호출 실패:", error);
       alert("회원가입에 실패하였습니다. 다시 시도해주세요.");
@@ -190,7 +186,7 @@ export default function SignUpDonor() {
                     type="password"
                     id="confirmPassword"
                     name="confirmPassword"
-                    value=""
+                    value={formData.confirmPassword}
                     onChange={handleChange}
                     placeholder="비밀번호를 다시 입력해주세요"
                   />
@@ -212,7 +208,6 @@ export default function SignUpDonor() {
                 <button type="submit" className="signup-button">
                   <span>가입하기</span>
                 </button>
-                {/* hidden input: userType을 올바른 속성명으로 지정 */}
                 <input
                   type="hidden"
                   name="userType"
@@ -225,11 +220,11 @@ export default function SignUpDonor() {
         </div>
         {/* 소셜 로그인 영역 */}
         <div className="social-login">
-          <img
+          {/* <img
             src={kakaoLogo}
             alt="카카오로 로그인"
             onClick={() => alert("카카오 로그인")}
-          />
+          /> */}
           <img
             src={googleLogo}
             alt="구글로 로그인"
@@ -239,7 +234,7 @@ export default function SignUpDonor() {
       </div>
       {/* 오른쪽 이미지 및 텍스트 영역 */}
       <div className="signup-right-img-container">
-        <ImageSwiper />
+        <ImageSwiper className="signup-img" />
         <div className="signup-right-text1">
           <div className="big-title">작은 손길, 큰 변화</div>
           <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>

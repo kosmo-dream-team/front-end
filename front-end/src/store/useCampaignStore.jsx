@@ -4,10 +4,10 @@ import { create } from "zustand";
 const useCampaignStore = create((set) => ({
   toggleMenu: {
     menuList: [
-      {name: '소개', url: '/campaign/intro'},
-      {name: '나눔내역', url: '/campaign/history'},
-      {name: '소식', url: '/campaign/news'},
-    ]
+      { name: "소개", url: "/campaign/intro" },
+      { name: "나눔내역", url: "/campaign/history" },
+      { name: "소식", url: "/campaign/news" },
+    ],
   },
   campaignStatus: {
     title: null,
@@ -39,16 +39,23 @@ const useCampaignStore = create((set) => ({
   },
   fetchCampaignStatus: async () => {
     try {
-      console.log('Fetching campaign status...');
-      await fetch("http://192.168.0.53:8586/project/10", {withCredentials: true}).then(res => res.json()).then(res => {
-        console.log(res);
-        set({ campaignStatus: res });
-      });
+      console.log("Fetching campaign status...");
+      await fetch("http://192.168.0.53:8586/project/10", {
+        withCredentials: true,
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          set({ campaignStatus: res });
+        });
     } catch (error) {
       console.error("캠페인 api 가져오기 오류 발생", error);
     }
   },
-  setCampaignStatus: (newStatus) => set((state) => ({ campaignStatus: { ...state.campaignStatus, ...newStatus } }))
+  setCampaignStatus: (newStatus) =>
+    set((state) => ({
+      campaignStatus: { ...state.campaignStatus, ...newStatus },
+    })),
 }));
 
 export default useCampaignStore;

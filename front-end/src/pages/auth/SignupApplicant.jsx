@@ -1,5 +1,4 @@
 import axios from "axios";
-import MockAdapter from "axios-mock-adapter"; // 모킹 어댑터 import
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate import
 
@@ -11,12 +10,6 @@ import googleLogo from "../../assets/img/google-logo.svg";
 import useImageStore from "../../store/useImgStore";
 import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
-
-// axios 모킹 설정 (개발 환경에서만 사용)
-const mock = new MockAdapter(axios, { delayResponse: 500 }); // 0.5초 지연 (옵션)
-mock.onPost("http://localhost:8586/api/signup").reply(200, {
-  message: "Mock 회원가입 성공",
-});
 
 export default function SignUpApplicant() {
   const { setImages } = useImageStore();
@@ -63,14 +56,18 @@ export default function SignUpApplicant() {
       return;
     }
 
+    // confirmPassword를 제외한 데이터 생성
+    const { confirmPassword, ...submitData } = formData;
+
     // API 요청 실행 (백엔드가 없더라도 모킹이 동작하여 성공 응답을 반환합니다.)
     try {
+      //"http://localhost:8586/api/signup",
       const response = await axios.post(
-        "http://localhost:8586/api/signup",
-        formData
+        "https://5a444086-c1dc-4892-ad18-bdd46c7aef5f.mock.pstmn.io/api/signup",
+        submitData
       );
       console.log("API 호출 성공:", response.data);
-      console.log("보내진 데이터:", formData);
+      console.log("보내진 데이터:", submitData);
       // API 호출 성공 후 페이지 이동
       navigate("/");
     } catch (error) {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import sign04 from "../../assets/img/auth1.jpg";
@@ -12,20 +12,6 @@ import UseLoginStore from "../../store/UseLoginStore";
 import useUserProfile from "../../store/useUserProfile";
 import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
-// 로그인 모킹 설정 (개발 환경에서만 사용)
-const mock = new MockAdapter(axios, { delayResponse: 500 });
-mock.onPost("http://localhost:8586/api/login").reply(200, {
-  nickname: "홍길23동",
-  password: "12345678910",
-  phone: "010123123123",
-  email: "orm123123@gmaul.com",
-  age: "1980-01-01",
-  sex: "남성",
-  rank: "골드",
-  totalDonationCount: "1004",
-  profileImage:
-    "https://i.namu.wiki/i/VrVvnKwZ-OR_dqWJfiQQZoOgnTmAQeZ_QTyDCPa3KDhF4V_oaHr4nIbVEebqDZYj5GJH75ft1UKfU9PMaqh93w.webp",
-});
 
 function Login() {
   // 로그인 폼 데이터 상태
@@ -39,10 +25,6 @@ function Login() {
     // 이미지 파일 상대 경로 배열 설정
     setImages([sign01, sign02, sign03, sign04]);
   }, [setImages]);
-  // 백엔드와 연동 테스트 할때 주석 해제  ( DB와 로그인 값이 일치하지는지 확인 )
-  //=================================================================
-  // const { setLogin } = useLoginStore(); // 로그인 상태 업데이트
-  //=================================================================
 
   // 로그인 폼 입력값 변경 시 상태 업데이트
   const handleChange = (e) => {
@@ -50,40 +32,31 @@ function Login() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  //http://localhost:8586
   // 로그인 폼 체줄시 api로 요청을 보냄
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8586/api/login",
+        "https://5a444086-c1dc-4892-ad18-bdd46c7aef5f.mock.pstmn.io/api/login",
         formData
       );
-      // 백엔드와 연동 테스트 할때 주석 해제  ( DB와 로그인 값이 일치하지는지 확인 )
-      //=================================================================
-      // if (!response.data.login) {
-      //   setLogin("false");
-      //   alert("로그인 실패. 이메일과 비밀번호를 확인해주세요.");
-      //   return;
-      // }
-      // console.log("로그인 성공:", response.data);
-
-      // setLogin(true);
-      //=================================================================
 
       const mappedProfile = {
-        name: response.data.nickname,
-        password: response.data.password,
+        user_name: response.data.user_name,
+        password_hash: response.data.password_hash,
         email: response.data.email,
-        phone: response.data.phone || "",
-        age: response.data.age,
-        gender: response.data.sex,
+        phone: response.data.phone,
+        user_type: response.data.user_type,
+        gender: response.data.gender,
         rank: response.data.rank,
-        totalDonationCount: response.data.totalDonationCount,
-        img: response.data.profileImage,
+        total_donation_count: response.data.total_donation_count,
+        profile_image: response.data.img,
       };
 
       setProfile(mappedProfile);
       alert("로그인 성공");
+      console.log(mappedProfile);
       setLogin("true");
       navigate("/");
     } catch (error) {

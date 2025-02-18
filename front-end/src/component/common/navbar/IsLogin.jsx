@@ -14,14 +14,13 @@ function UserMenu() {
   return (
     <>
       <div className="nav-list">
-        {profile.rank} 클래스 {profile.name} 님 <br />
+        {profile.rank} 클래스 {profile.user_name} 님 <br />
         환영합니다
       </div>
       <img
         className="login-profile-card-img"
-        src={profile.img}
+        src={profile.profile_image}
         alt="Profile"
-        onClick={""}
         style={{
           cursor: "pointer",
           border: "0.3rem solid #ff9191",

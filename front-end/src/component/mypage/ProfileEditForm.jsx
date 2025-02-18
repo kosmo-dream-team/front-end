@@ -3,38 +3,38 @@ import useUserProfile from "../../store/useUserProfile";
 import "../../style/scss/style.scss";
 
 export default function ProfileEditForm() {
-  // fetchProfile 호출을 제거하여, 로그인 시 업데이트된 데이터(예: "홍길23동")를 그대로 사용합니다.
   const { profile, updateProfile, isLoading, error } = useUserProfile();
 
   // 편집 여부 관리
   const [editing, setEditing] = useState({
-    name: false,
+    user_name: false,
+    password_hash: false,
     phone: false,
     email: false,
-    age: false,
     gender: false,
   });
 
   // 폼 데이터를 로컬 상태로 관리 (초기값은 store의 profile 데이터 사용)
   const [formData, setFormData] = useState({
-    name: "",
+    user_name: "",
+    password_hash: "",
     phone: "",
     email: "",
-    age: "",
     gender: "",
   });
 
   // store의 profile이 업데이트되면 로컬 폼 데이터를 초기화합니다.
   useEffect(() => {
-    // profile이 존재하고 name 필드가 있을 때만 초기화합니다.
-    if (profile && profile.name) {
+    // profile이 존재하고 user_name 필드가 있을 때만 초기화합니다.
+    if (profile && profile.user_name) {
       setFormData({
-        name: profile.name,
+        user_name: profile.user_name,
+        password_hash: profile.password_hash,
         phone: profile.phone,
         email: profile.email,
-        age: profile.age,
         gender: profile.gender,
       });
+      console.log("프로필 데이터 업데이트:", profile);
     }
   }, [profile]);
 
@@ -57,11 +57,11 @@ export default function ProfileEditForm() {
     await updateProfile(formData);
     // 저장 후 편집모드 비활성화
     setEditing({
-      name: false,
-      phone: false,
-      email: false,
-      age: false,
-      gender: false,
+      user_name: profile.user_name,
+      password_hash: profile.password_hash,
+      phone: profile.phone,
+      email: profile.email,
+      gender: profile.gender,
     });
   };
 
@@ -74,14 +74,14 @@ export default function ProfileEditForm() {
           <input
             className="myinfo-value"
             type="text"
-            value={formData.name}
-            readOnly={!editing.name}
-            onChange={(e) => handleChange("name", e.target.value)}
+            value={formData.user_name}
+            readOnly={!editing.user_name}
+            onChange={(e) => handleChange("user_name", e.target.value)}
           />
           <button
             type="button"
             className="myinfo-edit"
-            onClick={() => handleEditToggle("name")}
+            onClick={() => handleEditToggle("user_name")}
           >
             변경
           </button>
@@ -136,12 +136,12 @@ export default function ProfileEditForm() {
       {/* 나이 */}
       <div className="mypage-myinfo__container">
         <div className="mypage-myinfo__list-wrapper">
-          <p className="myinfo-title">나이</p>
+          <p className="myinfo-title">비밀번호 변경</p>
           <input
             className="myinfo-value"
-            type="date"
-            value={formData.age}
-            readOnly={!editing.age}
+            type="text"
+            value={formData.password_hash}
+            readOnly={!editing.password_hash}
             onChange={(e) => handleChange("age", e.target.value)}
           />
           <button
@@ -161,7 +161,7 @@ export default function ProfileEditForm() {
           <p className="myinfo-title">성별</p>
           <select
             name="gender"
-            id="sex"
+            id="gender"
             className="myinfo-value"
             value={formData.gender}
             disabled={!editing.gender}
