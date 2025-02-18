@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 
 // 각 컴포넌트 임포트
 
-import Login from "../../pages/auth/login";
+import Login from "../../pages/auth/Login";
 import RegistType from "../../pages/auth/registType";
 import SignUpApplicant from "../../pages/auth/signupApplicant";
 import SignUpDonor from "../../pages/auth/SignupDonor";
@@ -18,7 +18,7 @@ const AppRouter = () => {
       <Route path="/" element={<MainPage />} />
       <Route path="/login" element={<Login />} />
 
-      <Route path="/myPage" element={<MyPage />} />
+      <Route path="/pages/mypage" element={<MyPage />} />
 
       <Route path="/registType" element={<RegistType />} />
       <Route path="/registType/signup/donor" element={<SignUpDonor />} />

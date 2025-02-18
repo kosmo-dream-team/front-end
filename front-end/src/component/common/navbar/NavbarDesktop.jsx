@@ -11,7 +11,7 @@ export default function NavbarDesktop() {
     <div className="layout__header">
       <nav className="navbar">
         <div className="navbar-logo">
-          <Link to={menuDb.mainPage}>{menuDb.logoTheme}</Link>
+          <Link to="/">{menuDb.logoTheme}</Link>
         </div>
 
         <div className={`navbar-menu ${menuOpen ? "active" : ""}`}>

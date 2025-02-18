@@ -3,7 +3,6 @@ import useUserProfile from "../../store/useUserProfile";
 import "../../style/scss/style.scss";
 
 export default function MyPageMenu() {
-  // fetchProfile() 호출 제거 → 로그인 시 저장된 상태를 그대로 사용
   const { profile, setProfileImage, isLoading, error } = useUserProfile();
 
   // 모달 열림 여부 및 새 이미지 URL 관리를 위한 상태
@@ -45,13 +44,13 @@ export default function MyPageMenu() {
         <div className="profile-card">
           <div className="profile-card__background"></div>
           <div className="profile-card__text">
-            {profile.name}
+            {profile.user_name}
             <br />
-            {profile.email.slice(0, 5)}**
+            {profile.email.slice(0, 5) || ""}**
           </div>
           <img
             className="profile-card__img"
-            src={profile.img}
+            src={profile.profile_image}
             alt="Profile"
             onClick={handleImageClick}
             style={{ cursor: "pointer" }}
@@ -82,7 +81,7 @@ export default function MyPageMenu() {
                 />
               ) : (
                 <img
-                  src={profile.img}
+                  src={profile.profile_image}
                   alt="Current Profile"
                   style={{ maxWidth: "100%" }}
                 />
