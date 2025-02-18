@@ -1,5 +1,5 @@
+import useNavbarStore from "@/store/useNavbarStore";
 import { Link } from "react-router-dom";
-import useNavbarStore from "../../../store/useNavbarStore";
 
 export default function NavbarMobile() {
   const { menuDb } = useNavbarStore();

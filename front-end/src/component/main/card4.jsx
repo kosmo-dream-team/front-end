@@ -1,8 +1,8 @@
-import "../.././style/scss/style.scss";
-import facebook from "../../assets/img/facebook.svg";
-import instagram from "../../assets/img/instagram.svg";
-import naverblog from "../../assets/img/naverblog.svg";
-import youtube from "../../assets/img/youtube.svg";
+import facebook from "@/assets/img/facebook.svg";
+import instagram from "@/assets/img/instagram.svg";
+import naverblog from "@/assets/img/naverblog.svg";
+import youtube from "@/assets/img/youtube.svg";
+import "@/style/scss/style.scss";
 const Card4 = () => {
   return (
     <div className="donation-sharing">

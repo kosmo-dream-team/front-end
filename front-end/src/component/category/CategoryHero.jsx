@@ -1,6 +1,6 @@
-import heroBg from "../../assets/img/categorypage-hero.png";
-import donor from "../../assets/img/donor.png";
-import "../../style/scss/style.scss";
+import heroBg from "@/assets/img/categorypage-hero.png";
+import donor from "@/assets/img/donor.png";
+import "@/style/scss/style.scss";
 
 export default function CategoryHero() {
   return (

@@ -1,7 +1,7 @@
-import facebookBlack from "../../../assets/img/facebook-black.svg";
-import instagramBlack from "../../../assets/img/instagram-black.svg";
-import kakaoBlack from "../../../assets/img/kakao-black.svg";
-import "../../../style/scss/style.scss";
+import facebookBlack from "@/assets/img/facebook-black.svg";
+import instagramBlack from "@/assets/img/instagram-black.svg";
+import kakaoBlack from "@/assets/img/kakao-black.svg";
+import "@/style/scss/style.scss";
 const Footer = () => {
   return (
     <div className="donation-footer">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import useNavbarStore from "../../../store/useNavbarStore";
+import useNavbarStore from "@/store/useNavbarStore";
 import IsLogin from "./IsLogin";
 export default function NavbarDesktop() {
   const [menuOpen, setMenuOpen] = useState(false);

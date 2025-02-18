@@ -1,6 +1,6 @@
+import useTop15CampaginListStore from "@/store/useTop15CampaginListStore";
+import "@/style/scss/style.scss";
 import { useEffect } from "react";
-import useTop15CampaginListStore from "../../store/useTop15CampaginListStore";
-import "../../style/scss/style.scss";
 
 export default function PopularCampaign() {
   // Zustand 스토어에서 state와 함수를 가져옴

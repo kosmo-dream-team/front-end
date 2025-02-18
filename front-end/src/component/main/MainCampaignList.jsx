@@ -1,7 +1,7 @@
+import baby1 from "@/assets/img/baby1.jpg";
+import useTop15CampaginListStore from "@/store/useTop15CampaginListStore";
+import "@/style/scss/style.scss";
 import { useEffect } from "react";
-import baby1 from "../../assets/img/baby1.jpg";
-import useTop15CampaginListStore from "../../store/useTop15CampaginListStore";
-import "../../style/scss/style.scss";
 
 export default function MainCampaignList() {
   // Zustand 스토어에서 state와 함수를 가져옴

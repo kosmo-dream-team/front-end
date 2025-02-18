@@ -1,6 +1,6 @@
-import React from 'react';
-import "../.././style/scss/style.scss";
-import donationBox from "../../assets/img/donation-box.svg";
+import donationBox from "@/assets/img/donation-box.svg";
+import "@/style/scss/style.scss";
+
 const Card5 = () => {
   return (
     <div className="donation-suggestion">
@@ -17,8 +17,7 @@ const Card5 = () => {
       {/* 아이콘 영역 */}
       <div className="donation-suggestion__icon-container">
         <div className="donation-suggestion__icon">
-          <img src={donationBox}  className="donation-suggestion__icon-bg" />
-         
+          <img src={donationBox} className="donation-suggestion__icon-bg" />
         </div>
       </div>
 

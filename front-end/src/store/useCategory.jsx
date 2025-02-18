@@ -1,6 +1,6 @@
 import create from "zustand";
 
-const useCategoryStore = create((set) => ({
+const UseCategoryStore = create((set) => ({
   categories: [],
   addCategory: (category) =>
     set((state) => ({
@@ -18,4 +18,4 @@ const useCategoryStore = create((set) => ({
     })),
 }));
 
-export default useCategoryStore;
+export default UseCategoryStore;
