@@ -5,9 +5,10 @@ import "../../style/scss/style.scss";
 export default function MyPageMenu() {
   const { profile, setProfileImage, isLoading, error } = useUserProfile();
 
-  // 모달 열림 여부 및 새 이미지 URL 관리를 위한 상태
+  // 모달 열림 여부 및 이미지 관련 상태
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [newImage, setNewImage] = useState(null);
+  const [newImageFile, setNewImageFile] = useState(null);
+  const [newImageUrl, setNewImageUrl] = useState(null);
 
   const handleImageClick = () => {
     setIsModalOpen(true);
@@ -15,21 +16,27 @@ export default function MyPageMenu() {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setNewImage(null);
+    setNewImageFile(null);
+    setNewImageUrl(null);
   };
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
+      setNewImageFile(file);
       const imageUrl = URL.createObjectURL(file);
-      setNewImage(imageUrl);
+      setNewImageUrl(imageUrl);
     }
   };
 
+  // 여기서는 store에 이미지만 업데이트 (백엔드 API 호출 X)
   const handleUpdateImage = () => {
-    if (newImage) {
-      setProfileImage(newImage);
+    if (newImageUrl) {
+      // 여기서는 새 이미지의 URL (혹은 file)을 store에 저장함
+      // setProfileImage 함수는 단순히 store의 profile 객체를 업데이트하도록 구현되어 있음.
+      setProfileImage(newImageUrl);
       handleCloseModal();
+      console.log("새 이미지 저장:", newImageUrl);
     } else {
       alert("새로운 이미지를 선택해주세요.");
     }
@@ -46,7 +53,7 @@ export default function MyPageMenu() {
           <div className="profile-card__text">
             {profile.user_name}
             <br />
-            {profile.email.slice(0, 5) || ""}**
+            {profile.email?.slice(0, 5) || ""}**
           </div>
           <img
             className="profile-card__img"
@@ -73,9 +80,9 @@ export default function MyPageMenu() {
             <h2>프로필 이미지 변경</h2>
             <input type="file" accept="image/*" onChange={handleImageChange} />
             <div className="image-preview">
-              {newImage ? (
+              {newImageUrl ? (
                 <img
-                  src={newImage}
+                  src={newImageUrl}
                   alt="New Profile Preview"
                   style={{ maxWidth: "100%" }}
                 />

@@ -1,5 +1,6 @@
 import { create } from "zustand";
 
+//회원가입
 const useImageStore = create((set) => ({
   images: [],
 

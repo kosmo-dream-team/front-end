@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import useNavbarStore from "@/store/useNavbarStore";
-import IsLogin from "./IsLogin";
+import UserInfo from "./UserInfo";
 export default function NavbarDesktop() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { menuDb } = useNavbarStore(); // zustand 스토어에서 menuDb 가져오기
@@ -32,7 +32,7 @@ export default function NavbarDesktop() {
               {data.logo}
             </Link>
           ))}
-          <IsLogin />
+          <UserInfo />
         </div>
 
         <div className="navbar-btn" onClick={() => setMenuOpen(!menuOpen)}>

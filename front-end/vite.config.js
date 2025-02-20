@@ -1,6 +1,6 @@
 import react from "@vitejs/plugin-react";
 import path from "path";
-import { fileURLToPath } from "url"; // ESM 환경에서 __dirname 대체
+import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,7 +17,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: ``, // SCSS 전역 변수 등을 추가할 수 있음
+        additionalData: ``, // SCSS 전역 변수
       },
     },
   },

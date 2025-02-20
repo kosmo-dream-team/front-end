@@ -3,7 +3,7 @@ import "swiper/css/autoplay"; // autoplay 모듈의 CSS 가져오기
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 // zustand 스토어에서 이미지 데이터 불러오기
-import useImageStore from "../../store/useImgStore";
+import useImageStore from "@/store/useImgStore";
 
 const ImageSwiper = () => {
   //zustand 스토어에서 images 배열을 가져옴

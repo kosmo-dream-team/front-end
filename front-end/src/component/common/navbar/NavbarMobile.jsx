@@ -51,7 +51,7 @@ export default function NavbarMobile() {
             ))}
           </div> */}
           {/* 로그인 상태에 따른 메뉴가 필요하다면 추가 */}
-          {/* 예시: <IsLogin /> */}
+          {/* 예시: <UserInfo /> */}
         </div>
       </div>
     </nav>

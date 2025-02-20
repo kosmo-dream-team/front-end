@@ -1,11 +1,13 @@
 import baby1 from "@/assets/img/baby1.jpg";
-import useTop15CampaginListStore from "@/store/useTop15CampaginListStore";
+import useTopCampaginListStore from "@/store/useTopCampaginListStore";
 import "@/style/scss/style.scss";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function MainCampaignList() {
   // Zustand 스토어에서 state와 함수를 가져옴
-  const { campaignList, fetchCampaignList } = useTop15CampaginListStore();
+  const { campaignList, fetchCampaignList } = useTopCampaginListStore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCampaignList(); // 컴포넌트 마운트 시점에 API 호출
@@ -14,12 +16,19 @@ export default function MainCampaignList() {
   // 4번째~15번째 (인덱스 3~14)만 화면에 출력
   const slicedCampaigns = campaignList.slice(3, 15);
 
+  // 캠페인 상세 페이지로 이동하는 함수
+  const goToCampaignDetail = (project_id) => {
+    navigate(`/campaign/${project_id}`);
+  };
+
   return (
     <>
       {slicedCampaigns.map((campaign, index) => (
         <div
           className="main-campaign-list"
           key={`${campaign.user_id}-${index}`}
+          onClick={() => goToCampaignDetail(campaign.project_id)}
+          style={{ cursor: "pointer" }} // 클릭 가능한 UI임을 명시
         >
           <div
             className="layout__main-campaign-list__content"
