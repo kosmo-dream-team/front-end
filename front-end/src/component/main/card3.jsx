@@ -1,5 +1,5 @@
-import arrowRight from "../../assets/img/arrow-right.svg";
-import "../.././style/scss/style.scss";
+import arrowRight from "@/assets/img/arrow-right.svg";
+import "@/style/scss/style.scss";
 const Card3 = () => {
   return (
     <div className="campaign-section">
@@ -43,12 +43,11 @@ const Card3 = () => {
                     />
                   </div>
                   <div className="new-campaign-item">
-                  <div className="campaign-item__donation-percent">28%</div>
-                  <div className="campaign-item__donation-amount">
-                    <span>1,140,000원</span>
-                    
+                    <div className="campaign-item__donation-percent">28%</div>
+                    <div className="campaign-item__donation-amount">
+                      <span>1,140,000원</span>
+                    </div>
                   </div>
-                </div>
                 </div>
               </div>
 
@@ -66,12 +65,11 @@ const Card3 = () => {
                   <div className="campaign-item__sponsor">양지지역아동센터</div>
                   <div className="campaign-item__progress-bg" />
                   <div className="new-campaign-item">
-                  <div className="campaign-item__donation-percent">28%</div>
-                  <div className="campaign-item__donation-amount">
-                    <span>1,140,000원</span>
-                    
+                    <div className="campaign-item__donation-percent">28%</div>
+                    <div className="campaign-item__donation-amount">
+                      <span>1,140,000원</span>
+                    </div>
                   </div>
-                </div>
                 </div>
               </div>
 
@@ -96,12 +94,11 @@ const Card3 = () => {
                     />
                   </div>
                   <div className="new-campaign-item">
-                  <div className="campaign-item__donation-percent">28%</div>
-                  <div className="campaign-item__donation-amount">
-                    <span>1,140,000원</span>
-                    
+                    <div className="campaign-item__donation-percent">28%</div>
+                    <div className="campaign-item__donation-amount">
+                      <span>1,140,000원</span>
+                    </div>
                   </div>
-                </div>
                 </div>
               </div>
             </div>

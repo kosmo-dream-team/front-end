@@ -1,5 +1,4 @@
-
-import "../.././style/scss/style.scss";
+import "@/style/scss/style.scss";
 
 const Card = () => {
   return (
@@ -165,9 +164,7 @@ const Card = () => {
         </div>
       </div>
       <div className="card-date-container">
-        <div className="card-date-text">
-          모금기간 2025.01.03 ~ 2025.02.15
-        </div>
+        <div className="card-date-text">모금기간 2025.01.03 ~ 2025.02.15</div>
       </div>
     </>
   );

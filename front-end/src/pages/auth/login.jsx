@@ -1,24 +1,21 @@
+import sign04 from "@/assets/img/auth1.jpg";
+import sign02 from "@/assets/img/auth7.jpg";
+import sign01 from "@/assets/img/auth8.jpg";
+import sign03 from "@/assets/img/auth9.jpg";
+import googleLogo from "@/assets/img/google-logo.svg";
+import useImageStore from "@/store/useImgStore";
+import useUserProfile from "@/store/useUserProfile";
+import "@/style/scss/style.scss";
 import axios from "axios";
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import sign04 from "../../assets/img/auth1.jpg";
-import sign02 from "../../assets/img/auth7.jpg";
-import sign01 from "../../assets/img/auth8.jpg";
-import sign03 from "../../assets/img/auth9.jpg";
-import googleLogo from "../../assets/img/google-logo.svg";
-import useImageStore from "../../store/useImgStore";
-import UseLoginStore from "../../store/UseLoginStore";
-import useUserProfile from "../../store/useUserProfile";
-import "../../style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
 
 function Login() {
-  // 로그인 폼 데이터 상태
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  // 초기 formData에서 password 대신 password_hash 사용
+  const [formData, setFormData] = useState({ email: "", password_hash: "" });
   const navigate = useNavigate();
   const { setProfile } = useUserProfile(); // 프로필 상태를 지정
-  const { setLogin } = UseLoginStore(); // 로그인 상태 업데이트
   const { setImages } = useImageStore();
 
   useEffect(() => {
@@ -32,42 +29,58 @@ function Login() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  //http://localhost:8586
-  // 로그인 폼 체줄시 api로 요청을 보냄
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("보낸 데이터", formData);
     try {
+      // Axios를 사용해 POST 요청 전송 (URL은 백엔드 매핑에 맞게 수정 필요)
       const response = await axios.post(
-        "https://5a444086-c1dc-4892-ad18-bdd46c7aef5f.mock.pstmn.io/api/login",
-        formData
+        "http://localhost:8586/api/login",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
 
+      // 응답 데이터가 없으면 로그인 실패 처리
+      if (!response.data) {
+        alert("아이디와 비밀번호를 다시 확인해주세요.");
+        window.location.reload();
+        return;
+      }
+
+      const data = response.data;
       const mappedProfile = {
-        user_name: response.data.user_name,
-        password_hash: response.data.password_hash,
-        email: response.data.email,
-        phone: response.data.phone,
-        user_type: response.data.user_type,
-        gender: response.data.gender,
-        rank: response.data.rank,
-        total_donation_count: response.data.total_donation_count,
-        profile_image: response.data.img,
+        user_id: data.user_id,
+        user_name: data.user_name,
+
+        password_hash: data.password_hash,
+        email: data.email,
+        phone: data.phone,
+        user_type: data.user_type,
+        gender: data.gender,
+        rank: data.rank,
+        total_donation_count: data.total_donation_count,
+        profile_image: data.img,
       };
 
       setProfile(mappedProfile);
       alert("로그인 성공");
-      console.log(mappedProfile);
-      setLogin("true");
+      console.log("가져온 데이터 ", response.data);
       navigate("/");
     } catch (error) {
       console.error("로그인 실패:", error);
-      alert("로그인 실패. 다시 시도해주십시오.");
+      alert("아이디 또는 비밀번호가 일치하지 않습니다.");
     }
   };
-
+  const handleGoogleLogin = () => {
+    //
+    window.location.href = "http://localhost:8586/oauth2/authorization/google";
+  };
   return (
     <div className="signup-container">
-      {/* ... 로그인 UI 유지 ... */}
       <div className="signup-left-form-container">
         <div className="signup-left">
           <div className="favicon">
@@ -104,12 +117,12 @@ function Login() {
                   />
                 </div>
                 <div className="input-wrapper password">
-                  <label htmlFor="password">비밀번호</label>
+                  <label htmlFor="password_hash">비밀번호</label>
                   <input
                     type="password"
-                    id="password"
-                    name="password"
-                    value={formData.password}
+                    id="password_hash"
+                    name="password_hash"
+                    value={formData.password_hash}
                     onChange={handleChange}
                     placeholder="비밀번호를 입력해주세요"
                   />
@@ -135,15 +148,10 @@ function Login() {
           <div className="other-method">다른 방법으로 로그인</div>
         </div>
         <div className="social-login">
-          {/* <img
-            src={kakaoLogo}
-            alt="카카오로 로그인하기"
-            onClick={() => alert("카카오 로그인")}
-          /> */}
           <img
             src={googleLogo}
             alt="구글로 로그인하기"
-            onClick={() => alert("구글 로그인")}
+            onClick={handleGoogleLogin}
           />
         </div>
       </div>

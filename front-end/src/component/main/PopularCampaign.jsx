@@ -1,11 +1,11 @@
+import useTopCampaginListStore from "@/store/useTopCampaginListStore";
+import "@/style/scss/style.scss";
 import { useEffect } from "react";
-import useTop15CampaginListStore from "../../store/useTop15CampaginListStore";
-import "../../style/scss/style.scss";
-
+import { useNavigate } from "react-router-dom";
 export default function PopularCampaign() {
   // Zustand 스토어에서 state와 함수를 가져옴
-  const { campaignList, fetchCampaignList } = useTop15CampaginListStore();
-
+  const { campaignList, fetchCampaignList } = useTopCampaginListStore();
+  const navigate = useNavigate();
   // 컴포넌트가 마운트될 때 15개 캠페인 데이터를 받아옴
   useEffect(() => {
     fetchCampaignList();
@@ -13,7 +13,10 @@ export default function PopularCampaign() {
 
   // 상위 3개 캠페인만 추출 (배열 길이가 3 미만이면 그대로 사용)
   const topThreeCampaigns = campaignList.slice(0, 3);
-
+  // 캠페인 상세 페이지로 이동하는 함수
+  const goToCampaignDetail = (project_id) => {
+    navigate(`/campaign/${project_id}`);
+  };
   return (
     <div className="popular-campaign">
       <div className="popular-campaign__title">가장 많이 기부 중인 모금함</div>
@@ -28,6 +31,8 @@ export default function PopularCampaign() {
               index === 0 ? "first" : index === 1 ? "second" : "third"
             }`}
             key={campaign.user_id + index}
+            onClick={() => goToCampaignDetail(campaign.project_id)} // 캠페인 아이디로 상세 페이지 이동
+            style={{ cursor: "pointer" }} // 클릭 가능한 UI임을 명시
           >
             {/* 이미지 영역 */}
             <div className="popular-campaign__item-img-container">

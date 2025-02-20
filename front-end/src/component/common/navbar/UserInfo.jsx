@@ -1,15 +1,9 @@
+import useUserProfile from "@/store/useUserProfile";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import useLoginStore from "../../../store/UseLoginStore";
-import useUserProfile from "../../../store/useUserProfile";
 
-function UserMenu() {
+function UserMenu({ onLogout }) {
   const { profile } = useUserProfile();
-  const { setLogin } = useLoginStore();
-
-  const logout = () => {
-    setLogin("false"); // 로그인 상태 업데이트
-    window.location.reload();
-  };
 
   return (
     <>
@@ -27,7 +21,7 @@ function UserMenu() {
           borderStyle: "outset",
         }}
       />
-      <button className="logout-button" onClick={logout}>
+      <button className="logout-button" onClick={onLogout}>
         로그아웃
       </button>
     </>
@@ -47,7 +41,18 @@ function AuthMenu() {
   );
 }
 
-export default function IsLogin() {
-  const { login } = useLoginStore();
-  return login === "false" ? <AuthMenu /> : <UserMenu />;
+export default function UserInfo() {
+  const { profile } = useUserProfile();
+
+  // 회원 이름이 있으면 로그인 상태
+  const [isLogin, setLogin] = useState(profile.user_name !== null);
+
+  const handleLogout = () => {
+    // 로그아웃 시 상태를 false로 업데이트합니다.
+    setLogin(false);
+    // 필요하다면 추가적인 로그아웃 작업(예: 토큰 삭제, 서버 로그아웃 요청 등)을 진행합니다.
+    window.location.reload();
+  };
+
+  return isLogin ? <UserMenu onLogout={handleLogout} /> : <AuthMenu />;
 }

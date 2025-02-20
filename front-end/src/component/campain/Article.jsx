@@ -1,16 +1,15 @@
-
-import "../.././style/scss/style.scss";
+import "@/style/scss/style.scss";
 
 const Article = () => {
   // 하드코딩된 데이터
-  const title = '사랑의 열매 캠페인';
+  const title = "사랑의 열매 캠페인";
   const description = `이 캠페인은 사고피해 유가족들을 지원하기 위해 진행됩니다. 
   피해자들의 어려움을 덜어주고 희망을 전달하기 위한 다양한 프로그램이 운영되고 있습니다. 
   여러분의 작은 도움이 큰 변화를 만들 수 있습니다.`;
   const images = [
-    'https://via.placeholder.com/300x200?text=Image+1',
-    'https://via.placeholder.com/300x200?text=Image+2',
-    'https://via.placeholder.com/300x200?text=Image+3',
+    "https://via.placeholder.com/300x200?text=Image+1",
+    "https://via.placeholder.com/300x200?text=Image+2",
+    "https://via.placeholder.com/300x200?text=Image+3",
   ];
 
   return (

@@ -1,5 +1,5 @@
-import categoriesIcon from "../../assets/img/categories-icon.png";
-import "../../style/scss/style.scss";
+import categoriesIcon from "@/assets/img/categories-icon.png";
+import "@/style/scss/style.scss";
 
 export default function Categories() {
   return (

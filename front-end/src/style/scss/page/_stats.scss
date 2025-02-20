@@ -1,0 +1,10 @@
+@use "../abstracts/mixin" as mixin;
+.stats-chart {
+  justify-self: center;
+  width: 60%;
+}
+.stats-chart-title {
+  @include mixin.font-style(#ff9191, "xl", "bold");
+  text-align: center;
+  margin-bottom: 2rem;
+}
