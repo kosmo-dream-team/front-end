@@ -1,10 +1,10 @@
-import CategoryAll from "../../assets/img/category-all.svg";
-import CategoryBaby from "../../assets/img/category-baby.svg";
-import CategoryDisabled from "../../assets/img/category-disabled.svg";
-import CategoryEnvironment from "../../assets/img/category-environment.svg";
-import CategoryGlobal from "../../assets/img/category-global.svg";
-import CategorySocial from "../../assets/img/category-social.svg";
-import "../../style/scss/style.scss";
+import CategoryAll from "@/assets/img/category-all.svg";
+import CategoryBaby from "@/assets/img/category-baby.svg";
+import CategoryDisabled from "@/assets/img/category-disabled.svg";
+import CategoryEnvironment from "@/assets/img/category-environment.svg";
+import CategoryGlobal from "@/assets/img/category-global.svg";
+import CategorySocial from "@/assets/img/category-social.svg";
+import "@/style/scss/style.scss";
 const categories = [
   { icon: CategoryBaby, label: "아동" },
   { icon: CategoryDisabled, label: "동물" },

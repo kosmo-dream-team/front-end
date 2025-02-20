@@ -1,4 +1,4 @@
-import logo from "../../assets/img/logo3.png";
+import logo from "@/assets/img/logo3.png";
 export default function TotalDonation() {
   return (
     <>

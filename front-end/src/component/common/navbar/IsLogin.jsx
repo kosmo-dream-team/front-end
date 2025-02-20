@@ -1,6 +1,6 @@
+import useLoginStore from "@/store/UseLoginStore";
+import useUserProfile from "@/store/useUserProfile";
 import { Link } from "react-router-dom";
-import useLoginStore from "../../../store/UseLoginStore";
-import useUserProfile from "../../../store/useUserProfile";
 
 function UserMenu() {
   const { profile } = useUserProfile();

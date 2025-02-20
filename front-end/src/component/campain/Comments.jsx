@@ -1,26 +1,26 @@
-import { useState } from 'react';
-import "../.././style/scss/style.scss";
+import "@/style/scss/style.scss";
+import { useState } from "react";
 
 const Comments = () => {
   // 초기 댓글 목록 (하드코딩)
   const [comments, setComments] = useState([
-    { id: "추꾸신동", text: '정말 감동적이에요!' },
-    { id: "야구신동", text: '도움이 필요합니다. 함께 해요.' },
+    { id: "추꾸신동", text: "정말 감동적이에요!" },
+    { id: "야구신동", text: "도움이 필요합니다. 함께 해요." },
   ]);
 
   // 새 댓글 입력값 상태
-  const [newComment, setNewComment] = useState('');
+  const [newComment, setNewComment] = useState("");
 
   // 댓글 추가 핸들러
   const handleCommentSubmit = (e) => {
     e.preventDefault();
-    if (newComment.trim() === '') return;
+    if (newComment.trim() === "") return;
     const newCommentObj = {
       id: comments.length + 1,
       text: newComment.trim(),
     };
     setComments([...comments, newCommentObj]);
-    setNewComment('');
+    setNewComment("");
   };
 
   return (
