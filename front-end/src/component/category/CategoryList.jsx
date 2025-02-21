@@ -1,5 +1,5 @@
 // src/component/category/CategoryList.jsx
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { fakeData } from "../../data/fakeData";
 import "../../style/scss/style.scss";

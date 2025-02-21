@@ -13,6 +13,7 @@ import CategoryPage from "@/pages/category/CategoryPage";
 import MainPage from "@/pages/main/mainPage";
 import MyPage from "@/pages/mypage/MyPage";
 import Stats from "@/pages/stats/Stats";
+import AdminApp from "../../AdminApp";
 import useUserProfile from "../../store/useUserProfile";
 //라우터 제약조건
 const PrivateRoute = () => {
@@ -34,6 +35,7 @@ const AppRouter = () => {
       <Route path="/signup" element={<Signup />} />
 
       <Route path="/campaign" element={<CampaignPage />} />
+      <Route path="/admin/*" element={<AdminApp />} />
 
       <Route path="/campaign/:campaignId" element={<CampaignPage />} />
     </Routes>
