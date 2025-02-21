@@ -34,6 +34,8 @@ const AppRouter = () => {
       <Route path="/signup" element={<Signup />} />
 
       <Route path="/campaign" element={<CampaignPage />} />
+
+      <Route path="/campaign/:campaignId" element={<CampaignPage />} />
     </Routes>
   );
 };

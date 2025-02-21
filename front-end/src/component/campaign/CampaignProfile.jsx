@@ -12,8 +12,8 @@ const CampaignProfile = () => {
       }}>
         <div className = "campaign-info">
           <div className = "applicant-info">
-            <img className = "applicant-img" src = "https://via.placeholder.com/200x137" alt = "수혜자 이미지" />
-            <span className = "applicant-name">한국백혈병어린이재단</span>
+            <img className = "applicant-img" src = {campaignStatus.applicantImage} alt = "수혜자 이미지" />
+            <span className = "applicant-name">{campaignStatus.applicant}</span>
           </div>
           <div className = "campaign-title">{campaignStatus.title}</div>
         </div>

@@ -54,7 +54,7 @@
 }
 .campaign-d-day {
   display: flex;
-  width: 2.10063rem;
+  width: 4rem;
   height: 1.875rem;
   flex-direction: column;
   justify-content: center;
@@ -176,20 +176,18 @@
   height: 2.875rem;
   flex-shrink: 0;
 }
-.like-img .share-img {
-  flex-shrink: 0;
-  background-repeat: no-repeat; 
-  background-size: cover; 
-}
 .like-img { 
-  background-image: url("../../../../assets/img/like.png");
+  background-image: url("/src/assets/img/like.png");
+  background-position: center center;
   width: 2.5rem;
   height: 2.5rem;
 }
 .share-img { 
-  background-image: url("../../../../assets/img/share.svg");  
-  width: 1rem;
-  height: 1rem;
+  background-image: url("/src/assets/img/share.svg"); 
+  background-position: center center; 
+  background-repeat: no-repeat;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 .like-count .share-count {
   color: #202020;
