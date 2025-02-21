@@ -62,7 +62,11 @@ const useCampaignStore = create((set) => ({
           credentials: "include",
           mode: "cors"
         }
-      ).then(res => { console.log(res); });
+      ).then(res => { 
+        console.log(res); 
+        alert("댓글 작성이 완료되었습니다.");
+        window.location.reload();
+      });
     } catch (error) {
       console.error("댓글 작성하기 api 오류 발생", error);
     }

@@ -44,7 +44,6 @@ const CampaignContext = () => {
     // else alert("댓글 작성은 로그인 이후에 가능합니다."); // 로그인이 되지 않았다면 alert 호출
     
     writeComment(parseInt(campaignId), 1, document.getElementById("comment").textContent);
-    alert("댓글 작성이 완료되었습니다.");
   }
 
   return (
