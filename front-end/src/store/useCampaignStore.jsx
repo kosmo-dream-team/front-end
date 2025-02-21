@@ -106,7 +106,6 @@ const useCampaignStore = create((set) => ({
         alert("기부가 완료되었습니다!\n감사합니다!");
         window.location.reload();
       });
-<<<<<<< HEAD
     } catch (error) { console.error("기부 내역 저장하기 api 오류 발생", error); }
   },
   likeCampaign: async (campaignId) => {
@@ -117,12 +116,6 @@ const useCampaignStore = create((set) => ({
       });
     } catch (error) { console.error("좋아요 api 오류 발생", error); }
   }
-=======
-    } catch (error) {
-      console.error("기부 내역 저장하기 api 오류 발생", error);
-    }
-  },
->>>>>>> c1bfa61884095db0ae77e100bac1557e142751fb
 }));
 
 export default useCampaignStore;
