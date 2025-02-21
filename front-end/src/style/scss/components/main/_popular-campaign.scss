@@ -1,31 +1,26 @@
 @use "../../abstracts/mixin" as mixin;
-@use '../../abstracts/variable' as var;
+@use "../../abstracts/variable" as var;
 .popular-campaign {
   padding: 3rem;
   overflow: auto;
   width: 100%; /* 700px */
   height: 37.15rem; /* 371.5px */
- 
-  
 
-  
   background: white;
   box-shadow: 0rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1.2rem; /* 12px */
-  
 }
-.popular-campaign__items-wrapper{
+.popular-campaign__items-wrapper {
   width: 100%;
-  
+
   display: inline-flex;
   justify-content: space-around;
-  
 }
 /* 제목 */
 .popular-campaign__title {
   width: 23.8rem; /* 238px */
   height: 2.8rem; /* 28px */
-  
+
   left: 3rem; /* 30px */
   top: 1.2rem; /* 12px */
   color: #202020;
@@ -40,7 +35,7 @@
 .popular-campaign__subtitle {
   width: 31.36rem; /* 313.59px ≒ 31.36rem */
   height: 2.4rem; /* 24px */
-  
+
   left: 3rem; /* 30px */
   top: 5.6rem; /* 56px */
   color: #666666;
@@ -55,13 +50,13 @@
 .popular-campaign__item {
   width: 20rem; /* 199.97px ≒ 20rem */
   height: 24.35rem; /* 243.5px */
-  
+
   top: 9.6rem; /* 96px */
 }
 
 /* 각 아이템의 수평 위치 */
 .popular-campaign__item--first {
-  left: 3rem; /* 30px */
+  left: 25rem; /* 30px */
 }
 
 .popular-campaign__item--second {
@@ -69,14 +64,14 @@
 }
 
 .popular-campaign__item--third {
-  left: 47rem; /* 469.94px ≒ 47rem */
+  left: 25rem; /* 469.94px ≒ 47rem */
 }
 
 /* 이미지 컨테이너 */
 .popular-campaign__item-img-container {
   width: 20rem; /* 199.97px */
   height: 13.75rem; /* 137.47px */
-  
+
   top: 0;
   left: 0;
   border-radius: 0.8rem; /* 8px */
@@ -87,14 +82,13 @@
 .popular-campaign__item-img {
   width: 20rem; /* 199.97px */
   height: 13.75rem; /* 137.47px */
-  
+
   top: 0;
   left: 0;
 }
 
 /* 캠페인 제목 컨테이너 (첫 번째: 단일행, 나머지: 2줄) */
 .popular-campaign__item-title-container {
-  
   left: 0;
   top: 14.95rem; /* 149.47px ≒ 14.95rem */
   display: inline-flex;
@@ -124,7 +118,7 @@
 /* 기관명 컨테이너 */
 .popular-campaign__item-org-container {
   height: 1.8rem; /* 18px */
-  
+
   left: 0;
   top: 17.15rem; /* 171.47px ≒ 17.15rem */
   display: inline-flex;
@@ -147,7 +141,7 @@
 .popular-campaign__item-progress-container {
   width: 20rem; /* 199.97px */
   height: 0.2rem; /* 2px */
-  
+
   left: 0;
   top: 21.75rem; /* 217.47px ≒ 21.75rem */
   background: #d0e3ff;
@@ -166,7 +160,7 @@
 
 /* 진행바 너비 (아이템마다 다름) */
 .popular-campaign__item-progress--first {
-  width: 13.4rem; /* 133.97px ≒ 13.4rem */
+  width: 4.4rem; /* 133.97px ≒ 13.4rem */
 }
 
 .popular-campaign__item-progress--second {
@@ -179,7 +173,6 @@
 
 /* 기부 금액 텍스트 */
 .popular-campaign__item-amount {
-  
   left: 0;
   top: 22.345rem; /* 223.45px ≒ 22.345rem */
   color: #202020;
@@ -191,11 +184,11 @@
 }
 
 .popular-campaign__item-amount--first {
-  width: 7.06rem; /* 70.58px ≒ 7.06rem */
+  width: 7.15rem; /* 70.58px ≒ 7.06rem */
 }
 
 .popular-campaign__item-amount--second {
-  width: 6.16rem; /* 61.59px ≒ 6.16rem */
+  width: 7.15rem; /* 61.59px ≒ 6.16rem */
 }
 
 .popular-campaign__item-amount--third {
@@ -204,7 +197,6 @@
 
 /* 퍼센트 텍스트 */
 .popular-campaign__item-percent {
-  
   top: 22.345rem; /* 223.45px ≒ 22.345rem */
   color: #ff4050;
   font-size: 1.2rem; /* 12px */
@@ -225,12 +217,11 @@
 }
 
 .popular-campaign__item-percent--third {
-  width: 1.78rem; /* 17.75px ≒ 1.78rem */
-  left: 18.242rem; /* 182.42px ≒ 18.24rem */
+  width: 2.57rem; /* 17.75px ≒ 1.78rem */
+  left: 17.448rem; /* 182.42px ≒ 18.24rem */
 }
 
-
-@media (max-width: var.$mobile-max-width){
+@media (max-width: var.$mobile-max-width) {
   .popular-campaign {
-  
-  }}
+  }
+}

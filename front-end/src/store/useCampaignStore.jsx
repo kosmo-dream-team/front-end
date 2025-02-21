@@ -4,10 +4,10 @@ import { create } from "zustand";
 const useCampaignStore = create((set) => ({
   toggleMenu: {
     menuList: [
-      {name: '소개', url: '/campaign/intro'},
-      {name: '나눔내역', url: '/campaign/history'},
-      {name: '소식', url: '/campaign/news'},
-    ]
+      { name: "소개", url: "/campaign/intro" },
+      { name: "나눔내역", url: "/campaign/history" },
+      { name: "소식", url: "/campaign/news" },
+    ],
   },
   campaignStatus: {
     projectId: null,
@@ -35,34 +35,48 @@ const useCampaignStore = create((set) => ({
     // commentList: [
     //   {userName: '축복덩어리', comment: '응원합니다.', likeCount: 0, postDate: '2025.01.23', profileImage: '/src/assets/img/like.png'}
     // ]
-    commentList: []
+    commentList: [],
   },
   fetchCampaignStatus: async (campaignId) => {
     try {
-      await fetch("http://localhost:8586/project/" + campaignId, {withCredentials: true}).then(res => res.json()).then(res => {
-        console.log(res);
-        set({ campaignStatus: res });
-      });
+      await fetch("http://localhost:8586/project/" + campaignId, {
+        withCredentials: true,
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          set({ campaignStatus: res });
+        });
     } catch (error) {
       console.error("캠페인 api 가져오기 오류 발생", error);
     }
   },
-  setCampaignStatus: (newStatus) => set((state) => ({ campaignStatus: { ...state.campaignStatus, ...newStatus } })),
+  setCampaignStatus: (newStatus) =>
+    set((state) => ({
+      campaignStatus: { ...state.campaignStatus, ...newStatus },
+    })),
   writeComment: async (campaignId, userId, comment) => {
-    console.log(JSON.stringify({campaignId: campaignId, userId: userId, comment: comment}));
+    console.log(
+      JSON.stringify({
+        campaignId: campaignId,
+        userId: userId,
+        comment: comment,
+      })
+    );
     try {
-      await fetch(
-        "http://localhost:8586/comment/write", 
-        {
-          method: "POST",
-          headers : {
-            "Content-Type":"application/json"
-          },
-          body: JSON.stringify({projectId: campaignId, userId: userId, comment: comment}),
-          credentials: "include",
-          mode: "cors"
-        }
-      ).then(res => { 
+      await fetch("http://localhost:8586/comment/write", {
+        method: "POST",
+        headers : {
+          "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+          projectId: campaignId, 
+          userId: userId, 
+          comment: comment
+        }),
+        credentials: "include",
+        mode: "cors"
+      }).then(res => { 
         console.log(res); 
         alert("댓글 작성이 완료되었습니다.");
         window.location.reload();
@@ -76,25 +90,23 @@ const useCampaignStore = create((set) => ({
       const data = {
         userId: userId,
         amount: amount,
-        paymentMethod: paymentMethod
+        paymentMethod: paymentMethod,
       };
 
-      await fetch(
-        `http://localhost:8586/project/${campaignId}/donate`,
-        {
-          method: "POST",
-          headers : {
-            "Content-Type":"application/json"
-          },
-          body: JSON.stringify(data),
-          credentials: "include",
-          mode: "cors"
-        }
-      ).then(res => { 
-        console.log(res); 
+      await fetch(`http://localhost:8586/project/${campaignId}/donate`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+        credentials: "include",
+        mode: "cors",
+      }).then((res) => {
+        console.log(res);
         alert("기부가 완료되었습니다!\n감사합니다!");
-        window.location.reload(); 
+        window.location.reload();
       });
+<<<<<<< HEAD
     } catch (error) { console.error("기부 내역 저장하기 api 오류 발생", error); }
   },
   likeCampaign: async (campaignId) => {
@@ -105,6 +117,12 @@ const useCampaignStore = create((set) => ({
       });
     } catch (error) { console.error("좋아요 api 오류 발생", error); }
   }
+=======
+    } catch (error) {
+      console.error("기부 내역 저장하기 api 오류 발생", error);
+    }
+  },
+>>>>>>> c1bfa61884095db0ae77e100bac1557e142751fb
 }));
 
 export default useCampaignStore;

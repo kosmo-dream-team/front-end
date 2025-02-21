@@ -1,92 +1,62 @@
-import { useState, useEffect } from 'react';
-// import axios from 'axios';
-import { Line } from 'react-chartjs-2';
-// Chart.js 관련 import와 설정 (필요한 경우)
+// MonthlyDonationChart.jsx
 import {
+  CategoryScale,
   Chart as ChartJS,
+  Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Tooltip,
+} from "chart.js";
+import { useEffect, useState } from "react";
+import { Line } from "react-chartjs-2";
+import useStateStore from "../../store/useStateStore";
+
+ChartJS.register(
   LineElement,
   CategoryScale,
   LinearScale,
   PointElement,
   Tooltip,
-  Legend,
-} from 'chart.js';
-
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
+  Legend
+);
 
 const MonthlyDonationChart = () => {
-  const [chartData, setChartData] = useState("");
+  // zustand 스토어에서 monthlyDonationChange와 fetchStatistics를 불러옵니다.
+  const { monthlyDonationChange, fetchStatistics } = useStateStore();
+  const [chartData, setChartData] = useState(null);
 
+  // 컴포넌트가 마운트될 때 API 호출
   useEffect(() => {
-    // 백엔드가 준비되지 않았으므로, axios를 통한 API 요청 부분은 주석 처리합니다.
-    /*
-    axios.get('http://localhost:8080/api/donations/monthly')
-      .then(response => {
-        const data = response.data;
-        const labels = data.map(item => item.month);
-        const donations = data.map(item => item.donation);
+    fetchStatistics();
+  }, [fetchStatistics]);
 
-        setChartData({
-          labels: labels,
-          datasets: [
-            {
-              label: '월별 기부금 (만원)',
-              data: donations,
-              fill: false,
-              backgroundColor: 'rgba(75,192,192,0.6)',
-              borderColor: 'rgba(75,192,192,1)',
-              tension: 0.3,
-            },
-          ],
-        });
-      })
-      .catch(error => {
-        console.error("데이터를 불러오는 중 에러 발생:", error);
+  // monthlyDonationChange가 업데이트 될 때 차트 데이터를 생성합니다.
+  useEffect(() => {
+    if (monthlyDonationChange && monthlyDonationChange.length > 0) {
+      const labels = monthlyDonationChange.map((item) => item.year);
+      const donations = monthlyDonationChange.map((item) => item.donation);
+
+      setChartData({
+        labels: labels,
+        datasets: [
+          {
+            label: "월별 기부금 (원)",
+            data: donations,
+            fill: false,
+            backgroundColor: "rgba(75,192,192,0.6)",
+            borderColor: "rgba(75,192,192,1)",
+            tension: 0.3,
+          },
+        ],
       });
-    */
-
-    // 백엔드 없이 하드코딩된 예시 데이터 사용
-    const data = [
-      { month: '1월', donation: 100 },
-      { month: '2월', donation: 150 },
-      { month: '3월', donation: 200 },
-      { month: '4월', donation: 170 },
-      { month: '5월', donation: 220 },
-      { month: '6월', donation: 180 },
-      { month: '7월', donation: 210 },
-      { month: '8월', donation: 230 },
-      { month: '9월', donation: 190 },
-      { month: '10월', donation: 250 },
-      { month: '11월', donation: 300 },
-      { month: '12월', donation: 280 },
-    ];
-
-    const labels = data.map(item => item.month);
-    const donations = data.map(item => item.donation);
-
-    setChartData({
-      labels: labels,
-      datasets: [
-        {
-          label: '월별 기부금 (만원)',
-          data: donations,
-          fill: false,
-          backgroundColor: 'rgba(75,192,192,0.6)',
-          borderColor: 'rgba(75,192,192,1)',
-          tension: 0.3,
-        },
-      ],
-    });
-  }, []);
+    }
+  }, [monthlyDonationChange]);
 
   return (
-    <div>
-      <h2>월별 기부금 변화</h2>
-      {chartData ? (
-        <Line data={chartData} />
-      ) : (
-        <p>데이터 로딩 중...</p>
-      )}
+    <div className="stats-chart">
+      <h2 className="stats-chart-title">월별 기부금 변화</h2>
+      {chartData ? <Line data={chartData} /> : <p>데이터 로딩 중...</p>}
     </div>
   );
 };

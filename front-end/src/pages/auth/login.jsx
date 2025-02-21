@@ -1,28 +1,84 @@
-import { useState } from "react";
-import googleLogo from "../../assets/img/google-logo.svg";
-import kakaoLogo from "../../assets/img/kakao-logo.svg";
-import sign01 from "../../assets/img/sign01.png";
-import "../../style/scss/style.scss";
-function Login() {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+import sign04 from "@/assets/img/auth1.jpg";
+import sign02 from "@/assets/img/auth7.jpg";
+import sign01 from "@/assets/img/auth8.jpg";
+import sign03 from "@/assets/img/auth9.jpg";
+import useImageStore from "@/store/useImgStore";
+import useUserProfile from "@/store/useUserProfile";
+import "@/style/scss/style.scss";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ImageSwiper from "./ImageSwiper";
 
+function Login() {
+  // 초기 formData에서 password 대신 password_hash 사용
+  const [formData, setFormData] = useState({ email: "", password_hash: "" });
+  const navigate = useNavigate();
+  const { setProfile } = useUserProfile(); // 프로필 상태를 지정
+  const { setImages } = useImageStore();
+
+  useEffect(() => {
+    // 이미지 파일 상대 경로 배열 설정
+    setImages([sign01, sign02, sign03, sign04]);
+  }, [setImages]);
+
+  // 로그인 폼 입력값 변경 시 상태 업데이트
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("회원가입 폼 제출:", formData);
-    // 회원가입 처리 로직
+    console.log("보낸 데이터", formData);
+    try {
+      // Axios를 사용해 POST 요청 전송 (URL은 백엔드 매핑에 맞게 수정 필요)
+      const response = await axios.post(
+        "http://localhost:8586/api/login",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      // 응답 데이터가 없으면 로그인 실패 처리
+      if (!response.data) {
+        alert("아이디와 비밀번호를 다시 확인해주세요.");
+        window.location.reload();
+        return;
+      }
+
+      const data = response.data;
+      const mappedProfile = {
+        user_id: data.user_id,
+        user_name: data.user_name,
+
+        password_hash: data.password_hash,
+        email: data.email,
+        phone: data.phone,
+        user_type: data.user_type,
+        gender: data.gender,
+        rank: data.rank,
+        total_donation_count: data.total_donation_count,
+        profile_image: data.img,
+      };
+
+      setProfile(mappedProfile);
+      alert("로그인 성공");
+      console.log("가져온 데이터 ", response.data);
+      navigate("/");
+    } catch (error) {
+      console.error("로그인 실패:", error);
+      alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+    }
   };
 
   return (
     <div className="signup-container">
       <div className="signup-left-form-container">
-        {/* 왼쪽 회원가입 폼 영역 */}
         <div className="signup-left">
-          {/* 상단 로고 */}
           <div className="favicon">
             <div className="favicon-text">DREAM ON</div>
             <div className="favicon-line">
@@ -44,7 +100,6 @@ function Login() {
             </div>
             <div className="signup-form-area">
               <form onSubmit={handleSubmit}>
-                {/* 이메일 */}
                 <div className="input-wrapper">
                   <label htmlFor="email">이메일</label>
                   <input
@@ -57,21 +112,17 @@ function Login() {
                     placeholder="이메일을 입력해주세요"
                   />
                 </div>
-
-                {/* 비밀번호 */}
                 <div className="input-wrapper password">
-                  <label htmlFor="password">비밀번호</label>
+                  <label htmlFor="password_hash">비밀번호</label>
                   <input
                     type="password"
-                    id="password"
-                    name="password"
-                    value={formData.password}
+                    id="password_hash"
+                    name="password_hash"
+                    value={formData.password_hash}
                     onChange={handleChange}
                     placeholder="비밀번호를 입력해주세요"
                   />
                 </div>
-
-                {/* 옵션, 비밀번호 찾기 */}
                 <div className="options">
                   <div className="remember-me">
                     <input type="checkbox" id="rememberMe" name="rememberMe" />
@@ -84,37 +135,18 @@ function Login() {
                     <a href="/find-password">비밀번호를 잊으셨나요?</a>
                   </div>
                 </div>
-
-                {/* 가입하기 버튼 */}
                 <button type="submit" className="signup-button">
-                  <span>가입하기</span>
+                  <span>로그인</span>
                 </button>
               </form>
             </div>
           </div>
-          <div className="other-method">다른 방법으로 가입</div>
+          <div className="other-method">다른 방법으로 로그인</div>
         </div>
-
-        {/* 소셜 로그인(구글) 예시 */}
-        <div className="social-login">
-          <img
-            src={kakaoLogo}
-            alt="카카오로 로그인하기"
-            onClick={() => alert("카카오 로그인")}
-          />
-
-          <img
-            src={googleLogo}
-            alt="구글로 로그인하기"
-            onClick={() => alert("구글 로그인")}
-          />
-        </div>
+        <div className="social-login"></div>
       </div>
-
-      {/* 오른쪽 이미지+텍스트 영역 */}
-
       <div className="signup-right-img-container">
-        <img className="signup-img" src={sign01} alt="웃는 아이의 이미지" />
+        <ImageSwiper className="signup-img" />
         <div className="signup-right-text1">
           <div className="big-title">작은 손길, 큰 변화</div>
           <div className="small-title">희망을 선물하는 가장 쉬운 방법</div>

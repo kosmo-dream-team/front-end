@@ -8,6 +8,12 @@
     clear: both;
   }
 }
+// 버튼 스타일 초기화
+@mixin reset-button {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+}
 //가로길이(width)가 설정되있는 상태에서
 // 텍스트가 가로길이를 초과하면 ...으로 표시
 @mixin text-ellipsis {

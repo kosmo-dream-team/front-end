@@ -4,7 +4,7 @@ import MyMoney from "../../component/mypage/MyMoney";
 import MyPageMenu from "../../component/mypage/MyPageMenu";
 import ProfileEditForm from "../../component/mypage/ProfileEditForm";
 import "../../style/scss/style.scss";
-export default function MyPage() {
+function MyPage() {
   return (
     <div
       style={{
@@ -30,7 +30,7 @@ export default function MyPage() {
           </div>
 
           <div className="layout__mypage-myinfo">
-            <ProfileEditForm />`
+            <ProfileEditForm />
           </div>
         </div>
       </div>
@@ -39,3 +39,4 @@ export default function MyPage() {
     </div>
   );
 }
+export default MyPage;

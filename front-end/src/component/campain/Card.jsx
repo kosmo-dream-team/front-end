@@ -1,24 +1,16 @@
+import "@/style/scss/style.scss";
 
-import "../.././style/scss/style.scss";
-
-const Card = () => {
+const Card2 = () => {
   return (
     <div className="card">
       {/* 제목 */}
-      <div className="card__title">
-        치료 후에도 집에 갈 수 없는 해영이
-      </div>
+      <div className="card__title">치료 후에도 집에 갈 수 없는 해영이</div>
 
       {/* 진행률(%) */}
-      <div className="card__percent">
-        42%
-      </div>
+      <div className="card__percent">42%</div>
 
       {/* D-Day */}
-      <div className="card__d-day">
-        
-        D-5
-      </div>
+      <div className="card__d-day">D-5</div>
 
       {/* 모금액 */}
       <div className="card__donation">
@@ -28,8 +20,8 @@ const Card = () => {
 
       {/* 목표액 */}
       <div className="card__goal">
-        2,165,00000000000000<br />
-         원 목표
+        2,165,00000000000000
+        <br />원 목표
       </div>
 
       {/* 진행바 */}
@@ -41,9 +33,7 @@ const Card = () => {
       <div className="card__info">
         {/* 세제 혜택 안내 */}
         <div className="card__info-item card__info-item--tax">
-          <div className="card__info-link">
-            세제 혜택 안내
-          </div>
+          <div className="card__info-link">세제 혜택 안내</div>
         </div>
 
         <div className="card__info-section">
@@ -55,16 +45,15 @@ const Card = () => {
             <div className="card__bullet" />
             <div className="card__info-text">모금 전달 안내</div>
           </div>
-           <div className="card__info-row" style={{ top: 18 }}>
+          <div className="card__info-row" style={{ top: 18 }}>
             <div className="card__bullet" />
             <div className="card__info-text">2025년 연말정산 대상</div>
           </div>
         </div>
 
         {/* 모금 전달 안내 */}
-          
-        <div className="card__info-item card__info-item--transfer">
-        </div>
+
+        <div className="card__info-item card__info-item--transfer"></div>
 
         <div className="card__info-row" style={{ top: 127 }}>
           <div className="card__bullet" />
@@ -74,12 +63,10 @@ const Card = () => {
 
       {/* 기부하기 버튼 */}
       <div className="card__donate-button">
-        <div className="card__donate-text">
-          기부하기
-        </div>
+        <div className="card__donate-text">기부하기</div>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default Card2;

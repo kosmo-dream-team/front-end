@@ -1,41 +1,75 @@
 import axios from "axios";
-import MockAdapter from "axios-mock-adapter"; // 모킹 어댑터 import
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import card1 from "../../assets/img/Card1.png";
-import googleLogo from "../../assets/img/google-logo.svg";
-import kakaoLogo from "../../assets/img/kakao-logo.svg";
-import sign01 from "../../assets/img/sign01.png";
-import sign02 from "../../assets/img/아동.png";
-import useImageStore from "../../store/useImgStore";
-import "../../style/scss/style.scss";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import sign04 from "@/assets/img/auth1.jpg";
+import sign02 from "@/assets/img/auth7.jpg";
+import sign01 from "@/assets/img/auth8.jpg";
+import sign03 from "@/assets/img/auth9.jpg";
+import googleLogo from "@/assets/img/google-logo.svg";
+import useImageStore from "@/store/useImgStore";
+import "@/style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
 
-// axios 모킹 설정 (개발 환경에서만 사용)
-
-const mock = new MockAdapter(axios, { delayResponse: 500 }); // 0.5초 지연 (옵션)
-mock.onPost("http://localhost:8586/api/signup").reply(200, {
-  message: "Mock 회원가입 성공",
-});
-
-export default function SignUpApplicant() {
+export default function Signup() {
   const { setImages } = useImageStore();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    // 이미지 파일 상대 경로 배열 설정
-    setImages([sign01, sign02, card1]);
-  }, [setImages]);
+  // 전달된 state에서 user_type 추출 (쿼리 파라미터와 별도로)
+  const defaultUserType = location.state?.user_type || "applicant";
 
-  // 입력 필드 관리를 위한 상태값
+  // URL 쿼리 파라미터로 전달된 googleUser 정보를 파싱
+  const searchParams = new URLSearchParams(location.search);
+  let googleUserFromQuery = {};
+  const googleUserParam = searchParams.get("googleUser");
+  if (googleUserParam) {
+    try {
+      googleUserFromQuery = JSON.parse(decodeURIComponent(googleUserParam));
+    } catch (error) {
+      console.error("Error parsing googleUser parameter:", error);
+    }
+  }
+
+  // googleUser는 쿼리 파라미터가 있으면 그 값을, 없으면 빈 객체 사용
+  const googleUser =
+    Object.keys(googleUserFromQuery).length > 0 ? googleUserFromQuery : {};
+
+  // 초기 formData 설정 : 구글 로그인 정보를 받으면 해당 값이 자동 채워짐
   const [formData, setFormData] = useState({
-    email: "",
-    name: "",
-    password: "",
+    email: googleUser.email || "",
+    user_name: googleUser.name || "",
+    password_hash: "",
     confirmPassword: "",
     phone: "",
     gender: "",
-    userType: "applicant",
+    user_type: defaultUserType,
+    profile_image: googleUser.picture || "",
   });
+
+  useEffect(() => {
+    // 이미지 파일 상대 경로 배열 설정
+    setImages([sign01, sign02, sign03, sign04]);
+  }, [setImages]);
+
+  // location.search가 바뀔 경우 폼 데이터 업데이트 (옵션)
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const param = params.get("googleUser");
+    if (param) {
+      try {
+        const parsedUser = JSON.parse(decodeURIComponent(param));
+        setFormData((prevData) => ({
+          ...prevData,
+          email: parsedUser.email || "",
+          user_name: parsedUser.name || "",
+          profile_image: parsedUser.picture || "",
+        }));
+      } catch (error) {
+        console.error("Error parsing googleUser parameter:", error);
+      }
+    }
+  }, [location.search]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,39 +83,49 @@ export default function SignUpApplicant() {
     // 필수 항목 검증
     if (
       !formData.email ||
-      !formData.name ||
-      !formData.password ||
+      !formData.user_name ||
+      !formData.password_hash ||
       !formData.phone ||
       !formData.gender
     ) {
       alert("필수 항목을 모두 입력해주세요.");
       return;
     }
-    if (formData.password !== formData.confirmPassword) {
+    if (formData.password_hash !== formData.confirmPassword) {
       alert("비밀번호와 비밀번호 재입력이 일치하지 않습니다.");
       return;
     }
 
-    // API 요청 실행 (백엔드가 없더라도 모킹이 동작하여 성공 응답을 반환합니다.)
+    // confirmPassword를 제외한 데이터 생성
+    const { confirmPassword, ...submitData } = formData;
+
     try {
       const response = await axios.post(
         "http://localhost:8586/api/signup",
-        formData
+        submitData
       );
       console.log("API 호출 성공:", response.data);
-      console.log("보내진 데이터:", formData);
+      console.log("보내진 데이터:", submitData);
+      if (response.data.success === true) {
+        alert("회원가입이 완료되었습니다. 다시 로그인 해주세요.");
+        navigate("/");
+      } else {
+        alert(response.data.message);
+      }
     } catch (error) {
       console.error("API 호출 실패:", error);
       alert("회원가입에 실패하였습니다. 다시 시도해주세요.");
     }
   };
 
+  const handleGoogleLogin = () => {
+    window.location.href = "http://localhost:8586/oauth2/authorization/google";
+  };
+
   return (
     <div className="signup-container">
       <div className="signup-left-form-container">
-        {/* 왼쪽 회원가입 폼 영역 */}
         <div className="signup-left">
-          {/* 상단 로고 영역 */}
           <div className="favicon">
             <div className="favicon-text">DREAM ON</div>
             <div className="favicon-line">
@@ -103,7 +147,6 @@ export default function SignUpApplicant() {
             </div>
             <div className="signup-form-area">
               <form onSubmit={handleSubmit} className="signup-form">
-                {/* 이메일 */}
                 <div className="input-wrapper">
                   <label htmlFor="email">이메일</label>
                   <input
@@ -115,7 +158,6 @@ export default function SignUpApplicant() {
                     placeholder="이메일을 입력해주세요"
                   />
                 </div>
-                {/* 성별 선택 */}
                 <div className="input-wrapper">
                   <label>성별</label>
                   <div className="gender-options">
@@ -143,19 +185,17 @@ export default function SignUpApplicant() {
                     </label>
                   </div>
                 </div>
-                {/* 이름 */}
                 <div className="input-wrapper">
-                  <label htmlFor="name">이름</label>
+                  <label htmlFor="user_name">이름</label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="user_name"
+                    name="user_name"
+                    value={formData.user_name}
                     onChange={handleChange}
                     placeholder="이름을 입력해주세요"
                   />
                 </div>
-                {/* 전화번호 */}
                 <div className="input-wrapper">
                   <label htmlFor="phone">전화번호</label>
                   <input
@@ -167,19 +207,17 @@ export default function SignUpApplicant() {
                     placeholder="전화번호를 입력해주세요"
                   />
                 </div>
-                {/* 비밀번호 */}
                 <div className="input-wrapper">
-                  <label htmlFor="password">비밀번호</label>
+                  <label htmlFor="password_hash">비밀번호</label>
                   <input
                     type="password"
-                    id="password"
-                    name="password"
-                    value={formData.password}
+                    id="password_hash"
+                    name="password_hash"
+                    value={formData.password_hash}
                     onChange={handleChange}
                     placeholder="비밀번호를 입력해주세요"
                   />
                 </div>
-                {/* 비밀번호 재입력 */}
                 <div className="input-wrapper">
                   <label htmlFor="confirmPassword">비밀번호 재입력</label>
                   <input
@@ -191,7 +229,6 @@ export default function SignUpApplicant() {
                     placeholder="비밀번호를 다시 입력해주세요"
                   />
                 </div>
-                {/* 옵션 및 비밀번호 찾기 영역 */}
                 <div className="options">
                   <div className="remember-me">
                     <input type="checkbox" id="rememberMe" name="rememberMe" />
@@ -204,37 +241,33 @@ export default function SignUpApplicant() {
                     <a href="/find-password">비밀번호를 잊으셨나요?</a>
                   </div>
                 </div>
-                {/* 가입하기 버튼 */}
                 <button type="submit" className="signup-button">
-                  <Link to="/" className="regist-type-link">
-                    <span>가입하기</span>
-                  </Link>
+                  <span>가입하기</span>
                 </button>
                 <input
                   type="hidden"
-                  value={formData.usertype}
-                  onChange={handleChange}
+                  name="user_type"
+                  value={formData.user_type}
+                />
+                {/* 프로필 이미지 URL을 저장하기 위한 hidden input */}
+                <input
+                  type="hidden"
+                  name="profile_image"
+                  value={formData.profile_image}
                 />
               </form>
             </div>
           </div>
           <div className="other-method">다른 방법으로 가입</div>
         </div>
-        {/* 소셜 로그인 영역 */}
         <div className="social-login">
           <img
-            src={kakaoLogo}
-            alt="카카오로 로그인"
-            onClick={() => alert("카카오 로그인")}
-          />
-          <img
             src={googleLogo}
-            alt="구글로 로그인"
-            onClick={() => alert("구글 로그인")}
+            alt="구글로 로그인하기"
+            onClick={handleGoogleLogin}
           />
         </div>
       </div>
-      {/* 오른쪽 이미지 및 텍스트 영역 */}
       <div className="signup-right-img-container">
         <ImageSwiper className="signup-img" />
         <div className="signup-right-text1">

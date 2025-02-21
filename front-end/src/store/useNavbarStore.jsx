@@ -13,8 +13,8 @@ const useMenuStore = create(() => ({
       //메뉴
       { name: "홈", url: "/pages/main/mainPage" },
       { name: "회사 소개", url: "/pages/company" },
-      { name: "카테고리", url: "/pages/category/CategoryPage" },
-      { name: "기부 통계", url: "/pages/donation" },
+      { name: "카테고리", url: "/pages/category" },
+      { name: "기부 통계", url: "/pages/stats" },
       { name: "게시판 & Tip", url: "/pages/board" },
       { name: "마이페이지", url: "/pages/mypage" },
     ],

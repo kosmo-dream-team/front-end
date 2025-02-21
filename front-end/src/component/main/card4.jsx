@@ -1,9 +1,8 @@
-import React from "react";
-import "../.././style/scss/style.scss";
-import facebook from "../../assets/img/facebook.svg";
-import instagram from "../../assets/img/instagram.svg";
-import naverblog from "../../assets/img/naverblog.svg";
-import youtube from "../../assets/img/youtube.svg";
+import facebook from "@/assets/img/facebook.svg";
+import instagram from "@/assets/img/instagram.svg";
+import naverblog from "@/assets/img/naverblog.svg";
+import youtube from "@/assets/img/youtube.svg";
+import "@/style/scss/style.scss";
 const Card4 = () => {
   return (
     <div className="donation-sharing">
@@ -24,7 +23,10 @@ const Card4 = () => {
             이벤트를 확인할 수 있어요
           </div>
           <div className="donation-sharing__card-icon">
-            <img src={instagram} className="donation-sharing__card-icon-inner" />
+            <img
+              src={instagram}
+              className="donation-sharing__card-icon-inner"
+            />
           </div>
         </div>
 
@@ -35,7 +37,10 @@ const Card4 = () => {
             모아봐요!
           </div>
           <div className="donation-sharing__card-icon">
-            <img src={facebook} className="donation-sharing__card-icon-image donation-sharing__card-icon-image--facebook" />
+            <img
+              src={facebook}
+              className="donation-sharing__card-icon-image donation-sharing__card-icon-image--facebook"
+            />
           </div>
         </div>
 
@@ -46,7 +51,7 @@ const Card4 = () => {
             어떻게 살고 있을까요?
           </div>
           <div className="donation-sharing__card-icon">
-          <img src={youtube} className="donation-sharing__card-icon-inner" />
+            <img src={youtube} className="donation-sharing__card-icon-inner" />
           </div>
         </div>
 
@@ -59,7 +64,10 @@ const Card4 = () => {
           </div>
           <div className="donation-sharing__card-icon">
             <div className="donation-sharing__card-icon-image donation-sharing__card-icon-image--card4">
-            <img src={naverblog} className="donation-sharing__card-icon-inner" />
+              <img
+                src={naverblog}
+                className="donation-sharing__card-icon-inner"
+              />
             </div>
           </div>
         </div>
