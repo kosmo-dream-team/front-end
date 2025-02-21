@@ -57,13 +57,11 @@ export default function ProfileEditForm() {
     await updateProfile(formData);
     // 저장 후 편집모드 비활성화
     setEditing({
-      user_name: profile.user_name,
-      // password_hash: profile.password_hash,  // 주석 처리
-      phone: profile.phone,
-      email: profile.email,
-      gender: profile.gender,
+      user_name: false,
+      phone: false,
+      email: false,
+      gender: false,
     });
-    window.onload();
   };
 
   return (

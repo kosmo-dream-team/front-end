@@ -1,5 +1,5 @@
 import "swiper/css";
-import "swiper/css/autoplay"; // autoplay 모듈의 CSS 가져오기
+import "swiper/css/autoplay"; // swiper Autoplay css 가져오기
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 // zustand 스토어에서 이미지 데이터 불러오기

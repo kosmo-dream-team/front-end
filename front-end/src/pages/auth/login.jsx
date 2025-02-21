@@ -2,7 +2,6 @@ import sign04 from "@/assets/img/auth1.jpg";
 import sign02 from "@/assets/img/auth7.jpg";
 import sign01 from "@/assets/img/auth8.jpg";
 import sign03 from "@/assets/img/auth9.jpg";
-import googleLogo from "@/assets/img/google-logo.svg";
 import useImageStore from "@/store/useImgStore";
 import useUserProfile from "@/store/useUserProfile";
 import "@/style/scss/style.scss";
@@ -75,10 +74,7 @@ function Login() {
       alert("아이디 또는 비밀번호가 일치하지 않습니다.");
     }
   };
-  const handleGoogleLogin = () => {
-    //
-    window.location.href = "http://localhost:8586/oauth2/authorization/google";
-  };
+
   return (
     <div className="signup-container">
       <div className="signup-left-form-container">
@@ -147,13 +143,7 @@ function Login() {
           </div>
           <div className="other-method">다른 방법으로 로그인</div>
         </div>
-        <div className="social-login">
-          <img
-            src={googleLogo}
-            alt="구글로 로그인하기"
-            onClick={handleGoogleLogin}
-          />
-        </div>
+        <div className="social-login"></div>
       </div>
       <div className="signup-right-img-container">
         <ImageSwiper className="signup-img" />

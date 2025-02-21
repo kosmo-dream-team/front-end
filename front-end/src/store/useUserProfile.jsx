@@ -39,10 +39,33 @@ const useUserProfile = create((set, get) => ({
       const mergedProfile = { ...currentProfile, ...newProfile };
       // password_hash 필드 제거
       const { password_hash, ...profileWithoutPassword } = mergedProfile;
-      const response = await axios.put(
-        "http://localhost:8586/api/update/userProfile",
-        profileWithoutPassword
-      );
+
+      // profile_image가 File 객체인 경우 FormData로 전송, 아니면 JSON 전송
+      let response;
+      if (profileWithoutPassword.profile_image instanceof File) {
+        const formData = new FormData();
+        // 텍스트 필드 추가
+        formData.append("user_id", profileWithoutPassword.user_id);
+        formData.append("user_name", profileWithoutPassword.user_name);
+        formData.append("phone", profileWithoutPassword.phone);
+        formData.append("email", profileWithoutPassword.email);
+        formData.append("gender", profileWithoutPassword.gender);
+        formData.append("user_type", profileWithoutPassword.user_type || "");
+        // File 객체 추가 (키는 백엔드에서 기대하는 이름 "profileImage")
+        formData.append("profileImage", profileWithoutPassword.profile_image);
+
+        response = await axios.put(
+          "http://localhost:8586/api/update/userProfile",
+          formData,
+          { headers: { "Content-Type": "multipart/form-data" } }
+        );
+      } else {
+        // JSON 전송 (이미지가 문자열 URL인 경우)
+        response = await axios.put(
+          "http://localhost:8586/api/update/userProfile",
+          profileWithoutPassword
+        );
+      }
       set({ profile: response.data, isLoading: false });
       console.log("보낸 데이터 ", profileWithoutPassword);
       console.log("PUT API 호출 성공:", response.data);

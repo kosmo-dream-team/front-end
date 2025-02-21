@@ -31,12 +31,11 @@ export default function MyPageMenu() {
 
   // 여기서는 store에 이미지만 업데이트 (백엔드 API 호출 X)
   const handleUpdateImage = () => {
-    if (newImageUrl) {
-      // 여기서는 새 이미지의 URL (혹은 file)을 store에 저장함
-      // setProfileImage 함수는 단순히 store의 profile 객체를 업데이트하도록 구현되어 있음.
-      setProfileImage(newImageUrl);
+    if (newImageFile) {
+      // File 객체를 store에 저장
+      setProfileImage(newImageFile);
       handleCloseModal();
-      console.log("새 이미지 저장:", newImageUrl);
+      console.log("새 이미지 저장 (File 객체):", newImageFile);
     } else {
       alert("새로운 이미지를 선택해주세요.");
     }

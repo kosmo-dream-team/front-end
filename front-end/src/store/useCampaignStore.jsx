@@ -23,20 +23,8 @@ const useCampaignStore = create((set) => ({
     accumulatedDonation: null,
     projectImage: null,
     likeCount: null,
-    // shareCount: null,
-    // categoryList: [
-    //   {name: '국내'}, // 임시 데이터
-    //   {name: '치료비'}
-    // ],
-    // donorList: [
-    //   {userName: '축복덩어리', profileImg: '/src/assets/img/like.png'}, // 임시 데이터
-    //   {userName: '숨은천사', profileImg: '/src/assets/img/like.png'}
-    // ],
-    // commentList: [
-    //   {profileImg: '/src/assets/img/like.png', userName: '축복덩어리', comment: '응원합니다.', likeCount: 0, postDate: '2025.01.23'}, // 임시 데이터
-    //   {profileImg: '/src/assets/img/like.png', userName: '숨은천사', comment: '우리 함께 합시다!', likeCount: 1, postDate: '2025.01.22'}
-    // ]
   },
+
   fetchCampaignStatus: async () => {
     try {
       console.log("Fetching campaign status...");
