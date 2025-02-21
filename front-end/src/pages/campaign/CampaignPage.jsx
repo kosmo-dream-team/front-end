@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Footer from "../../component/common/footer/Footer";
 import Navbar from "../../component/common/navbar/Navbar";
@@ -12,13 +12,11 @@ import useCampaignStore from "../../store/useCampaignStore";
 import "../../style/scss/style.scss";
 
 function CampaignPage() {
-  const { toggleMenu } = useCampaignStore();
-  const { campaignStatus, fetchCampaignStatus } = useCampaignStore();
+  const { campaignId } = useParams(); // 페이지 URL의 campaignId를 가져옴
+  const { toggleMenu, fetchCampaignStatus } = useCampaignStore();
 
   useEffect(() => {
-    console.log('useEffect triggered');
-    fetchCampaignStatus();
-    console.log(campaignStatus);
+    fetchCampaignStatus(campaignId); // URL에서 가져온 캠페인의 상세 정보를 받아옴
   }, []);
 
   return (

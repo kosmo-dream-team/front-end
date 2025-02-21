@@ -10,37 +10,36 @@ const useCampaignStore = create((set) => ({
     ]
   },
   campaignStatus: {
+    projectId: null,
+    projectImage: null,
+    applicant: null,
     title: null,
-    category: null,
+    description: null,
+    // categoryList: [
+    //   {categoryName: '국내'}
+    // ],
+    categoryList: [],
     startDate: null,
     endDate: null,
-    description: null,
     daysLeft: null,
+    accumulatedDonation: null,
     targetAmount: null,
     donationRate: null,
-    donors: [],
-    donorCount: null,
-    accumulatedDonation: null,
-    projectImage: null,
     likeCount: null,
-    // shareCount: null,
-    // categoryList: [
-    //   {name: '국내'}, // 임시 데이터
-    //   {name: '치료비'}
-    // ],
+    shareCount: null,
+    donorCount: null,
     // donorList: [
-    //   {userName: '축복덩어리', profileImg: '/src/assets/img/like.png'}, // 임시 데이터
-    //   {userName: '숨은천사', profileImg: '/src/assets/img/like.png'}
+    //   {donorName: '축복덩어리', profileImage: '/src/assets/img/like.png'}
     // ],
+    donorList: [],
     // commentList: [
-    //   {profileImg: '/src/assets/img/like.png', userName: '축복덩어리', comment: '응원합니다.', likeCount: 0, postDate: '2025.01.23'}, // 임시 데이터
-    //   {profileImg: '/src/assets/img/like.png', userName: '숨은천사', comment: '우리 함께 합시다!', likeCount: 1, postDate: '2025.01.22'}
+    //   {userName: '축복덩어리', comment: '응원합니다.', likeCount: 0, postDate: '2025.01.23', profileImage: '/src/assets/img/like.png'}
     // ]
+    commentList: []
   },
-  fetchCampaignStatus: async () => {
+  fetchCampaignStatus: async (campaignId) => {
     try {
-      console.log('Fetching campaign status...');
-      await fetch("http://192.168.0.53:8586/project/10", {withCredentials: true}).then(res => res.json()).then(res => {
+      await fetch("http://localhost:8586/project/" + campaignId, {withCredentials: true}).then(res => res.json()).then(res => {
         console.log(res);
         set({ campaignStatus: res });
       });
@@ -48,7 +47,52 @@ const useCampaignStore = create((set) => ({
       console.error("캠페인 api 가져오기 오류 발생", error);
     }
   },
-  setCampaignStatus: (newStatus) => set((state) => ({ campaignStatus: { ...state.campaignStatus, ...newStatus } }))
+  setCampaignStatus: (newStatus) => set((state) => ({ campaignStatus: { ...state.campaignStatus, ...newStatus } })),
+  writeComment: async (campaignId, userId, comment) => {
+    console.log(JSON.stringify({campaignId: campaignId, userId: userId, comment: comment}));
+    try {
+      await fetch(
+        "http://localhost:8586/comment/write", 
+        {
+          method: "POST",
+          headers : {
+            "Content-Type":"application/json"
+          },
+          body: JSON.stringify({projectId: campaignId, userId: userId, comment: comment}),
+          credentials: "include",
+          mode: "cors"
+        }
+      ).then(res => { console.log(res); });
+    } catch (error) {
+      console.error("댓글 작성하기 api 오류 발생", error);
+    }
+  },
+  donateCampaign: async (campaignId, userId, amount, paymentMethod) => {
+    try {
+      const data = {
+        userId: userId,
+        amount: amount,
+        paymentMethod: paymentMethod
+      };
+
+      await fetch(
+        `http://localhost:8586/project/${campaignId}/donate`,
+        {
+          method: "POST",
+          headers : {
+            "Content-Type":"application/json"
+          },
+          body: JSON.stringify(data),
+          credentials: "include",
+          mode: "cors"
+        }
+      ).then(res => { 
+        console.log(res); 
+        alert("기부가 완료되었습니다!\n감사합니다!");
+        window.location.reload(); 
+      });
+    } catch (error) { console.error("기부 내역 저장하기 api 오류 발생", error); }
+  }
 }));
 
 export default useCampaignStore;
