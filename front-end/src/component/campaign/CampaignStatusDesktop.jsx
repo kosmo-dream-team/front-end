@@ -16,7 +16,7 @@ export default function CampaignStatusDesktop() {
   const donationAmountRef = useRef();
   const [preventFirstRender, setPreventFirstRender] = useState(true);
 
-  const { campaignStatus, donateCampaign } = useCampaignStore();
+  const { campaignStatus, donateCampaign, likeCampaign } = useCampaignStore();
   const { initInfo, paymentInfo, setPaymentInfo } = usePortOneStore();
   const { login } = UseLoginStore(); 
   const { userProfile } = useUserProfile();
@@ -90,7 +90,12 @@ export default function CampaignStatusDesktop() {
   }, [paymentInfo]);
 
   const like = () => {
+    // if (!login) { // 로그인이 되었는 지 확인
+    //   alert("좋아요는 로그인 이후에 가능합니다.");
+    //   return;
+    // }
     console.log("좋아요 함수");
+    likeCampaign(campaignStatus.projectId);
   }
 
   return (

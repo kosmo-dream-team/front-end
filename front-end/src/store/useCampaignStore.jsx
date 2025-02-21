@@ -96,6 +96,14 @@ const useCampaignStore = create((set) => ({
         window.location.reload(); 
       });
     } catch (error) { console.error("기부 내역 저장하기 api 오류 발생", error); }
+  },
+  likeCampaign: async (campaignId) => {
+    try {
+      await fetch(`http://localhost:8586/project/${campaignId}/like`, {withCredentials: true}).then(res => {
+        console.log(res);
+        window.location.reload();
+      });
+    } catch (error) { console.error("좋아요 api 오류 발생", error); }
   }
 }));
 
