@@ -2,13 +2,11 @@ import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 
 import "@/style/scss/style.scss";
-import "../.././style/scss/style.scss";
 
 import CampaignStatus from "@/component/campaign/CampaignStatus";
 
-import useCampaignStore from "../../store/useCampaignStore";
-import UseLoginStore from "../../store/useLoginStore";
-import useUserProfile from "../../store/useUserProfile";
+import useCampaignStore from "@/store/useCampaignStore";
+import useUserProfile from "@/store/useUserProfile";
 
 const CampaignContext = () => {
   const { campaignId } = useParams(); // 페이지 URL의 campaignId를 가져옴
@@ -18,7 +16,7 @@ const CampaignContext = () => {
   const recommendRef3 = useRef(null);
 
   const { campaignStatus, writeComment } = useCampaignStore();
-  const { login } = UseLoginStore();
+
   const { userProfile } = useUserProfile();
 
   useEffect(() => {
@@ -55,6 +53,9 @@ const CampaignContext = () => {
 
   function comment() {
     // if (login) { // 로그인이 되었는 지 확인
+    //================================================================================================
+    // 기부할 경우에는 user_name != null 로 확인하도록 수정했습니다. loginstore 삭제
+    //================================================================================================
     //   writeComment(campaignId, userProfile.userId, document.getElementById("comment").textContent); // 로그인이 되었다면 댓글 작성 함수 호출
     //   alert("댓글 작성이 완료되었습니다.");
     // }

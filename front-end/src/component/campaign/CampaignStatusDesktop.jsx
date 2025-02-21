@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from "react";
 
 import CampaignDonateModal from "./CampaignDonateModal";
 
-import useCampaignStore from "../../store/useCampaignStore";
-import UseLoginStore from "../../store/useLoginStore";
-import usePortOneStore from "../../store/usePortOneStore";
-import useUserProfile from "../../store/useUserProfile";
+import useCampaignStore from "@/store/useCampaignStore";
+import usePortOneStore from "@/store/usePortOneStore";
+import useUserProfile from "@/store/useUserProfile";
 
 export default function CampaignStatusDesktop() {
   const statusRef = useRef(); // 최초 좌표를 가져오기 위한 useRef
@@ -18,7 +17,7 @@ export default function CampaignStatusDesktop() {
 
   const { campaignStatus, donateCampaign } = useCampaignStore();
   const { initInfo, paymentInfo, setPaymentInfo } = usePortOneStore();
-  const { login } = UseLoginStore();
+
   const { userProfile } = useUserProfile();
 
   useEffect(() => {
@@ -50,6 +49,9 @@ export default function CampaignStatusDesktop() {
   // 포트원 결제 설정 함수
   const donate = () => {
     // if (!login) { // 로그인이 되었는 지 확인
+    //================================================================================================
+    // 기부할 경우에는 user_name != null 로 확인하도록 수정했습니다. loginstore 삭제
+    //================================================================================================
     //   alert("댓글 작성은 로그인 이후에 가능합니다.");
     //   return;
     // }
