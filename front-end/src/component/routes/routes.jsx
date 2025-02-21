@@ -28,7 +28,7 @@ const AppRouter = () => {
           element={<SignUpApplicant />}
         />
 
-        <Route path = "/campaign" element = {<CampaignPage />} />
+        <Route path = "/campaign/:campaignId" element = {<CampaignPage />} />
       </Routes>
     </Router>
   );
