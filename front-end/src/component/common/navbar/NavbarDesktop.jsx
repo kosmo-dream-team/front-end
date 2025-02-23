@@ -28,7 +28,7 @@ export default function NavbarDesktop() {
 
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
           {menuDb.util.map((data, index) => (
-            <Link to key={index} href={data.url}>
+            <Link to={data.url} key={index} >
               {data.logo}
             </Link>
           ))}

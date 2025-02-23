@@ -13,8 +13,9 @@ import CategoryPage from "@/pages/category/CategoryPage";
 import MainPage from "@/pages/main/mainPage";
 import MyPage from "@/pages/mypage/MyPage";
 import Stats from "@/pages/stats/Stats";
-import AdminApp from "../../AdminApp";
-import useUserProfile from "../../store/useUserProfile";
+import AdminApp from "@/AdminApp";
+import useUserProfile from "@/store/useUserProfile";
+import SearchList from "@/component/common/navbar/SearchList";
 //라우터 제약조건
 const PrivateRoute = () => {
   const { profile } = useUserProfile();
@@ -24,6 +25,7 @@ const PrivateRoute = () => {
 const AppRouter = () => {
   return (
     <Routes>
+      <Route path="/search" element={<SearchList />} />
       <Route path="/" element={<MainPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/pages/stats" element={<Stats />} />
