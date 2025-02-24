@@ -3,6 +3,7 @@ import CategoryBaby from "@/assets/img/category-baby.svg";
 import CategoryDisabled from "@/assets/img/category-disabled.svg";
 import CategoryEnvironment from "@/assets/img/category-environment.svg";
 import CategoryGlobal from "@/assets/img/category-global.svg";
+import GrandF from "@/assets/img/category-grand-parents.svg";
 import CategorySocial from "@/assets/img/category-social.svg";
 import "@/style/scss/style.scss";
 import { Link } from "react-router-dom";
@@ -13,7 +14,7 @@ const categories = [
   { icon: CategoryEnvironment, label: "환경" },
   { icon: CategoryDisabled, label: "장애인" },
   { icon: CategoryGlobal, label: "지구촌" },
-  { icon: CategoryDisabled, label: "어르신" },
+  { icon: GrandF, label: "어르신" },
   { icon: CategorySocial, label: "사회" },
   { icon: CategoryAll, label: "전체" },
 ];

@@ -1,6 +1,6 @@
+import Cookies from "js-cookie";
 import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
-import Cookies from "js-cookie";
 
 import "@/style/scss/style.scss";
 
@@ -73,10 +73,9 @@ const CampaignContext = () => {
     console.log(commentId);
     if (Cookies.get(`like-${commentId}`)) {
       alert("이미 좋아요를 누르신 댓글입니다.");
-    }
-    else {
+    } else {
       likeComment(commentId);
-      Cookies.set(`like-${commentId}`, 'true', {expires: 1});
+      Cookies.set(`like-${commentId}`, "true", { expires: 1 });
     }
   }
 
@@ -94,9 +93,7 @@ const CampaignContext = () => {
         모금기간 {campaignStatus.startDate} ~ {campaignStatus.endDate}
       </div>
 
-      <div className="content-wrapper">
-        {campaignStatus.description}
-      </div>
+      <div className="content-wrapper">{campaignStatus.description}</div>
 
       <div className="category-list-wrapper">
         <div className="category-list">
@@ -205,7 +202,10 @@ const CampaignContext = () => {
                             </div>
                           </div>
                           <div className="comment-info-wrapper">
-                            <div className="comment-like-wrapper" onClick = {() => like(comment.commentId)}>
+                            <div
+                              className="comment-like-wrapper"
+                              onClick={() => like(comment.commentId)}
+                            >
                               <div className="comment-like-img" />
                               {comment.likeCount}
                             </div>

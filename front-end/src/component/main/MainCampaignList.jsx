@@ -26,7 +26,7 @@ export default function MainCampaignList() {
       {slicedCampaigns.map((campaign, index) => (
         <div
           className="main-campaign-list"
-          key={`${campaign.user_id}-${index}`}
+          key={`${campaign.user_name}-${index}`}
           onClick={() => goToCampaignDetail(campaign.project_id)}
           style={{ cursor: "pointer" }} // 클릭 가능한 UI임을 명시
         >
@@ -50,7 +50,7 @@ export default function MainCampaignList() {
               </div>
               <div className="main-campaign-list__beneficiary">
                 <div className="main-campaign-list__beneficiary-text">
-                  {campaign.user_id || "수혜자명"}
+                  {campaign.user_name || "수혜자명"}
                 </div>
               </div>
             </div>
