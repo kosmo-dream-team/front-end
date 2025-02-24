@@ -1,4 +1,7 @@
-.context-wrapper { 
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
+.context-wrapper {
   width: 75rem;
   height: 212rem;
   flex-shrink: 0;
@@ -11,34 +14,49 @@
   width: 43.6875rem;
   height: 9rem;
   border-radius: 0.625rem;
-  background: rgba(255, 148, 152, 0.20); 
-  padding-top: 3rem;
-  padding-left: 1rem;
+  background: rgba(255, 148, 152, 0.2);
+  padding: 3rem;
 }
-.overview-text { max-width: 50%; }
-.fundraising-period { 
+.overview-text {
+  @include mixin.font-style(black, "xs", "normal");
+}
+.applicant-info {
+  width: 100%;
+}
+.fundraising-period {
   display: flex;
   width: 43.6875rem;
   height: 3.125rem;
   padding: 1rem 0 1rem 1.3125rem;
   border-radius: 0.625rem;
-  border: 1px solid rgba(255, 109, 115, 0.40);
+  border: 1px solid rgba(255, 109, 115, 0.4);
   margin-top: 1rem;
 }
-.context { width: 43.6875rem; margin-top: 3rem; margin-bottom: 1rem; }
+.context {
+  width: 43.6875rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
 .category-list-wrapper {
+  margin-top: 1rem;
   width: 43.6875rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-.category-list { 
+.applicant-name {
+  position: absolute;
+  left: 9rem;
+  bottom: 5.5rem;
+  cursor: pointer;
+  @include mixin.font-style(black, "xs", "bold");
+}
+.category-list {
   display: flex;
   width: 38.75rem;
   padding: 0.625rem 0rem 3.125rem 0rem;
   flex-direction: row;
   align-items: flex-start;
-  gap: 1.25rem; 
+  gap: 1.25rem;
   border-top: 1px solid lightgray;
 }
 .category {
@@ -81,7 +99,7 @@
   line-height: 1.5rem; /* 171.429% */
   letter-spacing: -0.03125rem;
 }
-.donor-list { 
+.donor-list {
   display: flex;
   width: 38.75rem;
   padding: 0.625rem 0rem 3.125rem 0rem;
@@ -93,7 +111,7 @@
   width: 3.75rem;
   height: 3.75rem;
   border-radius: 1.09375rem;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   background-size: contain;
 }
 .donor-name {
@@ -103,7 +121,7 @@
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
-  color: #524E4E;
+  color: #524e4e;
   text-align: center;
   font-family: "Noto Sans KR";
   font-size: 0.8125rem;
@@ -145,17 +163,17 @@
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 0.4375rem;
-  border: 1px solid #C9C9C9;
+  border: 1px solid #c9c9c9;
 }
-[contentEditable=true]:empty:not(:focus):before {
-  content: attr(data-text)
+[contentEditable="true"]:empty:not(:focus):before {
+  content: attr(data-text);
 }
 .comment-btn {
   display: flex;
   justify-content: center;
   width: 5rem;
   border-radius: 0.4375rem;
-  border: 1px solid #C9C9C9;
+  border: 1px solid #c9c9c9;
 }
 .comment-recommend-wrapper {
   width: 38.75rem;
@@ -172,7 +190,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 1.5625rem;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
 }
 .comment-section {
   margin-top: 1.5rem;
@@ -187,7 +205,11 @@
   line-height: normal;
   letter-spacing: -0.0625rem;
 }
-.comment-wrapper { margin-bottom: 2rem; }
+.comment-wrapper {
+  margin-bottom: 2rem;
+}
+.content-wrapper {
+}
 .comment-img-wrapper {
   display: flex;
   flex-direction: row;
@@ -197,20 +219,20 @@
   width: 2.1875rem;
   height: 2.1875rem;
   border-radius: 1.09375rem;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   background-size: contain;
 }
 .comment-content-wrapper {
   width: 11.375rem;
   flex-shrink: 0;
   border-radius: 0.9375rem;
-  background: #F5F5F5;
+  background: #f5f5f5;
   margin-left: 0.4rem;
   padding-top: 1rem;
   padding-left: 1rem;
 }
 .comment-name {
-  color: #5E5E5E;
+  color: #5e5e5e;
   font-family: "Noto Sans KR";
   font-size: 0.8125rem;
   font-style: normal;
@@ -230,6 +252,7 @@
   letter-spacing: -0.0625rem;
 }
 .comment-info-wrapper {
+  align-items: center;
   margin-top: 0.5rem;
   margin-left: 3.5rem;
   display: flex;
@@ -247,10 +270,10 @@
   letter-spacing: -0.0625rem;
 }
 .comment-like-img {
-  width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  height: 2rem;
   flex-shrink: 0;
-  background-image: url('/src/assets/img/like.png');
+  background-image: url("/src/assets/img/like.png");
   background-size: contain;
 }
 .comment-post-date {

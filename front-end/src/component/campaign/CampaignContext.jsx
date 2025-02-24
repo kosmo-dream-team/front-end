@@ -85,8 +85,8 @@ const CampaignContext = () => {
 
       <div className="donation-overview">
         <div className="overview-text">
-          드림온 외 {campaignStatus.donorCount}명의 이름으로 소아암 환자 1명에게{" "}
-          {campaignStatus.accumulatedDonation}원을 지원합니다.
+          <b>드림온</b> 외 <b>{campaignStatus.donorCount}</b>명의 이름으로{" "}
+          <b> {campaignStatus.accumulatedDonation}</b>원을 지원합니다.
         </div>
       </div>
       <div className="fundraising-period">
@@ -115,7 +115,10 @@ const CampaignContext = () => {
             <div className="donor-wrapper" key={index}>
               <div
                 className="donor-img"
-                style={{ backgroundImage: "url(" + donor.profileImage + ")" }}
+                style={{
+                  backgroundImage: "url(" + donor.profileImage + ")",
+                  marginBottom: "0.4rem",
+                }}
               />
               <div className="donor-name">{donor.donorName}</div>
             </div>
