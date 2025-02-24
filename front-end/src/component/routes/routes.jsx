@@ -7,15 +7,15 @@ import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import Login from "@/pages/auth/Login";
 import RegistType from "@/pages/auth/registType";
 
+import AdminApp from "@/AdminApp";
 import Signup from "@/pages/auth/Signup";
 import CampaignPage from "@/pages/campaign/CampaignPage";
 import CategoryPage from "@/pages/category/CategoryPage";
 import MainPage from "@/pages/main/mainPage";
 import MyPage from "@/pages/mypage/MyPage";
+import SearchPage from "@/pages/search/SearchPage";
 import Stats from "@/pages/stats/Stats";
-import AdminApp from "@/AdminApp";
 import useUserProfile from "@/store/useUserProfile";
-import SearchList from "@/component/common/navbar/SearchList";
 //라우터 제약조건
 const PrivateRoute = () => {
   const { profile } = useUserProfile();
@@ -25,7 +25,7 @@ const PrivateRoute = () => {
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/search" element={<SearchList />} />
+      <Route path="/search" element={<SearchPage />} />
       <Route path="/" element={<MainPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/pages/stats" element={<Stats />} />

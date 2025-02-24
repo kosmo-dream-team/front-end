@@ -1,75 +1,95 @@
-
-import heroBgDefault from "@/assets/img/categorypage-hero.png";
-import donorDefault from "@/assets/img/donor.png";
-// 예시로 다른 분류에 사용할 이미지들을 임포트 (파일명은 실제 상황에 맞게 변경)
-import heroBgAnimal from "@/assets/img/test1.png";
-import donorAnimal from "@/assets/img/category-animal.svg";
-import heroBgEnvironment from "@/assets/img/category-baby.svg";
-import donorEnvironment from "@/assets/img/category-baby.svg";
-
-import donorSocial from "@/assets/img/category-social.svg";
+import allBg from "@/assets/img/all-bg.png";
+import animalBg from "@/assets/img/animal-bg.png";
+import { default as allCategoriesIcon } from "@/assets/img/category-all.svg";
+import animalIcon from "@/assets/img/category-animal.svg";
+import { default as childIcon } from "@/assets/img/category-baby.svg";
+import disabilityIcon from "@/assets/img/category-disabled.svg";
+import environmentIcon from "@/assets/img/category-environment.svg";
+import worldIcon from "@/assets/img/category-global.svg";
+import seniorIcon from "@/assets/img/category-grand-parents.svg";
+import socialIcon from "@/assets/img/category-social.svg";
+import childBg from "@/assets/img/child-bg.png";
+import disableBg from "@/assets/img/disable-bg.jpg";
+import envBg from "@/assets/img/env-bg.jpg";
+import grandFBg from "@/assets/img/grand-f-bg.jpg";
+import socialBg from "@/assets/img/social-bg2.png";
+import worldBg from "@/assets/img/world-bg.png";
+import useAllCampaignListStore from "@/store/useAllCampaignListStore";
 import "@/style/scss/style.scss";
+import { useEffect, useMemo } from "react";
 
-// 각 분류별 콘텐츠를 정의하는 객체
 const heroContent = {
   전체: {
-    heroBg: heroBgDefault,
-    donor: donorDefault,
+    heroBg: allBg,
+    icon: allCategoriesIcon,
     title: "전체",
-    subtitle: "2190건 참여중",
+    // 기본 참여건수는 0으로 처리 (동적으로 계산)
+    subtitle: "0건 참여중",
   },
   아동: {
-    heroBg: heroBgAnimal,
-    donor: donorAnimal,
+    heroBg: childBg,
+    icon: childIcon,
     title: "아동",
-    subtitle: "1500건 참여중",
+    subtitle: "0건 참여중",
   },
   환경: {
-    heroBg: heroBgEnvironment,
-    donor: donorEnvironment,
+    heroBg: envBg,
+    icon: environmentIcon,
     title: "환경",
-    subtitle: "1800건 참여중",
+    subtitle: "0건 참여중",
   },
   장애인: {
-    heroBg: heroBgDefault,
-    donor: donorDefault,
+    heroBg: disableBg,
+    icon: disabilityIcon,
     title: "장애인",
-    subtitle: "2190건 참여중",
+    subtitle: "0건 참여중",
   },
   지구촌: {
-    heroBg: heroBgAnimal,
-    donor: donorAnimal,
+    heroBg: worldBg,
+    icon: worldIcon,
     title: "지구촌",
-    subtitle: "1500건 참여중",
+    subtitle: "0건 참여중",
   },
   어르신: {
-    heroBg: heroBgEnvironment,
-    donor: donorEnvironment,
+    heroBg: grandFBg,
+    icon: seniorIcon,
     title: "어르신",
-    subtitle: "1800건 참여중",
+    subtitle: "0건 참여중",
   },
   사회: {
-    heroBg: heroBgDefault,
-    donor: donorDefault,
+    heroBg: socialBg,
+    icon: socialIcon,
     title: "사회",
-    subtitle: "2190건 참여중",
+    subtitle: "0건 참여중",
   },
-  자립준비청년지원: {
-    heroBg: heroBgAnimal,
-    donor: donorAnimal,
-    title: "자립준비청년지원",
-    subtitle: "1500건 참여중",
-  }
+  동물: {
+    heroBg: animalBg,
+    icon: animalIcon,
+    title: "동물",
+    subtitle: "0건 참여중",
+  },
 };
 
 export default function CategoryHero({ selectedCategory }) {
-  // 선택된 분류에 해당하는 콘텐츠, 없으면 기본값 사용
-  const content = heroContent[selectedCategory] || {
-    heroBg: heroBgDefault,
-    donor: donorDefault,
-    title: "아동 / 청소년",
-    subtitle: "2190건 참여중",
-  };
+  const { campaignList, fetchCampaignList } = useAllCampaignListStore();
+
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 전체 캠페인 데이터를 불러옵니다.
+    fetchCampaignList();
+  }, [fetchCampaignList]);
+
+  // 선택된 카테고리별 참여 건수 계산
+  const participationCount = useMemo(() => {
+    if (!campaignList || campaignList.length === 0) return 0;
+    if (selectedCategory === "전체") return campaignList.length;
+    return campaignList.filter(
+      (campaign) => campaign.category === selectedCategory
+    ).length;
+  }, [campaignList, selectedCategory]);
+
+  // heroContent 객체에서 선택된 카테고리에 해당하는 값을 가져오되, 동적으로 계산된 참여 건수로 subtitle을 덮어씁니다.
+  const content = heroContent[selectedCategory] || heroContent["전체"];
+  const dynamicSubtitle = `${participationCount.toLocaleString()}건 참여중`;
 
   return (
     <div
@@ -81,12 +101,23 @@ export default function CategoryHero({ selectedCategory }) {
         justifyContent: "center",
         alignItems: "center",
         opacity: 0.8,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div className="category-hero">
-        <img src={content.donor} className="category-hero-applicant-img" alt="donor icon" />
-        <div className="category-hero-title">{content.title}</div>
-        <div className="category-hero-subtitle">{content.subtitle}</div>
+        <img
+          src={content.icon}
+          className="category-hero-applicant-img"
+          alt="donor icon"
+        />
+        <div
+          className="category-hero-title"
+          style={{ fontSize: "2rem", fontWeight: "bold" }}
+        >
+          {content.title}
+        </div>
+        <div className="category-hero-subtitle">{dynamicSubtitle}</div>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const useTopCampaginListStore = create((set) => ({
       // http://192.168.0.53:8586/project
       const response = await axios.get(
         //"https://5a444086-c1dc-4892-ad18-bdd46c7aef5f.mock.pstmn.io/api/topproject"
-        "http://localhost:8586/api/category/projectlist"
+        "http://localhost:8586/api/topproject"
       );
       const data = response.data;
       console.log(

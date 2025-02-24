@@ -7,7 +7,7 @@ import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId="YOUR_CLIENT_ID">
+    <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
       <App />
     </GoogleOAuthProvider>
     <AdminApp />

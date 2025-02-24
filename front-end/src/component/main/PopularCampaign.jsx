@@ -62,7 +62,7 @@ export default function PopularCampaign() {
             {/* 수혜자 또는 주관 단체 */}
             <div className="popular-campaign__item-org-container">
               <div className="popular-campaign__item-org">
-                {campaign.user_name || "단체명"}
+                {campaign.user_id || "단체명"}
               </div>
             </div>
 

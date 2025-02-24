@@ -1,15 +1,15 @@
-import MainBanner from "../../assets/img/main-banner1.png";
-import Footer from "../../component/common/footer/Footer";
-import Navbar from "../../component/common/navbar/Navbar";
-import Card2 from "../../component/main/Card2";
-import Card3 from "../../component/main/Card3";
-import Card4 from "../../component/main/card4";
-import Card5 from "../../component/main/Card5";
-import MainCampaignList from "../../component/main/MainCampaignList";
-import MainCategory from "../../component/main/MainCategory";
-import PopularCampaign from "../../component/main/PopularCampaign";
-import TotalDonation from "../../component/main/TotalDonation";
-import "../../style/scss/style.scss";
+import MainBanner from "@/assets/img/main-banner1.png";
+import Footer from "@/component/common/footer/Footer";
+import Navbar from "@/component/common/navbar/Navbar";
+import Card2 from "@/component/main/Card2";
+import Card4 from "@/component/main/card4";
+import Card5 from "@/component/main/Card5";
+import MainCampaignList from "@/component/main/MainCampaignList";
+import MainCategory from "@/component/main/MainCategory";
+import NewCampagin from "@/component/main/NewCampagin";
+import PopularCampaign from "@/component/main/PopularCampaign";
+import TotalDonation from "@/component/main/TotalDonation";
+import "@/style/scss/style.scss";
 function MainPage() {
   return (
     <div
@@ -55,7 +55,7 @@ function MainPage() {
           </div>
 
           <div className="layout__new-campaign">
-            <Card3 />
+            <NewCampagin />
           </div>
           <div className="layout__social-link">
             <Card4 />

@@ -1,4 +1,5 @@
 import useUserProfile from "@/store/useUserProfile";
+import Cookies from "js-cookie";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -50,6 +51,8 @@ export default function UserInfo() {
   const handleLogout = () => {
     // 로그아웃 시 상태를 false로 업데이트합니다.
     setLogin(false);
+    // 쿠키 삭제
+    Cookies.remove("userProfile", { path: "/" });
     // 필요하다면 추가적인 로그아웃 작업(예: 토큰 삭제, 서버 로그아웃 요청 등)을 진행합니다.
     window.location.reload();
   };

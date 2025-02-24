@@ -5,6 +5,8 @@ import CategoryEnvironment from "@/assets/img/category-environment.svg";
 import CategoryGlobal from "@/assets/img/category-global.svg";
 import CategorySocial from "@/assets/img/category-social.svg";
 import "@/style/scss/style.scss";
+import { Link } from "react-router-dom";
+
 const categories = [
   { icon: CategoryBaby, label: "아동" },
   { icon: CategoryDisabled, label: "동물" },
@@ -15,24 +17,32 @@ const categories = [
   { icon: CategorySocial, label: "사회" },
   { icon: CategoryAll, label: "전체" },
 ];
+
 export default function MainCategory() {
   return (
     <div className="donation-card">
       <div className="donation-card__title">나의 도움이 필요한 모금함은?</div>
       <div className="donation-card__categories">
         {categories.map((category, index) => (
-          <div className="donation-card__category" key={index}>
-            <div className="donation-card__category-icon">
-              <img
-                src={category.icon}
-                alt={category.label}
-                className="category-icon-image"
-              />
+          <Link
+            key={index}
+            to={`/pages/category?selectedCategory=${encodeURIComponent(
+              category.label
+            )}&sort=date`}
+          >
+            <div className="donation-card__category">
+              <div className="donation-card__category-icon">
+                <img
+                  src={category.icon}
+                  alt={category.label}
+                  className="category-icon-image"
+                />
+              </div>
+              <div className="donation-card__category-label">
+                <div className="label-text">{category.label}</div>
+              </div>
             </div>
-            <div className="donation-card__category-label">
-              <div className="label-text">{category.label}</div>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

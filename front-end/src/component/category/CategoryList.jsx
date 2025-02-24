@@ -1,36 +1,37 @@
-// src/component/category/CategoryList.jsx
 import useAllCampaignListStore from "@/store/useAllCampaignListStore";
 import "@/style/scss/style.scss";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-const CategoryList = ({ selectedCategory }) => {
+const CategoryList = (props) => {
+  // props.selectedCategory를 사용하여 필터링
+  const querySelectedCategory = props.selectedCategory || "전체";
+
   // 화면에 표시할 항목 수
   const [visibleCount, setVisibleCount] = useState(5);
-  // 정렬 옵션: 'date' 또는 'popularity'
+  // 정렬 옵션 상태 초기값 (URL 대신 내부 상태로 관리 가능)
   const [sortOption, setSortOption] = useState("date");
-  // Sentinel을 위한 ref
   const sentinelRef = useRef(null);
 
-  // 스토어에서 캠페인 리스트와 fetch 함수를 가져옴
   const { campaignList, fetchCampaignList } = useAllCampaignListStore();
 
-  // 컴포넌트 마운트 시 API 호출
   useEffect(() => {
     fetchCampaignList();
   }, [fetchCampaignList]);
 
-  // 캠페인 리스트 중 승인된 데이터만 필터링 후, 선택한 카테고리에 따라 추가 필터링 (전체 또는 선택된 카테고리)
+  // 캠페인 리스트 필터링 (선택된 카테고리에 따라)
   const filteredCampaigns = useMemo(() => {
     const approvedCampaigns = campaignList.filter(
       (app) => app.status === "active"
     );
-    return selectedCategory && selectedCategory !== "전체"
-      ? approvedCampaigns.filter((app) => app.category === selectedCategory)
+    return querySelectedCategory && querySelectedCategory !== "전체"
+      ? approvedCampaigns.filter(
+          (app) => app.category === querySelectedCategory
+        )
       : approvedCampaigns;
-  }, [campaignList, selectedCategory]);
+  }, [campaignList, querySelectedCategory]);
 
-  // 정렬 옵션에 따라 정렬 (날짜순: start_date 기준 오름차순, 인기순: like_count 기준 내림차순)
+  // 정렬
   const sortedCampaigns = useMemo(() => {
     const campaigns = [...filteredCampaigns];
     if (sortOption === "date") {
@@ -41,13 +42,12 @@ const CategoryList = ({ selectedCategory }) => {
     return campaigns;
   }, [filteredCampaigns, sortOption]);
 
-  // 정렬 옵션 변경 핸들러
   const handleSortChange = (option) => {
     setSortOption(option);
-    setVisibleCount(5); // 정렬 옵션 변경 시 표시 개수 초기화
+    setVisibleCount(5);
   };
 
-  // IntersectionObserver로 스크롤 시 추가 렌더링 처리
+  // 무한 스크롤
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -67,13 +67,9 @@ const CategoryList = ({ selectedCategory }) => {
         threshold: 1.0,
       }
     );
-    if (sentinelRef.current) {
-      observer.observe(sentinelRef.current);
-    }
+    if (sentinelRef.current) observer.observe(sentinelRef.current);
     return () => {
-      if (sentinelRef.current) {
-        observer.unobserve(sentinelRef.current);
-      }
+      if (sentinelRef.current) observer.unobserve(sentinelRef.current);
     };
   }, [sortedCampaigns]);
 
@@ -99,10 +95,7 @@ const CategoryList = ({ selectedCategory }) => {
           인기순
         </span>
       </div>
-
-      {/* Categories 컴포넌트에서 선택한 카테고리를 기준으로 하는 필터 영역 */}
       <div style={{ height: "2rem" }}></div>
-
       {sortedCampaigns.slice(0, visibleCount).map((campaign) => (
         <div key={campaign.project_id} className="main-campaign-list">
           <Link
@@ -181,8 +174,6 @@ const CategoryList = ({ selectedCategory }) => {
           </div>
         </div>
       ))}
-
-      {/* Sentinel 요소: 추가 항목 로드를 위한 영역 */}
       <div ref={sentinelRef} style={{ height: "20px" }}></div>
     </>
   );

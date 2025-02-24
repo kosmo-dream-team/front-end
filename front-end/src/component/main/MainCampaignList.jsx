@@ -41,7 +41,7 @@ export default function MainCampaignList() {
               <div className="main-campaign-list__category">
                 <div className="main-campaign-list__category-text">
                   {/* 서버에서 받아온 카테고리 */}
-                  {campaign.category_id || "카테고리"}
+                  {campaign.category || "카테고리"}
                 </div>
               </div>
               <div className="main-campaign-list__quote">
@@ -50,7 +50,7 @@ export default function MainCampaignList() {
               </div>
               <div className="main-campaign-list__beneficiary">
                 <div className="main-campaign-list__beneficiary-text">
-                  {campaign.user_id}
+                  {campaign.user_id || "수혜자명"}
                 </div>
               </div>
             </div>

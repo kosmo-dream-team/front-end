@@ -25,4 +25,5 @@
 .category-hero-subtitle {
   margin-top: 0.4rem;
   @include mixin.font-style(#444444, "sm", "normal");
+  text-shadow: 1px 1px 2px rgba(70, 70, 68, 0.5);
 }
