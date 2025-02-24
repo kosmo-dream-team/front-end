@@ -1,6 +1,57 @@
 @use "../../abstracts/mixin" as mixin;
 // Noto Sans KR
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1&family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("http://fonts.googleapis.com/earlyaccess/hanna.css");
+@import url("http://fonts.googleapis.com/earlyaccess/hanna.css");
+
+// 적용: font-family: 'Hanna', serif;
+
+// 제주고딕
+@import url("http://fonts.googleapis.com/earlyaccess/jejugothic.css");
+
+// 적용: font-family: 'Jeju Gothic', serif;
+
+// 제주한라산
+@import url("http://fonts.googleapis.com/earlyaccess/jejuhallasan.css");
+
+// 적용: font-family: 'Jeju Hallasan', serif;
+
+// 제주명조
+@import url("http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css");
+
+// 적용: font-family: 'Jeju Myeongjo', serif;
+
+// KoPub 바탕체
+@import url("http://fonts.googleapis.com/earlyaccess/kopubbatang.css");
+
+// 적용: font-family: 'KoPub Batang', serif;
+
+// 나눔 Brush
+@import url("http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css");
+
+// 적용: font-family: 'Nanum Brush Script', serif;
+
+// 나눔 고딕체
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
+// 적용: font-family: 'Nanum Gothic', serif;
+
+// 나눔 고딕 코딩
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css");
+
+// 적용: font-family: 'Nanum Gothic Coding', serif;
+
+// 나눔 명조체
+@import url("http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css");
+
+// 적용: font-family: 'Nanum Myeongjo', serif;
+
+// 나눔 Pen Script
+@import url("http://fonts.googleapis.com/earlyaccess/nanumpenscript.css");
+
+// 적용: font-family: 'Nanum Pen Script', serif;
 body {
   font-family: "Noto Sans KR", sans-serif;
+  
 }

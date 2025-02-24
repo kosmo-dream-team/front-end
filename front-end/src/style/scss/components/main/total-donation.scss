@@ -1,0 +1,47 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+.total-donation {
+  display: flex;
+  padding: 2.5rem;
+  flex-direction: column;
+
+  gap: var(--stroke-weight-1, 1px);
+  align-self: stretch;
+  border-radius: 12px 12px 0px 0px;
+  background: #ff9191;
+}
+.total-donation-title {
+  padding: 0rem 1rem;
+  display: flex; // Flexbox 사용
+  justify-content: space-between; // 내부 요소들을 양쪽 정렬
+  align-items: center; // 수직 중앙 정렬
+  width: 100%;
+}
+.total-donation-title-date {
+  margin-top: 0.4rem;
+  @include mixin.font-style(black, xs, normal);
+  font-size: 1.2rem;
+}
+.total-donation-title-text {
+  @include mixin.font-style(black, md, bold);
+  word-wrap: break-word;
+}
+
+.total-donation-title-img {
+  margin-bottom: 1rem;
+  width: 13rem;
+}
+.total-donation-donation-box {
+  display: flex;
+
+  align-items: center;
+  padding: 2rem;
+  align-self: stretch;
+  background-color: white;
+  justify-content: space-between;
+  @include mixin.font-style(black, xs, normal);
+}
+.total-raised-donation {
+  text-align: end;
+  font-weight: bold;
+}

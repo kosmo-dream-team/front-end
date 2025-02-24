@@ -1,0 +1,3879 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://localhost:5173/ca -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="module">
+      import RefreshRuntime from "/@react-refresh";
+      RefreshRuntime.injectIntoGlobalHook(window);
+      window.$RefreshReg$ = () => {};
+      window.$RefreshSig$ = () => (type) => type;
+      window.__vite_plugin_react_preamble_installed__ = true;
+    </script>
+
+    <script type="module" src="./Vite + React_files/client"></script>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="http://localhost:5173/vite.svg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <style
+      type="text/css"
+      data-vite-dev-id="C:/workspace/team-project/dream-on/front-end/src/style/scss/style.scss"
+    >
+      @charset "UTF-8";
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Gothic+A1&family=Noto+Sans+KR:wght@100..900&display=swap");
+      @import url("http://fonts.googleapis.com/earlyaccess/hanna.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/hanna.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/jejugothic.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/jejuhallasan.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/kopubbatang.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css");
+      @import url("http://fonts.googleapis.com/earlyaccess/nanumpenscript.css");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%; /* 1rem = 10px */
+      }
+
+      /* DonationBox.css */
+      /* 최상위 모금함 박스 */
+      .donation-box {
+        width: 700px;
+        height: 174px;
+        padding: 24px 30px 32px 30px;
+        background: white;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      /* 제목 */
+      .donation-box-title {
+        color: #202020;
+        font-size: 20px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 28px;
+        word-wrap: break-word;
+      }
+
+      /* 항목들을 감싸는 영역 */
+      .donation-box-items {
+        align-self: stretch;
+        display: inline-flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      /* 개별 항목 */
+      .donation-box-item {
+        width: 80px;
+        padding-left: 12.5px;
+        padding-right: 12.5px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* 항목 내 그래픽 영역 */
+      .donation-box-item-graphic {
+        width: 37.33px;
+        height: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      /* 그래픽 컨테이너 */
+      .graphic-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      /* 그래픽 내부 상대영역 */
+      .graphic-relative {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      /* ── 아동 항목의 그래픽 레이어 (인라인 스타일을 CSS로 변환) ── */
+      .graphic-layer {
+        position: absolute;
+      }
+
+      /* 레이어 1 */
+      .graphic-layer.layer1 {
+        width: 6.88px;
+        height: 6.43px;
+        left: 27.19px;
+        top: 20.99px;
+        background: #202020;
+      }
+
+      /* 레이어 2 */
+      .graphic-layer.layer2 {
+        width: 5.51px;
+        height: 5.14px;
+        left: 30.62px;
+        top: 24.85px;
+        background: #202020;
+      }
+
+      /* 레이어 3 */
+      .graphic-layer.layer3 {
+        width: 29.42px;
+        height: 27.42px;
+        left: 3.87px;
+        top: 1.87px;
+        background: #ffdca4;
+        border: 1px solid #202020;
+      }
+
+      /* 레이어 4 */
+      .graphic-layer.layer4 {
+        width: 5.81px;
+        height: 8.27px;
+        left: 0.49px;
+        top: 13.13px;
+        background: #ffdca4;
+      }
+
+      /* 레이어 5 */
+      .graphic-layer.layer5 {
+        width: 5.81px;
+        height: 8.27px;
+        left: 0.49px;
+        top: 13.13px;
+        border: 1px solid #202020;
+      }
+
+      /* 레이어 6 */
+      .graphic-layer.layer6 {
+        width: 1.88px;
+        height: 1.55px;
+        left: 3.4px;
+        top: 16.12px;
+        border: 1px solid #202020;
+      }
+
+      /* 레이어 7 */
+      .graphic-layer.layer7 {
+        width: 5.81px;
+        height: 8.27px;
+        left: 30.87px;
+        top: 13.13px;
+        background: #ffdca4;
+      }
+
+      /* 레이어 8 */
+      .graphic-layer.layer8 {
+        width: 5.81px;
+        height: 8.27px;
+        left: 30.87px;
+        top: 13.13px;
+        border: 1px solid #202020;
+      }
+
+      /* 레이어 9 */
+      .graphic-layer.layer9 {
+        width: 1.88px;
+        height: 1.55px;
+        left: 31.89px;
+        top: 16.12px;
+        border: 1px solid #202020;
+      }
+
+      /* 레이어 10 */
+      .graphic-layer.layer10 {
+        width: 2.17px;
+        height: 3.55px;
+        left: 14.89px;
+        top: 16.51px;
+        background: #202020;
+      }
+
+      /* 레이어 11 */
+      .graphic-layer.layer11 {
+        width: 2.17px;
+        height: 3.55px;
+        left: 20.11px;
+        top: 16.51px;
+        background: #202020;
+      }
+
+      /* 레이어 12 (내부에 두 개의 자식 레이어 포함) */
+      .graphic-layer.layer12 {
+        width: 28.49px;
+        height: 26.54px;
+        left: 4.34px;
+        top: 2.31px;
+      }
+
+      /* 레이어 12 내부 자식 */
+      .graphic-layer.layer12 > .inner-layer1 {
+        width: 28.49px;
+        height: 26.54px;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background: white;
+      }
+
+      .graphic-layer.layer12 > .inner-layer2 {
+        width: 23.22px;
+        height: 18.42px;
+        left: 7.32px;
+        top: -6.16px;
+        position: absolute;
+        background: #202020;
+      }
+
+      /* 레이어 13 */
+      .graphic-layer.layer13 {
+        width: 28.2px;
+        height: 9.79px;
+        left: 4.49px;
+        top: 1.87px;
+        background: #ffa26e;
+        border: 1px solid #202020;
+      }
+
+      /* 레이어 14 */
+      .graphic-layer.layer14 {
+        width: 23.72px;
+        height: 4.81px;
+        left: 2.53px;
+        top: 9.75px;
+        background: #ffa26e;
+        border: 1px solid #202020;
+      }
+
+      /* ── 항목 라벨 ── */
+      .donation-box-item-label {
+        height: 28px;
+        padding: 7px 16.17px 8px 16.17px;
+        background: #eeeeee;
+        border-radius: 9999px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .donation-box-item-label-text {
+        text-align: center;
+        color: #202020;
+        font-size: 13px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        line-height: 13px;
+        word-wrap: break-word;
+      }
+
+      /* ── 참고 ──
+추가 항목(동물, 환경 등)은 위의 구조와 유사하게
+각 항목별 고유의 클래스명(예: .layer1-animal 등)을 만들어 적용하면 됩니다.
+*/
+      .donation-footer {
+        width: 1200px;
+        height: 180px;
+        position: relative;
+        background: white;
+        border-top: 1px solid #eeeeee;
+      }
+
+      /* ─── 빈 스페이서 ────────────────────────────────────────── */
+      .donation-footer__spacer {
+        width: 115px;
+        height: 18px;
+        position: absolute;
+        left: 400px;
+        top: 41px;
+      }
+
+      /* ─── 네비게이션 영역 ───────────────────────────────────── */
+      .donation-footer__nav {
+        width: 434.09px;
+        height: 33.97px;
+        position: absolute;
+        left: 131px;
+        top: 94px;
+      }
+
+      .donation-footer__nav-group {
+        position: absolute;
+        height: 33.97px;
+      }
+
+      /* © Dream On Corp. */
+      .donation-footer__nav-group--corp {
+        width: 119.75px;
+        left: 0;
+        top: 0;
+      }
+
+      /* 고객센터 */
+      .donation-footer__nav-group--support {
+        width: 71.67px;
+        left: 119.75px;
+        top: 0;
+      }
+
+      /* 문의하기 */
+      .donation-footer__nav-group--inquire {
+        width: 71.67px;
+        left: 191.42px;
+        top: 0;
+      }
+
+      /* 이용약관 */
+      .donation-footer__nav-group--terms {
+        width: 71.67px;
+        left: 263.09px;
+        top: 0;
+      }
+
+      /* 네비게이션 텍스트 (공통 스타일) */
+      .donation-footer__nav-text {
+        position: absolute;
+        top: 5px;
+        color: #444444;
+        font-size: 14px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        line-height: 21.98px;
+        word-wrap: break-word;
+      }
+
+      /* 개별 좌측 위치 조정 */
+      .donation-footer__nav-group--corp .donation-footer__nav-text {
+        left: 0;
+      }
+
+      .donation-footer__nav-group--support .donation-footer__nav-text {
+        left: 0.25px;
+      }
+
+      .donation-footer__nav-group--inquire .donation-footer__nav-text {
+        left: -0.42px;
+      }
+
+      .donation-footer__nav-group--terms .donation-footer__nav-text {
+        left: -0.09px;
+      }
+
+      /* 네비게이션 도트 (공통 스타일) */
+      .donation-footer__nav-dot {
+        width: 2px;
+        height: 2px;
+        position: absolute;
+        top: 15.98px;
+        background: #444444;
+        border-radius: 2px;
+      }
+
+      .donation-footer__nav-group--corp .donation-footer__nav-dot {
+        left: 107.75px;
+      }
+
+      .donation-footer__nav-group--support .donation-footer__nav-dot {
+        left: 59.67px;
+      }
+
+      .donation-footer__nav-group--inquire .donation-footer__nav-dot {
+        left: 59.67px;
+      }
+
+      .donation-footer__nav-group--terms .donation-footer__nav-dot {
+        left: 59.68px;
+      }
+
+      /* 개인정보처리방침 */
+      .donation-footer__nav-privacy {
+        width: 132px;
+        height: 22px;
+        position: absolute;
+        left: 335px;
+        top: 5px;
+        color: #444444;
+        font-size: 14px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 21.98px;
+        word-wrap: break-word;
+      }
+
+      /* ─── 소셜 아이콘 영역 ───────────────────────────────────── */
+      .donation-footer__social {
+        position: absolute;
+        left: 1017px;
+        top: 93px;
+        padding: 6px 5px 7.97px 5px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .donation-footer__social-icon {
+        height: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 첫번째 아이콘 */
+      .donation-footer__social-icon-inner {
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .donation-footer__social-icon-bg-wrapper {
+        position: absolute;
+        width: 20px;
+        height: 18.33px;
+        left: 0;
+        top: 1px;
+      }
+
+      .donation-footer__social-icon-bg {
+        width: 20px;
+        height: 18.33px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: white;
+      }
+
+      .donation-footer__social-icon-overlay {
+        width: 20px;
+        height: 18.33px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #444444;
+      }
+
+      .donation-footer__social-icon-line {
+        width: 1.46px;
+        height: 2.17px;
+        position: absolute;
+        left: 7.17px;
+        top: 7.43px;
+        background: #444444;
+      }
+
+      /* 두번째 아이콘 (작은 아이콘) */
+      .donation-footer__social-icon-inner--small {
+        width: 20px;
+        height: 20px;
+        position: relative;
+      }
+
+      .donation-footer__social-icon-bg-small-wrapper {
+        position: absolute;
+        width: 10.13px;
+        height: 18px;
+        left: 4.72px;
+        top: 1px;
+      }
+
+      .donation-footer__social-icon-bg-small {
+        width: 10.13px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: white;
+      }
+
+      .donation-footer__social-icon-bg-small-overlay {
+        width: 10.13px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #444444;
+      }
+
+      /* 세번째 아이콘 (원형 아이콘) */
+      .donation-footer__social-icon-inner--circle {
+        width: 20px;
+        height: 20px;
+        position: relative;
+      }
+
+      .donation-footer__social-icon-bg-circle-wrapper {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        left: 1px;
+        top: 1px;
+      }
+
+      .donation-footer__social-icon-bg-circle {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: white;
+      }
+
+      .donation-footer__social-icon-bg-circle-overlay {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #444444;
+      }
+
+      .donation-footer__social-icon-circle-overlay {
+        width: 9.5px;
+        height: 9.5px;
+        position: absolute;
+        left: 5.5px;
+        top: 5.5px;
+        background: #444444;
+      }
+
+      .donation-footer__social-icon-dot {
+        width: 2px;
+        height: 2px;
+        position: absolute;
+        left: 14px;
+        top: 4px;
+        background: #444444;
+      }
+
+      /* ─── 타이틀 영역 ───────────────────────────────────────── */
+      .donation-footer__title {
+        width: 228px;
+        position: absolute;
+        left: 131px;
+        top: 59px;
+        color: black;
+        font-size: 14px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 500;
+        line-height: 21.98px;
+        word-wrap: break-word;
+      }
+
+      .navigation-bar {
+        width: 1800px;
+        height: 69px;
+        position: relative;
+      }
+
+      /* 내부 컨텐츠 영역 (전체 메뉴와 로고 등) */
+      .navigation-bar__content {
+        width: 1120px;
+        height: 70px;
+        left: 339px;
+        top: 0;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+      }
+
+      /* ─── 로고 영역 ─────────────────────────────── */
+      .navigation-bar__logo {
+        width: 120px;
+        height: 30px;
+        position: relative;
+        background: transparent;
+      }
+
+      .navigation-bar__logo-text {
+        width: 139px;
+        height: 41px;
+        position: absolute;
+        left: -19px;
+        top: -8px;
+        text-align: right;
+        color: #ff9191;
+        font-size: 23px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 24px;
+        word-wrap: break-word;
+      }
+
+      .navigation-bar__logo-underline-container {
+        width: 117px;
+        height: 3px;
+        position: absolute;
+        left: 1px;
+        top: 23px;
+        border-radius: 100px;
+        overflow: hidden;
+      }
+
+      .navigation-bar__logo-underline {
+        width: 117px;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(
+          90deg,
+          #f8f0f0 0%,
+          #e8b3b3 100%,
+          #ff0000 100%
+        );
+        border-radius: 40px;
+      }
+
+      /* ─── 메뉴 영역 ─────────────────────────────── */
+      .navigation-bar__menu {
+        width: 601px;
+        height: 70px;
+        position: relative;
+      }
+
+      /* 공통 메뉴 아이템 스타일 */
+      .navigation-bar__menu-item {
+        position: absolute;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 22px 14px 24px 14px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #444444;
+        word-wrap: break-word;
+      }
+
+      /* 홈 메뉴 – 선택된 항목: border-bottom 적용 */
+      .navigation-bar__menu-item--home {
+        width: 43px;
+        left: 56px;
+        top: -1px;
+        border-bottom: 2px solid #393939;
+      }
+
+      .navigation-bar__menu-item--company {
+        width: 75px;
+        left: 122px;
+        top: 22px;
+      }
+
+      .navigation-bar__menu-item--campaign {
+        width: 70px;
+        left: 220px;
+        top: 22px;
+      }
+
+      .navigation-bar__menu-item--statistics {
+        width: 99.53px;
+        left: 281px;
+        top: 0;
+        position: absolute;
+      }
+
+      .navigation-bar__menu-item--board {
+        width: 117px;
+        left: 385px;
+        top: -1px;
+      }
+
+      .navigation-bar__menu-item--mypage {
+        width: 102px;
+        left: 513px;
+        top: 0;
+      }
+
+      /* 메뉴 텍스트 (공통) */
+      .navigation-bar__menu-text {
+        color: inherit;
+      }
+
+      /* 기부 통계 메뉴 – 작은 도트 */
+      .navigation-bar__menu-item--statistics .navigation-bar__menu-dot {
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        left: 80px;
+        top: 24px;
+        background: #ff5a72;
+        border-radius: 2px;
+      }
+
+      /* ─── 오른쪽 스페이서 (추가 여백) ───────────── */
+      .navigation-bar__spacer {
+        width: 115px;
+        align-self: stretch;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .navigation-bar__spacer-inner {
+        width: 99.53px;
+        padding: 22px 14px 24px 14px;
+        /* 내용이 없으므로 내부에 아무것도 표시하지 않습니다. */
+      }
+
+      .favicon-text {
+        width: 13.9rem;
+        height: 4.1rem;
+        margin-left: -1.9rem;
+        margin-top: -0.8rem;
+        /* 텍스트와 라인 사이 간격 줄이기 위해 아래 여백 추가 */
+        margin-bottom: -1rem;
+        text-align: right;
+        color: #ff9191;
+        font-size: 2.3rem;
+        font-weight: 700;
+        line-height: 2.4rem;
+      }
+
+      .favicon-line {
+        width: 11.7rem;
+        height: 0.3rem;
+        margin-left: 0.1rem;
+        /* 상단 여백을 음수로 조정하여 텍스트에 더 가깝게 배치 */
+        margin-top: -0.5rem;
+        border-radius: 10rem;
+      }
+      .favicon-line .favicon-line-gradient {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          #f8f0f0 0%,
+          #e8b3b3 100%,
+          #ff0000 100%
+        );
+        border-radius: 4rem;
+      }
+
+      .navbar-mobile .mobile_btn {
+        position: absolute;
+        top: 40px;
+        left: 15px;
+        font-size: 12px;
+      }
+      .navbar-mobile input[id="hamburger"] {
+        display: none;
+      }
+      .navbar-mobile input[id="hamburger"] + label {
+        display: block;
+        width: 60px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+      }
+      .navbar-mobile input[id="hamburger"] + label span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-radius: 30px;
+        background: #000;
+        transition: all 0.35s;
+      }
+      .navbar-mobile input[id="hamburger"] + label span:nth-child(1) {
+        top: 0;
+      }
+      .navbar-mobile input[id="hamburger"] + label span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .navbar-mobile input[id="hamburger"] + label span:nth-child(3) {
+        bottom: 0;
+      }
+      .navbar-mobile input[id="hamburger"]:checked + label {
+        z-index: 99;
+      }
+      .navbar-mobile input[id="hamburger"]:checked + label span {
+        background: black;
+      }
+      .navbar-mobile input[id="hamburger"]:checked + label span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .navbar-mobile input[id="hamburger"]:checked + label span:nth-child(2) {
+        opacity: 0;
+      }
+      .navbar-mobile input[id="hamburger"]:checked + label span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+      }
+      .navbar-mobile div[class="sidebar"] {
+        width: 100%;
+        height: 100%;
+        background: white;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 98;
+        transition: all 0.35s;
+      }
+      .navbar-mobile input[id="hamburger"]:checked + label + div {
+        left: 0;
+      }
+      .navbar-mobile .nav_mobile {
+        position: absolute;
+        top: 119px;
+        width: 100%;
+      }
+      .navbar-mobile .sidebar .nav_mobile li {
+        color: black;
+        position: relative;
+        float: left;
+        width: 100%;
+        list-style-type: none;
+        font-size: 20px;
+        border-bottom: 1px solid #ccc;
+        font-family: "Noto Sans KR";
+        font-weight: normal;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+      .navbar-mobile .sidebar .nav_mobile li:first-of-type {
+        margin-top: 33px;
+      }
+      .navbar-mobile .sidebar .nav_mobile li:hover {
+        transition: background-color 0.35s ease;
+        background-color: #ff9191;
+      }
+      .navbar-mobile .sidebar a {
+        padding: 0;
+        text-decoration: none;
+        display: block;
+      }
+      .navbar-mobile .sidebar li a {
+        display: block;
+        font-weight: bold;
+        line-height: 40px;
+        margin: 0px;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.4s;
+      }
+      .navbar-mobile .sidebar li a:hover,
+      .navbar-mobile .sidebar ul li:hover a {
+        text-decoration: none;
+        color: #eee;
+        padding: 0;
+        margin: 0;
+        border: 0px;
+      }
+
+      :root {
+        /* 로고 색상 */
+        --logoColor: #ff4646;
+        /* 텍스트 색상 */
+        --textColor: #ecf0f1;
+        /* 마우스 오버 색상 */
+        --mouseOverColor: #ff4646;
+      }
+
+      .navbar {
+        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        background: white;
+      }
+      .navbar .favicon {
+        margin-top: 1.5rem;
+        margin-left: 2.5rem;
+      }
+
+      .navbar-logo {
+        display: flex;
+        align-items: center;
+        background: transparent;
+      }
+
+      .navbar-logo > a {
+        display: inherit;
+        font-size: 2rem;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .navbar-logo > a > i {
+        padding: 0rem 0.5rem;
+        color: var(--logoColor);
+      }
+
+      .navbar-logo > a > h1 {
+        margin: 0;
+        color: var(--textColor);
+      }
+
+      .navbar-menu > ul {
+        display: flex;
+        list-style: none;
+      }
+
+      .navbar-menu li {
+        padding: 0.8rem 3rem;
+      }
+
+      .navbar-menu li:hover {
+        background: #ff9191;
+        border-radius: 0.6rem;
+      }
+
+      /* 메뉴바 이동 텍스트 (마이페이지)*/
+      .navbar-menu li > a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.6rem;
+        color: black;
+        font-size: 1.6rem;
+        font-weight: normal;
+      }
+
+      .navbar-links {
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar-links a {
+        padding: 0.8rem 1.2rem;
+        color: black;
+      }
+
+      .navbar-btn {
+        display: none;
+        cursor: pointer;
+      }
+
+      .nav-list {
+        text-decoration: none;
+        /* 밑줄 제거 */
+        color: inherit;
+        /* 부모 요소의 색상을 상속 */
+        outline: none;
+        /* 클릭 시 테두리 제거 */
+      }
+      .nav-list:hover {
+        background-color: #ff9191;
+      }
+
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+
+      .background-shadow {
+        background-color: var(--togetherkakaocomwhite);
+        border-radius: 12px;
+        height: 372px;
+        overflow: hidden;
+        position: relative;
+        width: 700px;
+      }
+
+      .background-shadow .heading-link {
+        color: var(--togetherkakaocommine-shaft);
+        font-family: "Noto Sans-Bold", Helvetica;
+        font-size: 20px;
+        font-weight: 700;
+        height: 28px;
+        left: 30px;
+        letter-spacing: -0.3px;
+        line-height: 28px;
+        position: absolute;
+        top: 11px;
+        white-space: nowrap;
+        width: 238px;
+      }
+
+      .background-shadow .text-wrapper {
+        color: #666666;
+        font-family: var(
+          --together-kakao-com-noto-sans-display-regular-font-family
+        );
+        font-size: var(
+          --together-kakao-com-noto-sans-display-regular-font-size
+        );
+        font-style: var(
+          --together-kakao-com-noto-sans-display-regular-font-style
+        );
+        font-weight: var(
+          --together-kakao-com-noto-sans-display-regular-font-weight
+        );
+        height: 24px;
+        left: 30px;
+        letter-spacing: var(
+          --together-kakao-com-noto-sans-display-regular-letter-spacing
+        );
+        line-height: var(
+          --together-kakao-com-noto-sans-display-regular-line-height
+        );
+        position: absolute;
+        top: 55px;
+        white-space: nowrap;
+        width: 314px;
+      }
+
+      .background-shadow .link {
+        height: 244px;
+        left: 30px;
+        position: absolute;
+        top: 96px;
+        width: 200px;
+      }
+
+      .background-shadow .container {
+        background-image: url(./c1400x960-jpg.png);
+        background-position: 50% 50%;
+        background-size: cover;
+        border-radius: 8px;
+        height: 137px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 200px;
+      }
+
+      .background-shadow .strong {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        position: absolute;
+        top: 149px;
+        width: 200px;
+      }
+
+      .background-shadow .div {
+        color: var(--togetherkakaocommine-shaft);
+        font-family: var(--together-kakao-com-semantic-strong-font-family);
+        font-size: var(--together-kakao-com-semantic-strong-font-size);
+        font-style: var(--together-kakao-com-semantic-strong-font-style);
+        font-weight: var(--together-kakao-com-semantic-strong-font-weight);
+        letter-spacing: var(
+          --together-kakao-com-semantic-strong-letter-spacing
+        );
+        line-height: var(--together-kakao-com-semantic-strong-line-height);
+        margin-top: -1px;
+        position: relative;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .background-shadow .div-wrapper {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        position: absolute;
+        top: 171px;
+        width: 200px;
+      }
+
+      .background-shadow .text-wrapper-2 {
+        color: #888888;
+        font-family: "Noto Sans-DisplayRegular", Helvetica;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: -0.1px;
+        line-height: 18px;
+        margin-top: -1px;
+        position: relative;
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .background-shadow .horizontal-divider {
+        align-items: flex-start;
+        background-color: #d0e3ff;
+        border-radius: 999px;
+        display: flex;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        top: 217px;
+        width: 200px;
+      }
+
+      .background-shadow .progressbar {
+        align-self: stretch;
+        background-color: #ff4050;
+        border-radius: 999px;
+        position: relative;
+        width: 133.97px;
+      }
+
+      .background-shadow .text-wrapper-3 {
+        color: var(--togetherkakaocommine-shaft);
+        font-family: var(--together-kakao-com-semantic-link-font-family);
+        font-size: var(--together-kakao-com-semantic-link-font-size);
+        font-style: var(--together-kakao-com-semantic-link-font-style);
+        font-weight: var(--together-kakao-com-semantic-link-font-weight);
+        height: 20px;
+        left: 0;
+        letter-spacing: var(--together-kakao-com-semantic-link-letter-spacing);
+        line-height: var(--together-kakao-com-semantic-link-line-height);
+        position: absolute;
+        top: 222px;
+        white-space: nowrap;
+        width: 71px;
+      }
+
+      .background-shadow .text-wrapper-4 {
+        color: #ff4050;
+        font-family: var(--together-kakao-com-semantic-link-font-family);
+        font-size: var(--together-kakao-com-semantic-link-font-size);
+        font-style: var(--together-kakao-com-semantic-link-font-style);
+        font-weight: var(--together-kakao-com-semantic-link-font-weight);
+        height: 20px;
+        left: 174px;
+        letter-spacing: var(--together-kakao-com-semantic-link-letter-spacing);
+        line-height: var(--together-kakao-com-semantic-link-line-height);
+        position: absolute;
+        top: 222px;
+        white-space: nowrap;
+        width: 26px;
+      }
+
+      .background-shadow .link-2 {
+        height: 244px;
+        left: 250px;
+        position: absolute;
+        top: 96px;
+        width: 200px;
+      }
+
+      .background-shadow .container-2 {
+        background-image: url(./image.png);
+        background-position: 50% 50%;
+        background-size: cover;
+        border-radius: 8px;
+        height: 137px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 200px;
+      }
+
+      .background-shadow .p {
+        color: var(--togetherkakaocommine-shaft);
+        font-family: var(--together-kakao-com-semantic-strong-font-family);
+        font-size: var(--together-kakao-com-semantic-strong-font-size);
+        font-style: var(--together-kakao-com-semantic-strong-font-style);
+        font-weight: var(--together-kakao-com-semantic-strong-font-weight);
+        letter-spacing: var(
+          --together-kakao-com-semantic-strong-letter-spacing
+        );
+        line-height: var(--together-kakao-com-semantic-strong-line-height);
+        margin-top: -1px;
+        position: relative;
+        width: fit-content;
+      }
+
+      .background-shadow .container-3 {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        position: absolute;
+        top: 191px;
+        width: 200px;
+      }
+
+      .background-shadow .progressbar-2 {
+        align-self: stretch;
+        background-color: #ff4050;
+        border-radius: 999px;
+        position: relative;
+        width: 43.98px;
+      }
+
+      .background-shadow .text-wrapper-5 {
+        color: var(--togetherkakaocommine-shaft);
+        font-family: var(--together-kakao-com-semantic-link-font-family);
+        font-size: var(--together-kakao-com-semantic-link-font-size);
+        font-style: var(--together-kakao-com-semantic-link-font-style);
+        font-weight: var(--together-kakao-com-semantic-link-font-weight);
+        height: 20px;
+        left: 0;
+        letter-spacing: var(--together-kakao-com-semantic-link-letter-spacing);
+        line-height: var(--together-kakao-com-semantic-link-line-height);
+        position: absolute;
+        top: 222px;
+        white-space: nowrap;
+        width: 62px;
+      }
+
+      .background-shadow .link-3 {
+        height: 244px;
+        left: 470px;
+        position: absolute;
+        top: 96px;
+        width: 200px;
+      }
+
+      .background-shadow .container-4 {
+        background-image: url(./c1400x960-jpg-2.png);
+        background-position: 50% 50%;
+        background-size: cover;
+        border-radius: 8px;
+        height: 137px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 200px;
+      }
+
+      .background-shadow .strong-2 {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 149px;
+        width: 200px;
+      }
+
+      .background-shadow .text-wrapper-6 {
+        color: var(--togetherkakaocommine-shaft);
+        font-family: var(--together-kakao-com-semantic-strong-font-family);
+        font-size: var(--together-kakao-com-semantic-strong-font-size);
+        font-style: var(--together-kakao-com-semantic-strong-font-style);
+        font-weight: var(--together-kakao-com-semantic-strong-font-weight);
+        letter-spacing: var(
+          --together-kakao-com-semantic-strong-letter-spacing
+        );
+        line-height: var(--together-kakao-com-semantic-strong-line-height);
+        margin-right: -6.03px;
+        margin-top: -1px;
+        position: relative;
+        width: fit-content;
+      }
+
+      .background-shadow .progressbar-3 {
+        align-self: stretch;
+        background-color: #ff4050;
+        border-radius: 999px;
+        position: relative;
+        width: 13.98px;
+      }
+
+      .background-shadow .text-wrapper-7 {
+        color: var(--togetherkakaocommine-shaft);
+        font-family: var(--together-kakao-com-semantic-link-font-family);
+        font-size: var(--together-kakao-com-semantic-link-font-size);
+        font-style: var(--together-kakao-com-semantic-link-font-style);
+        font-weight: var(--together-kakao-com-semantic-link-font-weight);
+        height: 20px;
+        left: 0;
+        letter-spacing: var(--together-kakao-com-semantic-link-letter-spacing);
+        line-height: var(--together-kakao-com-semantic-link-line-height);
+        position: absolute;
+        top: 222px;
+        white-space: nowrap;
+        width: 72px;
+      }
+
+      .background-shadow .text-wrapper-8 {
+        color: #ff4050;
+        font-family: var(--together-kakao-com-semantic-link-font-family);
+        font-size: var(--together-kakao-com-semantic-link-font-size);
+        font-style: var(--together-kakao-com-semantic-link-font-style);
+        font-weight: var(--together-kakao-com-semantic-link-font-weight);
+        height: 20px;
+        left: 182px;
+        letter-spacing: var(--together-kakao-com-semantic-link-letter-spacing);
+        line-height: var(--together-kakao-com-semantic-link-line-height);
+        position: absolute;
+        top: 222px;
+        white-space: nowrap;
+        width: 18px;
+      }
+
+      .card {
+        width: 360px;
+        height: 250px;
+        padding: 34px 26px 29px 26px;
+        background: #ff9191;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1px;
+        position: relative;
+      }
+
+      .card-title-container {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .card-title {
+        color: #202020;
+        font-size: 20px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 30px;
+        word-wrap: break-word;
+      }
+
+      .card-date-container {
+        align-self: stretch;
+        height: 65px;
+        padding: 12px 0 40px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .card-date {
+        align-self: stretch;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 13px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        line-height: 13px;
+        word-wrap: break-word;
+      }
+
+      .card-donation {
+        align-self: stretch;
+        height: 60px;
+        padding: 21px 20px;
+        background: white;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .donation-icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .donation-text {
+        color: #444444;
+        font-size: 16px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 16px;
+        word-wrap: break-word;
+      }
+
+      .donation-amount-container {
+        flex: 1 1 0;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+      }
+
+      .donation-amount {
+        align-self: stretch;
+        text-align: right;
+        color: #202020;
+        font-size: 18px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 18px;
+        word-wrap: break-word;
+      }
+
+      .card-image {
+        width: 105px;
+        height: 133px;
+        position: absolute;
+        left: 235px;
+        top: 19px;
+      }
+
+      .review-card {
+        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+        width: 36rem; /* 360px → 36rem */
+        height: 36rem; /* 281px → 28.1rem */
+        padding: 3.1rem 2.6rem 4.6rem 2.6rem; /* 31px 26px 46px 26px */
+        background: white;
+        border-top-left-radius: 1.2rem; /* 12px → 1.2rem */
+        border-top-right-radius: 1.2rem; /* 12px → 1.2rem */
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 헤더(따뜻한 후기) */
+      .review-card__header {
+        color: #888888;
+        font-size: 1.3rem; /* 13px → 1.3rem */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 1.3rem; /* 13px → 1.3rem */
+        word-wrap: break-word;
+      }
+
+      /* 콘텐츠 전체 영역 */
+      .review-card__content-container {
+        width: 30.8rem; /* 308px → 30.8rem */
+        height: 19.05rem; /* 190.5px → 19.05rem */
+        gap: 30rem;
+      }
+
+      /* 좌측 콘텐츠 영역 */
+      .review-card__left-content {
+        top: 0;
+        left: -0.006rem; /* -0.06px → -0.006rem (아주 작은 값이지만 그대로 변환) */
+        height: 19.1rem; /* 191px → 19.1rem */
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 좌측 타이틀 컨테이너 */
+      .review-card__left-title-container {
+        align-self: stretch;
+        height: 7.2rem; /* 72px → 7.2rem */
+        padding-top: 1.6rem; /* 16px → 1.6rem */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 좌측 타이틀 */
+      .review-card__left-title {
+        align-self: stretch;
+        color: #444444;
+        font-size: 1.8rem; /* 18px → 1.8rem */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 2.8rem; /* 28px → 2.8rem */
+        word-wrap: break-word;
+      }
+
+      /* 좌측 설명 컨테이너 */
+      .review-card__left-description-container {
+        align-self: stretch;
+        height: 11.9rem; /* 119px → 11.9rem */
+        padding-top: 1.1rem; /* 11px → 1.1rem */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 좌측 설명 텍스트 */
+      .review-card__left-description {
+        align-self: stretch;
+        color: #4a4a4a;
+        font-size: 1.4rem; /* 14px → 1.4rem */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        line-height: 2.688rem; /* 26.88px → 2.688rem */
+        word-wrap: break-word;
+      }
+
+      /* 우측 콘텐츠 영역 */
+      .review-card__right-content {
+        top: 0;
+        left: 30.792rem; /* 307.92px → 30.792rem */
+        height: 19rem; /* 190px → 19rem */
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 우측 타이틀 컨테이너 */
+      .review-card__right-title-container {
+        align-self: stretch;
+        height: 4.4rem; /* 44px → 4.4rem */
+        padding-top: 1.6rem; /* 16px → 1.6rem */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 우측 타이틀 */
+      .review-card__right-title {
+        align-self: stretch;
+        color: #444444;
+        font-size: 1.8rem; /* 18px → 1.8rem */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 2.8rem; /* 28px → 2.8rem */
+        word-wrap: break-word;
+      }
+
+      /* 우측 설명 컨테이너 */
+      .review-card__right-description-container {
+        align-self: stretch;
+        height: 14.6rem; /* 146px → 14.6rem */
+        padding-top: 1.1rem; /* 11px → 1.1rem */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 우측 설명 텍스트 */
+      .review-card__right-description {
+        align-self: stretch;
+        color: #4a4a4a;
+        font-size: 1.4rem; /* 14px → 1.4rem */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        line-height: 2.688rem; /* 26.88px → 2.688rem */
+        word-wrap: break-word;
+      }
+
+      /* 도트(페이지 인디케이터) 영역 */
+      .review-card__dots-container {
+        align-self: stretch;
+        padding: 1.7rem 11.8rem 0.1rem 11.8rem; /* 17px 118px 1px 118px */
+        display: inline-flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.6rem; /* 6px → 0.6rem */
+        margin-top: 6rem;
+      }
+
+      /* 개별 도트 */
+      .review-card__dot {
+        width: 2rem; /* 20px → 2rem */
+        height: 0.2rem; /* 2px → 0.2rem */
+        background: #202020;
+        border-radius: 0.6rem; /* 6px → 0.6rem */
+      }
+
+      .review-card__dot.inactive {
+        opacity: 0.4;
+      }
+
+      .review-card__dot.active {
+        opacity: 1;
+      }
+
+      /* 도트 내부(위치를 맞추기 위한 요소) */
+      .review-card__dot-inner {
+        width: 2rem; /* 20px → 2rem */
+        height: 3rem; /* 30px → 3rem */
+        left: 0;
+        top: -1.4rem; /* -14px → -1.4rem */
+      }
+
+      .campaign-section {
+        width: 37.372rem; /* 373.72px → 37.372rem */
+        height: 39.3rem; /* 393px → 39.3rem */
+        padding-left: 1.8rem; /* 18px → 1.8rem */
+        padding-right: 1.8rem; /* 18px → 1.8rem */
+        display: inline-flex;
+        flex-direction: column;
+        gap: 2rem; /* 50px → 5rem */
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 헤더 영역 */
+      .campaign-section__header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .campaign-section__title {
+        width: 22.272rem; /* 222.72px → 22.272rem */
+        height: 3rem; /* 30px → 3rem */
+        color: black;
+        font-size: 2.4rem; /* 24px → 2.4rem */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 700;
+        line-height: 3rem; /* 30px → 3rem */
+        word-wrap: break-word;
+      }
+
+      .campaign-section__view-all {
+        display: inline-flex;
+        padding-top: 0.2rem; /* 2px → 0.2rem */
+        padding-bottom: 0.7rem; /* 7px → 0.7rem */
+        gap: 0.2rem; /* 2px → 0.2rem */
+      }
+      .campaign-section__view-all img {
+        margin-top: 0.2rem;
+        margin-left: 0.2rem;
+      }
+
+      .campaign-section__view-all-text {
+        text-align: center;
+        color: #787778;
+        font-size: 1.4rem; /* 14px → 1.4rem */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 500;
+        word-wrap: break-word;
+      }
+
+      .campaign-section__view-all-icon {
+        width: 1.4rem; /* 14px → 1.4rem */
+        height: 1.33rem; /* 13.3px → 1.33rem */
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .campaign-section__arrow-wrapper {
+        width: 1.4rem; /* 14px → 1.4rem */
+        height: 1.33rem; /* 13.3px → 1.33rem */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .campaign-section__arrow {
+        position: relative;
+        width: 0.496rem; /* 4.96px → 0.496rem */
+        height: 0.933rem; /* 9.33px → 0.933rem */
+        left: 0.5rem; /* 5px → 0.5rem */
+        top: 0.2rem; /* 2px → 0.2rem */
+        border: 0.1rem solid #858585; /* 1px → 0.1rem */
+      }
+
+      /* 슬라이더 영역 */
+      .campaign-section__slider {
+        width: 33.7rem; /* 337px → 33.7rem */
+        padding: 2.9rem 2.1rem 4.3rem 2.1rem; /* 29px 21px 43px 21px */
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.07); /* 0px 10px 20px → 0 1rem 2rem */
+        border-radius: 1.5rem; /* 15px → 1.5rem */
+        border: 0.1rem solid rgba(0, 0, 0, 0.1); /* 1px → 0.1rem */
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .campaign-slider-container {
+        width: 29.5rem; /* 295px → 29.5rem */
+        height: 27.9rem; /* 279px → 27.9rem */
+        position: relative;
+      }
+
+      .campaign-slider__track {
+        width: 163.5rem; /* 1635px → 163.5rem */
+        position: absolute;
+        left: -33.5rem; /* -335px → -33.5rem */
+        top: 0;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 4rem; /* 40px → 4rem */
+      }
+
+      .campaign-slider__spacer {
+        width: 29.5rem; /* 295px → 29.5rem */
+        height: 27.9rem; /* 279px → 27.9rem */
+        position: relative;
+      }
+
+      /* 캠페인 아이템들 (세로로 배치) */
+      .campaign-items {
+        width: 29.5rem; /* 295px → 29.5rem */
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0.9rem; /* 9px → 0.9rem */
+        align-self: stretch;
+      }
+
+      /* 개별 캠페인 아이템 */
+      .campaign-item {
+        width: 29.5rem; /* 295px → 29.5rem */
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1.4rem; /* 14px → 1.4rem */
+      }
+
+      /* 캠페인 이미지 */
+      .campaign-item__image {
+        width: 11.4rem; /* 114px → 11.4rem */
+        height: 8.3rem; /* 83px → 8.3rem */
+        position: relative;
+        border-radius: 0.5rem; /* 5px → 0.5rem */
+      }
+
+      /* 캠페인 상세정보 컨테이너 */
+      .campaign-item__details {
+        width: 16.7rem; /* 167px → 16.7rem */
+        height: 8.3rem; /* 83px → 8.3rem */
+        position: relative;
+      }
+
+      /* 캠페인 제목 (절대 배치) */
+      .campaign-item__title {
+        position: absolute;
+        width: 16.7rem; /* 167px → 16.7rem */
+        height: 3.6rem; /* 36px → 3.6rem */
+        left: 0;
+        top: 0;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: #202020;
+        font-size: 1.5rem; /* 15px → 1.5rem */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 350;
+        line-height: 1.8rem; /* 18px → 1.8rem */
+        word-wrap: break-word;
+      }
+
+      /* 후원기관명 */
+      .campaign-item__sponsor {
+        position: absolute;
+        left: 0;
+        top: 3.7rem; /* 37px → 3.7rem */
+        height: 1.9rem; /* 19px → 1.9rem */
+        padding-top: 0.2rem; /* 2px → 0.2rem */
+        padding-bottom: 0.1rem; /* 1px → 0.1rem */
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: #8a8a8a;
+        font-size: 1.3rem; /* 13px → 1.3rem */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 350;
+        word-wrap: break-word;
+      }
+
+      /* 진행율 (왼쪽 상단 고정) */
+      .campaign-item__donation-percent {
+        position: absolute;
+        width: 3.045rem; /* 30.45px → 3.045rem */
+        height: 1.7rem; /* 17px → 1.7rem */
+        left: 0;
+        top: 6.65rem; /* 66.5px → 6.65rem */
+        color: #ff6d73;
+        font-size: 1.4rem; /* 14px → 1.4rem */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 700;
+        word-wrap: break-word;
+      }
+
+      /* 모금액 (오른쪽 정렬) */
+      .campaign-item__donation-amount {
+        position: absolute;
+        top: 6.7rem; /* 67px → 6.7rem */
+        right: 0;
+        text-align: right;
+        color: #202020;
+        font-size: 1.345rem; /* 13.45px → 1.345rem */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 700;
+        word-wrap: break-word;
+      }
+
+      /* 진행바 컨테이너 */
+      .campaign-item__progress-bg {
+        position: absolute;
+        width: 16.7rem; /* 167px → 16.7rem */
+        height: 0.2rem; /* 2px → 0.2rem */
+        left: 0;
+        top: 6.2rem; /* 62px → 6.2rem */
+        background: #e9e9e9;
+        border-radius: 0.4rem; /* 4px → 0.4rem */
+        overflow: hidden;
+      }
+
+      /* 진행바 (내부 채워진 부분) */
+      .campaign-item__progress-bar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 0.2rem; /* 2px → 0.2rem */
+        background: #ff6d73;
+        border-radius: 0.2rem; /* 2px → 0.2rem */
+      }
+
+      /* (필요 시) 진행바 길이가 짧은 경우 추가 클래스 */
+      .campaign-item__progress-bar.short {
+        /* width는 인라인 스타일 등으로 개별 조정 가능 */
+      }
+
+      .donation-sharing {
+        width: 375px;
+        height: 477px;
+        padding-left: 19px;
+        padding-right: 19px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      /* 제목 영역 */
+      .donation-sharing__title {
+        align-self: stretch;
+      }
+
+      .donation-sharing__title-bold {
+        color: black;
+        font-size: 24px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 700;
+        line-height: 30px;
+        word-wrap: break-word;
+      }
+
+      .donation-sharing__title-regular {
+        color: black;
+        font-size: 24px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        line-height: 30px;
+        word-wrap: break-word;
+      }
+
+      /* 카드 컨테이너 */
+      .donation-sharing__cards {
+        align-self: stretch;
+        height: 435px;
+        padding: 29px 21px;
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.07);
+        border-radius: 15px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 7px;
+      }
+
+      /* 공통 카드 스타일 */
+      .donation-sharing__card {
+        align-self: stretch;
+        padding: 20px 20px 21px 20px;
+        /* 위:20, 우:20, 아래:21, 좌:20 */
+        border-radius: 10px;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* 카드별 배경색 */
+      .donation-sharing__card--pink {
+        background: #ffb6cb;
+      }
+
+      .donation-sharing__card--c4d3f3 {
+        background: #c4d3f3;
+      }
+
+      .donation-sharing__card--b6e2eb {
+        background: #b6e2eb;
+      }
+
+      .donation-sharing__card--ffd9e3 {
+        background: #ffd9e3;
+      }
+
+      /* 카드 텍스트 */
+      .donation-sharing__card-text {
+        color: #202020;
+        font-size: 16px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 500;
+        line-height: 20px;
+        word-wrap: break-word;
+      }
+
+      /* 카드 아이콘 공통 */
+      .donation-sharing__card-icon {
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* --- 카드1: 단색 아이콘 --- */
+      .donation-sharing__card-icon-inner {
+        align-self: stretch;
+        height: 48px;
+      }
+
+      .donation-sharing__card-icon-inner--white {
+        background: white;
+      }
+
+      /* --- 카드2: 페이스북 스타일 아이콘 --- */
+      .donation-sharing__card-icon-image {
+        width: 48px;
+        height: 48px;
+        position: relative;
+      }
+
+      .donation-sharing__card-icon-image--facebook::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 48px;
+        height: 47.71px;
+        background: #3b5998;
+      }
+
+      /* --- 카드3: 간단 아이콘 --- */
+      .donation-sharing__card-icon-image--card3 {
+        width: 48px;
+        height: 48px;
+        position: relative;
+      }
+
+      .donation-sharing__card-icon-image--card3::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 48px;
+        height: 33.82px;
+        background: #c4302b;
+      }
+
+      /* --- 카드4: 복합 아이콘 --- */
+      .donation-sharing__card-icon-image--card4 {
+        width: 48px;
+        height: 48px;
+        position: relative;
+      }
+
+      .donation-sharing__card-icon-image--card4
+        .donation-sharing__card-icon-image-bg {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 48px;
+        height: 43.35px;
+      }
+
+      .donation-sharing__card-icon-image--card4
+        .donation-sharing__card-icon-image-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 48px;
+        height: 43.35px;
+        background: black;
+      }
+
+      .donation-sharing__card-icon-image--card4
+        .donation-sharing__card-icon-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 48px;
+        height: 43.36px;
+      }
+
+      /* 카드4 아이콘 내부 요소들 */
+      .donation-sharing__icon-element {
+        position: absolute;
+      }
+
+      .donation-sharing__icon-element--1 {
+        width: 3.3px;
+        height: 3.22px;
+        left: 8.82px;
+        top: 16px;
+        background: #2db400;
+      }
+
+      .donation-sharing__icon-element--2 {
+        width: 3.56px;
+        height: 3.47px;
+        left: 25.02px;
+        top: 15.83px;
+        background: #2db400;
+      }
+
+      .donation-sharing__icon-element--3 {
+        width: 48px;
+        height: 43.36px;
+        left: 0;
+        top: 0;
+        background: #2db400;
+      }
+
+      .donation-sharing__icon-element--4 {
+        width: 3.48px;
+        height: 3.39px;
+        left: 35.99px;
+        top: 15.87px;
+        background: #2db400;
+      }
+
+      .donation-suggestion {
+        width: 295px;
+        height: 248px;
+        position: relative;
+        background: white;
+      }
+
+      /* 그라데이션 오버레이 */
+      .donation-suggestion__overlay {
+        width: 295px;
+        height: 248px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(
+          90deg,
+          #ff9191 0%,
+          rgba(255, 93, 100, 0.8) 100%
+        );
+        border-radius: 10px;
+        border: 1px solid #9e9a9a;
+      }
+
+      /* 텍스트 */
+      .donation-suggestion__text {
+        position: absolute;
+        left: 44px;
+        top: 111px;
+        color: black;
+        font-size: 16px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 500;
+        line-height: 24px;
+        word-wrap: break-word;
+      }
+
+      /* 아이콘 영역 */
+      .donation-suggestion__icon-container {
+        position: absolute;
+        left: 124px;
+        top: 46px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      .donation-suggestion__icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .donation-suggestion__icon-bg {
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #454545;
+      }
+
+      .donation-suggestion__icon-line {
+        width: 13.68px;
+        height: 1.41px;
+        position: absolute;
+        left: 17.16px;
+        top: 37.45px;
+        background: #454545;
+      }
+
+      /* 버튼 영역 */
+      .donation-suggestion__button-container {
+        width: 231px;
+        height: 49px;
+        position: absolute;
+        left: 32px;
+        top: 152px;
+      }
+
+      .donation-suggestion__button-bg {
+        width: 232px;
+        height: 48px;
+        position: absolute;
+        left: 0;
+        top: 1px;
+        background: #fbefef;
+        border-radius: 10px;
+      }
+
+      .donation-suggestion__button-text {
+        width: 279px;
+        height: 70px;
+        position: absolute;
+        left: 39px;
+        top: -10px;
+        color: black;
+        font-size: 16px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 500;
+        line-height: 24px;
+        word-wrap: break-word;
+      }
+
+      /* Donation Card Container */
+      .donation-card {
+        width: 100%;
+        height: 17.4rem;
+        padding: 2.4rem 3rem 3.2rem 3rem; /* top, right, bottom, left */
+        background: white;
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+        border-radius: 1.2rem;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+
+      /* Title 스타일 */
+      .donation-card__title {
+        color: #202020;
+        font-size: 2rem;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 2.8rem;
+        word-wrap: break-word;
+      }
+
+      /* 카테고리 컨테이너 */
+      .donation-card__categories {
+        display: inline-flex;
+        align-self: stretch;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      /* 각 카테고리 박스 */
+      .donation-card__category {
+        width: 8rem;
+        padding: 0 1.25rem;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .donation-card__category:hover {
+        transform: scale(1.05);
+      }
+
+      /* 선택된 카테고리 스타일 */
+      .donation-card__category.selected .donation-card__category-label {
+        background: #d0d0d0; /* 선택 상태 시 배경색 변경 (예시) */
+        border: 0.1rem solid #202020;
+      }
+
+      /* 카테고리 아이콘 영역 */
+      .donation-card__category-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 아이콘 이미지 (필요에 따라 크기 조정) */
+      .category-icon-image {
+        width: 100%;
+        height: auto;
+      }
+
+      /* 카테고리 라벨 영역 */
+      .donation-card__category-label {
+        height: 2.8rem;
+        padding-left: 1.3rem;
+        padding-right: 1.3rem;
+        background: #eeeeee;
+        border-radius: 99.99rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      /* 라벨 텍스트 */
+      .label-text {
+        text-align: center;
+        color: #202020;
+        font-size: 1.3rem;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        line-height: 1.3rem;
+        word-wrap: break-word;
+        white-space: nowrap;
+      }
+
+      /* Container (1rem = 10px) */
+      .popular-campaign {
+        width: 100%; /* 700px */
+        height: 37.15rem; /* 371.5px */
+        position: relative;
+        background: white;
+        box-shadow: 0rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
+        border-radius: 1.2rem; /* 12px */
+        overflow: hidden;
+      }
+
+      /* 제목 */
+      .popular-campaign__title {
+        width: 23.8rem; /* 238px */
+        height: 2.8rem; /* 28px */
+        position: absolute;
+        left: 3rem; /* 30px */
+        top: 1.2rem; /* 12px */
+        color: #202020;
+        font-size: 2rem; /* 20px */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 2.8rem; /* 28px */
+        word-wrap: break-word;
+      }
+
+      /* 부제목 */
+      .popular-campaign__subtitle {
+        width: 31.36rem; /* 313.59px ≒ 31.36rem */
+        height: 2.4rem; /* 24px */
+        position: absolute;
+        left: 3rem; /* 30px */
+        top: 5.6rem; /* 56px */
+        color: #666666;
+        font-size: 1.4rem; /* 15px */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        line-height: 2.4rem; /* 24px */
+        word-wrap: break-word;
+      }
+
+      /* 캠페인 아이템 공통 */
+      .popular-campaign__item {
+        width: 20rem; /* 199.97px ≒ 20rem */
+        height: 24.35rem; /* 243.5px */
+        position: absolute;
+        top: 9.6rem; /* 96px */
+      }
+
+      /* 각 아이템의 수평 위치 */
+      .popular-campaign__item--first {
+        left: 3rem; /* 30px */
+      }
+
+      .popular-campaign__item--second {
+        left: 25rem; /* 249.97px ≒ 25rem */
+      }
+
+      .popular-campaign__item--third {
+        left: 47rem; /* 469.94px ≒ 47rem */
+      }
+
+      /* 이미지 컨테이너 */
+      .popular-campaign__item-img-container {
+        width: 20rem; /* 199.97px */
+        height: 13.75rem; /* 137.47px */
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0.8rem; /* 8px */
+        overflow: hidden;
+      }
+
+      /* 이미지 */
+      .popular-campaign__item-img {
+        width: 20rem; /* 199.97px */
+        height: 13.75rem; /* 137.47px */
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      /* 캠페인 제목 컨테이너 (첫 번째: 단일행, 나머지: 2줄) */
+      .popular-campaign__item-title-container {
+        position: absolute;
+        left: 0;
+        top: 14.95rem; /* 149.47px ≒ 14.95rem */
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .popular-campaign__item-title-container--small {
+        height: 2rem; /* 20px */
+      }
+
+      .popular-campaign__item-title-container--large {
+        height: 4rem; /* 40px */
+      }
+
+      /* 캠페인 제목 텍스트 */
+      .popular-campaign__item-title {
+        color: #202020;
+        font-size: 1.4rem; /* 14px */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        line-height: 2rem; /* 20px */
+        word-wrap: break-word;
+      }
+
+      /* 기관명 컨테이너 */
+      .popular-campaign__item-org-container {
+        height: 1.8rem; /* 18px */
+        position: absolute;
+        left: 0;
+        top: 17.15rem; /* 171.47px ≒ 17.15rem */
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 기관명 텍스트 */
+      .popular-campaign__item-org {
+        color: #888888;
+        font-size: 1.2rem; /* 12px */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 400;
+        line-height: 1.8rem; /* 18px */
+        word-wrap: break-word;
+      }
+
+      /* 진행바 컨테이너 */
+      .popular-campaign__item-progress-container {
+        width: 20rem; /* 199.97px */
+        height: 0.2rem; /* 2px */
+        position: absolute;
+        left: 0;
+        top: 21.75rem; /* 217.47px ≒ 21.75rem */
+        background: #d0e3ff;
+        border-radius: 99.9rem; /* 999px */
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      /* 진행바 기본 */
+      .popular-campaign__item-progress {
+        align-self: stretch;
+        background: #ff4050;
+        border-radius: 99.9rem; /* 999px */
+      }
+
+      /* 진행바 너비 (아이템마다 다름) */
+      .popular-campaign__item-progress--first {
+        width: 13.4rem; /* 133.97px ≒ 13.4rem */
+      }
+
+      .popular-campaign__item-progress--second {
+        width: 4.4rem; /* 43.98px ≒ 4.4rem */
+      }
+
+      .popular-campaign__item-progress--third {
+        width: 1.4rem; /* 13.98px ≒ 1.4rem */
+      }
+
+      /* 기부 금액 텍스트 */
+      .popular-campaign__item-amount {
+        position: absolute;
+        left: 0;
+        top: 22.345rem; /* 223.45px ≒ 22.345rem */
+        color: #202020;
+        font-size: 1.2rem; /* 12px */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 2rem; /* 20.04px ≒ 2rem */
+        word-wrap: break-word;
+      }
+
+      .popular-campaign__item-amount--first {
+        width: 7.06rem; /* 70.58px ≒ 7.06rem */
+      }
+
+      .popular-campaign__item-amount--second {
+        width: 6.16rem; /* 61.59px ≒ 6.16rem */
+      }
+
+      .popular-campaign__item-amount--third {
+        width: 7.15rem; /* 71.53px ≒ 7.15rem */
+      }
+
+      /* 퍼센트 텍스트 */
+      .popular-campaign__item-percent {
+        position: absolute;
+        top: 22.345rem; /* 223.45px ≒ 22.345rem */
+        color: #ff4050;
+        font-size: 1.2rem; /* 12px */
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        line-height: 2rem;
+        word-wrap: break-word;
+      }
+
+      .popular-campaign__item-percent--first {
+        width: 2.57rem; /* 25.69px ≒ 2.57rem */
+        left: 17.448rem; /* 174.48px ≒ 17.45rem */
+      }
+
+      .popular-campaign__item-percent--second {
+        width: 2.57rem;
+        left: 17.448rem;
+      }
+
+      .popular-campaign__item-percent--third {
+        width: 1.78rem; /* 17.75px ≒ 1.78rem */
+        left: 18.242rem; /* 182.42px ≒ 18.24rem */
+      }
+
+      /* Container */
+      .main-campaign-list {
+        width: 70rem; /* 700px */
+        height: 40rem; /* 400px */
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+      }
+
+      /* 이미지 */
+      .main-campaign-list__img {
+        width: 70rem; /* 700px */
+        height: 40rem;
+      }
+
+      /* 카테고리 (예: 아동 / 청소년) */
+      .main-campaign-list__category {
+        padding: 0.5rem 1.2rem; /* top/bottom: 4px, left/right: 10px */
+        background: #ff6996;
+        border-radius: 5rem; /* 50px */
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .main-campaign-list__category-text {
+        color: white;
+        font-size: 1.3rem; /* 13px */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 500;
+        word-wrap: break-word;
+      }
+
+      /* 인용문 (캠페인 제목) */
+      .main-campaign-list__quote {
+        width: 50rem; /* 229.73px */
+        color: white;
+        font-size: 2rem; /* 20px */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 500;
+        line-height: 2.8rem; /* 28px */
+        word-wrap: break-word;
+        margin-top: 1rem; /* 필요에 따라 간격 조절 */
+      }
+
+      /* 기한 표시 (D-16) */
+      .main-campaign-list__deadline {
+        height: 2.3rem; /* 23px */
+        padding: 0rem 0.9rem; /* top/bottom: 3px, left/right: 9px */
+        border-radius: 5rem; /* 50px */
+        border: 0.1rem solid rgba(255, 255, 255, 0.7); /* 1px */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 0.5rem; /* 필요에 따라 간격 조절 */
+      }
+
+      .main-campaign-list__deadline-text {
+        color: white;
+        font-size: 1.42rem; /* 약 14.16px */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 700;
+        word-wrap: break-word;
+      }
+
+      /* 수혜자명 */
+      .main-campaign-list__beneficiary {
+        height: 2rem; /* 20px */
+        padding-top: 0.2rem; /* 2px */
+        padding-bottom: 0.1rem; /* 1px */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 0rem; /* 필요에 따라 간격 조절 */
+      }
+
+      .main-campaign-list__beneficiary-text {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.4rem; /* 14px */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 350;
+        word-wrap: break-word;
+      }
+
+      /* 진행 영역 (하단) */
+      .main-campaign-list__progress-wrapper {
+        width: 70rem; /* 700px */
+        height: 7.2rem; /* 72px */
+        position: relative;
+        background: white;
+        margin-top: 1rem; /* 필요에 따라 간격 조절 */
+      }
+
+      /* 진행 퍼센트 */
+      .main-campaign-list__progress-percent {
+        width: 3.486rem; /* 34.86px */
+        height: 2rem; /* 20px */
+        position: absolute;
+        left: 3.2rem; /* 32px */
+        top: 3rem; /* 30px */
+        color: #ff6d73;
+        font-size: 1.6rem; /* 16px */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 700;
+        word-wrap: break-word;
+      }
+
+      /* 기부금액 영역 */
+      .main-campaign-list__amount {
+        width: 15rem; /* 86.4px */
+        height: 2rem; /* 20px */
+        position: absolute;
+        right: 1rem;
+        top: 2.6rem; /* 26px */
+        text-align: right;
+      }
+
+      .main-campaign-list__amount span {
+        color: #202020;
+        font-size: 1.59rem; /* 약 15.88px */
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 700;
+        word-wrap: break-word;
+      }
+
+      /* 진행바 컨테이너 */
+      .main-campaign-list__progress-bar {
+        width: 63.6rem; /* 636px */
+        height: 0.3rem; /* 3px */
+        padding-right: 42.613rem; /* 426.13px */
+        position: absolute;
+        left: 3.2rem; /* 32px */
+        top: 2rem; /* 20px */
+        background: #e9e9e9;
+        border-radius: 0.4rem; /* 4px */
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      /* 진행바 채움 */
+      .main-campaign-list__progress-fill {
+        width: 20.987rem; /* 209.87px */
+        height: 0.3rem; /* 3px */
+        background: #ff6d73;
+        border-radius: 0.2rem; /* 2px */
+      }
+
+      .layout__main-campaign-list__content {
+        bottom: 0;
+        padding: 3rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between; /* 자식들을 좌측, 우측에 배치 */
+        align-items: end;
+        position: absolute;
+      }
+
+      /* 모바일: 최대 너비 767px */
+      /* 모바일: 최대 너비 479px */
+      @media (max-width: 479px) {
+        html {
+          font-size: 40%;
+        }
+      }
+      /* 태블릿: 480px ~ 1023px */
+      @media (min-width: 480px) and (max-width: 1023px) {
+        html {
+          font-size: 50%; /* 8px */
+        }
+      }
+      /* 데스크탑: 1024px 이상 */
+      @media (min-width: 1024px) {
+        html {
+          font-size: 62.5%; /* 1rem = 10px */
+        }
+      }
+      .signup-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem;
+      }
+
+      .signup-left-form-container {
+        position: relative;
+        width: 100%;
+        max-width: 60rem; /* 최대 너비 60rem 유지 */
+        /* 높이는 콘텐츠에 따라 유동적으로 변경되도록 auto 처리 (원래 75rem) */
+        height: auto;
+        background: #fff;
+        border-radius: 1.25rem;
+        overflow: hidden;
+      }
+
+      .signup-right-img-container {
+        max-width: 60rem; /* 최대 너비 60rem */
+        max-height: 73rem;
+        margin-top: 1.5rem;
+        background: #fff;
+        border-radius: 2rem;
+        overflow: hidden;
+        position: relative;
+      }
+      .signup-right-img-container img {
+        width: 100%;
+        display: block;
+        height: auto;
+      }
+      .signup-right-img-container .big-title {
+        bottom: 13rem;
+        left: 3rem;
+        color: white;
+        font-family: Poppins;
+        font-size: 4rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        position: absolute;
+      }
+      .signup-right-img-container .small-title {
+        bottom: 10.5rem;
+        left: 3rem;
+        color: white;
+        font-family: Poppins;
+        font-size: 1.7rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        position: absolute;
+      }
+      .signup-right-img-container .signup-right-subtitle {
+        font-size: 1.2rem;
+        top: 2rem;
+        right: 3rem;
+        color: white;
+        position: absolute;
+      }
+
+      /* 오른쪽 큰 이미지 + 문구 영역 */
+      .signup-right {
+        width: 100%;
+        max-width: 61.25rem; /* 최대 너비 61.25rem */
+        height: auto;
+        margin: 1.75rem auto 0; /* 위쪽 여백과 중앙 정렬 */
+      }
+      .signup-right .signup-right-bg {
+        width: 100%;
+        /* 높이는 콘텐츠에 맞게 auto 처리 */
+        background: #fff;
+        border-radius: 2.5rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .signup-right .signup-right-bg img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .signup-right .signup-right-text1 {
+        width: 100%;
+        max-width: 33rem; /* 최대 너비 33rem */
+        margin: 1rem auto; /* 위아래 여백 및 중앙 정렬 */
+      }
+      .signup-right .signup-right-text1 .big-title {
+        color: #fff;
+        font-size: 3.33rem;
+        font-weight: 600;
+        word-wrap: break-word;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+      .signup-right .signup-right-text1 .small-title {
+        width: 100%;
+        margin-top: 5.33rem;
+        color: #fff;
+        font-size: 1.67rem;
+        font-weight: 300;
+        word-wrap: break-word;
+        text-align: center;
+      }
+      .signup-right .signup-right-subtitle {
+        margin: 2rem auto 0;
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
+
+      /* 왼쪽 회원가입 폼 영역 */
+      .signup-left {
+        width: 100%;
+        max-width: 35.92rem;
+        margin: 12.5rem auto 0; /* 상단 여백은 그대로, 좌우 중앙 정렬 */
+      }
+
+      .signup-form input {
+        margin-bottom: 1rem;
+      }
+
+      .signup-left .signup-top {
+        width: 100%;
+        /* height는 콘텐츠에 따라 auto 처리 */
+        height: auto;
+        padding: 0 1rem;
+      }
+
+      .signup-left .signup-top .signup-title-area {
+        width: 100%;
+        margin: 0 auto 2rem auto;
+      }
+
+      .signup-left .signup-top .signup-title-area .signup-title {
+        margin-top: 5rem;
+        color: #000;
+        font-size: 3.5rem;
+        font-weight: 500;
+        word-wrap: break-word;
+        text-align: left;
+      }
+
+      .signup-left .signup-top .signup-title-area .signup-subinfo {
+        width: 100%;
+        max-width: 25.67rem;
+        margin-top: 2rem;
+      }
+
+      .signup-left .signup-top .signup-title-area .signup-subinfo .already {
+        width: 100%;
+        max-width: 25.67rem;
+        color: #000;
+        font-size: 1.33rem;
+        font-weight: 400;
+        word-wrap: break-word;
+        text-align: left;
+      }
+
+      .signup-left .signup-top .signup-title-area .signup-subinfo .goto-login {
+        width: 100%;
+        max-width: 25.67rem;
+        margin-top: 1.25rem; /* 기존 2.5rem의 절반으로 줄임 */
+        color: #ff9191;
+        font-size: 1.33rem;
+        font-weight: 600;
+        word-wrap: break-word;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .signup-left .signup-top .signup-form-area {
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      .signup-left .signup-top .signup-form-area form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .signup-left .signup-top .signup-form-area form .input-wrapper {
+        width: 100%;
+        margin-bottom: 1.67rem;
+      }
+
+      .signup-left .signup-top .signup-form-area form .input-wrapper label {
+        display: block;
+        color: #999;
+        font-size: 1.08rem;
+        font-weight: 500;
+        margin-bottom: 0.335rem; /* 기존 0.67rem의 절반으로 줄임 */
+      }
+
+      .signup-left .signup-top .signup-form-area form .input-wrapper input {
+        width: 100%;
+        border: none;
+        border-bottom: 0.17rem solid #000;
+        outline: none;
+        font-size: 1.33rem;
+        font-weight: 400;
+        padding: 0.33rem 0;
+      }
+
+      .signup-left
+        .signup-top
+        .signup-form-area
+        form
+        .input-wrapper.password
+        input {
+        border-bottom-color: #999;
+      }
+
+      .signup-left .signup-top .signup-form-area form .options {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .signup-left .signup-top .signup-form-area form .options .remember-me {
+        display: flex;
+        align-items: center;
+      }
+
+      .signup-left
+        .signup-top
+        .signup-form-area
+        form
+        .options
+        .remember-me
+        input[type="checkbox"] {
+        margin-right: 0.5rem;
+      }
+
+      .signup-left
+        .signup-top
+        .signup-form-area
+        form
+        .options
+        .remember-me
+        label {
+        color: #000;
+        font-size: 1rem;
+        font-weight: 300;
+        cursor: pointer;
+      }
+
+      .signup-left .signup-top .signup-form-area form .options .forgot-pw {
+        color: #4d4d4d;
+        font-size: 1rem;
+        font-weight: 300;
+        cursor: pointer;
+      }
+
+      .signup-left .signup-top .signup-form-area form .signup-button {
+        width: 100%;
+        max-width: 35.75rem;
+        height: 4.42rem;
+        background: #ff9191;
+        box-shadow: 0 0.33rem 2.17rem rgba(0, 0, 0, 0.25);
+        border-radius: 2.67rem;
+        border: none;
+        cursor: pointer;
+        margin: 0 auto;
+      }
+
+      .signup-left .signup-top .signup-form-area form .signup-button span {
+        color: #fff;
+        font-size: 1.42rem;
+        font-weight: 500;
+      }
+
+      .signup-left .other-method {
+        color: #b5b5b5;
+        font-size: 1.33rem;
+        font-weight: 500;
+        word-wrap: break-word;
+        margin-top: 4rem;
+        text-align: center;
+      }
+
+      /* 소셜 로그인 버튼 (구글 예시) */
+      .social-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 6.13rem;
+        position: relative;
+      }
+
+      .gender-options {
+        display: flex;
+        gap: 20px;
+      }
+
+      .gender-options label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      /* 미디어 쿼리: 화면 폭 768px 이하에서 레이아웃 및 폰트 크기 조정 */
+      @media (max-width: 768px) {
+        .favicon {
+          position: static;
+          margin-bottom: 3rem;
+        }
+        .signup-right-img-container {
+          display: none;
+        }
+      }
+      .layout__header {
+        margin: 0 auto;
+        width: 120rem;
+        height: 70px;
+        top: 0;
+        left: 0;
+        background: #d9d9d9;
+        margin-bottom: 2rem;
+      }
+
+      .layout__main-container {
+        margin: 0 auto;
+        width: 120rem;
+        height: 300rem;
+        display: inline-flex;
+        background: white;
+      }
+
+      .layout__left-panel {
+        width: 70rem;
+        height: auto;
+        margin-right: 14rem;
+      }
+      .layout__left-panel > div {
+        margin-bottom: 3rem;
+      }
+      .layout__left-panel .layout__main-banner {
+        height: 25rem;
+        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+      }
+      .layout__left-panel .layout__my-help-category {
+        height: 17.4rem;
+        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+      }
+      .layout__left-panel .layout__top-campaign {
+        height: 37.15rem;
+        box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+      }
+
+      .layout__right-panel {
+        width: 36rem;
+        background: #002fff;
+      }
+      .layout__right-panel .layout__first-section {
+        height: 53.1rem;
+        background: black;
+      }
+      .layout__right-panel > div {
+        margin-bottom: 6rem;
+      }
+      .layout__right-panel .layout__total-donation {
+        height: 25rem;
+        background: red;
+      }
+      .layout__right-panel .layout__donation-review {
+        height: 28.1rem;
+        background: violet;
+      }
+      .layout__right-panel .layout__new-campaign {
+        height: 39.3rem;
+        background: linear-gradient(
+          90deg,
+          #ff9191 0%,
+          rgba(255, 93, 100, 0.8) 100%
+        );
+      }
+      .layout__right-panel .layout__social-link {
+        height: 47.7rem;
+        background-color: #002fff;
+        background: #ff0000;
+      }
+      .layout__right-panel .layout__receive-donation {
+        margin: 0 auto;
+        width: 295px;
+        height: 248px;
+        flex-shrink: 0;
+        background-color: #ff9191;
+      }
+
+      .layout__categories {
+        width: 112rem;
+        height: 80.4rem;
+        background-color: pink;
+        background: #f00;
+        margin-bottom: 2.8rem;
+      }
+
+      .layout__category-hero {
+        width: 111rem;
+        height: 26.5rem;
+        background-color: pink;
+        background: #f00;
+        margin-bottom: 3.8rem;
+      }
+
+      .regist-type-link {
+        text-decoration: none;
+        /* 밑줄 제거 */
+        color: inherit;
+        /* 부모 요소의 색상을 상속 */
+        outline: none;
+        /* 클릭 시 테두리 제거 */
+      }
+
+      .regist-type-title {
+        margin-top: 10rem;
+        margin-bottom: 5rem;
+        color: white;
+        font-size: 4rem;
+        font-size: "xxl";
+        font-weight: bold;
+        color: #ff9191;
+        text-align: center;
+      }
+
+      .regist-type-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .regist-type {
+        text-decoration: none;
+        /* 밑줄 제거 */
+        color: inherit;
+        /* 부모 요소의 색상을 상속 */
+        outline: none;
+        /* 클릭 시 테두리 제거 */
+        color: white;
+        font-size: 2.25rem;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-style: none;
+        margin-right: 6rem;
+        width: 30.2rem;
+        height: 30.2rem;
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          #f47e7e 0%,
+          #e78e8e 100%
+        );
+      }
+    </style>
+    <style
+      type="text/css"
+      data-vite-dev-id="C:/workspace/team-project/dream-on/front-end/node_modules/swiper/swiper.css"
+    >
+      /**
+ * Swiper 11.2.2
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2025 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: January 31, 2025
+ */
+
+      /* FONT_START */
+      @font-face {
+        font-family: "swiper-icons";
+        src: url("data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA");
+        font-weight: 400;
+        font-style: normal;
+      }
+      /* FONT_END */
+      :root {
+        --swiper-theme-color: #007aff;
+        /*
+  --swiper-preloader-color: var(--swiper-theme-color);
+  --swiper-wrapper-transition-timing-function: initial;
+  */
+      }
+      :host {
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+      }
+      .swiper {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: hidden;
+        list-style: none;
+        padding: 0;
+        /* Fix of Webkit flickering */
+        z-index: 1;
+        display: block;
+      }
+      .swiper-vertical > .swiper-wrapper {
+        flex-direction: column;
+      }
+      .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        transition-property: transform;
+        transition-timing-function: var(
+          --swiper-wrapper-transition-timing-function,
+          initial
+        );
+        box-sizing: content-box;
+      }
+      .swiper-android .swiper-slide,
+      .swiper-ios .swiper-slide,
+      .swiper-wrapper {
+        transform: translate3d(0px, 0, 0);
+      }
+      .swiper-horizontal {
+        touch-action: pan-y;
+      }
+      .swiper-vertical {
+        touch-action: pan-x;
+      }
+      .swiper-slide {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition-property: transform;
+        display: block;
+      }
+      .swiper-slide-invisible-blank {
+        visibility: hidden;
+      }
+      /* Auto Height */
+      .swiper-autoheight,
+      .swiper-autoheight .swiper-slide {
+        height: auto;
+      }
+      .swiper-autoheight .swiper-wrapper {
+        align-items: flex-start;
+        transition-property: transform, height;
+      }
+      .swiper-backface-hidden .swiper-slide {
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      /* 3D Effects */
+      .swiper-3d.swiper-css-mode .swiper-wrapper {
+        perspective: 1200px;
+      }
+      .swiper-3d .swiper-wrapper {
+        transform-style: preserve-3d;
+      }
+      .swiper-3d {
+        perspective: 1200px;
+      }
+      .swiper-3d .swiper-slide,
+      .swiper-3d .swiper-cube-shadow {
+        transform-style: preserve-3d;
+      }
+      /* CSS Mode */
+      .swiper-css-mode > .swiper-wrapper {
+        overflow: auto;
+        scrollbar-width: none;
+        /* For Firefox */
+        -ms-overflow-style: none;
+        /* For Internet Explorer and Edge */
+      }
+      .swiper-css-mode > .swiper-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+      .swiper-css-mode > .swiper-wrapper > .swiper-slide {
+        scroll-snap-align: start start;
+      }
+      .swiper-css-mode.swiper-horizontal > .swiper-wrapper {
+        scroll-snap-type: x mandatory;
+      }
+      .swiper-css-mode.swiper-vertical > .swiper-wrapper {
+        scroll-snap-type: y mandatory;
+      }
+      .swiper-css-mode.swiper-free-mode > .swiper-wrapper {
+        scroll-snap-type: none;
+      }
+      .swiper-css-mode.swiper-free-mode > .swiper-wrapper > .swiper-slide {
+        scroll-snap-align: none;
+      }
+      .swiper-css-mode.swiper-centered > .swiper-wrapper::before {
+        content: "";
+        flex-shrink: 0;
+        order: 9999;
+      }
+      .swiper-css-mode.swiper-centered > .swiper-wrapper > .swiper-slide {
+        scroll-snap-align: center center;
+        scroll-snap-stop: always;
+      }
+      .swiper-css-mode.swiper-centered.swiper-horizontal
+        > .swiper-wrapper
+        > .swiper-slide:first-child {
+        margin-inline-start: var(--swiper-centered-offset-before);
+      }
+      .swiper-css-mode.swiper-centered.swiper-horizontal
+        > .swiper-wrapper::before {
+        height: 100%;
+        min-height: 1px;
+        width: var(--swiper-centered-offset-after);
+      }
+      .swiper-css-mode.swiper-centered.swiper-vertical
+        > .swiper-wrapper
+        > .swiper-slide:first-child {
+        margin-block-start: var(--swiper-centered-offset-before);
+      }
+      .swiper-css-mode.swiper-centered.swiper-vertical
+        > .swiper-wrapper::before {
+        width: 100%;
+        min-width: 1px;
+        height: var(--swiper-centered-offset-after);
+      }
+      /* Slide styles start */
+      /* 3D Shadows */
+      .swiper-3d .swiper-slide-shadow,
+      .swiper-3d .swiper-slide-shadow-left,
+      .swiper-3d .swiper-slide-shadow-right,
+      .swiper-3d .swiper-slide-shadow-top,
+      .swiper-3d .swiper-slide-shadow-bottom,
+      .swiper-3d .swiper-slide-shadow,
+      .swiper-3d .swiper-slide-shadow-left,
+      .swiper-3d .swiper-slide-shadow-right,
+      .swiper-3d .swiper-slide-shadow-top,
+      .swiper-3d .swiper-slide-shadow-bottom {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+      }
+      .swiper-3d .swiper-slide-shadow {
+        background: rgba(0, 0, 0, 0.15);
+      }
+      .swiper-3d .swiper-slide-shadow-left {
+        background-image: linear-gradient(
+          to left,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .swiper-3d .swiper-slide-shadow-right {
+        background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .swiper-3d .swiper-slide-shadow-top {
+        background-image: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .swiper-3d .swiper-slide-shadow-bottom {
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .swiper-lazy-preloader {
+        width: 42px;
+        height: 42px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -21px;
+        margin-top: -21px;
+        z-index: 10;
+        transform-origin: 50%;
+        box-sizing: border-box;
+        border: 4px solid
+          var(--swiper-preloader-color, var(--swiper-theme-color));
+        border-radius: 50%;
+        border-top-color: transparent;
+      }
+      .swiper:not(.swiper-watch-progress) .swiper-lazy-preloader,
+      .swiper-watch-progress .swiper-slide-visible .swiper-lazy-preloader {
+        animation: swiper-preloader-spin 1s infinite linear;
+      }
+      .swiper-lazy-preloader-white {
+        --swiper-preloader-color: #fff;
+      }
+      .swiper-lazy-preloader-black {
+        --swiper-preloader-color: #000;
+      }
+      @keyframes swiper-preloader-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      /* Slide styles end */
+    </style>
+    <style
+      type="text/css"
+      data-vite-dev-id="C:/workspace/team-project/dream-on/front-end/node_modules/swiper/modules/autoplay.css"
+    ></style>
+  </head>
+  <body>
+    <div id="root">
+      <div
+        style="
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <div class="layout__header">
+          <nav class="navbar">
+            <div class="navbar-logo">
+              <a
+                href="http://localhost:5173/pages/main/mainPage"
+                data-discover="true"
+                ><div class="favicon">
+                  <div class="favicon-text">DREAM ON</div>
+                  <div class="favicon-line">
+                    <div class="favicon-line-gradient"></div>
+                  </div></div
+              ></a>
+            </div>
+            <div class="navbar-menu">
+              <ul>
+                <li>
+                  <a
+                    class="nav-list"
+                    href="http://localhost:5173/pages/main/mainPage"
+                    data-discover="true"
+                    >홈</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="nav-list"
+                    href="http://localhost:5173/pages/company"
+                    data-discover="true"
+                    >회사 소개</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="nav-list"
+                    href="http://localhost:5173/pages/category/CategoryPage"
+                    data-discover="true"
+                    >카테고리</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="nav-list"
+                    href="http://localhost:5173/pages/donation"
+                    data-discover="true"
+                    >기부 통계</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="nav-list"
+                    href="http://localhost:5173/pages/board"
+                    data-discover="true"
+                    >게시판 &amp; Tip</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="nav-list"
+                    href="http://localhost:5173/pages/mypage"
+                    data-discover="true"
+                    >마이페이지</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="navbar-links">
+              <a href="http://localhost:5173/ca" data-discover="true"
+                ><img
+                  src="data:image/svg+xml,%3csvg%20width=&#39;20&#39;%20height=&#39;20&#39;%20viewBox=&#39;0%200%2020%2020&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20id=&#39;Component%201&#39;%3e%3cpath%20id=&#39;Vector&#39;%20d=&#39;M18%2018.02L12.718%2012.737M14.444%208.22301C14.444%209.04009%2014.2831%209.84918%2013.9704%2010.6041C13.6577%2011.359%2013.1994%2012.0449%2012.6216%2012.6226C12.0439%2013.2004%2011.3579%2013.6587%2010.6031%2013.9714C9.84817%2014.2841%209.03908%2014.445%208.222%2014.445C7.40492%2014.445%206.59583%2014.2841%205.84094%2013.9714C5.08606%2013.6587%204.40015%2013.2004%203.82238%2012.6226C3.24462%2012.0449%202.78631%2011.359%202.47362%2010.6041C2.16094%209.84918%202%209.04009%202%208.22301C2%206.57283%202.65553%204.99024%203.82238%203.82339C4.98923%202.65654%206.57182%202.00101%208.222%202.00101C9.87218%202.00101%2011.4548%202.65654%2012.6216%203.82339C13.7885%204.99024%2014.444%206.57283%2014.444%208.22301Z&#39;%20stroke=&#39;black&#39;%20stroke-width=&#39;1.5&#39;%20stroke-linecap=&#39;round&#39;/%3e%3c/g%3e%3c/svg%3e"
+                  alt="Search" /></a
+              ><a href="http://localhost:5173/ca" data-discover="true"
+                ><img src="./Vite + React_files/cart.png" alt="Cart" /></a
+              ><a
+                class="nav-list"
+                href="http://localhost:5173/login"
+                data-discover="true"
+                >로그인</a
+              ><a
+                class="nav-list"
+                href="http://localhost:5173/signup"
+                data-discover="true"
+                >회원가입</a
+              >
+            </div>
+            <div class="navbar-btn"><i class="fas fa-bars"></i></div>
+          </nav>
+        </div>
+        <div class="layout__main-container">
+          <div class="layout__left-panel">
+            <div class="layout__main-banner">
+              <a href="http://localhost:5173/"
+                ><img
+                  src="./Vite + React_files/main-banner1.png"
+                  alt=""
+                  style="width: 100%"
+              /></a>
+            </div>
+            <div class="layout__my-help-category">
+              <div class="donation-card">
+                <div class="donation-card__title">
+                  나의 도움이 필요한 모금함은?
+                </div>
+                <div class="donation-card__categories">
+                  <div class="donation-card__category">
+                    <div class="donation-card__category-icon">
+                      <img
+                        src="./Vite + React_files/category-baby.svg"
+                        alt="아동"
+                        class="category-icon-image"
+                      />
+                    </div>
+                    <div class="donation-card__category-label">
+                      <div class="label-text">아동</div>
+                    </div>
+                  </div>
+                  <div class="donation-card__category">
+                    <div class="donation-card__category-icon">
+                      <img
+                        src="data:image/svg+xml,%3csvg%20width=&#39;36&#39;%20height=&#39;32&#39;%20viewBox=&#39;0%200%2036%2032&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20id=&#39;Component%201&#39;%20clip-path=&#39;url(%23clip0_2175_1140)&#39;%3e%3cpath%20id=&#39;Vector&#39;%20d=&#39;M21.3496%2014.9244H28.5183C30.0705%2014.9244%2031.3299%2016.1838%2031.3299%2017.736V20.9833H21.3496V14.9312V14.9244Z&#39;%20fill=&#39;%23FFAB7D&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_2&#39;%20d=&#39;M31.3301%2020.3366V27.0423&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_3&#39;%20d=&#39;M31.33%2030.9432C33.1084%2030.9432%2034.5501%2029.5015%2034.5501%2027.7231C34.5501%2025.9447%2033.1084%2024.503%2031.33%2024.503C29.5516%2024.503%2028.1099%2025.9447%2028.1099%2027.7231C28.1099%2029.5015%2029.5516%2030.9432%2031.33%2030.9432Z&#39;%20fill=&#39;%23D0D0D0&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_4&#39;%20d=&#39;M10.6342%201.70353H6.35205&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_5&#39;%20d=&#39;M9.81689%201.70353H17.891C19.2389%201.70353%2020.335%202.79959%2020.335%204.14755V16.9599H9.81689V1.70353Z&#39;%20fill=&#39;%23FFAB7D&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_6&#39;%20d=&#39;M6.19522%200.682354H1.79054C1.53111%200.682354%201.3208%200.892662%201.3208%201.1521V2.24816C1.3208%202.50759%201.53111%202.7179%201.79054%202.7179H6.19522C6.45465%202.7179%206.66496%202.50759%206.66496%202.24816V1.1521C6.66496%200.892662%206.45465%200.682354%206.19522%200.682354Z&#39;%20fill=&#39;%23D0D0D0&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_7&#39;%20d=&#39;M12.4723%2030.95C18.334%2030.95%2023.0857%2026.1982%2023.0857%2020.3366C23.0857%2014.475%2018.334%209.72317%2012.4723%209.72317C6.61068%209.72317%201.85889%2014.475%201.85889%2020.3366C1.85889%2026.1982%206.61068%2030.95%2012.4723%2030.95Z&#39;%20fill=&#39;%23D0D0D0&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_8&#39;%20d=&#39;M12.4721%2027.8048C16.5967%2027.8048%2019.9403%2024.4612%2019.9403%2020.3366C19.9403%2016.2121%2016.5967%2012.8684%2012.4721%2012.8684C8.34754%2012.8684%205.00391%2016.2121%205.00391%2020.3366C5.00391%2024.4612%208.34754%2027.8048%2012.4721%2027.8048Z&#39;%20fill=&#39;white&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_9&#39;%20d=&#39;M12.4722%2022.5832C13.7129%2022.5832%2014.7188%2021.5773%2014.7188%2020.3366C14.7188%2019.0959%2013.7129%2018.09%2012.4722%2018.09C11.2314%2018.09%2010.2256%2019.0959%2010.2256%2020.3366C10.2256%2021.5773%2011.2314%2022.5832%2012.4722%2022.5832Z&#39;%20fill=&#39;white&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id=&#39;clip0_2175_1140&#39;%3e%3crect%20width=&#39;34.72&#39;%20height=&#39;31.9969&#39;%20fill=&#39;white&#39;%20transform=&#39;translate(0.640137%200.00156784)&#39;/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                        alt="동물"
+                        class="category-icon-image"
+                      />
+                    </div>
+                    <div class="donation-card__category-label">
+                      <div class="label-text">동물</div>
+                    </div>
+                  </div>
+                  <div class="donation-card__category">
+                    <div class="donation-card__category-icon">
+                      <img
+                        src="data:image/svg+xml,%3csvg%20width=&#39;36&#39;%20height=&#39;32&#39;%20viewBox=&#39;0%200%2036%2032&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20id=&#39;Component%201&#39;%20clip-path=&#39;url(%23clip0_2175_1134)&#39;%3e%3cpath%20id=&#39;Vector&#39;%20d=&#39;M13.9268%2016.7376H9.36768V30.0151H13.9268V16.7376Z&#39;%20fill=&#39;%23A47423&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999808&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_2&#39;%20d=&#39;M1.33643%2025.8625L11.6411%208.46586L21.9525%2025.8625H1.33643Z&#39;%20fill=&#39;%2351CE51&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999808&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_3&#39;%20d=&#39;M3.8291%2015.0646L11.6409%201.87381L19.4594%2015.0646H3.8291Z&#39;%20fill=&#39;%23D6EF6A&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999808&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_4&#39;%20d=&#39;M26.6382%2016.7376H22.0791V30.0151H26.6382V16.7376Z&#39;%20fill=&#39;%23A47423&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999808&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_5&#39;%20d=&#39;M14.0474%2025.8625L24.3587%208.46586L34.6634%2025.8625H14.0474Z&#39;%20fill=&#39;%2351CE51&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999808&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_6&#39;%20d=&#39;M16.54%2015.0646L24.3585%201.87381L32.1704%2015.0646H16.54Z&#39;%20fill=&#39;%23D6EF6A&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999808&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id=&#39;clip0_2175_1134&#39;%3e%3crect%20width=&#39;34.66&#39;%20height=&#39;31.9938&#39;%20fill=&#39;white&#39;%20transform=&#39;translate(0.669922%200.00307846)&#39;/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                        alt="환경"
+                        class="category-icon-image"
+                      />
+                    </div>
+                    <div class="donation-card__category-label">
+                      <div class="label-text">환경</div>
+                    </div>
+                  </div>
+                  <div class="donation-card__category">
+                    <div class="donation-card__category-icon">
+                      <img
+                        src="data:image/svg+xml,%3csvg%20width=&#39;36&#39;%20height=&#39;32&#39;%20viewBox=&#39;0%200%2036%2032&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20id=&#39;Component%201&#39;%20clip-path=&#39;url(%23clip0_2175_1140)&#39;%3e%3cpath%20id=&#39;Vector&#39;%20d=&#39;M21.3496%2014.9244H28.5183C30.0705%2014.9244%2031.3299%2016.1838%2031.3299%2017.736V20.9833H21.3496V14.9312V14.9244Z&#39;%20fill=&#39;%23FFAB7D&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_2&#39;%20d=&#39;M31.3301%2020.3366V27.0423&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_3&#39;%20d=&#39;M31.33%2030.9432C33.1084%2030.9432%2034.5501%2029.5015%2034.5501%2027.7231C34.5501%2025.9447%2033.1084%2024.503%2031.33%2024.503C29.5516%2024.503%2028.1099%2025.9447%2028.1099%2027.7231C28.1099%2029.5015%2029.5516%2030.9432%2031.33%2030.9432Z&#39;%20fill=&#39;%23D0D0D0&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_4&#39;%20d=&#39;M10.6342%201.70353H6.35205&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_5&#39;%20d=&#39;M9.81689%201.70353H17.891C19.2389%201.70353%2020.335%202.79959%2020.335%204.14755V16.9599H9.81689V1.70353Z&#39;%20fill=&#39;%23FFAB7D&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_6&#39;%20d=&#39;M6.19522%200.682354H1.79054C1.53111%200.682354%201.3208%200.892662%201.3208%201.1521V2.24816C1.3208%202.50759%201.53111%202.7179%201.79054%202.7179H6.19522C6.45465%202.7179%206.66496%202.50759%206.66496%202.24816V1.1521C6.66496%200.892662%206.45465%200.682354%206.19522%200.682354Z&#39;%20fill=&#39;%23D0D0D0&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_7&#39;%20d=&#39;M12.4723%2030.95C18.334%2030.95%2023.0857%2026.1982%2023.0857%2020.3366C23.0857%2014.475%2018.334%209.72317%2012.4723%209.72317C6.61068%209.72317%201.85889%2014.475%201.85889%2020.3366C1.85889%2026.1982%206.61068%2030.95%2012.4723%2030.95Z&#39;%20fill=&#39;%23D0D0D0&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_8&#39;%20d=&#39;M12.4721%2027.8048C16.5967%2027.8048%2019.9403%2024.4612%2019.9403%2020.3366C19.9403%2016.2121%2016.5967%2012.8684%2012.4721%2012.8684C8.34754%2012.8684%205.00391%2016.2121%205.00391%2020.3366C5.00391%2024.4612%208.34754%2027.8048%2012.4721%2027.8048Z&#39;%20fill=&#39;white&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_9&#39;%20d=&#39;M12.4722%2022.5832C13.7129%2022.5832%2014.7188%2021.5773%2014.7188%2020.3366C14.7188%2019.0959%2013.7129%2018.09%2012.4722%2018.09C11.2314%2018.09%2010.2256%2019.0959%2010.2256%2020.3366C10.2256%2021.5773%2011.2314%2022.5832%2012.4722%2022.5832Z&#39;%20fill=&#39;white&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id=&#39;clip0_2175_1140&#39;%3e%3crect%20width=&#39;34.72&#39;%20height=&#39;31.9969&#39;%20fill=&#39;white&#39;%20transform=&#39;translate(0.640137%200.00156784)&#39;/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                        alt="장애인"
+                        class="category-icon-image"
+                      />
+                    </div>
+                    <div class="donation-card__category-label">
+                      <div class="label-text">장애인</div>
+                    </div>
+                  </div>
+                  <div class="donation-card__category">
+                    <div class="donation-card__category-icon">
+                      <img
+                        src="data:image/svg+xml,%3csvg%20width=&#39;32&#39;%20height=&#39;32&#39;%20viewBox=&#39;0%200%2032%2032&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20id=&#39;Component%201&#39;%20clip-path=&#39;url(%23clip0_2175_1146)&#39;%3e%3cpath%20id=&#39;Vector&#39;%20d=&#39;M15.6665%2030.7511C23.9508%2030.7511%2030.6665%2024.0354%2030.6665%2015.7511C30.6665%207.46682%2023.9508%200.751087%2015.6665%200.751087C7.38223%200.751087%200.666504%207.46682%200.666504%2015.7511C0.666504%2024.0354%207.38223%2030.7511%2015.6665%2030.7511Z&#39;%20fill=&#39;%2391D1F9&#39;/%3e%3cg%20id=&#39;Mask%20group&#39;%3e%3cmask%20id=&#39;mask0_2175_1146&#39;%20style=&#39;mask-type:luminance&#39;%20maskUnits=&#39;userSpaceOnUse&#39;%20x=&#39;0&#39;%20y=&#39;0&#39;%20width=&#39;31&#39;%20height=&#39;31&#39;%3e%3cg%20id=&#39;Group&#39;%3e%3cpath%20id=&#39;Vector_2&#39;%20d=&#39;M15.6665%2030.7511C23.9508%2030.7511%2030.6665%2024.0354%2030.6665%2015.7511C30.6665%207.46682%2023.9508%200.751087%2015.6665%200.751087C7.38223%200.751087%200.666504%207.46682%200.666504%2015.7511C0.666504%2024.0354%207.38223%2030.7511%2015.6665%2030.7511Z&#39;%20fill=&#39;white&#39;/%3e%3c/g%3e%3c/mask%3e%3cg%20mask=&#39;url(%23mask0_2175_1146)&#39;%3e%3cg%20id=&#39;Group_2&#39;%3e%3cpath%20id=&#39;Vector_3&#39;%20d=&#39;M32.9203%2029.9378C32.9203%2029.9378%2027.627%2027.3911%2024.967%2023.1511C22.3137%2018.9178%2024.647%2018.1978%2024.7603%2015.5378C24.8737%2012.8778%2021.2937%2010.7111%2021.1003%209.01778C20.907%207.32445%2021.227%201.61779%2024.0537%200.797789C26.8803%20-0.0222104%2037.2203%204.95112%2037.2203%204.95112L32.9137%2029.9311L32.9203%2029.9378Z&#39;%20fill=&#39;%23D6EF6A&#39;%20stroke=&#39;%23202020&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_4&#39;%20d=&#39;M18.0736%2032.4978C18.0736%2032.4978%2018.8203%2025.8244%2015.9337%2023.1978C13.047%2020.5711%2012.1403%2022.4778%209.72698%2020.3311C7.31367%2018.1911%208.73367%2015.4644%200.0136719%2015.8178L1.01367%2030.4044L18.067%2032.4978H18.0736Z&#39;%20fill=&#39;%23D6EF6A&#39;%20stroke=&#39;%23202020&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_5&#39;%20d=&#39;M13.3801%200.371094C13.3801%200.371094%2015.2401%204.22443%2012.2934%205.96443C9.34673%207.70443%206.58673%2012.4778%200.533394%2010.1644L-1.2666%204.99776L13.3801%200.371094Z&#39;%20fill=&#39;%23D6EF6A&#39;%20stroke=&#39;%23202020&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_6&#39;%20d=&#39;M16.4929%2013.4511C16.5063%2013.0511%2016.4929%2012.6178%2016.2463%2012.2978C15.9996%2011.9644%2015.5663%2011.8244%2015.1596%2011.7378C14.1063%2011.5111%2013.0063%2011.5111%2011.9529%2011.7378C11.7796%2011.7778%2011.5996%2011.8178%2011.4463%2011.9178C10.6529%2012.4111%2010.1529%2014.8778%2010.2529%2015.7711C10.3596%2016.7111%2010.9596%2017.2244%2011.8529%2017.4311C14.6929%2018.0911%2016.3996%2016.0644%2016.4929%2013.4578V13.4511Z&#39;%20fill=&#39;%23D6EF6A&#39;%20stroke=&#39;%23202020&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cpath%20id=&#39;Vector_7&#39;%20d=&#39;M15.6665%2030.7511C23.9508%2030.7511%2030.6665%2024.0354%2030.6665%2015.7511C30.6665%207.46682%2023.9508%200.751087%2015.6665%200.751087C7.38223%200.751087%200.666504%207.46682%200.666504%2015.7511C0.666504%2024.0354%207.38223%2030.7511%2015.6665%2030.7511Z&#39;%20stroke=&#39;%23202020&#39;%20stroke-miterlimit=&#39;10&#39;/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id=&#39;clip0_2175_1146&#39;%3e%3crect%20width=&#39;32&#39;%20height=&#39;32&#39;%20fill=&#39;white&#39;/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                        alt="지구촌"
+                        class="category-icon-image"
+                      />
+                    </div>
+                    <div class="donation-card__category-label">
+                      <div class="label-text">지구촌</div>
+                    </div>
+                  </div>
+                  <div class="donation-card__category">
+                    <div class="donation-card__category-icon">
+                      <img
+                        src="data:image/svg+xml,%3csvg%20width=&#39;36&#39;%20height=&#39;32&#39;%20viewBox=&#39;0%200%2036%2032&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20id=&#39;Component%201&#39;%20clip-path=&#39;url(%23clip0_2175_1140)&#39;%3e%3cpath%20id=&#39;Vector&#39;%20d=&#39;M21.3496%2014.9244H28.5183C30.0705%2014.9244%2031.3299%2016.1838%2031.3299%2017.736V20.9833H21.3496V14.9312V14.9244Z&#39;%20fill=&#39;%23FFAB7D&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_2&#39;%20d=&#39;M31.3301%2020.3366V27.0423&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_3&#39;%20d=&#39;M31.33%2030.9432C33.1084%2030.9432%2034.5501%2029.5015%2034.5501%2027.7231C34.5501%2025.9447%2033.1084%2024.503%2031.33%2024.503C29.5516%2024.503%2028.1099%2025.9447%2028.1099%2027.7231C28.1099%2029.5015%2029.5516%2030.9432%2031.33%2030.9432Z&#39;%20fill=&#39;%23D0D0D0&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_4&#39;%20d=&#39;M10.6342%201.70353H6.35205&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_5&#39;%20d=&#39;M9.81689%201.70353H17.891C19.2389%201.70353%2020.335%202.79959%2020.335%204.14755V16.9599H9.81689V1.70353Z&#39;%20fill=&#39;%23FFAB7D&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_6&#39;%20d=&#39;M6.19522%200.682354H1.79054C1.53111%200.682354%201.3208%200.892662%201.3208%201.1521V2.24816C1.3208%202.50759%201.53111%202.7179%201.79054%202.7179H6.19522C6.45465%202.7179%206.66496%202.50759%206.66496%202.24816V1.1521C6.66496%200.892662%206.45465%200.682354%206.19522%200.682354Z&#39;%20fill=&#39;%23D0D0D0&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_7&#39;%20d=&#39;M12.4723%2030.95C18.334%2030.95%2023.0857%2026.1982%2023.0857%2020.3366C23.0857%2014.475%2018.334%209.72317%2012.4723%209.72317C6.61068%209.72317%201.85889%2014.475%201.85889%2020.3366C1.85889%2026.1982%206.61068%2030.95%2012.4723%2030.95Z&#39;%20fill=&#39;%23D0D0D0&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_8&#39;%20d=&#39;M12.4721%2027.8048C16.5967%2027.8048%2019.9403%2024.4612%2019.9403%2020.3366C19.9403%2016.2121%2016.5967%2012.8684%2012.4721%2012.8684C8.34754%2012.8684%205.00391%2016.2121%205.00391%2020.3366C5.00391%2024.4612%208.34754%2027.8048%2012.4721%2027.8048Z&#39;%20fill=&#39;white&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_9&#39;%20d=&#39;M12.4722%2022.5832C13.7129%2022.5832%2014.7188%2021.5773%2014.7188%2020.3366C14.7188%2019.0959%2013.7129%2018.09%2012.4722%2018.09C11.2314%2018.09%2010.2256%2019.0959%2010.2256%2020.3366C10.2256%2021.5773%2011.2314%2022.5832%2012.4722%2022.5832Z&#39;%20fill=&#39;white&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;1.02118&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id=&#39;clip0_2175_1140&#39;%3e%3crect%20width=&#39;34.72&#39;%20height=&#39;31.9969&#39;%20fill=&#39;white&#39;%20transform=&#39;translate(0.640137%200.00156784)&#39;/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                        alt="어르신"
+                        class="category-icon-image"
+                      />
+                    </div>
+                    <div class="donation-card__category-label">
+                      <div class="label-text">어르신</div>
+                    </div>
+                  </div>
+                  <div class="donation-card__category">
+                    <div class="donation-card__category-icon">
+                      <img
+                        src="data:image/svg+xml,%3csvg%20width=&#39;38&#39;%20height=&#39;32&#39;%20viewBox=&#39;0%200%2038%2032&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20id=&#39;Component%201&#39;%20clip-path=&#39;url(%23clip0_2175_1158)&#39;%3e%3cpath%20id=&#39;Vector&#39;%20d=&#39;M12.5621%2010.4583C16.1885%2010.4583%2019.1282%2013.398%2019.1282%2017.0244V25.7836H5.99609V17.0244C5.99609%2013.398%208.93583%2010.4583%2012.5621%2010.4583Z&#39;%20fill=&#39;%2391D1F9&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_2&#39;%20d=&#39;M12.5622%2013.2447C15.7025%2013.2447%2018.2483%2010.6989%2018.2483%207.55851C18.2483%204.41813%2015.7025%201.87235%2012.5622%201.87235C9.42172%201.87235%206.87598%204.41813%206.87598%207.55851C6.87598%2010.6989%209.42172%2013.2447%2012.5622%2013.2447Z&#39;%20fill=&#39;%23FFDCA4&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-miterlimit=&#39;10&#39;/%3e%3cpath%20id=&#39;Vector_3&#39;%20d=&#39;M11.0228%208.75175C11.3761%208.75175%2011.6627%208.28318%2011.6627%207.70517C11.6627%207.12717%2011.3761%206.6586%2011.0228%206.6586C10.6693%206.6586%2010.3828%207.12717%2010.3828%207.70517C10.3828%208.28318%2010.6693%208.75175%2011.0228%208.75175Z&#39;%20fill=&#39;%23202020&#39;/%3e%3cpath%20id=&#39;Vector_4&#39;%20d=&#39;M14.096%208.75175C14.4494%208.75175%2014.7359%208.28318%2014.7359%207.70517C14.7359%207.12717%2014.4494%206.6586%2014.096%206.6586C13.7425%206.6586%2013.4561%207.12717%2013.4561%207.70517C13.4561%208.28318%2013.7425%208.75175%2014.096%208.75175Z&#39;%20fill=&#39;%23202020&#39;/%3e%3cpath%20id=&#39;Vector_5&#39;%20d=&#39;M25.6945%2010.4583C29.3208%2010.4583%2032.2606%2013.398%2032.2606%2017.0244V25.7836H19.1284V17.0244C19.1284%2013.398%2022.0682%2010.4583%2025.6945%2010.4583Z&#39;%20fill=&#39;%2391D1F9&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_6&#39;%20d=&#39;M25.6949%2013.2447C28.8353%2013.2447%2031.3811%2010.6989%2031.3811%207.55851C31.3811%204.41813%2028.8353%201.87235%2025.6949%201.87235C22.5545%201.87235%2020.0088%204.41813%2020.0088%207.55851C20.0088%2010.6989%2022.5545%2013.2447%2025.6949%2013.2447Z&#39;%20fill=&#39;%23FFDCA4&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-miterlimit=&#39;10&#39;/%3e%3cpath%20id=&#39;Vector_7&#39;%20d=&#39;M24.1541%208.75175C24.5075%208.75175%2024.794%208.28318%2024.794%207.70517C24.794%207.12717%2024.5075%206.6586%2024.1541%206.6586C23.8007%206.6586%2023.5142%207.12717%2023.5142%207.70517C23.5142%208.28318%2023.8007%208.75175%2024.1541%208.75175Z&#39;%20fill=&#39;%23202020&#39;/%3e%3cpath%20id=&#39;Vector_8&#39;%20d=&#39;M27.2278%208.75175C27.5813%208.75175%2027.8678%208.28318%2027.8678%207.70517C27.8678%207.12717%2027.5813%206.6586%2027.2278%206.6586C26.8744%206.6586%2026.5879%207.12717%2026.5879%207.70517C26.5879%208.28318%2026.8744%208.75175%2027.2278%208.75175Z&#39;%20fill=&#39;%23202020&#39;/%3e%3cpath%20id=&#39;Vector_9&#39;%20d=&#39;M3.79492%2022.357H33.0523C35.0921%2022.357%2036.752%2024.0169%2036.752%2026.0567C36.752%2028.0965%2035.0921%2029.7564%2033.0523%2029.7564H3.79492V22.357Z&#39;%20fill=&#39;%23FFDCA4&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_10&#39;%20d=&#39;M5.5542%2026.1701V20.3506H21.8861C23.4926%2020.3506%2024.7992%2021.6505%2024.7992%2023.2637C24.7992%2024.8702%2023.4993%2026.1768%2021.8861%2026.1768H15.0334&#39;%20fill=&#39;%23FFDCA4&#39;/%3e%3cpath%20id=&#39;Vector_11&#39;%20d=&#39;M5.5542%2026.1701V20.3506H21.8861C23.4926%2020.3506%2024.7992%2021.6505%2024.7992%2023.2637C24.7992%2024.8702%2023.4993%2026.1768%2021.8861%2026.1768H15.0334&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_12&#39;%20d=&#39;M6.74766%2020.3507H1.50146V29.7499H6.74766V20.3507Z&#39;%20fill=&#39;white&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id=&#39;clip0_2175_1158&#39;%3e%3crect%20width=&#39;37.33&#39;%20height=&#39;31.9971&#39;%20fill=&#39;white&#39;%20transform=&#39;translate(0.334961%200.0014267)&#39;/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                        alt="사회"
+                        class="category-icon-image"
+                      />
+                    </div>
+                    <div class="donation-card__category-label">
+                      <div class="label-text">사회</div>
+                    </div>
+                  </div>
+                  <div class="donation-card__category">
+                    <div class="donation-card__category-icon">
+                      <img
+                        src="data:image/svg+xml,%3csvg%20width=&#39;38&#39;%20height=&#39;32&#39;%20viewBox=&#39;0%200%2038%2032&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20id=&#39;Component%201&#39;%3e%3cpath%20id=&#39;Vector&#39;%20d=&#39;M31.6118%2028.6812C31.4479%2028.6812%2031.28%2028.6655%2031.1083%2028.6304C26.627%2027.7365%2022.6257%2026.5381%2019.1905%2025.0977C15.7554%2026.5381%2011.7541%2027.7365%207.27282%2028.6304C5.89484%2028.9036%204.54809%2028.0098%204.27484%2026.6278C3.99768%2025.2459%204.89552%2023.9031%206.2774%2023.626C8.70935%2023.1419%2010.993%2022.5603%2013.0931%2021.9005C8.15895%2018.6606%205.41079%2014.714%205.41079%2010.4669C5.41079%205.79816%209.21292%201.99604%2013.8855%201.99604C15.8608%201.99604%2017.7189%202.66747%2019.1905%203.85416C20.6622%202.67137%2022.5204%201.99604%2024.4956%201.99604C29.1682%201.99604%2032.9665%205.79816%2032.9665%2010.4669C32.9665%2014.714%2030.2183%2018.6567%2025.292%2021.9005C27.392%2022.5603%2029.6757%2023.1419%2032.1076%2023.626C33.4895%2023.9031%2034.3834%2025.2459%2034.1102%2026.6278C33.8682%2027.8419%2032.8025%2028.6773%2031.6118%2028.6773V28.6812ZM13.8855%207.09806C12.0235%207.09806%2010.5128%208.61267%2010.5128%2010.4708C10.5128%2013.699%2013.7411%2016.9274%2019.1905%2019.5389C24.64%2016.9274%2027.8684%2013.699%2027.8684%2010.4708C27.8684%208.61267%2026.3537%207.09806%2024.4956%207.09806C23.2074%207.09806%2022.048%207.81633%2021.4703%208.97183C21.037%209.83842%2020.1547%2010.3849%2019.1866%2010.3849C18.2185%2010.3849%2017.3363%209.83842%2016.903%208.97183C16.3253%207.81633%2015.1659%207.09806%2013.8778%207.09806H13.8855Z&#39;%20fill=&#39;%23FF818B&#39;/%3e%3cpath%20id=&#39;Vector_2&#39;%20d=&#39;M19.4892%2019.0978C24.642%2016.5331%2027.7375%2013.4102%2027.7375%2010.3615C27.7375%208.57365%2026.2815%207.1176%2024.4897%207.1176C23.2483%207.1176%2022.1358%207.80854%2021.5815%208.92107C21.1287%209.83059%2020.1996%2010.4044%2019.1847%2010.4044C18.1697%2010.4044%2017.2407%209.83059%2016.7878%208.92107C16.2336%207.80854%2015.1171%207.1176%2013.8796%207.1176C12.0918%207.1176%2010.6357%208.57365%2010.6357%2010.3615&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-miterlimit=&#39;10&#39;%20stroke-linecap=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_3&#39;%20d=&#39;M19.1461%2025.1601C15.6835%2026.5927%2011.6862%2027.7756%207.29855%2028.6499C7.12288%2028.6851%206.94332%2028.7006%206.77155%2028.7006C5.52239%2028.7006%204.40206%2027.8185%204.14832%2026.5459C3.85946%2025.0977%204.80023%2023.6846%206.24847%2023.3957C8.45402%2022.9546%2010.5464%2022.4276%2012.4943%2021.8303&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-miterlimit=&#39;10&#39;%20stroke-linecap=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_4&#39;%20d=&#39;M5.28418%2010.3654C5.28418%205.62247%209.14095%201.76571%2013.8838%201.76571C15.8552%201.76571%2017.7094%202.42541%2019.1888%203.58869C20.6723%202.42541%2022.5226%201.76571%2024.4939%201.76571C29.2367%201.76571%2033.0936%205.62247%2033.0936%2010.3654C33.0936%2013.297%2031.7937%2017.6261%2025.6728%2021.7366&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-miterlimit=&#39;10&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3cpath%20id=&#39;Vector_5&#39;%20d=&#39;M10.636%2010.3653C10.636%2015.5142%2019.4738%2020.8739%2032.1294%2023.4033C33.5776%2023.6923%2034.5183%2025.1014%2034.2295%2026.5536C33.9758%2027.8261%2032.8554%2028.7084%2031.6062%2028.7084C31.4306%2028.7084%2031.255%2028.6927%2031.0792%2028.6576C23.7756%2027.1977%2017.5493%2024.8946%2013.0758%2021.9903C6.63483%2017.7978%205.28418%2013.3554%205.28418%2010.3653&#39;%20stroke=&#39;%23202020&#39;%20stroke-width=&#39;0.999911&#39;%20stroke-miterlimit=&#39;10&#39;%20stroke-linecap=&#39;round&#39;/%3e%3c/g%3e%3c/svg%3e"
+                        alt="전체"
+                        class="category-icon-image"
+                      />
+                    </div>
+                    <div class="donation-card__category-label">
+                      <div class="label-text">전체</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="layout__top-campaign">
+              <div class="popular-campaign">
+                <div class="popular-campaign__title">
+                  가장 많이 기부 중인 모금함
+                </div>
+                <div class="popular-campaign__subtitle">
+                  오늘, 기부 하셨나요? 당신의 마음도 함께 나눠주세요!
+                </div>
+                <div
+                  class="popular-campaign__item popular-campaign__item--first"
+                >
+                  <div class="popular-campaign__item-img-container">
+                    <img
+                      class="popular-campaign__item-img"
+                      src="https://via.placeholder.com/200x137"
+                      alt="캠페인 이미지"
+                    />
+                  </div>
+                  <div
+                    class="popular-campaign__item-title-container popular-campaign__item-title-container--small"
+                  >
+                    <div class="popular-campaign__item-title">
+                      소녀들은 생리대가 필요합니다
+                    </div>
+                  </div>
+                  <div class="popular-campaign__item-org-container">
+                    <div class="popular-campaign__item-org">
+                      사단법인 오픈월드
+                    </div>
+                  </div>
+                  <div class="popular-campaign__item-progress-container">
+                    <div
+                      class="popular-campaign__item-progress popular-campaign__item-progress--first"
+                    ></div>
+                  </div>
+                  <div
+                    class="popular-campaign__item-amount popular-campaign__item-amount--first"
+                  >
+                    7,568,291원
+                  </div>
+                  <div
+                    class="popular-campaign__item-percent popular-campaign__item-percent--first"
+                  >
+                    67%
+                  </div>
+                </div>
+                <div
+                  class="popular-campaign__item popular-campaign__item--second"
+                >
+                  <div class="popular-campaign__item-img-container">
+                    <img
+                      class="popular-campaign__item-img"
+                      src="https://via.placeholder.com/200x137"
+                      alt="캠페인 이미지"
+                    />
+                  </div>
+                  <div
+                    class="popular-campaign__item-title-container popular-campaign__item-title-container--large"
+                  >
+                    <div class="popular-campaign__item-title">
+                      아버지의 장례식도 멈출 수 없었던<br />학교 폭력
+                    </div>
+                  </div>
+                  <div class="popular-campaign__item-org-container">
+                    <div class="popular-campaign__item-org">
+                      사단법인 따뜻한 하루
+                    </div>
+                  </div>
+                  <div class="popular-campaign__item-progress-container">
+                    <div
+                      class="popular-campaign__item-progress popular-campaign__item-progress--second"
+                    ></div>
+                  </div>
+                  <div
+                    class="popular-campaign__item-amount popular-campaign__item-amount--second"
+                  >
+                    989,900원
+                  </div>
+                  <div
+                    class="popular-campaign__item-percent popular-campaign__item-percent--second"
+                  >
+                    22%
+                  </div>
+                </div>
+                <div
+                  class="popular-campaign__item popular-campaign__item--third"
+                >
+                  <div class="popular-campaign__item-img-container">
+                    <img
+                      class="popular-campaign__item-img"
+                      src="https://via.placeholder.com/200x137"
+                      alt="캠페인 이미지"
+                    />
+                  </div>
+                  <div
+                    class="popular-campaign__item-title-container popular-campaign__item-title-container--large"
+                  >
+                    <div class="popular-campaign__item-title">
+                      영양장애를 앓고 있는 아기에게 이유<br />식을 선물해
+                      주세요.
+                    </div>
+                  </div>
+                  <div class="popular-campaign__item-org-container">
+                    <div class="popular-campaign__item-org">
+                      사단법인 오픈월드
+                    </div>
+                  </div>
+                  <div class="popular-campaign__item-progress-container">
+                    <div
+                      class="popular-campaign__item-progress popular-campaign__item-progress--third"
+                    ></div>
+                  </div>
+                  <div
+                    class="popular-campaign__item-amount popular-campaign__item-amount--third"
+                  >
+                    5,519,959원
+                  </div>
+                  <div
+                    class="popular-campaign__item-percent popular-campaign__item-percent--third"
+                  >
+                    7%
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="layout__main-campaign-list">
+              <div class="main-campaign-list">
+                <img
+                  class="main-campaign-list__img"
+                  src="./Vite + React_files/baby1.jpg"
+                  alt="Campaign"
+                />
+                <div class="layout__main-campaign-list__content">
+                  <div>
+                    <div class="main-campaign-list__category">
+                      <div class="main-campaign-list__category-text">
+                        아동 / 청소년
+                      </div>
+                    </div>
+                    <div class="main-campaign-list__quote">
+                      “ 예비 초등학생에게 책가방을 보내주세요 ”
+                    </div>
+                    <div class="main-campaign-list__beneficiary">
+                      <div class="main-campaign-list__beneficiary-text">
+                        수혜자명
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-campaign-list__deadline">
+                    <div class="main-campaign-list__deadline-text">D-16</div>
+                  </div>
+                </div>
+                <div class="main-campaign-list__progress-wrapper">
+                  <div class="main-campaign-list__progress-percent">33%</div>
+                  <div class="main-campaign-list__amount">
+                    <span>1,920,999 원</span>
+                  </div>
+                  <div class="main-campaign-list__progress-bar">
+                    <div class="main-campaign-list__progress-fill"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layout__right-panel">
+            <div class="layout__first-section">
+              <div class="layout__total-donation">컴포넌트 꽂는곳</div>
+              <div class="layout__donation-review">컴포넌트 꽂는곳</div>
+            </div>
+            <div class="layout__new-campaign">컴포넌트 꽂는곳</div>
+            <div class="layout__social-link">컴포넌트 꽂는곳</div>
+            <div class="layout__receive-donation">컴포넌트 꽂는곳</div>
+          </div>
+        </div>
+      </div>
+      <div class="campaign-section">
+        <div class="campaign-section__header">
+          <div class="campaign-section__title">새로운 캠페인이에요</div>
+          <div class="campaign-section__view-all">
+            <div class="campaign-section__view-all-text">전체보기</div>
+            <img
+              src="data:image/svg+xml,%3csvg%20width=&#39;7&#39;%20height=&#39;11&#39;%20viewBox=&#39;0%200%207%2011&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20id=&#39;Group&#39;%3e%3cpath%20id=&#39;Vector&#39;%20d=&#39;M1%200.499512L5.95833%205.16618L1%209.8328&#39;%20stroke=&#39;%23858585&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;/%3e%3c/g%3e%3c/svg%3e"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="campaign-section__slider">
+          <div class="campaign-slider-container">
+            <div class="campaign-slider__track">
+              <div class="campaign-slider__spacer"></div>
+              <div class="campaign-items">
+                <div class="campaign-item">
+                  <img
+                    class="campaign-item__image"
+                    src="https://via.placeholder.com/114x83"
+                    alt="Campaign 1"
+                  />
+                  <div class="campaign-item__details">
+                    <div class="campaign-item__title">
+                      병원비 걱정없이 치료받고 싶어요.
+                    </div>
+                    <div class="campaign-item__sponsor">
+                      한국백혈병어린이재단
+                    </div>
+                    <div class="campaign-item__progress-bg">
+                      <div
+                        class="campaign-item__progress-bar"
+                        style="width: 46.75px"
+                      ></div>
+                    </div>
+                    <div class="campaign-item__donation-percent">28%</div>
+                    <div class="campaign-item__donation-amount">
+                      <span>1,140,000</span><span>원</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="campaign-item">
+                  <img
+                    class="campaign-item__image"
+                    src="https://via.placeholder.com/114x83"
+                    alt="Campaign 2"
+                  />
+                  <div class="campaign-item__details">
+                    <div class="campaign-item__title">
+                      1년간 준비해온 아이들의 발표회를 지원해주세요
+                    </div>
+                    <div class="campaign-item__sponsor">양지지역아동센터</div>
+                    <div class="campaign-item__progress-bg"></div>
+                    <div class="campaign-item__donation-percent">0%</div>
+                    <div class="campaign-item__donation-amount">
+                      <span>0</span><span>원</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="campaign-item">
+                  <img
+                    class="campaign-item__image"
+                    src="https://via.placeholder.com/114x83"
+                    alt="Campaign 3"
+                  />
+                  <div class="campaign-item__details">
+                    <div class="campaign-item__title">
+                      사각지대 맞춤 돌봄 서비스
+                    </div>
+                    <div class="campaign-item__sponsor">
+                      서대문한마음돌봄 사회적협
+                    </div>
+                    <div class="campaign-item__progress-bg">
+                      <div
+                        class="campaign-item__progress-bar short"
+                        style="width: 3.33px"
+                      ></div>
+                    </div>
+                    <div class="campaign-item__donation-percent">2%</div>
+                    <div class="campaign-item__donation-amount">
+                      <span>70,000</span><span>원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="campaign-slider__spacer"></div>
+              <div class="campaign-slider__spacer"></div>
+              <div class="campaign-slider__spacer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./Vite + React_files/main.jsx"></script>
+  </body>
+</html>

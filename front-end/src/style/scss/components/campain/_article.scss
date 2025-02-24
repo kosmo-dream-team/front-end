@@ -1,0 +1,36 @@
+.campaign-story {
+  width: 62rem; // 620px / 10
+  height: 14.4rem; // 144px / 10
+  padding: 2rem; // 20px
+  background-color: #fff;
+  border-radius: 1rem; // 10px
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; // 20px
+
+  &__title {
+    font-size: 2rem; // 20px
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem; // 10px
+  }
+
+  &__description {
+    font-size: 1.6rem; // 16px
+    line-height: 2.2rem; // 22px
+    color: #666;
+    margin-bottom: 1.5rem; // 15px
+  }
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; // 10px
+
+    .campaign-story__image {
+      width: 100%;
+      max-width: 30rem; // 300px
+      border-radius: 0.5rem; // 5px
+      object-fit: cover;
+    }
+  }
+}

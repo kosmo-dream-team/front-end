@@ -1,0 +1,54 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+.mypage-myinfo__root-container {
+  width: 70rem;
+}
+.myinfo-title {
+  width: 15rem;
+  text-align: center;
+  color: black;
+  word-wrap: break-word;
+  @include mixin.font-style(#535054, md, "bold");
+}
+
+.mypage-myinfo__container {
+  padding: 3rem;
+  .mypage-myinfo__list-wrapper {
+    display: flex;
+    align-items: center; // 추가: 자식 요소들을 수직 중앙 정렬
+  }
+
+  .myinfo-value {
+    text-align: center;
+    @include mixin.flex-center;
+
+    padding: 1rem;
+  }
+}
+
+.border--dotted {
+  border: 0.1rem dashed lightgray;
+
+  margin: 0rem;
+  border-radius: 0.5rem;
+}
+.myinfo-edit {
+  @include mixin.flex-center;
+  @include mixin.font-style(#535054, md, "bold");
+  padding: 1rem 2.5rem;
+  margin-left: 0.5rem;
+  border: 1rem #535054;
+  background: white;
+  cursor: pointer;
+
+  &:hover {
+    background: var.$color-primary;
+    color: white;
+  }
+}
+.myinfo-delete {
+  @include mixin.flex-center;
+  @include mixin.font-style(#535054, md, "bold");
+  padding: 1rem 2.5rem;
+  @include mixin.no-link-style;
+}

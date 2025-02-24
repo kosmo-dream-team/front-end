@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import useNavbarStore from "../../../store/useNavbarStore";
-import IsLogin from "./IsLogin";
+import useNavbarStore from "@/store/useNavbarStore";
+import UserInfo from "./UserInfo";
 export default function NavbarDesktop() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { menuDb } = useNavbarStore(); // zustand 스토어에서 menuDb 가져오기
@@ -11,7 +11,7 @@ export default function NavbarDesktop() {
     <div className="layout__header">
       <nav className="navbar">
         <div className="navbar-logo">
-          <Link to={menuDb.mainPage}>{menuDb.logoTheme}</Link>
+          <Link to="/">{menuDb.logoTheme}</Link>
         </div>
 
         <div className={`navbar-menu ${menuOpen ? "active" : ""}`}>
@@ -28,11 +28,11 @@ export default function NavbarDesktop() {
 
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
           {menuDb.util.map((data, index) => (
-            <Link to key={index} href={data.url}>
+            <Link to={data.url} key={index} >
               {data.logo}
             </Link>
           ))}
-          <IsLogin />
+          <UserInfo />
         </div>
 
         <div className="navbar-btn" onClick={() => setMenuOpen(!menuOpen)}>

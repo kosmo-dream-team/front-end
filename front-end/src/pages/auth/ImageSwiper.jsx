@@ -1,15 +1,12 @@
-import React from "react";
 import "swiper/css";
-import "swiper/css/autoplay"; // Autoplay 모듈의 CSS 가져오기
+import "swiper/css/autoplay"; // swiper Autoplay css 가져오기
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Zustand 스토어에서 이미지 데이터 불러오기
-import useImageStore from "../../store/useImgStore";
-
-// Autoplay 모듈 등록
+// zustand 스토어에서 이미지 데이터 불러오기
+import useImageStore from "@/store/useImgStore";
 
 const ImageSwiper = () => {
-  // Zustand 스토어에서 images 배열을 가져옴
+  //zustand 스토어에서 images 배열을 가져옴
   const { images } = useImageStore();
 
   return (
@@ -24,8 +21,16 @@ const ImageSwiper = () => {
       }}
     >
       {images.map((src, index) => (
-        <SwiperSlide key={index}>
-          <img src={src} alt={`slide-${index}`} />
+        <SwiperSlide key={index} className="signup-swiper">
+          <img
+            src={src}
+            alt={`slide-${index}`}
+            style={{
+              width: "100%",
+              height: "70rem",
+              objectFit: "cover",
+            }}
+          />
         </SwiperSlide>
       ))}
     </Swiper>

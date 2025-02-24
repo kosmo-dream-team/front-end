@@ -1,0 +1,49 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
+.stats-page {
+  background-color: #f8f8f8;
+}
+.donation-stats {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+
+  h1 {
+    @include mixin.font-style(#333, "xl", normal);
+    margin-bottom: 1.5rem;
+  }
+
+  .donation-img {
+    width: 300px;
+    height: auto;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    .stat-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      min-width: 200px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        @include mixin.font-style(#555, "xs", noraml);
+
+        margin-bottom: 0.5rem;
+        color: #555;
+      }
+
+      p {
+        @include mixin.font-style(#222, "md", noraml);
+      }
+    }
+  }
+}

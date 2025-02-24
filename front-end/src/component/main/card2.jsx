@@ -1,4 +1,4 @@
-import "../.././style/scss/style.scss";
+import "@/style/scss/style.scss";
 
 const Card2 = () => {
   return (
@@ -15,13 +15,11 @@ const Card2 = () => {
           </div>
           <div className="review-card__left-description-container">
             <div className="review-card__left-description">
-              후원자님 안녕하세요? (주)안녕 병원동행 따동입니다.
-              <br />
-              ‘아파도 병원에 갈 수없어요’ 모금함을 향한 여러분의 따
-              <br />
-              뜻한 동참에 진심으로 감사드립니다. '카카오같이가치'
-              <br />
-              에서 많은 분들이 응원해 주시고 모금으로 참여해주신…
+              후원자님 안녕하세요? (주)안녕 병원동행
+              따asdasdasdsda동입니다sdsdsdsds.1231231231231sddddd ‘아파도 병원에
+              갈 수없어요’ 모금함을 향한 여러분의 따 뜻한 동참에 진심으로
+              감사드립니다. 카카오같이가치 에서 많은 분들이 응원해 주시고
+              모금으로 참여해주신…
             </div>
           </div>
         </div>

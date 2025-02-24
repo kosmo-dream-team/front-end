@@ -1,20 +1,25 @@
-.layout__category{
+.layout__categories {
+  width: 112rem;
+  height: 80.4rem;
+  background-color: pink;
+  background: #f00;
+  margin-bottom: 2.8rem;
+}
 
+.layout__category-hero {
+  width: 111rem;
+  height: 26.5rem;
 
-    width: 112rem;
-    height: 80.4rem;
-    background-color: pink;
-    background: #F00;
-    margin-bottom: 2.8rem;
-    
-    
-    
-    }
+  margin-bottom: 3.8rem;
+}
+.layout__categort-page-left-panel {
+  width: 70rem;
 
-.layout__category-hero{
-    width: 111rem;
-    height: 26.5rem;
-    background-color: pink;
-    background: #F00;
-    margin-bottom: 3.8rem;
-    }
+  height: auto;
+
+  margin-right: 14rem;
+
+  & > div {
+    margin-bottom: 3rem;
+  }
+}

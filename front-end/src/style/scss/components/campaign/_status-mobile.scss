@@ -1,0 +1,236 @@
+.campaign-mobile { 
+  width: 75rem;
+  height: 29.4375rem; 
+  border-radius: 0.625rem;
+  border: 1px solid #CBCBCB;
+  background: #FFF;
+  margin-bottom: 1rem;
+}
+.campaign-title {
+  display: flex;
+  width: 14.59006rem;
+  height: 1.5625rem;
+  margin-left: 1.3rem;
+  margin-top: 1.94rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #242424;
+  font-family: "Noto Sans KR";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5625rem; /* 138.889% */
+  letter-spacing: -0.0625rem;
+}
+.progress-wrapper { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.progress-text-wrapper { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: last baseline;
+  margin: 1.59rem 1.31rem 0.02rem 1.31rem;
+}
+.progress-percent {
+  display: flex;
+  width: 2.03625rem;
+  height: 1.1875rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FF6D73;
+  font-family: "Noto Sans KR";
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.03125rem;
+}
+.campaign-d-day-mobile {
+  display: flex;
+  width: 2.10063rem;
+  height: 1.875rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #202020;
+  font-family: "Noto Sans KR";
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.875rem; /* 200% */
+  letter-spacing: -0.03125rem;
+}
+.progress-bar-wrapper { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+.progress-bar-mobile {
+  display: flex;
+  width: 41rem;
+  height: 0.3125rem;
+  flex-shrink: 0;
+  border-radius: 0.15625rem;
+  margin-bottom: 0.1rem;
+}
+.progress-bar::-webkit-progress-value { background: #FF6D73; } // 진행된 부분 배경색
+.progress-bar::-webkit-progress-bar { background: #E8E8E8; } // 진행되지 않은 부분 배경샋
+.amount-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 1.33rem;
+  margin-bottom: 1.25rem;
+}
+.current_amount {
+  display: flex;
+  width: 7.82313rem;
+  height: 1.75rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #202020;
+  font-family: "Noto Sans KR";
+  font-size: 1.41506rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.03125rem;
+}
+.target-amount {
+  display: flex;
+  width: 7.29063rem;
+  height: 1.25rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #9E9999;
+  font-family: "Noto Sans KR";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.03125rem;
+}
+.info-wrapper {
+  width: 19.875rem;
+  height: 9.0625rem;
+  flex-shrink: 0;
+  border-top: 1px solid #E6E6E6;
+  padding-top: 1.75rem;
+  margin: 0 auto 1rem auto;
+}
+.list-header {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+  color: rgba(32, 32, 32, 0.80);
+  font-family: "Noto Sans KR";
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 153.846% */
+  letter-spacing: -0.0625rem;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+.info-list {
+  margin-left: 1.44rem;
+  flex-shrink: 0;
+  color: rgba(32, 32, 32, 0.80);
+  font-family: "Noto Sans KR";
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.125rem; /* 138.462% */
+  letter-spacing: -0.0625rem;
+  margin-bottom: 1rem;
+}
+.like-and-share-wrapper {
+  width: 19.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto 1rem auto;
+}
+.like-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 9.375rem;
+  height: 2.875rem;
+  flex-shrink: 0;
+}
+.like-img .share-img {
+  flex-shrink: 0;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+}
+.like-img-mobile { 
+  background-image: url("../../../../assets/img/like.png");
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.share-img-mobile { 
+  background-image: url("../../../../assets/img/share.svg");  
+  width: 1rem;
+  height: 1rem;
+}
+.like-count .share-count {
+  color: #202020;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.88563rem; /* 109% */
+  letter-spacing: -0.01875rem;
+}
+.vertical-divider {
+  width: 0.0625rem;
+  height: 1rem;
+  flex-shrink: 0;
+  background-color: #D8D8D8;
+  margin: auto 0.5rem auto 0.5rem;
+}
+.share-wrapper {
+  padding: 0.46375rem 0rem 0.47375rem 0rem;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 9.375rem;
+  height: 2.875rem;
+  flex-shrink: 0;
+}
+.donate-btn-mobile {
+  bottom: 0;
+  width: 74.875rem;
+  height: 2.75rem;
+  padding: 0.75rem 0rem;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+  background: #FF6D73;
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans KR";
+  font-size: 1.0625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.0625rem;
+}
