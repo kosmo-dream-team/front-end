@@ -1,12 +1,12 @@
 import Cookies from "js-cookie";
 import { useEffect, useRef, useState } from "react";
-
+import LikeActiveImg from "@/assets/img/like-active.png";
 import CampaignDonateModal from "./CampaignDonateModal";
-import KakaoPayIco from "@/assets/img/kakaopay-ico.png";
+import Likeimg from "@/assets/img/like.png";
 import useCampaignStore from "@/store/useCampaignStore";
 import usePortOneStore from "@/store/usePortOneStore";
 import useUserProfile from "@/store/useUserProfile";
-import Kakaopay from "@/assets/img/kakaopay.png";
+import Kakaopay from "@/assets/img/kakaopay-ico.png";
 import Paypal from "@/assets/img/paypal.png";
 import Naverpay from "@/assets/img/naverpay.png";
 import Tosspay from "@/assets/img/tosspay.png";
@@ -19,12 +19,16 @@ export default function CampaignStatusDesktop() {
   const [modalOpen, setModalOpen] = useState(false);
   const donationAmountRef = useRef();
   const [preventFirstRender, setPreventFirstRender] = useState(true);
+  // selectPG: 선택된 PG 채널 (예: "kakaopay", "tosspay", "payco", "nicepay")
   const [selectPG, setSelectPG] = useState("kakaopay");
 
   // 추가된 결제 옵션/금액 관련 state
   const [selectedPaymentOption, setSelectedPaymentOption] = useState("option1");
   const [selectedPresetAmount, setSelectedPresetAmount] = useState(null);
   const [customDonation, setCustomDonation] = useState("");
+  
+  // 좋아요 여부를 관리하는 state
+  const [liked, setLiked] = useState(false);
 
   const { campaignStatus, donateCampaign, likeCampaign, shareCampaign } =
     useCampaignStore();
@@ -65,6 +69,14 @@ export default function CampaignStatusDesktop() {
       case "kakaopay":
         channelKey = "channel-key-ee27fa89-f49b-414d-81e5-b8f57e614c5e";
         pg = "kakaopay";
+        break;
+      case "tosspay":
+        channelKey = "channel-key-890a0a6b-7bb2-4a13-824b-99e302e1c804";
+        pg = "tosspay";
+        break;
+      case "payco":
+        channelKey = "channel-key-1abd4115-b089-4ba7-93ed-8c241f899b8f";
+        pg = "payco";
         break;
       case "nicepay":
         channelKey = "channel-key-74aa624f-f796-475a-b37f-532b6cc04b7e";
@@ -107,10 +119,11 @@ export default function CampaignStatusDesktop() {
   }, [paymentInfo]);
 
   const like = () => {
-    if (Cookies.get("like")) {
+    if (liked) {
       alert("이미 좋아요를 누르신 캠페인입니다.");
     } else {
       likeCampaign(campaignStatus.projectId);
+      setLiked(true);
       Cookies.set("like", "true", { expires: 1 });
     }
   };
@@ -192,7 +205,13 @@ export default function CampaignStatusDesktop() {
       {/* 좋아요 및 공유 영역 */}
       <div className="like-and-share-wrapper">
         <div className="like-wrapper" onClick={() => like()}>
-          <div className="like-img"></div>
+          <div className="">
+            <img src={liked ? LikeActiveImg : Likeimg} alt=""
+            style={{
+              width: "2rem",
+              height: "2rem",
+            }} />
+          </div>
           <div className="like-count">{campaignStatus.likeCount}</div>
         </div>
         <div className="vertical-divider"></div>
@@ -223,7 +242,10 @@ export default function CampaignStatusDesktop() {
           {/* 결제 수단 옵션 */}
           <div
             className="payment-option option-1 reset-btn"
-            onClick={() => setSelectedPaymentOption("option1")}
+            onClick={() => {
+              setSelectedPaymentOption("option1");
+              setSelectPG("kakaopay");
+            }}
           >
             <div className="option-bg option-1-bg"></div>
             <div
@@ -239,7 +261,10 @@ export default function CampaignStatusDesktop() {
           </div>
           <div
             className="payment-option option-2 reset-btn"
-            onClick={() => setSelectedPaymentOption("option2")}
+            onClick={() => {
+              setSelectedPaymentOption("option2");
+              setSelectPG("tosspay");
+            }}
           >
             <div className="option-bg option-2-bg"></div>
             <div
@@ -255,7 +280,10 @@ export default function CampaignStatusDesktop() {
           </div>
           <div
             className="payment-option option-3 reset-btn"
-            onClick={() => setSelectedPaymentOption("option3")}
+            onClick={() => {
+              setSelectedPaymentOption("option3");
+              setSelectPG("payco");
+            }}
           >
             <div className="option-bg option-3-bg"></div>
             <div
@@ -266,18 +294,21 @@ export default function CampaignStatusDesktop() {
             <img
               className="option-img option-3-img"
               src={Naverpay}
-              alt="Naverpay"
+              alt="Payco"
             />
           </div>
           <div
             className="payment-option option-4 reset-btn"
-            onClick={() => setSelectedPaymentOption("option4")}
+            onClick={() => {
+              setSelectedPaymentOption("option4");
+              setSelectPG("nicepay");
+            }}
           >
             <div className="option-bg option-4-bg"></div>
             <img
               className="option-img option-4-img"
               src={Paypal}
-              alt="Paypal"
+              alt="Nicepay"
             />
             <div
               className={`option-circle option-4-circle ${
