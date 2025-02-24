@@ -1,6 +1,6 @@
-import "../.././style/scss/style.scss";
+import "@/style/scss/style.scss";
 
-import useCampaignStore from "../../store/useCampaignStore";
+import useCampaignStore from "@/store/useCampaignStore";
 
 const CampaignProfile = () => {
   const { campaignStatus } = useCampaignStore();
