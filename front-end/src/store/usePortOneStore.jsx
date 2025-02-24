@@ -13,8 +13,9 @@ const usePortOneStore = create((set) => ({
     pay_method: "card", // 결제 수단
     merchant_uid: "order_no_0001", // 주문 마다 다른 값이 설정 되어야 함
     name: "결제 테스트", // 결제 화면에서 보여질 이름
-    amount: 1 // 결제 금액
-  },
+    amount: 1, // 결제 금액
+    pg: "kakaopay" // PG사
+},
   setPaymentInfo: (newPaymentInfo) => set((state) => ({ paymentInfo: { ...state.paymentInfo, ...newPaymentInfo } })) // 결제정보 변경을 위한 함수
 }));
 

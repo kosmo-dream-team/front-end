@@ -33,7 +33,7 @@ const useCampaignStore = create((set) => ({
     // ],
     donorList: [],
     // commentList: [
-    //   {userName: '축복덩어리', comment: '응원합니다.', likeCount: 0, postDate: '2025.01.23', profileImage: '/src/assets/img/like.png'}
+    //   {commentId: 1, userName: '축복덩어리', comment: '응원합니다.', likeCount: 0, postDate: '2025.01.23', profileImage: '/src/assets/img/like.png'}
     // ]
     commentList: [],
   },
@@ -115,7 +115,23 @@ const useCampaignStore = create((set) => ({
         window.location.reload();
       });
     } catch (error) { console.error("좋아요 api 오류 발생", error); }
-  }
+  },
+  shareCampaign: async (campaignId) => {
+    try {
+      await fetch(`http://localhost:8586/project/${campaignId}/share`, {withCredentials: true}).then(res => {
+        console.log(res);
+        window.location.reload();
+      });
+    } catch (error) { console.error("캠페인 공유 api 오류 발생", error); }
+  },
+  likeComment: async (commentId) => {
+    try {
+      await fetch(`http://localhost:8586/project/likeComment/${commentId}`, {withCredentials: true}).then(res => {
+        console.log(res);
+        window.location.reload();
+      });
+    } catch (error) { console.error("댓글 좋아요 api 오류 발생"); }
+}
 }));
 
 export default useCampaignStore;

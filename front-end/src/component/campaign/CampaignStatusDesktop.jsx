@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Cookies from 'js-cookie';
 
 import CampaignDonateModal from "./CampaignDonateModal";
 
@@ -14,8 +15,9 @@ export default function CampaignStatusDesktop() {
   const [modalOpen, setModalOpen] = useState(false);
   const donationAmountRef = useRef();
   const [preventFirstRender, setPreventFirstRender] = useState(true);
+  const [selectPG, setSelectPG] = useState('kakaopay'); // PG사 선택
 
-  const { campaignStatus, donateCampaign, likeCampaign } = useCampaignStore();
+  const { campaignStatus, donateCampaign, likeCampaign, shareCampaign } = useCampaignStore();
   const { initInfo, paymentInfo, setPaymentInfo } = usePortOneStore();
 
   const { userProfile } = useUserProfile();
@@ -65,13 +67,29 @@ export default function CampaignStatusDesktop() {
       return;
     }
 
-    // 2. 결제 요청할 값 설정
+    // 2. PG사 설정
+    let channelKey;
+    let pg;
+    switch (selectPG) {
+      case 'kakaopay':
+        channelKey = "channel-key-ee27fa89-f49b-414d-81e5-b8f57e614c5e";
+        pg = 'kakaopay';
+        break;
+      case 'nicepay':
+        channelKey = "channel-key-74aa624f-f796-475a-b37f-532b6cc04b7e";
+        pg = 'nice_v2';
+        break;
+    }
+  
+    // 3. 결제 요청할 값 설정
     const timestamp = Date.now(); // 항상 유니크해야하는 merchant_uid를 위해 타임스탬프 생성
 
     setPaymentInfo({
+      channelKey: channelKey,
       merchant_uid: `donate-${timestamp}`,
       name: campaignStatus.title,
       amount: parseInt(donationAmountRef.current.value),
+      pg: pg,
     });
   };
 
@@ -112,8 +130,26 @@ export default function CampaignStatusDesktop() {
     //   alert("좋아요는 로그인 이후에 가능합니다.");
     //   return;
     // }
-    console.log("좋아요 함수");
-    likeCampaign(campaignStatus.projectId);
+    if (Cookies.get('like')) {
+      alert('이미 좋아요를 누르신 캠페인입니다.');
+    }
+    else {
+      console.log("좋아요 함수");
+      likeCampaign(campaignStatus.projectId);
+      Cookies.set('like', 'true', {expires: 1});
+    }
+  }
+
+  const copyToClipboard = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert("클립보드에 링크가 복사되었습니다.");
+      shareCampaign(campaignStatus.projectId);
+    } catch (error) { alert("복사에 실패했습니다!", error); }
+  }
+
+  const changePG = (event) => {
+    setSelectPG(event.target.value);
   }
 
   return (
@@ -160,12 +196,12 @@ export default function CampaignStatusDesktop() {
         </ul>
       </div>
       <div className="like-and-share-wrapper">
-        <div className="like-wrapper" onClick={() => like()}>
+        <div className="like-wrapper" onClick = {() => like()}>
           <div className="like-img"></div>
           <div className="like-count">{campaignStatus.likeCount}</div>
         </div>
         <div className="vertical-divider"></div>
-        <div className="share-wrapper">
+        <div className="share-wrapper" onClick = {() => copyToClipboard(`http://localhost:5173/campaign/${campaignStatus.projectId}`)}>
           <div className="share-img"></div>
           <div className="share-count">{campaignStatus.shareCount}</div>
         </div>
@@ -182,6 +218,10 @@ export default function CampaignStatusDesktop() {
         <div>
           <p>{campaignStatus.title} 캠페인에 기부하실 금액을 입력해주세요.</p>
           <div>
+            <select value = {selectPG} onChange = {changePG}>
+              <option value = 'kakaopay'>카카오페이</option>
+              <option value = 'nicepay'>나이스페이먼츠</option>
+            </select>
             <label htmlFor="donationAmount">기부 금액</label>
             <input id="donationAmount" type="number" ref={donationAmountRef} />
             <button id="donate" onClick={() => donate()}>
