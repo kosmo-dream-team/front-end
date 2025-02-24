@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import Cookies from "js-cookie";
 
 import "@/style/scss/style.scss";
 
@@ -15,7 +16,7 @@ const CampaignContext = () => {
   const recommendRef2 = useRef(null);
   const recommendRef3 = useRef(null);
 
-  const { campaignStatus, writeComment } = useCampaignStore();
+  const { campaignStatus, writeComment, likeComment } = useCampaignStore();
 
   const { userProfile } = useUserProfile();
 
@@ -66,7 +67,17 @@ const CampaignContext = () => {
       1,
       document.getElementById("comment").textContent
     );
-    alert("댓글 작성이 완료되었습니다.");
+  }
+
+  function like(commentId) {
+    console.log(commentId);
+    if (Cookies.get(`like-${commentId}`)) {
+      alert("이미 좋아요를 누르신 댓글입니다.");
+    }
+    else {
+      likeComment(commentId);
+      Cookies.set(`like-${commentId}`, 'true', {expires: 1});
+    }
   }
 
   return (
@@ -81,6 +92,10 @@ const CampaignContext = () => {
       </div>
       <div className="fundraising-period">
         모금기간 {campaignStatus.startDate} ~ {campaignStatus.endDate}
+      </div>
+
+      <div className="content-wrapper">
+        {campaignStatus.description}
       </div>
 
       <div className="category-list-wrapper">
@@ -190,7 +205,7 @@ const CampaignContext = () => {
                             </div>
                           </div>
                           <div className="comment-info-wrapper">
-                            <div className="comment-like-wrapper">
+                            <div className="comment-like-wrapper" onClick = {() => like(comment.commentId)}>
                               <div className="comment-like-img" />
                               {comment.likeCount}
                             </div>
