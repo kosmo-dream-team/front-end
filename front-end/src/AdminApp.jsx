@@ -1,21 +1,23 @@
 // src/admin/AdminApp.jsx
 
 import AdminDashboard from "@/admin/AdminDashboard";
-import ApplicationEdit from "@/admin/ApplicationEdit";
-import ApplicationList from "@/admin/ApplicationList";
 import UserEdit from "@/admin/UserEdit";
 import UserList from "@/admin/UserList";
 import { dataProvider } from "@/data/dataProvider";
 import { Admin, Resource } from "react-admin";
+import authProvider from "./admin/authProvider";
+import { ProjectList } from "./admin/ProjectList";
+import { ProjectShow } from "./admin/ProjectShow";
 
 const AdminApp = () => (
   <Admin
-    dashboard={AdminDashboard}
     dataProvider={dataProvider}
     basename="/admin"
+    authProvider={authProvider} // 올바른 prop 이름
+    dashboard={AdminDashboard}
   >
-    <Resource name="projects" list={ApplicationList} edit={ApplicationEdit} />
-    {<Resource name="users" list={UserList} edit={UserEdit} />}
+    <Resource name="adminProject" list={ProjectList} show={ProjectShow} />
+    <Resource name="user" list={UserList} edit={UserEdit} />
   </Admin>
 );
 
