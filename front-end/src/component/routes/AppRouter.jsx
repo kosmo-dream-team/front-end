@@ -16,6 +16,7 @@ import MyPage from "@/pages/mypage/MyPage";
 import SearchPage from "@/pages/search/SearchPage";
 import Stats from "@/pages/stats/Stats";
 import useUserProfile from "@/store/useUserProfile";
+import DonationForm from "../../pages/donationForm/DonationForm";
 //라우터 제약조건
 const PrivateRoute = () => {
   const { profile } = useUserProfile();
@@ -38,6 +39,7 @@ const AppRouter = () => {
 
       <Route path="/campaign" element={<CampaignPage />} />
       <Route path="/admin/*" element={<AdminApp />} />
+      <Route path="/donationForm" element={<DonationForm />} />
 
       <Route path="/campaign/:campaignId" element={<CampaignPage />} />
     </Routes>
