@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // zustand 스토어에서 이미지 데이터 불러오기
 import useImageStore from "@/store/useImgStore";
 
+//스위퍼를 위한 컴포넌트
 const ImageSwiper = () => {
   //zustand 스토어에서 images 배열을 가져옴
   const { images } = useImageStore();

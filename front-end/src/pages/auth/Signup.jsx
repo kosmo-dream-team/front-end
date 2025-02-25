@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import sign04 from "@/assets/img/auth1.jpg";
 import sign02 from "@/assets/img/auth7.jpg";
@@ -11,6 +11,7 @@ import useImageStore from "@/store/useImgStore";
 import "@/style/scss/style.scss";
 import ImageSwiper from "./ImageSwiper";
 
+//회원가입
 export default function Signup() {
   const { setImages } = useImageStore();
   const navigate = useNavigate();
@@ -126,23 +127,22 @@ export default function Signup() {
     <div className="signup-container">
       <div className="signup-left-form-container">
         <div className="signup-left">
-          <div className="favicon">
-            <div className="favicon-text">DREAM ON</div>
-            <div className="favicon-line">
-              <div className="favicon-line-gradient" />
+          <Link to="/">
+            <div className="favicon">
+              <div className="favicon-text">DREAM ON</div>
+              <div className="favicon-line">
+                <div className="favicon-line-gradient" />
+              </div>
             </div>
-          </div>
+          </Link>
           <div className="signup-top">
             <div className="signup-title-area">
               <div className="signup-title">회원가입</div>
               <div className="signup-subinfo">
                 <div className="already">이미 계정이 있으신가요?</div>
-                <div
-                  className="goto-login"
-                  onClick={() => alert("로그인 페이지로 이동")}
-                >
-                  로그인 하기
-                </div>
+                <Link to="/login">
+                  <div className="goto-login">로그인 하기</div>
+                </Link>
               </div>
             </div>
             <div className="signup-form-area">

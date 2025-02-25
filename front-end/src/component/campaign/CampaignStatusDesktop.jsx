@@ -1,15 +1,15 @@
-import Cookies from "js-cookie";
-import { useEffect, useRef, useState } from "react";
+import Kakaopay from "@/assets/img/kakaopay-ico.png";
 import LikeActiveImg from "@/assets/img/like-active.png";
-import CampaignDonateModal from "./CampaignDonateModal";
 import Likeimg from "@/assets/img/like.png";
+import Naverpay from "@/assets/img/naverpay.png";
+import Paypal from "@/assets/img/paypal.png";
+import Tosspay from "@/assets/img/tosspay.png";
 import useCampaignStore from "@/store/useCampaignStore";
 import usePortOneStore from "@/store/usePortOneStore";
 import useUserProfile from "@/store/useUserProfile";
-import Kakaopay from "@/assets/img/kakaopay-ico.png";
-import Paypal from "@/assets/img/paypal.png";
-import Naverpay from "@/assets/img/naverpay.png";
-import Tosspay from "@/assets/img/tosspay.png";
+import Cookies from "js-cookie";
+import { useEffect, useRef, useState } from "react";
+import CampaignDonateModal from "./CampaignDonateModal";
 
 export default function CampaignStatusDesktop() {
   const statusRef = useRef();
@@ -26,7 +26,7 @@ export default function CampaignStatusDesktop() {
   const [selectedPaymentOption, setSelectedPaymentOption] = useState("option1");
   const [selectedPresetAmount, setSelectedPresetAmount] = useState(null);
   const [customDonation, setCustomDonation] = useState("");
-  
+
   // 좋아요 여부를 관리하는 state
   const [liked, setLiked] = useState(false);
 
@@ -57,7 +57,8 @@ export default function CampaignStatusDesktop() {
   };
 
   const donate = () => {
-    const donationValue = donationAmountRef.current?.value || customDonation || 0;
+    const donationValue =
+      donationAmountRef.current?.value || customDonation || 0;
     if (donationValue === "" || donationValue <= 0) {
       alert("기부 금액을 입력해주세요.");
       return;
@@ -182,10 +183,10 @@ export default function CampaignStatusDesktop() {
       {/* 금액 정보 영역 */}
       <div className="amount-wrapper">
         <div className="current-amount">
-          {campaignStatus.accumulatedDonation}원
+          {campaignStatus.accumulatedDonation || 10041004}원
         </div>
         <div className="target-amount">
-          {campaignStatus.targetAmount}원 목표
+          {campaignStatus.targetAmount || 10041004}원 목표
         </div>
       </div>
 
@@ -206,11 +207,14 @@ export default function CampaignStatusDesktop() {
       <div className="like-and-share-wrapper">
         <div className="like-wrapper" onClick={() => like()}>
           <div className="">
-            <img src={liked ? LikeActiveImg : Likeimg} alt=""
-            style={{
-              width: "2rem",
-              height: "2rem",
-            }} />
+            <img
+              src={liked ? LikeActiveImg : Likeimg}
+              alt=""
+              style={{
+                width: "2rem",
+                height: "2rem",
+              }}
+            />
           </div>
           <div className="like-count">{campaignStatus.likeCount}</div>
         </div>

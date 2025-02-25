@@ -17,13 +17,15 @@ const CampaignContext = () => {
   const recommendRef3 = useRef(null);
 
   const { campaignStatus, writeComment, likeComment } = useCampaignStore();
-
   const { userProfile } = useUserProfile();
 
   useEffect(() => {
     // 추천 댓글 클릭 시 해당 내용이 댓글 입력하는 곳에 업데이트 되는 기능
-    const setCommentToRecommended = (recommend) => {
-      document.getElementById("comment").innerText = recommend.target.innerText;
+    const setCommentToRecommended = (e) => {
+      const commentElement = document.getElementById("comment");
+      if (commentElement) {
+        commentElement.innerText = e.target.innerText;
+      }
     };
 
     if (recommendRef1.current)
@@ -52,21 +54,19 @@ const CampaignContext = () => {
     };
   }, []);
 
-  function comment() {
-    // if (login) { // 로그인이 되었는 지 확인
-    //================================================================================================
-    // 기부할 경우에는 user_name != null 로 확인하도록 수정했습니다. loginstore 삭제
-    //================================================================================================
-    //   writeComment(campaignId, userProfile.userId, document.getElementById("comment").textContent); // 로그인이 되었다면 댓글 작성 함수 호출
-    //   alert("댓글 작성이 완료되었습니다.");
-    // }
-    // else alert("댓글 작성은 로그인 이후에 가능합니다."); // 로그인이 되지 않았다면 alert 호출
-
-    writeComment(
-      parseInt(campaignId),
-      1,
-      document.getElementById("comment").textContent
-    );
+  function comment(e) {
+    e.preventDefault();
+    // 로그인 여부 확인
+    if (userProfile && userProfile.user_name) {
+      writeComment(
+        parseInt(campaignId),
+        userProfile.userId,
+        document.getElementById("comment").textContent
+      );
+      alert("댓글 작성이 완료되었습니다.");
+    } else {
+      alert("댓글 작성은 로그인 이후에 가능합니다.");
+    }
   }
 
   function like(commentId) {
@@ -86,7 +86,7 @@ const CampaignContext = () => {
       <div className="donation-overview">
         <div className="overview-text">
           <b>드림온</b> 외 <b>{campaignStatus.donorCount}</b>명의 이름으로{" "}
-          <b> {campaignStatus.accumulatedDonation}</b>원을 지원합니다.
+          <b>{campaignStatus.accumulatedDonation}</b>원을 지원합니다.
         </div>
       </div>
       <div className="fundraising-period">
@@ -136,18 +136,12 @@ const CampaignContext = () => {
               contentEditable
               data-text="댓글 남기기"
             />
-            <div
-              className="comment-btn"
-              onClick={() => {
-                event.preventDefault();
-                comment();
-              }}
-            >
+            <div className="comment-btn" onClick={(e) => comment(e)}>
               댓글 작성
             </div>
           </div>
           <div className="comment-recommend-wrapper">
-            {/* 버튼 클릭 시 댓글의 내용을 클릭한 버튼의 텍스트로 변경 setCommentToRecommended(this.innerText) */}
+            {/* 버튼 클릭 시 해당 텍스트가 댓글 입력란에 업데이트 됩니다 */}
             <div
               id="recommend-1"
               className="comment-recommend"
@@ -178,48 +172,43 @@ const CampaignContext = () => {
           <div className="comment-list-wrapper">
             <div className="comment-list">
               {
-                campaignStatus.commentList.length > 0 // 댓글이 달렸는 지 확인
-                  ? campaignStatus.commentList.map(
-                      (
-                        comment,
-                        index // 달린 댓글이 있다면 댓글 목록 출력
-                      ) => (
-                        <div className="comment-wrapper" key={index}>
-                          <div className="comment-img-wrapper">
-                            <div
-                              className="user-img"
-                              style={{
-                                backgroundImage:
-                                  "url(/src/assets/img/" +
-                                  comment.profileImage +
-                                  ")",
-                              }}
-                            />
-                            <div className="comment-content-wrapper">
-                              <div className="comment-name">
-                                {comment.userName}
-                              </div>
-                              <div className="comment-content">
-                                {comment.comment}
-                              </div>
+                campaignStatus.commentList.length > 0
+                  ? campaignStatus.commentList.map((comment, index) => (
+                      <div className="comment-wrapper" key={index}>
+                        <div className="comment-img-wrapper">
+                          <div
+                            className="user-img"
+                            style={{
+                              backgroundImage:
+                                "url(/src/assets/img/" +
+                                comment.profileImage +
+                                ")",
+                            }}
+                          />
+                          <div className="comment-content-wrapper">
+                            <div className="comment-name">
+                              {comment.userName}
                             </div>
-                          </div>
-                          <div className="comment-info-wrapper">
-                            <div
-                              className="comment-like-wrapper"
-                              onClick={() => like(comment.commentId)}
-                            >
-                              <div className="comment-like-img" />
-                              {comment.likeCount}
-                            </div>
-                            <div className="comment-post-date">
-                              {comment.postDate}
+                            <div className="comment-content">
+                              {comment.comment}
                             </div>
                           </div>
                         </div>
-                      )
-                    )
-                  : "" /* 달린 댓글이 없다면 아무것도 출력하지 않음 */
+                        <div className="comment-info-wrapper">
+                          <div
+                            className="comment-like-wrapper"
+                            onClick={() => like(comment.commentId)}
+                          >
+                            <div className="comment-like-img" />
+                            {comment.likeCount}
+                          </div>
+                          <div className="comment-post-date">
+                            {comment.postDate}
+                          </div>
+                        </div>
+                      </div>
+                    ))
+                  : "" /* 댓글이 없으면 아무것도 출력하지 않음 */
               }
             </div>
           </div>
