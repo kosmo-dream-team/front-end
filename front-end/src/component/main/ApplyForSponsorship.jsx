@@ -1,8 +1,9 @@
+import donationBox from "@/assets/img/donation-box.svg";
+import "@/style/scss/style.scss";
 import { Link } from "react-router-dom"; // lucide-react 대신 react-router-dom에서 가져오기
-import donationBox from "../../assets/img/donation-box.svg";
-import "../../style/scss/style.scss";
 
-const Card5 = () => {
+//후원 받기 신청(수혜자만 가능)
+const ApplyForSponsorship = () => {
   return (
     <div className="donation-suggestion">
       {/* 그라데이션 오버레이 */}
@@ -38,4 +39,4 @@ const Card5 = () => {
   );
 };
 
-export default Card5;
+export default ApplyForSponsorship;

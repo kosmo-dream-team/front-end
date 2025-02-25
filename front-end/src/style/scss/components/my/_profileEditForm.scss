@@ -52,3 +52,16 @@
   padding: 1rem 2.5rem;
   @include mixin.no-link-style;
 }
+.myinfo-edit-submit {
+  margin-left: 3rem;
+  width: 10rem;
+
+  height: 4rem;
+  color: white;
+
+  background-color: #ff9191;
+  border: white 0.1rem solid;
+  :active {
+    border: blueviolet 0.1rem solid;
+  }
+}

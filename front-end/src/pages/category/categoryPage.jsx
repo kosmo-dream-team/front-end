@@ -38,7 +38,6 @@ function CategoryPage() {
             </div>
           </div>
           <div className="layout__right-panel">
-            <div className="categories-container"></div>
             <Categories
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}

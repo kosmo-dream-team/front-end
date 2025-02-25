@@ -1,6 +1,7 @@
 import "@/style/scss/style.scss";
 
-const Card2 = () => {
+//후원 소감 - 미수정(하드코딩)
+const DonorReview = () => {
   return (
     <div className="review-card">
       <div className="review-card__header">따뜻한 후기</div>
@@ -45,4 +46,4 @@ const Card2 = () => {
   );
 };
 
-export default Card2;
+export default DonorReview;

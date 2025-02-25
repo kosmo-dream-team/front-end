@@ -1,74 +1,69 @@
-import Cookies from "js-cookie";
-import { useEffect, useRef, useState } from "react";
-
-import CampaignDonateModal from "./CampaignDonateModal";
-
+import Kakaopay from "@/assets/img/kakaopay-ico.png";
+import LikeActiveImg from "@/assets/img/like-active.png";
+import Likeimg from "@/assets/img/like.png";
+import Naverpay from "@/assets/img/naverpay.png";
+import Paypal from "@/assets/img/paypal.png";
+import Tosspay from "@/assets/img/tosspay.png";
 import useCampaignStore from "@/store/useCampaignStore";
 import usePortOneStore from "@/store/usePortOneStore";
 import useUserProfile from "@/store/useUserProfile";
+import Cookies from "js-cookie";
+import { useEffect, useRef, useState } from "react";
+import CampaignDonateModal from "./CampaignDonateModal";
 
 export default function CampaignStatusDesktop() {
-  const statusRef = useRef(); // 최초 좌표를 가져오기 위한 useRef
-  const [defaultY, setDefaultY] = useState(0); // 최초 좌표 값 저장
-  const [scrollY, setScrollY] = useState(0); // 스크롤 한 Y좌표 저장
+  const statusRef = useRef();
+  const [defaultY, setDefaultY] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   const [modalOpen, setModalOpen] = useState(false);
   const donationAmountRef = useRef();
   const [preventFirstRender, setPreventFirstRender] = useState(true);
-  const [selectPG, setSelectPG] = useState("kakaopay"); // PG사 선택
+  // selectPG: 선택된 PG 채널 (예: "kakaopay", "tosspay", "payco", "nicepay")
+  const [selectPG, setSelectPG] = useState("kakaopay");
+
+  // 추가된 결제 옵션/금액 관련 state
+  const [selectedPaymentOption, setSelectedPaymentOption] = useState("option1");
+  const [selectedPresetAmount, setSelectedPresetAmount] = useState(null);
+  const [customDonation, setCustomDonation] = useState("");
+
+  // 좋아요 여부를 관리하는 state
+  const [liked, setLiked] = useState(false);
 
   const { campaignStatus, donateCampaign, likeCampaign, shareCampaign } =
     useCampaignStore();
   const { initInfo, paymentInfo, setPaymentInfo } = usePortOneStore();
-
   const { userProfile } = useUserProfile();
 
   useEffect(() => {
-    // 최초 좌표 값 가져오기
     setDefaultY(statusRef.current.offsetTop);
-
-    // 스크롤이 될 때 마다 기본 좌표 + 스크롤 된 좌표를 계산하는 함수를 스크롤 이벤트에 할당
     window.addEventListener("scroll", handleScroll);
 
-    // 포트원 결제 API SDK 추가
-    const script = document.createElement("script"); // 스크립트 태그 생성
-    script.src = "https://cdn.iamport.kr/v1/iamport.js"; // 생성한 태그의 src 값 설정
-    document.head.appendChild(script); // <head> 태그의 자식으로 생성한 <script> 태그 추가
+    const script = document.createElement("script");
+    script.src = "https://cdn.iamport.kr/v1/iamport.js";
+    document.head.appendChild(script);
     script.onload = () => {
       console.log("포트원 스크립트 동적 생성 완료!");
-    }; // 태그가 정상적으로 추가되었는 지 확인을 위한 로그
+    };
 
     return () => {
-      window.removeEventListener("scroll", handleScroll); // 스크롤 이벤트 리스너 삭제
-      script.remove(); // 동적 생성한 포트원 스크립트 삭제
+      window.removeEventListener("scroll", handleScroll);
+      script.remove();
     };
   }, []);
 
-  // state로 스크롤 된 y 값을 바꾸면 기본 좌표 + 스크롤 된 좌표(0 ~ ???)값을 더해 위치가 자동 변경된다.
   const handleScroll = () => {
     setScrollY(window.scrollY);
   };
 
-  // 포트원 결제 설정 함수
   const donate = () => {
-    // if (!login) { // 로그인이 되었는 지 확인
-    //================================================================================================
-    // 기부할 경우에는 user_name != null 로 확인하도록 수정했습니다. loginstore 삭제
-    //================================================================================================
-    //   alert("댓글 작성은 로그인 이후에 가능합니다.");
-    //   return;
-    // }
-
-    // 1. 입력된 기부 금액 값이 없다면 return 처리
-    if (
-      donationAmountRef.current.value == "" ||
-      donationAmountRef.current.value <= 0
-    ) {
+    const donationValue =
+      donationAmountRef.current?.value || customDonation || 0;
+    if (donationValue === "" || donationValue <= 0) {
       alert("기부 금액을 입력해주세요.");
       return;
     }
 
-    // 2. PG사 설정
     let channelKey;
     let pg;
     switch (selectPG) {
@@ -76,66 +71,60 @@ export default function CampaignStatusDesktop() {
         channelKey = "channel-key-ee27fa89-f49b-414d-81e5-b8f57e614c5e";
         pg = "kakaopay";
         break;
+      case "tosspay":
+        channelKey = "channel-key-890a0a6b-7bb2-4a13-824b-99e302e1c804";
+        pg = "tosspay";
+        break;
+      case "payco":
+        channelKey = "channel-key-1abd4115-b089-4ba7-93ed-8c241f899b8f";
+        pg = "payco";
+        break;
       case "nicepay":
         channelKey = "channel-key-74aa624f-f796-475a-b37f-532b6cc04b7e";
         pg = "nice_v2";
         break;
+      default:
+        break;
     }
 
-    // 3. 결제 요청할 값 설정
-    const timestamp = Date.now(); // 항상 유니크해야하는 merchant_uid를 위해 타임스탬프 생성
-
+    const timestamp = Date.now();
     setPaymentInfo({
       channelKey: channelKey,
       merchant_uid: `donate-${timestamp}`,
       name: campaignStatus.title,
-      amount: parseInt(donationAmountRef.current.value),
+      amount: parseInt(donationValue),
       pg: pg,
     });
   };
 
   useEffect(() => {
-    // setPaymentInfo 함수가 값을 바꾼 이후 결제가 이루어져야 해서 paymentInfo의 변화를 추적
     if (preventFirstRender) {
-      // 첫 번째 값 변경(페이지 렌더링)일 경우는 실행하지 않게 처리
-      setPreventFirstRender(false); // 이후의 paymentInfo 변경은 값 입력 후 기부 버튼이 클릭되는 것이므로 false 처리
+      setPreventFirstRender(false);
       return;
     }
-
-    // 포트원 SDK 초기화
-    const { IMP } = window; // 동적으로 추가한 스크립트 처리
-    IMP.init(initInfo.impKey); // store에서 키 값을 가져와 포트원 SDK 초기화(※ 두 번 이상 호출 금지 ※)
-
-    // 결제 요청
+    const { IMP } = window;
+    IMP.init(initInfo.impKey);
     IMP.request_pay(paymentInfo, (rsp) => {
-      // callback 함수
       if (rsp.success) {
-        // 결제 성공 시
         console.log("결제 성공!");
-        // donateCampaign(campaignStatus.projectId, userProfile.userId, parseInt(donationAmountRef.current.value), "card");
         donateCampaign(
           campaignStatus.projectId,
           1,
-          parseInt(donationAmountRef.current.value),
+          parseInt(donationAmountRef.current.value || customDonation),
           "card"
         );
       } else {
-        // 결제 실패 시
         console.log("결제 실패!");
       }
     });
   }, [paymentInfo]);
 
   const like = () => {
-    // if (!login) { // 로그인이 되었는 지 확인
-    //   alert("좋아요는 로그인 이후에 가능합니다.");
-    //   return;
-    // }
-    if (Cookies.get("like")) {
+    if (liked) {
       alert("이미 좋아요를 누르신 캠페인입니다.");
     } else {
-      console.log("좋아요 함수");
       likeCampaign(campaignStatus.projectId);
+      setLiked(true);
       Cookies.set("like", "true", { expires: 1 });
     }
   };
@@ -154,13 +143,25 @@ export default function CampaignStatusDesktop() {
     setSelectPG(event.target.value);
   };
 
+  // 프리셋 금액 선택 함수
+  const handlePresetAmount = (amount) => {
+    setSelectedPresetAmount(amount);
+    setCustomDonation(amount);
+    if (donationAmountRef.current) {
+      donationAmountRef.current.value = amount;
+    }
+  };
+
   return (
     <div
       className="campaign-desktop"
       ref={statusRef}
       style={{ top: `${defaultY + scrollY}px` }}
     >
+      {/* 캠페인 제목 */}
       <div className="campaign-title">{campaignStatus.title}</div>
+
+      {/* 진행률 표시 영역 */}
       <div className="progress-wrapper">
         <div className="progress-text-wrapper">
           <div className="progress-percent">{campaignStatus.donationRate}%</div>
@@ -178,14 +179,18 @@ export default function CampaignStatusDesktop() {
           />
         </div>
       </div>
+
+      {/* 금액 정보 영역 */}
       <div className="amount-wrapper">
         <div className="current-amount">
-          {campaignStatus.accumulatedDonation}원
+          {campaignStatus.accumulatedDonation || 10041004}원
         </div>
         <div className="target-amount">
-          {campaignStatus.targetAmount}원 목표
+          {campaignStatus.targetAmount || 10041004}원 목표
         </div>
       </div>
+
+      {/* 혜택 및 모금 전달 안내 */}
       <div className="info-wrapper">
         <p className="list-header">세제 혜택 안내</p>
         <ul className="info-list">
@@ -197,9 +202,20 @@ export default function CampaignStatusDesktop() {
           <li>모금 종료시 전액 일시 전달</li>
         </ul>
       </div>
+
+      {/* 좋아요 및 공유 영역 */}
       <div className="like-and-share-wrapper">
         <div className="like-wrapper" onClick={() => like()}>
-          <div className="like-img"></div>
+          <div className="">
+            <img
+              src={liked ? LikeActiveImg : Likeimg}
+              alt=""
+              style={{
+                width: "2rem",
+                height: "2rem",
+              }}
+            />
+          </div>
           <div className="like-count">{campaignStatus.likeCount}</div>
         </div>
         <div className="vertical-divider"></div>
@@ -215,28 +231,150 @@ export default function CampaignStatusDesktop() {
           <div className="share-count">{campaignStatus.shareCount}</div>
         </div>
       </div>
+
+      {/* 기부 버튼 */}
       <div className="donate-btn" onClick={() => setModalOpen(true)}>
         기부하기
       </div>
 
+      {/* 기부/결제 모달 */}
       <CampaignDonateModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
       >
-        {/* children */}
-        <div>
-          <p>{campaignStatus.title} 캠페인에 기부하실 금액을 입력해주세요.</p>
-          <div>
-            <select value={selectPG} onChange={changePG}>
-              <option value="kakaopay">카카오페이</option>
-              <option value="nicepay">나이스페이먼츠</option>
-            </select>
-            <label htmlFor="donationAmount">기부 금액</label>
-            <input id="donationAmount" type="number" ref={donationAmountRef} />
-            <button id="donate" onClick={() => donate()}>
-              기부하기
+        <div className="payment-container">
+          {/* 결제 수단 옵션 */}
+          <div
+            className="payment-option option-1 reset-btn"
+            onClick={() => {
+              setSelectedPaymentOption("option1");
+              setSelectPG("kakaopay");
+            }}
+          >
+            <div className="option-bg option-1-bg"></div>
+            <div
+              className={`option-circle option-1-circle ${
+                selectedPaymentOption === "option1" ? "active-circle" : ""
+              }`}
+            ></div>
+            <img
+              className="option-img option-1-img"
+              src={Kakaopay}
+              alt="Kakaopay"
+            />
+          </div>
+          <div
+            className="payment-option option-2 reset-btn"
+            onClick={() => {
+              setSelectedPaymentOption("option2");
+              setSelectPG("tosspay");
+            }}
+          >
+            <div className="option-bg option-2-bg"></div>
+            <div
+              className={`option-circle option-2-circle ${
+                selectedPaymentOption === "option2" ? "active-circle" : ""
+              }`}
+            ></div>
+            <img
+              className="option-img option-2-img"
+              src={Tosspay}
+              alt="Tosspay"
+            />
+          </div>
+          <div
+            className="payment-option option-3 reset-btn"
+            onClick={() => {
+              setSelectedPaymentOption("option3");
+              setSelectPG("payco");
+            }}
+          >
+            <div className="option-bg option-3-bg"></div>
+            <div
+              className={`option-circle option-3-circle ${
+                selectedPaymentOption === "option3" ? "active-circle" : ""
+              }`}
+            ></div>
+            <img
+              className="option-img option-3-img"
+              src={Naverpay}
+              alt="Payco"
+            />
+          </div>
+          <div
+            className="payment-option option-4 reset-btn"
+            onClick={() => {
+              setSelectedPaymentOption("option4");
+              setSelectPG("nicepay");
+            }}
+          >
+            <div className="option-bg option-4-bg"></div>
+            <img
+              className="option-img option-4-img"
+              src={Paypal}
+              alt="Nicepay"
+            />
+            <div
+              className={`option-circle option-4-circle ${
+                selectedPaymentOption === "option4" ? "active-circle" : ""
+              }`}
+            ></div>
+          </div>
+          <div className="payment-title">결제 수단을 선택해주세요</div>
+
+          {/* 프리셋 금액 선택 버튼 */}
+          <div
+            className={`payment-amount payment-amount-3000 ${
+              selectedPresetAmount === 3000 ? "active-amount" : ""
+            }`}
+          >
+            <button
+              className="amount-value"
+              onClick={() => handlePresetAmount(3000)}
+            >
+              <span className="amount-number">3000</span>
+              <span className="amount-currency">원</span>
             </button>
           </div>
+          <div
+            className={`payment-amount payment-amount-5000 ${
+              selectedPresetAmount === 5000 ? "active-amount" : ""
+            }`}
+          >
+            <button
+              className="amount-value"
+              onClick={() => handlePresetAmount(5000)}
+            >
+              <span className="amount-number">5000</span>
+              <span className="amount-currency">원</span>
+            </button>
+          </div>
+          <div
+            className={`payment-amount payment-amount-10000 ${
+              selectedPresetAmount === 10000 ? "active-amount" : ""
+            }`}
+          >
+            <button
+              className="amount-value"
+              onClick={() => handlePresetAmount(10000)}
+            >
+              <span className="amount-number">10000</span>
+              <span className="amount-currency">원</span>
+            </button>
+          </div>
+          <div className="input-title">결제할 금액을 입력해주세요</div>
+          <input
+            type="number"
+            className="input-box"
+            id="donationAmount"
+            ref={donationAmountRef}
+            value={customDonation}
+            onChange={(e) => setCustomDonation(e.target.value)}
+          />
+          <div className="input-label">금액 직접 입력하기</div>
+          <button className="submit-button-bg" onClick={() => donate()}>
+            결제하기
+          </button>
         </div>
       </CampaignDonateModal>
     </div>

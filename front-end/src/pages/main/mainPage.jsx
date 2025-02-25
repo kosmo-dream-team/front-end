@@ -1,15 +1,16 @@
 import MainBanner from "@/assets/img/main-banner1.png";
 import Footer from "@/component/common/footer/Footer";
 import Navbar from "@/component/common/navbar/Navbar";
-import Card2 from "@/component/main/Card2";
-import Card4 from "@/component/main/card4";
-import Card5 from "@/component/main/Card5";
+import ApplyForSponsorship from "@/component/main/ApplyForSponsorship";
+import DonorReview from "@/component/main/DonorReview";
 import MainCampaignList from "@/component/main/MainCampaignList";
 import MainCategory from "@/component/main/MainCategory";
 import NewCampagin from "@/component/main/NewCampagin";
 import PopularCampaign from "@/component/main/PopularCampaign";
+import SocialLink from "@/component/main/SocialLink";
 import TotalDonation from "@/component/main/TotalDonation";
 import "@/style/scss/style.scss";
+import { Link } from "react-router-dom";
 function MainPage() {
   return (
     <div
@@ -47,10 +48,12 @@ function MainPage() {
         <div className="layout__right-panel">
           <div className="layout__first-section">
             <div className="layout__total-donation">
-              <TotalDonation />
+              <Link to="/pages/stats">
+                <TotalDonation />
+              </Link>
             </div>
             <div className="layout__donation-review">
-              <Card2 />
+              <DonorReview />
             </div>
           </div>
 
@@ -58,11 +61,11 @@ function MainPage() {
             <NewCampagin />
           </div>
           <div className="layout__social-link">
-            <Card4 />
+            <SocialLink />
           </div>
 
           <div className="layout__receive-donation">
-            <Card5 />
+            <ApplyForSponsorship />
           </div>
         </div>
       </div>
