@@ -72,17 +72,17 @@ export default function CampaignStatusDesktop() {
         pg = "kakaopay";
         break;
       case "tosspay":
-        channelKey = "channel-key-890a0a6b-7bb2-4a13-824b-99e302e1c804";
+        channelKey = "channel-key-b8e410ae-a2d8-4caa-9e93-5d0a1edfb1bb";
         pg = "tosspay";
         break;
-      case "payco":
-        channelKey = "channel-key-1abd4115-b089-4ba7-93ed-8c241f899b8f";
-        pg = "payco";
-        break;
-      case "nicepay":
-        channelKey = "channel-key-74aa624f-f796-475a-b37f-532b6cc04b7e";
-        pg = "nice_v2";
-        break;
+      // case "payco":
+      //   channelKey = "channel-key-1abd4115-b089-4ba7-93ed-8c241f899b8f";
+      //   pg = "payco";
+      //   break;
+      // case "nicepay":
+      //   channelKey = "channel-key-74aa624f-f796-475a-b37f-532b6cc04b7e";
+      //   pg = "nice_v2";
+      //   break;
       default:
         break;
     }
@@ -137,10 +137,6 @@ export default function CampaignStatusDesktop() {
     } catch (error) {
       alert("복사에 실패했습니다!", error);
     }
-  };
-
-  const changePG = (event) => {
-    setSelectPG(event.target.value);
   };
 
   // 프리셋 금액 선택 함수
@@ -282,7 +278,7 @@ export default function CampaignStatusDesktop() {
               alt="Tosspay"
             />
           </div>
-          <div
+          {/* <div
             className="payment-option option-3 reset-btn"
             onClick={() => {
               setSelectedPaymentOption("option3");
@@ -319,7 +315,7 @@ export default function CampaignStatusDesktop() {
                 selectedPaymentOption === "option4" ? "active-circle" : ""
               }`}
             ></div>
-          </div>
+          </div> */}
           <div className="payment-title">결제 수단을 선택해주세요</div>
 
           {/* 프리셋 금액 선택 버튼 */}
