@@ -32,11 +32,11 @@ export default function Signup() {
     }
   }
 
-  // googleUser는 쿼리 파라미터가 있으면 그 값을, 없으면 빈 객체 사용
+  // 쿼리 파라미터가 있으면 그 값을, 없으면 빈 객체 사용
   const googleUser =
     Object.keys(googleUserFromQuery).length > 0 ? googleUserFromQuery : {};
 
-  // 초기 formData 설정 : 구글 로그인 정보를 받으면 해당 값이 자동 채워짐
+  // 구글 로그인 정보를 받으면 해당 값이 자동 채워짐
   const [formData, setFormData] = useState({
     email: googleUser.email || "",
     user_name: googleUser.name || "",
@@ -53,7 +53,7 @@ export default function Signup() {
     setImages([sign01, sign02, sign03, sign04]);
   }, [setImages]);
 
-  // location.search가 바뀔 경우 폼 데이터 업데이트 (옵션)
+  // location.search가 바뀔 경우 폼 데이터 업데이트
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const param = params.get("googleUser");
@@ -77,11 +77,11 @@ export default function Signup() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  // 가입하기 버튼 클릭 시 API 호출하는 함수
+  // 가입하기 버튼 클릭 시 API 호출
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 필수 항목 검증
+    //필수 항목 검증
     if (
       !formData.email ||
       !formData.user_name ||
@@ -105,8 +105,8 @@ export default function Signup() {
         "http://localhost:8586/api/signup",
         submitData
       );
-      console.log("API 호출 성공:", response.data);
-      console.log("보내진 데이터:", submitData);
+      // console.log("API 호출 성공:", response.data);
+      // console.log("보내진 데이터:", submitData);
       if (response.data.success === true) {
         alert("회원가입이 완료되었습니다. 다시 로그인 해주세요.");
         navigate("/");
