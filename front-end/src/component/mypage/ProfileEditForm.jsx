@@ -5,20 +5,18 @@ import "../../style/scss/style.scss";
 export default function ProfileEditForm() {
   const { profile, updateProfile, isLoading, error } = useUserProfile();
 
-  // 편집 여부 관리 (비밀번호 포함)
+  // 편집 여부 관리 (비밀번호 관련 속성 제거)
   const [editing, setEditing] = useState({
     user_name: false,
     phone: false,
     email: false,
     gender: false,
-    password_hash: false, // 비밀번호도 편집 여부 추가
   });
 
-  // 폼 데이터 관리
+  // 폼 데이터 관리 (비밀번호 관련 필드 제거)
   const [formData, setFormData] = useState({
     user_id: "",
     user_name: "",
-    password_hash: "", // 기본값 비워둠
     phone: "",
     email: "",
     gender: "",
@@ -30,7 +28,6 @@ export default function ProfileEditForm() {
       setFormData({
         user_id: profile.user_id || "",
         user_name: profile.user_name || "",
-        password_hash: "", // 비밀번호는 항상 비워두기
         phone: profile.phone || "",
         email: profile.email || "",
         gender: profile.gender || "",
@@ -49,9 +46,6 @@ export default function ProfileEditForm() {
   // 편집 토글 핸들러
   const handleEditToggle = (field) => {
     setEditing((prev) => ({ ...prev, [field]: !prev[field] }));
-    if (field === "password_hash" && !editing.password_hash) {
-      setFormData((prev) => ({ ...prev, password_hash: "" })); // 비밀번호 필드 초기화
-    }
   };
 
   // 저장하기 버튼 클릭 시 업데이트
@@ -65,12 +59,8 @@ export default function ProfileEditForm() {
       phone: false,
       email: false,
       gender: false,
-      password_hash: false,
     });
 
-    // 비밀번호 필드는 저장 후 초기화
-
-    setFormData((prev) => ({ ...prev, password_hash: "" }));
     window.onload();
   };
 
@@ -163,29 +153,6 @@ export default function ProfileEditForm() {
             type="button"
             className="myinfo-edit"
             onClick={() => handleEditToggle("gender")}
-          >
-            변경
-          </button>
-        </div>
-      </div>
-      <div className="border--dotted" />
-
-      {/* 비밀번호 변경 */}
-      <div className="mypage-myinfo__container">
-        <div className="mypage-myinfo__list-wrapper">
-          <p className="myinfo-title">비밀번호 변경</p>
-          <input
-            className="myinfo-value"
-            type="password"
-            value={formData.password_hash}
-            readOnly={!editing.password_hash}
-            onChange={(e) => handleChange("password_hash", e.target.value)}
-            placeholder="변경할 비밀번호 입력"
-          />
-          <button
-            type="button"
-            className="myinfo-edit"
-            onClick={() => handleEditToggle("password_hash")}
           >
             변경
           </button>
