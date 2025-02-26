@@ -4,6 +4,21 @@ import "@/style/scss/style.scss";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+const IMAGE_BASE_URL = "http://localhost:8586/images/";
+const supportedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
+
+// 이미지가 파일명 형태이면 기본 경로를 붙여 전체 URL로 반환하는 함수
+const getImageUrl = (image) => {
+  if (
+    typeof image === "string" &&
+    supportedExtensions.some((ext) => image.toLowerCase().endsWith(ext)) &&
+    !image.startsWith("http")
+  ) {
+    return IMAGE_BASE_URL + image;
+  }
+  return image;
+};
+
 export default function MainCampaignList() {
   // Zustand 스토어에서 state와 함수를 가져옴
   const { campaignList, fetchCampaignList } = useTopCampaginListStore();
@@ -34,7 +49,11 @@ export default function MainCampaignList() {
             className="layout__main-campaign-list__content"
             // API에서 받아온 이미지 URL 사용 (없으면 기본 이미지 baby1 사용)
             style={{
-              backgroundImage: `url(${campaign.project_image || baby1})`,
+              backgroundImage: `url(${
+                campaign.project_image
+                  ? getImageUrl(campaign.project_image)
+                  : baby1
+              })`,
             }}
           >
             <div className="main-campaign-list__title">

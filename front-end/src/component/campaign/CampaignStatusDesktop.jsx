@@ -1,8 +1,6 @@
 import Kakaopay from "@/assets/img/kakaopay-ico.png";
 import LikeActiveImg from "@/assets/img/like-active.png";
 import Likeimg from "@/assets/img/like.png";
-import Naverpay from "@/assets/img/naverpay.png";
-import Paypal from "@/assets/img/paypal.png";
 import Tosspay from "@/assets/img/tosspay.png";
 import useCampaignStore from "@/store/useCampaignStore";
 import usePortOneStore from "@/store/usePortOneStore";
@@ -158,9 +156,6 @@ export default function CampaignStatusDesktop() {
       ref={statusRef}
       style={{ top: `${defaultY + scrollY}px` }}
     >
-      {/* 캠페인 제목 */}
-      <div className="campaign-title">{campaignStatus.title}</div>
-
       {/* 진행률 표시 영역 */}
       <div className="progress-wrapper">
         <div className="progress-text-wrapper">
@@ -244,25 +239,7 @@ export default function CampaignStatusDesktop() {
       >
         <div className="payment-container">
           {/* 결제 수단 옵션 */}
-          <div
-            className="payment-option option-1 reset-btn"
-            onClick={() => {
-              setSelectedPaymentOption("option1");
-              setSelectPG("kakaopay");
-            }}
-          >
-            <div className="option-bg option-1-bg"></div>
-            <div
-              className={`option-circle option-1-circle ${
-                selectedPaymentOption === "option1" ? "active-circle" : ""
-              }`}
-            ></div>
-            <img
-              className="option-img option-1-img"
-              src={Kakaopay}
-              alt="Kakaopay"
-            />
-          </div>
+
           <div
             className="payment-option option-2 reset-btn"
             onClick={() => {
@@ -283,36 +260,17 @@ export default function CampaignStatusDesktop() {
             />
           </div>
           <div
-            className="payment-option option-3 reset-btn"
-            onClick={() => {
-              setSelectedPaymentOption("option3");
-              setSelectPG("payco");
-            }}
-          >
-            <div className="option-bg option-3-bg"></div>
-            <div
-              className={`option-circle option-3-circle ${
-                selectedPaymentOption === "option3" ? "active-circle" : ""
-              }`}
-            ></div>
-            <img
-              className="option-img option-3-img"
-              src={Naverpay}
-              alt="Payco"
-            />
-          </div>
-          <div
             className="payment-option option-4 reset-btn"
             onClick={() => {
-              setSelectedPaymentOption("option4");
-              setSelectPG("nicepay");
+              setSelectedPaymentOption("option4"); // "option1"에서 "option4"로 수정
+              setSelectPG("kakaopay");
             }}
           >
             <div className="option-bg option-4-bg"></div>
             <img
               className="option-img option-4-img"
-              src={Paypal}
-              alt="Nicepay"
+              src={Kakaopay}
+              alt="Kakaopay" // alt 텍스트 수정
             />
             <div
               className={`option-circle option-4-circle ${
@@ -320,8 +278,8 @@ export default function CampaignStatusDesktop() {
               }`}
             ></div>
           </div>
-          <div className="payment-title">결제 수단을 선택해주세요</div>
 
+          <div className="payment-title">결제 수단을 선택해주세요</div>
           {/* 프리셋 금액 선택 버튼 */}
           <div
             className={`payment-amount payment-amount-3000 ${

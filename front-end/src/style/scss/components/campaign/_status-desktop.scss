@@ -5,25 +5,14 @@
   width: 22.5rem;
   height: 29.4375rem;
   border-radius: 0.625rem;
+  top: -1px;
   border: 1px solid #cbcbcb;
   background: #fff;
 }
 .campaign-title {
-  display: flex;
-  width: 14.59006rem;
-  height: 1.5625rem;
-  margin-left: 1.3rem;
-  margin-top: 1.94rem;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-  color: #242424;
-  font-family: "Noto Sans KR";
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.5625rem; /* 138.889% */
-  letter-spacing: -0.0625rem;
+  position: absolute;
+  top: 50%;
+  left: 0%;
 }
 .progress-wrapper {
   display: flex;

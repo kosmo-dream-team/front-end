@@ -1,4 +1,5 @@
 import CategoryAll from "@/assets/img/category-all.svg";
+import CategoryAnimal from "@/assets/img/category-animal.svg";
 import CategoryBaby from "@/assets/img/category-baby.svg";
 import CategoryDisabled from "@/assets/img/category-disabled.svg";
 import CategoryEnvironment from "@/assets/img/category-environment.svg";
@@ -10,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const categories = [
   { icon: CategoryBaby, label: "아동" },
-  { icon: CategoryDisabled, label: "동물" },
+  { icon: CategoryAnimal, label: "동물" },
   { icon: CategoryEnvironment, label: "환경" },
   { icon: CategoryDisabled, label: "장애인" },
   { icon: CategoryGlobal, label: "지구촌" },

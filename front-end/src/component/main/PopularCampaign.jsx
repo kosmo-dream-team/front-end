@@ -3,6 +3,21 @@ import "@/style/scss/style.scss";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+const IMAGE_BASE_URL = "http://localhost:8586/images/";
+const supportedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
+
+// 이미지가 파일명 형태이면 기본 경로를 붙여 전체 URL로 반환하는 함수
+const getImageUrl = (image) => {
+  if (
+    typeof image === "string" &&
+    supportedExtensions.some((ext) => image.toLowerCase().endsWith(ext)) &&
+    !image.startsWith("http")
+  ) {
+    return IMAGE_BASE_URL + image;
+  }
+  return image;
+};
+
 export default function PopularCampaign() {
   // Zustand 스토어에서 state와 함수를 가져옴
   const { campaignList, fetchCampaignList } = useTopCampaginListStore();
@@ -41,7 +56,7 @@ export default function PopularCampaign() {
               <img
                 className="popular-campaign__item-img"
                 src={
-                  campaign.project_image ||
+                  getImageUrl(campaign.project_image) ||
                   "https://via.placeholder.com/200x137"
                 }
                 alt="캠페인 이미지"

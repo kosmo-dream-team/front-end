@@ -1,19 +1,25 @@
-import "@/style/scss/style.scss";
-
+import DefaultUserImg from "@/assets/img/default-user-img.svg";
 import useCampaignStore from "@/store/useCampaignStore";
+import "@/style/scss/style.scss";
+const IMAGE_BASE_URL = "http://localhost:8586/images/";
+const supportedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
+
+const getImageUrl = (image) => {
+  if (
+    typeof image === "string" &&
+    supportedExtensions.some((ext) => image.toLowerCase().endsWith(ext)) &&
+    !image.startsWith("http")
+  ) {
+    return IMAGE_BASE_URL + image;
+  }
+  return image;
+};
 
 const CampaignProfile = () => {
   const { campaignStatus } = useCampaignStore();
 
   return (
     <div className="profile">
-      {/* <div
-        className="profile-img"
-        style={{
-          backgroundImage:
-            "url(" + `/src/assets/img/${campaignStatus.projectImage}` + ")",
-        }}
-      > */}
       <div className="campaign-info">
         <div
           className="applicant-info"
@@ -21,14 +27,32 @@ const CampaignProfile = () => {
             position: "relative",
           }}
         >
+          <div
+            className="campaign-title"
+            style={{
+              fontSize: "2rem",
+              width: "50rem",
+              textAlign: "left",
+              marginLeft: "3rem",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            {campaignStatus.title ?? "병원비 걱정없이 치료받고 싶어요."}
+          </div>
           <img
             className="applicant-img"
-            src={campaignStatus.applicantImage}
+            src={campaignStatus.projectImage}
             alt="배경 이미지"
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
           />
+          {/* 캠페인 제목 */}
           <img
             className="login-profile-card-img"
-            src={""}
+            src={getImageUrl(campaignStatus.applicantImage) || DefaultUserImg}
             alt="Profile"
             style={{
               position: "absolute",
@@ -39,14 +63,9 @@ const CampaignProfile = () => {
               borderStyle: "outset",
             }}
           />
-
-          <span className="applicant-name" style={{}}>
-            {campaignStatus.applicant}
-          </span>
+          <span className="applicant-name">{campaignStatus.applicant}</span>
         </div>
-        <div className="campaign-title">{campaignStatus.title}</div>
       </div>
-      {/* </div> */}
     </div>
   );
 };
