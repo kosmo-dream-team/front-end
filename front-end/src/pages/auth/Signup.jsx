@@ -234,10 +234,7 @@ export default function Signup() {
                     <input type="checkbox" id="rememberMe" name="rememberMe" />
                     <label htmlFor="rememberMe">Remember me</label>
                   </div>
-                  <div
-                    className="forgot-pw"
-                    onClick={() => alert("비밀번호 찾기 페이지로 이동")}
-                  >
+                  <div className="forgot-pw" onClick={() => alert("미구현")}>
                     <a href="/find-password">비밀번호를 잊으셨나요?</a>
                   </div>
                 </div>

@@ -63,17 +63,17 @@ const NewCampagin = () => {
                   <div className="campaign-item__details">
                     <div className="campaign-item__title">{campaign.title}</div>
                     <div className="campaign-item__sponsor">
-                      {campaign.user_id}
+                      {campaign.user_name}
                     </div>
                     <div className="campaign-item__progress-bg">
                       <div
                         className="campaign-item__progress-bar"
-                        style={{ width: `${campaign.progresS || 0}%` }}
+                        style={{ width: `${campaign.progress || 0}%` }}
                       />
                     </div>
                     <div className="new-campaign-item">
                       <div className="campaign-item__donation-percent">
-                        {campaign.progresS || 0}%
+                        {campaign.progress || 0}%
                       </div>
                       <div className="campaign-item__donation-amount">
                         <span>

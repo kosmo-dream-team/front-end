@@ -29,7 +29,7 @@ const useUserProfile = create((set, get) => ({
   setProfile: (newProfile) => {
     set({ profile: newProfile });
     Cookies.set("userProfile", JSON.stringify(newProfile), {
-      expires: 7,
+      expires: 1,
       path: "/",
     });
     console.log("프로필과 쿠키에 저장된 정보:", newProfile);

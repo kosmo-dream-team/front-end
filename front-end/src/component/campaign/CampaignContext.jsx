@@ -31,7 +31,8 @@ const CampaignContext = () => {
   const recommendRef2 = useRef(null);
   const recommendRef3 = useRef(null);
 
-  const { campaignStatus, fetchCampaignStatus, writeComment, likeComment } = useCampaignStore();
+  const { campaignStatus, fetchCampaignStatus, writeComment, likeComment } =
+    useCampaignStore();
   // 수정: userProfile 대신 스토어의 profile 속성을 가져옵니다.
   const { profile } = useUserProfile();
 
@@ -72,22 +73,26 @@ const CampaignContext = () => {
 
   function comment(e) {
     e.preventDefault();
-    // 로그인 여부 확인 (profile 사용)
+    //로그인 여부 확인 (profile 사용)
     if (profile && profile.user_name) {
-      writeComment(
-        parseInt(campaignId),
-        profile.user_id,
-        document.getElementById("comment").textContent
-      );
-      alert("댓글 작성이 완료되었습니다.");
+      const commentBox = document.getElementById("comment");
+      const commentContent = commentBox.textContent;
+      writeComment(parseInt(campaignId), profile.user_id, commentContent);
       fetchCampaignStatus(campaignId);
+      //댓글 작성 후 댓글창 초기화
+      commentBox.textContent = "";
     } else {
       alert("댓글 작성은 로그인 이후에 가능합니다.");
     }
   }
 
   function like(commentId) {
-    console.log(commentId);
+    // 로그인 상태가 아니라면 좋아요를 누를 수 없습니다.
+    if (!(profile && profile.user_name)) {
+      alert("좋아요는 로그인 이후에 가능합니다.");
+      return;
+    }
+
     if (Cookies.get(`like-comment-${commentId}`)) {
       alert("이미 좋아요를 누르신 댓글입니다.");
     } else {

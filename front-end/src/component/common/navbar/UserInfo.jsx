@@ -46,7 +46,9 @@ export default function UserInfo() {
   const { profile } = useUserProfile();
 
   // 회원 이름이 있으면 로그인 상태
-  const [isLogin, setLogin] = useState(profile.user_name !== null);
+  const [isLogin, setLogin] = useState(
+    profile.user_name !== null && profile.user_name !== ""
+  );
 
   const handleLogout = () => {
     // 로그아웃 시 상태를 false로 업데이트합니다.
