@@ -5,23 +5,18 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const SearchPage = () => {
-  // 스토어에서 캠페인 리스트와 fetch 함수를 가져옴
   const { campaignList, fetchCampaignList } = useAllCampaignListStore();
-  // 검색어 상태
   const [searchQuery, setSearchQuery] = useState("");
-  // 화면에 표시할 항목 수
   const [visibleCount, setVisibleCount] = useState(5);
-  // 정렬 옵션: 'date'(날짜순, 최신순) 또는 'popularity'(인기순)
   const [sortOption, setSortOption] = useState("date");
-  // 무한 스크롤 Sentinel을 위한 ref
   const sentinelRef = useRef(null);
 
-  // 컴포넌트 마운트 시 API 호출
+  //api 호출
   useEffect(() => {
     fetchCampaignList();
   }, [fetchCampaignList]);
 
-  // 제목 검색 및 status가 active인 데이터 필터링
+  // 제목 검색,필터링
   const filteredCampaigns = useMemo(() => {
     return campaignList.filter(
       (campaign) =>
@@ -30,7 +25,7 @@ const SearchPage = () => {
     );
   }, [campaignList, searchQuery]);
 
-  // 정렬 옵션에 따라 정렬 (날짜순: start_date 기준 내림차순, 인기순: like_count 기준 내림차순)
+  //정렬
   const sortedCampaigns = useMemo(() => {
     const campaigns = [...filteredCampaigns];
     if (sortOption === "date") {
@@ -41,7 +36,7 @@ const SearchPage = () => {
     return campaigns;
   }, [filteredCampaigns, sortOption]);
 
-  // IntersectionObserver를 이용한 무한 스크롤
+  //무한 스크롤
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

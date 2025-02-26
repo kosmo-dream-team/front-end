@@ -227,13 +227,12 @@
   background-size: contain;
 }
 .comment-content-wrapper {
+  padding: 1rem;
   width: 11.375rem;
   flex-shrink: 0;
   border-radius: 0.9375rem;
   background: #f5f5f5;
   margin-left: 0.4rem;
-  padding-top: 1rem;
-  padding-left: 1rem;
 }
 .comment-name {
   color: #5e5e5e;

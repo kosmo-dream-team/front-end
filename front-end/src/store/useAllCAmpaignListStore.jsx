@@ -29,7 +29,7 @@ const useAllCampaignListStore = create((set) => ({
       });
 
       set({ campaignList: processedCampaigns });
-      console.log("캠페인 리스트 전체 데이터", processedCampaigns);
+      // console.log("캠페인 리스트 전체 데이터", processedCampaigns);
     } catch (error) {
       console.error("Error fetching campaign list:", error);
     }

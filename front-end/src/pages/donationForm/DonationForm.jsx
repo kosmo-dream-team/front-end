@@ -3,14 +3,21 @@ import Navbar from "@/component/common/navbar/Navbar";
 import "@/style/scss/style.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // 메인 페이지로 이동하기 위해 import
+import { useNavigate } from "react-router-dom";
 import useUserProfile from "../../store/useUserProfile";
+
 const DonationForm = () => {
   // zustand 스토어에서 사용자 프로필 정보를 가져옴
   const { profile } = useUserProfile();
-
-  // 페이지 이동용 훅
   const navigate = useNavigate();
+
+  // 사용자가 "applicant" 타입이 아니면 접근 불가 처리
+  useEffect(() => {
+    if (profile && profile.user_type !== "applicant") {
+      alert("수혜자 전용 페이지입니다.");
+      navigate("/"); // 메인 페이지 등 원하는 페이지로 리다이렉트
+    }
+  }, [profile, navigate]);
 
   // 카테고리 목록 상태 추가
   const [categories, setCategories] = useState([]);
@@ -101,7 +108,7 @@ const DonationForm = () => {
       // 성공 후 알림창 표시
       alert("신청이 완료되었습니다.");
 
-      // 메인 페이지로 이동 (예: '/')
+      // 메인 페이지로 이동
       navigate("/");
     } catch (error) {
       console.error("프로젝트 생성 실패:", error);
@@ -116,7 +123,6 @@ const DonationForm = () => {
   return (
     <>
       <Navbar />
-
       <form className="donation-form" onSubmit={handleSubmit}>
         <h2>기부 신청</h2>
 

@@ -36,6 +36,7 @@ const CampaignProfile = () => {
               marginLeft: "3rem",
               color: "white",
               fontWeight: "bold",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 1)",
             }}
           >
             {campaignStatus.title ?? "병원비 걱정없이 치료받고 싶어요."}

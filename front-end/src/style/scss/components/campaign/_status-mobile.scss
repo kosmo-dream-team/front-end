@@ -1,9 +1,9 @@
-.campaign-mobile { 
+.campaign-mobile {
   width: 75rem;
-  height: 29.4375rem; 
+  height: 29.4375rem;
   border-radius: 0.625rem;
-  border: 1px solid #CBCBCB;
-  background: #FFF;
+  border: 1px solid #cbcbcb;
+  background: #fff;
   margin-bottom: 1rem;
 }
 .campaign-title {
@@ -23,12 +23,12 @@
   line-height: 1.5625rem; /* 138.889% */
   letter-spacing: -0.0625rem;
 }
-.progress-wrapper { 
+.progress-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.progress-text-wrapper { 
+.progress-text-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -42,7 +42,7 @@
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
-  color: #FF6D73;
+  color: #ff6d73;
   font-family: "Noto Sans KR";
   font-size: 0.9375rem;
   font-style: normal;
@@ -65,11 +65,11 @@
   line-height: 1.875rem; /* 200% */
   letter-spacing: -0.03125rem;
 }
-.progress-bar-wrapper { 
+.progress-bar-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 .progress-bar-mobile {
   display: flex;
@@ -79,8 +79,12 @@
   border-radius: 0.15625rem;
   margin-bottom: 0.1rem;
 }
-.progress-bar::-webkit-progress-value { background: #FF6D73; } // 진행된 부분 배경색
-.progress-bar::-webkit-progress-bar { background: #E8E8E8; } // 진행되지 않은 부분 배경샋
+.progress-bar::-webkit-progress-value {
+  background: #ff6d73;
+} // 진행된 부분 배경색
+.progress-bar::-webkit-progress-bar {
+  background: #e8e8e8;
+} // 진행되지 않은 부분 배경샋
 .amount-wrapper {
   display: flex;
   flex-direction: column;
@@ -111,7 +115,7 @@
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
-  color: #9E9999;
+  color: #9e9999;
   font-family: "Noto Sans KR";
   font-size: 1rem;
   font-style: normal;
@@ -123,7 +127,7 @@
   width: 19.875rem;
   height: 9.0625rem;
   flex-shrink: 0;
-  border-top: 1px solid #E6E6E6;
+  border-top: 1px solid #e6e6e6;
   padding-top: 1.75rem;
   margin: 0 auto 1rem auto;
 }
@@ -131,7 +135,7 @@
   height: 1rem;
   margin-bottom: 0.5rem;
   flex-shrink: 0;
-  color: rgba(32, 32, 32, 0.80);
+  color: rgba(32, 32, 32, 0.8);
   font-family: "Noto Sans KR";
   font-size: 0.8125rem;
   font-style: normal;
@@ -148,7 +152,7 @@
 .info-list {
   margin-left: 1.44rem;
   flex-shrink: 0;
-  color: rgba(32, 32, 32, 0.80);
+  color: rgba(32, 32, 32, 0.8);
   font-family: "Noto Sans KR";
   font-size: 0.8125rem;
   font-style: normal;
@@ -176,16 +180,16 @@
 }
 .like-img .share-img {
   flex-shrink: 0;
-  background-repeat: no-repeat; 
-  background-size: cover; 
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.like-img-mobile { 
+.like-img-mobile {
   background-image: url("../../../../assets/img/like.png");
   width: 2.5rem;
   height: 2.5rem;
 }
-.share-img-mobile { 
-  background-image: url("../../../../assets/img/share.svg");  
+.share-img-mobile {
+  background-image: url("../../../../assets/img/share.svg");
   width: 1rem;
   height: 1rem;
 }
@@ -203,7 +207,7 @@
   width: 0.0625rem;
   height: 1rem;
   flex-shrink: 0;
-  background-color: #D8D8D8;
+  background-color: #d8d8d8;
   margin: auto 0.5rem auto 0.5rem;
 }
 .share-wrapper {
@@ -224,8 +228,8 @@
   height: 2.75rem;
   padding: 0.75rem 0rem;
   border-radius: 0rem 0rem 0.5rem 0.5rem;
-  background: #FF6D73;
-  color: #FFF;
+  background: #ff6d73;
+  color: #fff;
   text-align: center;
   font-family: "Noto Sans KR";
   font-size: 1.0625rem;

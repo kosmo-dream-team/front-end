@@ -31,7 +31,7 @@ const CategoryList = (props) => {
       : approvedCampaigns;
   }, [campaignList, querySelectedCategory]);
 
-  // 정렬 (날짜순: 내림차순, 인기순: 좋아요 개수 순)
+  // 날짜순 , 좋아요순 정렬
   const sortedCampaigns = useMemo(() => {
     const campaigns = [...filteredCampaigns];
     if (sortOption === "date") {
@@ -47,7 +47,7 @@ const CategoryList = (props) => {
     setVisibleCount(5);
   };
 
-  // 무한 스크롤 (선택된 카테고리가 "전체"가 아니라면 visibleCount 기준으로 추가 로드)
+  //무한 스크롤 선택된 카테고리가 전체가 아니라면 visibleCount 기준으로 추가 로드)
   useEffect(() => {
     if (querySelectedCategory !== "전체") {
       const observer = new IntersectionObserver(

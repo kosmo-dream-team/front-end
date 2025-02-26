@@ -5,9 +5,10 @@ import Tosspay from "@/assets/img/tosspay.png";
 import useCampaignStore from "@/store/useCampaignStore";
 import usePortOneStore from "@/store/usePortOneStore";
 import Cookies from "js-cookie";
+import { jsPDF } from "jspdf";
 import { useEffect, useRef, useState } from "react";
 import CampaignDonateModal from "./CampaignDonateModal";
-
+import { nanumGothicFont } from "./font";
 export default function CampaignStatusDesktop() {
   const statusRef = useRef();
   const [defaultY, setDefaultY] = useState(0);
@@ -27,8 +28,13 @@ export default function CampaignStatusDesktop() {
   // 좋아요 여부를 관리하는 state
   const [liked, setLiked] = useState(false);
 
-  const { campaignStatus, fetchCampaignStatus, donateCampaign, likeCampaign, shareCampaign } =
-    useCampaignStore();
+  const {
+    campaignStatus,
+    fetchCampaignStatus,
+    donateCampaign,
+    likeCampaign,
+    shareCampaign,
+  } = useCampaignStore();
   const { initInfo, paymentInfo, setPaymentInfo } = usePortOneStore();
 
   useEffect(() => {
@@ -52,7 +58,7 @@ export default function CampaignStatusDesktop() {
     setScrollY(window.scrollY);
   };
 
-  const donate = () => { 
+  const donate = () => {
     const { user_id } = JSON.parse(Cookies.get("userProfile"));
 
     if (!user_id) {
@@ -117,19 +123,118 @@ export default function CampaignStatusDesktop() {
           parseInt(donationAmountRef.current.value || customDonation),
           "card"
         );
+        let AddReceipt = confirm("영수증을 저장하시겠습니까?");
+        if (AddReceipt) {
+          generateReceipt(paymentInfo, campaignStatus);
+        }
+
+        // 회원의 이메일 정보 (userProfile.email)로 백엔드에 이메일 전송 요청
         fetchCampaignStatus(campaignStatus.projectId);
+        setModalOpen(false);
+        alert("결제가 성공적으로 완료되었습니다.");
+        window.location.reload();
       } else {
         console.log("결제 실패!");
       }
     });
   }, [paymentInfo]);
 
+  //영수증
+  const generateReceipt = (paymentInfo, campaignStatus) => {
+    const doc = new jsPDF();
+
+    // 한글 커스텀 폰트 등록 (nanumGothicFont는 별도 파일에서 import한 Base64 문자열)
+    doc.addFileToVFS("NanumGothic.ttf", nanumGothicFont);
+    doc.addFont("NanumGothic.ttf", "NanumGothic", "normal");
+    doc.setFont("NanumGothic");
+
+    // 로고 이미지 추가 (logoBase64는 별도 파일에서 import한 Base64 문자열)
+    // doc.addImage(logoBase64, 'PNG', 15, 10, 50, 25);
+
+    // 헤더 배경 추가 (회색)
+    doc.setFillColor(230, 230, 230);
+    doc.rect(0, 40, 210, 30, "F");
+
+    // 헤더 텍스트 중앙정렬
+    doc.setFontSize(22);
+    doc.setTextColor(40, 40, 40);
+    doc.text("기부 영수증", 105, 60, { align: "center" });
+
+    // 헤더 아래 구분선
+    doc.setDrawColor(0, 0, 0);
+    doc.setLineWidth(0.5);
+    doc.line(10, 70, 200, 70);
+
+    // 본문 내용 (중앙정렬)
+    let startY = 80;
+    const lineSpacing = 10;
+    const centerX = 105; // A4용지 너비 210의 절반 값
+    doc.setFontSize(14);
+    doc.setTextColor(0, 0, 0);
+    doc.text(`캠페인: ${campaignStatus.title}`, centerX, startY, {
+      align: "center",
+    });
+    doc.text(
+      `기부 금액: ${paymentInfo.amount}원`,
+      centerX,
+      startY + lineSpacing,
+      { align: "center" }
+    );
+    doc.text(
+      `거래번호: ${paymentInfo.merchant_uid}`,
+      centerX,
+      startY + lineSpacing * 2,
+      { align: "center" }
+    );
+    const currentDate = new Date().toLocaleString();
+    doc.text(`결제일자: ${currentDate}`, centerX, startY + lineSpacing * 3, {
+      align: "center",
+    });
+
+    // 감사 메시지 (중앙정렬)
+    doc.setFontSize(16);
+    doc.text("감사합니다.", centerX, startY + lineSpacing * 5, {
+      align: "center",
+    });
+
+    // 푸터에 테두리 추가 (디자인 요소)
+    doc.setDrawColor(200, 200, 200);
+    doc.setLineWidth(0.3);
+    doc.rect(10, 10, 190, doc.internal.pageSize.getHeight() - 20);
+
+    // 푸터 텍스트 추가 (페이지 하단 중앙)
+    doc.setFontSize(10);
+    doc.setTextColor(100);
+    const pageHeight = doc.internal.pageSize.getHeight();
+    doc.text("Powered by [Your Company]", centerX, pageHeight - 10, {
+      align: "center",
+    });
+
+    // PDF 파일 다운로드 (파일명에 거래번호 포함)
+    doc.save(`donation_receipt_${paymentInfo.merchant_uid}.pdf`);
+    return doc.output("blob");
+  };
+
+  useEffect(() => {
+    if (
+      campaignStatus?.projectId &&
+      Cookies.get(`like-${campaignStatus.projectId}`)
+    ) {
+      setLiked(true);
+    }
+  }, [campaignStatus?.projectId]);
   const like = () => {
+    const userProfile = Cookies.get("userProfile");
+    if (!userProfile || !JSON.parse(userProfile).user_id) {
+      alert("좋아요는 로그인 이후에 가능합니다.");
+      return;
+    }
     if (Cookies.get(`like-${campaignStatus.projectId}`)) {
       alert("이미 좋아요를 누르신 캠페인입니다.");
     } else {
       likeCampaign(campaignStatus.projectId);
       Cookies.set(`like-${campaignStatus.projectId}`, "true", { expires: 1 });
+      setLiked(true); // 좋아요 클릭 시 이미지 변경을 위한 상태 업데이트
       fetchCampaignStatus(campaignStatus.projectId);
     }
   };
@@ -182,10 +287,10 @@ export default function CampaignStatusDesktop() {
       {/* 금액 정보 영역 */}
       <div className="amount-wrapper">
         <div className="current-amount">
-          {campaignStatus.accumulatedDonation || 10041004}원
+          {campaignStatus.accumulatedDonation || 0}원
         </div>
         <div className="target-amount">
-          {campaignStatus.targetAmount || 10041004}원 목표
+          {campaignStatus.targetAmount || 0}원 목표
         </div>
       </div>
 
