@@ -4,12 +4,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const CategoryList = (props) => {
-  // props.selectedCategory를 사용하여 필터링
+  // props.selectedCategory를 사용하여 필터링 (기본값 "전체")
   const querySelectedCategory = props.selectedCategory || "전체";
 
   // 화면에 표시할 항목 수
   const [visibleCount, setVisibleCount] = useState(5);
-  // 정렬 옵션 상태 초기값 (URL 대신 내부 상태로 관리 가능)
+  // 정렬 옵션 상태 초기값 (내부 상태로 관리)
   const [sortOption, setSortOption] = useState("date");
   const sentinelRef = useRef(null);
 
@@ -31,7 +31,7 @@ const CategoryList = (props) => {
       : approvedCampaigns;
   }, [campaignList, querySelectedCategory]);
 
-  // 정렬
+  // 정렬 (날짜순: 내림차순, 인기순: 좋아요 개수 순)
   const sortedCampaigns = useMemo(() => {
     const campaigns = [...filteredCampaigns];
     if (sortOption === "date") {
@@ -47,31 +47,39 @@ const CategoryList = (props) => {
     setVisibleCount(5);
   };
 
-  // 무한 스크롤
+  // 무한 스크롤 (선택된 카테고리가 "전체"가 아니라면 visibleCount 기준으로 추가 로드)
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleCount((prevCount) =>
-              prevCount + 5 > sortedCampaigns.length
-                ? sortedCampaigns.length
-                : prevCount + 5
-            );
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 1.0,
-      }
-    );
-    if (sentinelRef.current) observer.observe(sentinelRef.current);
-    return () => {
-      if (sentinelRef.current) observer.unobserve(sentinelRef.current);
-    };
-  }, [sortedCampaigns]);
+    if (querySelectedCategory !== "전체") {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setVisibleCount((prevCount) =>
+                prevCount + 5 > sortedCampaigns.length
+                  ? sortedCampaigns.length
+                  : prevCount + 5
+              );
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 1.0,
+        }
+      );
+      if (sentinelRef.current) observer.observe(sentinelRef.current);
+      return () => {
+        if (sentinelRef.current) observer.unobserve(sentinelRef.current);
+      };
+    }
+  }, [sortedCampaigns, querySelectedCategory]);
+
+  // 만약 선택된 카테고리가 "전체"라면 전체 캠페인을, 아니라면 visibleCount 만큼만 출력
+  const campaignsToDisplay =
+    querySelectedCategory === "전체"
+      ? sortedCampaigns
+      : sortedCampaigns.slice(0, visibleCount);
 
   return (
     <>
@@ -96,7 +104,7 @@ const CategoryList = (props) => {
         </span>
       </div>
       <div style={{ height: "2rem" }}></div>
-      {sortedCampaigns.slice(0, visibleCount).map((campaign) => (
+      {campaignsToDisplay.map((campaign) => (
         <div key={campaign.project_id} className="main-campaign-list">
           <Link
             to={`/campaign/${campaign.project_id}`}
@@ -139,7 +147,7 @@ const CategoryList = (props) => {
                     className="main-campaign-list__beneficiary-text"
                     style={{ color: "#fff" }}
                   >
-                    {campaign.user_id}
+                    {campaign.user_name}
                   </div>
                 </div>
               </div>
@@ -157,12 +165,12 @@ const CategoryList = (props) => {
             <div className="main-campaign-list__progress-bar">
               <div
                 className="main-campaign-list__progress-fill"
-                style={{ width: `${campaign.progresS}%` }}
+                style={{ width: `${campaign.progress}%` }}
               />
             </div>
             <div className="main-campaign-list__progress-info">
               <div className="main-campaign-list__progress-percent">
-                {campaign.progresS}%
+                {campaign.progress}%
               </div>
               <div
                 className="main-campaign-list__amount"
@@ -174,7 +182,9 @@ const CategoryList = (props) => {
           </div>
         </div>
       ))}
-      <div ref={sentinelRef} style={{ height: "20px" }}></div>
+      {querySelectedCategory !== "전체" && (
+        <div ref={sentinelRef} style={{ height: "20px" }}></div>
+      )}
     </>
   );
 };

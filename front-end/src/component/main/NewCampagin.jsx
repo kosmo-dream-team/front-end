@@ -46,7 +46,6 @@ const NewCampagin = () => {
           <div className="campaign-slider__track">
             {/* 좌측 여백(스페이서) */}
             <div className="campaign-slider__spacer" />
-
             {/* 최신 3개 캠페인 아이템들 */}
             <div className="campaign-items">
               {latestCampaigns.map((campaign) => (
@@ -69,12 +68,12 @@ const NewCampagin = () => {
                     <div className="campaign-item__progress-bg">
                       <div
                         className="campaign-item__progress-bar"
-                        style={{ width: `${campaign.progresS}%` }}
+                        style={{ width: `${campaign.progresS || 0}%` }}
                       />
                     </div>
                     <div className="new-campaign-item">
                       <div className="campaign-item__donation-percent">
-                        {campaign.progresS}%
+                        {campaign.progresS || 0}%
                       </div>
                       <div className="campaign-item__donation-amount">
                         <span>
@@ -86,7 +85,6 @@ const NewCampagin = () => {
                 </div>
               ))}
             </div>
-
             {/* 우측 여백(스페이서) – 3개 */}
             <div className="campaign-slider__spacer" />
             <div className="campaign-slider__spacer" />

@@ -11,7 +11,7 @@ const useMenuStore = create(() => ({
     logoTheme: <Favicon />, //favicon
     menuList: [
       //메뉴
-      { name: "홈", url: "/pages/main/mainPage" },
+      { name: "홈", url: "/" },
       { name: "회사 소개", url: "/pages/company" },
       { name: "카테고리", url: "/pages/category" },
       { name: "기부 통계", url: "/pages/stats" },

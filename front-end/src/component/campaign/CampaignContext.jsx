@@ -1,13 +1,28 @@
+import DefaultUserImg from "@/assets/img/default-user-img.svg";
+import LikeActiveImg from "@/assets/img/like-active.png";
+import Likeimg from "@/assets/img/like.png";
+import CampaignStatus from "@/component/campaign/CampaignStatus";
+import useCampaignStore from "@/store/useCampaignStore";
+import useUserProfile from "@/store/useUserProfile";
+import "@/style/scss/style.scss";
 import Cookies from "js-cookie";
 import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 
-import "@/style/scss/style.scss";
+const IMAGE_BASE_URL = "http://localhost:8586/images/";
+const supportedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
 
-import CampaignStatus from "@/component/campaign/CampaignStatus";
-
-import useCampaignStore from "@/store/useCampaignStore";
-import useUserProfile from "@/store/useUserProfile";
+// 이미지가 파일명 형태이면 기본 경로를 붙여 전체 URL로 반환하는 함수
+const getImageUrl = (image) => {
+  if (
+    typeof image === "string" &&
+    supportedExtensions.some((ext) => image.toLowerCase().endsWith(ext)) &&
+    !image.startsWith("http")
+  ) {
+    return IMAGE_BASE_URL + image;
+  }
+  return image;
+};
 
 const CampaignContext = () => {
   const { campaignId } = useParams(); // 페이지 URL의 campaignId를 가져옴
@@ -17,7 +32,8 @@ const CampaignContext = () => {
   const recommendRef3 = useRef(null);
 
   const { campaignStatus, writeComment, likeComment } = useCampaignStore();
-  const { userProfile } = useUserProfile();
+  // 수정: userProfile 대신 스토어의 profile 속성을 가져옵니다.
+  const { profile } = useUserProfile();
 
   useEffect(() => {
     // 추천 댓글 클릭 시 해당 내용이 댓글 입력하는 곳에 업데이트 되는 기능
@@ -56,11 +72,11 @@ const CampaignContext = () => {
 
   function comment(e) {
     e.preventDefault();
-    // 로그인 여부 확인
-    if (userProfile && userProfile.user_name) {
+    // 로그인 여부 확인 (profile 사용)
+    if (profile && profile.user_name) {
       writeComment(
         parseInt(campaignId),
-        userProfile.userId,
+        profile.user_id,
         document.getElementById("comment").textContent
       );
       alert("댓글 작성이 완료되었습니다.");
@@ -116,8 +132,14 @@ const CampaignContext = () => {
               <div
                 className="donor-img"
                 style={{
-                  backgroundImage: "url(" + donor.profileImage + ")",
+                  backgroundImage:
+                    "url(" +
+                    getImageUrl(donor.profileImage || DefaultUserImg) +
+                    ")",
                   marginBottom: "0.4rem",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
                 }}
               />
               <div className="donor-name">{donor.donorName}</div>
@@ -167,7 +189,7 @@ const CampaignContext = () => {
         </div>
         <div className="comment-section">
           <div className="comment-count">
-            댓글{campaignStatus.commentList.length}개
+            댓글 {campaignStatus.commentList.length}개
           </div>
           <div className="comment-list-wrapper">
             <div className="comment-list">
@@ -180,8 +202,10 @@ const CampaignContext = () => {
                             className="user-img"
                             style={{
                               backgroundImage:
-                                "url(/src/assets/img/" +
-                                comment.profileImage +
+                                "url(" +
+                                getImageUrl(
+                                  comment.profileImage || DefaultUserImg
+                                ) +
                                 ")",
                             }}
                           />
@@ -199,7 +223,16 @@ const CampaignContext = () => {
                             className="comment-like-wrapper"
                             onClick={() => like(comment.commentId)}
                           >
-                            <div className="comment-like-img" />
+                            <div
+                              className="comment-like-img"
+                              style={{
+                                backgroundImage: Cookies.get(
+                                  `like-${comment.commentId}`
+                                )
+                                  ? `url(${LikeActiveImg})`
+                                  : `url(${Likeimg})`,
+                              }}
+                            />
                             {comment.likeCount}
                           </div>
                           <div className="comment-post-date">
