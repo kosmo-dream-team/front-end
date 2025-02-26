@@ -96,7 +96,6 @@ const useCampaignStore = create((set) => ({
         mode: "cors",
       }).then((res) => {
         console.log("댓글 작성 응답:", res);
-        alert("댓글 작성이 완료되었습니다.");
       });
     } catch (error) {
       console.error("댓글 작성하기 API 오류 발생", error);
