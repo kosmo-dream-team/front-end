@@ -4,7 +4,6 @@ import Likeimg from "@/assets/img/like.png";
 import Tosspay from "@/assets/img/tosspay.png";
 import useCampaignStore from "@/store/useCampaignStore";
 import usePortOneStore from "@/store/usePortOneStore";
-import useUserProfile from "@/store/useUserProfile";
 import Cookies from "js-cookie";
 import { useEffect, useRef, useState } from "react";
 import CampaignDonateModal from "./CampaignDonateModal";
@@ -28,10 +27,9 @@ export default function CampaignStatusDesktop() {
   // 좋아요 여부를 관리하는 state
   const [liked, setLiked] = useState(false);
 
-  const { campaignStatus, donateCampaign, likeCampaign, shareCampaign } =
+  const { campaignStatus, fetchCampaignStatus, donateCampaign, likeCampaign, shareCampaign } =
     useCampaignStore();
   const { initInfo, paymentInfo, setPaymentInfo } = usePortOneStore();
-  const { userProfile } = useUserProfile();
 
   useEffect(() => {
     setDefaultY(statusRef.current.offsetTop);
@@ -54,7 +52,14 @@ export default function CampaignStatusDesktop() {
     setScrollY(window.scrollY);
   };
 
-  const donate = () => {
+  const donate = () => { 
+    const { user_id } = JSON.parse(Cookies.get("userProfile"));
+
+    if (!user_id) {
+      alert("기부는 로그인 이후에 할 수 있습니다.");
+      return;
+    }
+
     const donationValue =
       donationAmountRef.current?.value || customDonation || 0;
     if (donationValue === "" || donationValue <= 0) {
@@ -100,6 +105,7 @@ export default function CampaignStatusDesktop() {
       setPreventFirstRender(false);
       return;
     }
+    const { user_id } = JSON.parse(Cookies.get("userProfile"));
     const { IMP } = window;
     IMP.init(initInfo.impKey);
     IMP.request_pay(paymentInfo, (rsp) => {
@@ -107,10 +113,11 @@ export default function CampaignStatusDesktop() {
         console.log("결제 성공!");
         donateCampaign(
           campaignStatus.projectId,
-          1,
+          user_id,
           parseInt(donationAmountRef.current.value || customDonation),
           "card"
         );
+        fetchCampaignStatus(campaignStatus.projectId);
       } else {
         console.log("결제 실패!");
       }
@@ -118,12 +125,12 @@ export default function CampaignStatusDesktop() {
   }, [paymentInfo]);
 
   const like = () => {
-    if (liked) {
+    if (Cookies.get(`like-${campaignStatus.projectId}`)) {
       alert("이미 좋아요를 누르신 캠페인입니다.");
     } else {
       likeCampaign(campaignStatus.projectId);
-      setLiked(true);
-      Cookies.set("like", "true", { expires: 1 });
+      Cookies.set(`like-${campaignStatus.projectId}`, "true", { expires: 1 });
+      fetchCampaignStatus(campaignStatus.projectId);
     }
   };
 
@@ -132,6 +139,7 @@ export default function CampaignStatusDesktop() {
       await navigator.clipboard.writeText(text);
       alert("클립보드에 링크가 복사되었습니다.");
       shareCampaign(campaignStatus.projectId);
+      fetchCampaignStatus(campaignStatus.projectId);
     } catch (error) {
       alert("복사에 실패했습니다!", error);
     }

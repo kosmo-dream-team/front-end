@@ -97,7 +97,6 @@ const useCampaignStore = create((set) => ({
       }).then((res) => {
         console.log("댓글 작성 응답:", res);
         alert("댓글 작성이 완료되었습니다.");
-        window.location.reload();
       });
     } catch (error) {
       console.error("댓글 작성하기 API 오류 발생", error);
@@ -128,7 +127,6 @@ const useCampaignStore = create((set) => ({
       }).then((res) => {
         console.log("기부 응답:", res);
         alert("기부가 완료되었습니다!\n감사합니다!");
-        window.location.reload();
       });
     } catch (error) {
       console.error("기부 내역 저장하기 API 오류 발생", error);
@@ -141,7 +139,6 @@ const useCampaignStore = create((set) => ({
         withCredentials: true,
       }).then((res) => {
         console.log("좋아요 응답:", res);
-        window.location.reload();
       });
     } catch (error) {
       console.error("좋아요 API 오류 발생", error);
@@ -154,7 +151,6 @@ const useCampaignStore = create((set) => ({
         withCredentials: true,
       }).then((res) => {
         console.log("공유 응답:", res);
-        window.location.reload();
       });
     } catch (error) {
       console.error("캠페인 공유 API 오류 발생", error);
@@ -167,7 +163,6 @@ const useCampaignStore = create((set) => ({
         withCredentials: true,
       }).then((res) => {
         console.log("댓글 좋아요 응답:", res);
-        window.location.reload();
       });
     } catch (error) {
       console.error("댓글 좋아요 API 오류 발생", error);
