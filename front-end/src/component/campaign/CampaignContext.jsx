@@ -31,7 +31,7 @@ const CampaignContext = () => {
   const recommendRef2 = useRef(null);
   const recommendRef3 = useRef(null);
 
-  const { campaignStatus, writeComment, likeComment } = useCampaignStore();
+  const { campaignStatus, fetchCampaignStatus, writeComment, likeComment } = useCampaignStore();
   // 수정: userProfile 대신 스토어의 profile 속성을 가져옵니다.
   const { profile } = useUserProfile();
 
@@ -80,6 +80,7 @@ const CampaignContext = () => {
         document.getElementById("comment").textContent
       );
       alert("댓글 작성이 완료되었습니다.");
+      fetchCampaignStatus(campaignId);
     } else {
       alert("댓글 작성은 로그인 이후에 가능합니다.");
     }
@@ -87,11 +88,12 @@ const CampaignContext = () => {
 
   function like(commentId) {
     console.log(commentId);
-    if (Cookies.get(`like-${commentId}`)) {
+    if (Cookies.get(`like-comment-${commentId}`)) {
       alert("이미 좋아요를 누르신 댓글입니다.");
     } else {
       likeComment(commentId);
-      Cookies.set(`like-${commentId}`, "true", { expires: 1 });
+      Cookies.set(`like-comment-${commentId}`, "true", { expires: 1 });
+      fetchCampaignStatus(campaignId);
     }
   }
 
@@ -227,7 +229,7 @@ const CampaignContext = () => {
                               className="comment-like-img"
                               style={{
                                 backgroundImage: Cookies.get(
-                                  `like-${comment.commentId}`
+                                  `like-comment-${comment.commentId}`
                                 )
                                   ? `url(${LikeActiveImg})`
                                   : `url(${Likeimg})`,
