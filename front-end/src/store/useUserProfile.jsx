@@ -10,7 +10,7 @@ const initialProfile = Cookies.get("userProfile")
   : {
       user_id: null,
       user_name: null,
-      password_hash: null,
+
       email: null,
       phone: null,
       gender: null,
@@ -35,8 +35,7 @@ const useUserProfile = create((set, get) => ({
     console.log("프로필과 쿠키에 저장된 정보:", newProfile);
   },
 
-  // 프로필 업데이트 시 password_hash도 포함하여 백엔드로 전송하고,
-  // 응답받은 프로필의 profile_image(파일 이름)에 기본 경로를 붙여 저장
+  // 프로필 업데이트 시 password_hash는 null로 전송합니다.
   updateProfile: async (newProfile) => {
     set({ isLoading: true, error: null });
     try {
@@ -47,7 +46,8 @@ const useUserProfile = create((set, get) => ({
       // 필수 데이터 추가
       formData.append("user_id", mergedProfile.user_id);
       formData.append("user_name", mergedProfile.user_name);
-      formData.append("password_hash", mergedProfile.password_hash);
+      // 비밀번호는 업데이트하지 않고 null로 전송
+      formData.append("password_hash", null);
       formData.append("email", mergedProfile.email);
       formData.append("phone", mergedProfile.phone);
       formData.append("gender", mergedProfile.gender);
