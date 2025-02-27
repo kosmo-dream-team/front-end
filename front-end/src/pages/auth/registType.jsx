@@ -3,6 +3,7 @@ import donor from "@/assets/img/donor.png";
 import "@/style/scss/style.scss";
 import { Link } from "react-router-dom";
 
+// 수혜자,기부자 선택 목록
 function RegistType() {
   return (
     <div

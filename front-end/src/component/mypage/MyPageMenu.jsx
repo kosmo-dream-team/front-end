@@ -29,16 +29,25 @@ export default function MyPageMenu() {
     }
   };
 
-  // 여기서는 store에 이미지만 업데이트 (백엔드 API 호출 X)
+  // store에 파일 객체를 저장하도록 수정 (백엔드 API 요청 시 이 파일 객체가 전송됨)
   const handleUpdateImage = () => {
     if (newImageFile) {
-      // File 객체를 store에 저장
+      // 파일 객체를 저장함
       setProfileImage(newImageFile);
       handleCloseModal();
       console.log("새 이미지 저장 (File 객체):", newImageFile);
     } else {
       alert("새로운 이미지를 선택해주세요.");
     }
+  };
+
+  // profile.profile_image가 File 객체라면 URL로 변환하여 보여줌
+  const displayImage = () => {
+    if (newImageUrl) return newImageUrl;
+    if (profile.profile_image instanceof File) {
+      return URL.createObjectURL(profile.profile_image);
+    }
+    return profile.profile_image;
   };
 
   if (isLoading) return <p>로딩 중...</p>;
@@ -56,7 +65,7 @@ export default function MyPageMenu() {
           </div>
           <img
             className="profile-card__img"
-            src={profile.profile_image}
+            src={displayImage()}
             alt="Profile"
             onClick={handleImageClick}
             style={{ cursor: "pointer" }}
@@ -87,7 +96,7 @@ export default function MyPageMenu() {
                 />
               ) : (
                 <img
-                  src={profile.profile_image}
+                  src={displayImage()}
                   alt="Current Profile"
                   style={{ maxWidth: "100%" }}
                 />

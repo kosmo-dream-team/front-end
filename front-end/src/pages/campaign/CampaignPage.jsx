@@ -4,8 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import Footer from "../../component/common/footer/Footer";
 import Navbar from "../../component/common/navbar/Navbar";
 
-import CampaignProfile from "../../component/campaign/CampaignProfile";
 import CampaignContext from "../../component/campaign/CampaignContext";
+import CampaignProfile from "../../component/campaign/CampaignProfile";
 
 import useCampaignStore from "../../store/useCampaignStore";
 
@@ -23,15 +23,17 @@ function CampaignPage() {
     <>
       <Navbar />
 
-      <div style = {{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center"
-      }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <CampaignProfile />
 
-        <div className = "toggle">
+        <div className="toggle">
           <ul>
             {toggleMenu.menuList.map((menu, index) => (
               <li key={index}>
@@ -45,10 +47,10 @@ function CampaignPage() {
 
         <CampaignContext />
 
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
 }
 
-export default CampaignPage
+export default CampaignPage;

@@ -1,7 +1,20 @@
-.profile { width: 75rem; text-align: center; position: relative; }
-.profile-img {  
-  background-repeat: no-repeat; 
-  background-size: cover; 
+.profile {
+  width: 75rem;
+  text-align: center;
+  position: relative;
+}
+.profile-img {
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 30rem;
 }
-.campaign-info { position: absolute; bottom: 2rem; margin-left: 12rem; margin-right: 12rem; }
+.campaign-info {
+  position: relative;
+}
+.applicant-img {
+  width: 45rem;
+  height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

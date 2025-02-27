@@ -1,0 +1,103 @@
+[33m2184b2ce[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmerge[m[33m)[m Merge branch 'api/campaign' of https://github.com/kosmo-dream-team/front-end into merge
+[33mcfb74f7a[m 병합 전 커밋
+[33mb373d942[m[33m ([m[1;31mupstream/api/campaign[m[33m)[m Merge pull request #39 from Junyoung-Choi-0212/router
+[33m8a74a573[m node_modules 폴더를 git에서 더 이상 추적하지 않게 처리
+[33m7925a81d[m 캠페인 상세 페이지 댓글 & 테스트 결제 추가
+[33md9dd68d3[m[33m ([m[1;31morigin/signup/social[m[33m, [m[1;32msignup/social[m[33m)[m api- 회원가입,로그인,소셜회원가입,마이페이지 완료(프로필 이미지 처리 추가 필요)
+[33md0a11f80[m[33m ([m[1;31morigin/api/auth-mypage-top15campagin[m[33m, [m[1;32mapi/auth-mypage-top15campagin[m[33m)[m 모든 경로 절대경로로 수정2
+[33mc1f11cbf[m 모든 경로 절대경로로 수정
+[33m701699f2[m api->마이페이지,로그인,회원가입,메인페이지-top15캠페인리스트 추가완료
+[33m88026b60[m[33m ([m[1;31morigin/api/campaign[m[33m, [m[1;32mapi/user[m[33m, [m[1;32mapi/login-signup-top15campagin[m[33m, [m[1;32mapi/campaign[m[33m, [m[1;32mapi/auth-mypage=top15campagin[m[33m)[m 캠페인 api 연동이랑 합체
+[33m3e1884b7[m[33m ([m[1;31mupstream/announcement1[m[33m, [m[1;31morigin/api/user[m[33m)[m Merge pull request #33 from jinwoo123456/announcement1
+[33maf414481[m[33m ([m[1;31morigin/announcement1[m[33m)[m Merge branch 'announcement1' into announcement1
+[33ma0a96381[m Merge branch 'router' of https://github.com/kosmo-dream-team/front-end into announcement1
+[33m5a90e34d[m[33m ([m[1;31mupstream/router[m[33m)[m Merge pull request #31 from Junyoung-Choi-0212/router
+[33m03a9fb4a[m 캠페인 상세보기 작업
+[33m18f4078c[m[33m ([m[1;31mupstream/api/user[m[33m, [m[1;32mnavbar[m[33m)[m Merge pull request #30 from jinwoo123456/page/stats
+[33m1479e426[m[33m ([m[1;31morigin/page/stats[m[33m, [m[1;32mpage/stats[m[33m)[m 로그인 라우터 수정,로그인 Navbar 수정
+[33mc32eec1e[m[33m ([m[1;32mpage/login[m[33m)[m '로그인페이지구현완료'
+[33m22710a6a[m Merge branch 'page/login' of https://github.com/jinwoo123456/dream-on-frontend into page/login
+[33m22cdc90a[m '123'
+[33m46cf23d8[m[33m ([m[1;31morigin/page/login[m[33m)[m 로그인 api 추가 완료. 로그인 후 응답데이터  -> 마이페이지 연동 완료
+[33m17aed78f[m 로그인 api 추가 완료. 로그인 후 응답데이터  -> 마이페이지 연동 완료
+[33m8e01343f[m Merge pull request #28 from jinwoo123456/page/mypage
+[33mfcff910d[m[33m ([m[1;31morigin/page/mypage[m[33m, [m[1;32mrouter[m[33m, [m[1;32mpage/mypage[m[33m)[m mypage api 통신처리 완료
+[33m65930925[m[33m ([m[1;31morigin/router[m[33m)[m 회원가입,로그인 api 오류 수정
+[33mdd352809[m Merge pull request #27 from jinwoo123456/router
+[33m0b81edf9[m fix-router 오류 수정
+[33m39b4deec[m Merge pull request #26 from jinwoo123456/router
+[33mde238b79[m[33m ([m[1;31morigin/page/auth[m[33m, [m[1;32mpage/auth[m[33m)[m signUp.jsx 삭제, 수혜자,기부자 라우터 ,링크 설정,regsitType,NavBar(IsLogin)에 적용
+[33m122ded1e[m signup api 테스트 완료
+[33mdce5b1b9[m[33m ([m[1;32mpage/campaign[m[33m)[m 캠페인 상세보기 페이지 보내기용
+[33m293fc7fa[m api/zutand store 수정완료 내일 test 예정
+[33m931d6581[m api/zutand store 수정완료 내일 test 예정
+[33m0c3ed9c6[m Merge pull request #21 from Pooky-dot/page/campain
+[33m6e26f267[m[33m ([m[1;31mupstream/page/mypage[m[33m)[m Merge pull request #19 from jinwoo123456/page/mypage
+[33m1a0f3d0a[m Merge branch 'page/mypage' into page/mypage
+[33m0b0de17b[m '푸시'
+[33m6bb93042[m 마이페이지 디자인 완성
+[33me4567091[m '.'
+[33mc67539e1[m Merge pull request #16 from jinwoo123456/main-page
+[33mcfaf3f3d[m[33m ([m[1;31morigin/page/category[m[33m, [m[1;32mpage/category[m[33m)[m 필요없는 mixin 삭제.주석 추가
+[33mb361c4ac[m 카테고리 상세보기 페이지 디자인 완성
+[33m8bd94694[m Merge pull request #17 from Pooky-dot/gyeong-kosmo
+[33ma01156f0[m '풀'
+[33m94cfa893[m 카테고리 페이지 완성
+[33m795c2360[m 메인페이 디자인 완성.반응형
+[33m3a156e65[m[33m ([m[1;31morigin/main-page[m[33m)[m 메인피이지 완성. 푸터만 넣으면됨
+[33m6491b0c3[m card1 삭제. 새로 만들어서 없애도 됨.
+[33m5ad8fa33[m 반응형 오른쪽 패널 제작중. 모바일도 같이 하는중. card 1,2,3, 제작완료
+[33m5db6870e[m 중간커밋
+[33md81f9a4e[m 우측 섹션 제작중
+[33mede6bc3d[m 경민형과 병합 전 커밋
+[33m6573b4c4[m Update README.md
+[33mf632173f[m Merge pull request #15 from jinwoo123456/main-page
+[33m57495a98[m Merge pull request #13 from Pooky-dot/gyeong-kosmo
+[33m40d469a7[m 메인페이지 리스트 반응형 수정 완료
+[33m892f4408[m 메인페이지 카테고리 모바일 수정완료
+[33m3c8e6e20[m 메인페이지 리스트 모바일 버전 수정중
+[33m79b7e456[m Removed embedded Git repository
+[33m37862d69[m Merge branch 'main-page' of https://github.com/kosmo-dream-team/front-end into jinwoo-home
+[33md3662166[m Merge branch 'main' of https://github.com/kosmo-dream-team/front-end into jinwoo-home
+[33m598b1851[m Merge pull request #14 from jinwoo123456/main-page
+[33m9ef0d5c1[m 중간작업
+[33m4e6eb71e[m[33m ([m[1;32mmain-page[m[33m)[m 메인 페이지 추가 - 섹션1 - 배너1,캠페인인기리스트 캠페인리스트
+[33m25ad9ce4[m 추가사항
+[33me19af470[m Merge pull request #12 from jinwoo123456/navbar
+[33m6992faef[m[33m ([m[1;31morigin/navbar[m[33m)[m fix - nav 모바일 홈 메뉴 겹치는거 수정
+[33mbcfe8cde[m 풀
+[33mde689b84[m Merge pull request #11 from jinwoo123456/navbar
+[33m16f03935[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m 메뉴바 디자인 완성. api 관련 로직 필요
+[33m82ce65f4[m jinwoo-kosmo , main 병합 완료
+[33m7d3c502f[m 푸쉬문제발생
+[33mb288b9e8[m[33m ([m[1;31morigin/jinwoo-kosmo[m[33m, [m[1;32mjinwoo-kosmo[m[33m)[m 메뉴바 반응형 코드 완성(모바일,데스크탑) react-responsive install 함.
+[33me53dcd57[m 풀
+[33m6fd1b18e[m Merge pull request #10 from jinwoo123456/jinwoo-kosmo
+[33m5a844e18[m 경로 수정,폴더,파일 구조 수정 추가 완료
+[33m1c90accb[m 3일차
+[33mee5f9d10[m[33m ([m[1;31mupstream/main[m[33m)[m Merge pull request #9 from Pooky-dot/gyeong-kosmo
+[33m6ecac350[m 합쳐서 보내기
+[33m73627e05[m 풀
+[33m5d6740e4[m Merge pull request #8 from jinwoo123456/jinwoo-kosmo
+[33m7d1ecf07[m swiper,zustand store 설정 완료
+[33mae4d872e[m 미수정
+[33mddd94f13[m[33m ([m[1;31mupstream/gyeong-kosmo[m[33m)[m Merge pull request #7 from Pooky-dot/gyeong-kosmo
+[33m45caef64[m upsteam 변경사항 가져오기 완료,라우터 처리 완료
+[33m70d7d659[m pull위한 커밋
+[33md075fa88[m Create pull_request_template.md
+[33m2ddc41f1[m Merge pull request #6 from jinwoo123456/jinwoo-home
+[33m67faf8a3[m[33m ([m[1;31morigin/jinwoo-home[m[33m, [m[1;32mjinwoo-home[m[33m)[m card1,2,3 수정 완료
+[33ma8358664[m Merge branch 'gyeong-kosmo' of https://github.com/kosmo-dream-team/front-end into jinwoo-home 컴포넌트 만들기 레이아웃,디자인 오류 발생. 처리를 위해 merge 해서 받아서 컴포넌트를 만들기로했음.
+[33m4f219741[m 컴포넌트 수정요청받음
+[33mdd98a54b[m Merge pull request #5 from Pooky-dot/gyeong-kosmo
+[33md9545165[m 푸시
+[33m0c8a4f4e[m 가져오기
+[33m6bf5aa8c[m Merge pull request #4 from jinwoo123456/jinwoo-kosmo
+[33m6199f55e[m registType추가 mixin 추가
+[33m5ddf0187[m ㅇㅇ
+[33mc170bbc7[m 2일차
+[33m60a8855e[m 이름세부수정
+[33mfef0c8ef[m Merge pull request #3 from jinwoo123456/jinwoo-home
+[33m438d83cf[m 카테고리 페이지 추가.
+[33m0e931082[m 풀리퀘스트 가이드 작성중
+[33mf46a4eaf[m Merge pull request #1 from jinwoo123

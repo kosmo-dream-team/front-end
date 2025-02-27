@@ -41,13 +41,12 @@ const useStateStore = create((set) => ({
   fetchStatistics: async () => {
     try {
       // 실제 API 엔드포인트 URL로 변경해주세요.
-      const response = await axios.get(
-        "https://1dd58f98-d223-4b84-bafa-c09a8ab1596f.mock.pstmn.io/api/state"
-      );
+      const response = await axios.get("http://localhost:8586/api/state");
 
       const data = response.data;
       console.log("데이터 타입", typeof data);
       console.log("데이터 배열인지", Array.isArray(data));
+      console.log("통계 데이터들", response.data);
       console.log(
         "response.data.totalDonationAmount",
         data.totalDonationAmount

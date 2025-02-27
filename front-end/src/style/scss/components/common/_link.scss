@@ -1,0 +1,9 @@
+@use "../../abstracts/mixin" as mixin;
+@use "../../abstracts/variable" as var;
+
+a {
+  text-decoration: none;
+}
+.link-style-none {
+  @include mixin.no-link-style;
+}

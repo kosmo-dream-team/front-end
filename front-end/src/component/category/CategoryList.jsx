@@ -1,118 +1,124 @@
-// src/component/category/CategoryList.jsx
+import useAllCampaignListStore from "@/store/useAllCampaignListStore";
+import "@/style/scss/style.scss";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { fakeData } from "../../data/fakeData";
-import "../../style/scss/style.scss";
 
-// 남은 일수를 계산하는 함수
-const calculateDaysRemaining = (deadline) => {
-  const today = new Date();
-  const deadlineDate = new Date(deadline);
-  const diffTime = deadlineDate - today;
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  return diffDays > 0 ? `D-${diffDays}` : "마감";
-};
+const CategoryList = (props) => {
+  // props.selectedCategory를 사용하여 필터링 (기본값 "전체")
+  const querySelectedCategory = props.selectedCategory || "전체";
 
-const CategoryList = () => {
-  // 분류 선택 상태 (빈 문자열이면 전체)
-  const [selectedCategory, setSelectedCategory] = useState("");
   // 화면에 표시할 항목 수
   const [visibleCount, setVisibleCount] = useState(5);
-  // Sentinel을 위한 ref
+  // 정렬 옵션 상태 초기값 (내부 상태로 관리)
+  const [sortOption, setSortOption] = useState("date");
   const sentinelRef = useRef(null);
 
-  // 분류 선택 핸들러
-  const handleCategoryChange = (e) => {
-    setSelectedCategory(e.target.value);
-    setVisibleCount(5); // 분류 변경 시 초기 개수로 리셋
+  const { campaignList, fetchCampaignList } = useAllCampaignListStore();
+
+  useEffect(() => {
+    fetchCampaignList();
+  }, [fetchCampaignList]);
+
+  // 캠페인 리스트 필터링 (선택된 카테고리에 따라)
+  const filteredCampaigns = useMemo(() => {
+    const approvedCampaigns = campaignList.filter(
+      (app) => app.status === "active"
+    );
+    return querySelectedCategory && querySelectedCategory !== "전체"
+      ? approvedCampaigns.filter(
+          (app) => app.category === querySelectedCategory
+        )
+      : approvedCampaigns;
+  }, [campaignList, querySelectedCategory]);
+
+  // 날짜순 , 좋아요순 정렬
+  const sortedCampaigns = useMemo(() => {
+    const campaigns = [...filteredCampaigns];
+    if (sortOption === "date") {
+      campaigns.sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
+    } else if (sortOption === "popularity") {
+      campaigns.sort((a, b) => b.like_count - a.like_count);
+    }
+    return campaigns;
+  }, [filteredCampaigns, sortOption]);
+
+  const handleSortChange = (option) => {
+    setSortOption(option);
+    setVisibleCount(5);
   };
 
-  // fakeData에서 승인된 게시글만 필터링하고, 선택된 분류로 추가 필터링 (메모이제이션)
-  const filteredCampaigns = useMemo(() => {
-    const approvedCampaigns = fakeData.applications.filter(
-      (app) => app.status === "승인"
-    );
-    return selectedCategory
-      ? approvedCampaigns.filter((app) => app.category === selectedCategory)
-      : approvedCampaigns;
-  }, [selectedCategory]);
-
-  // IntersectionObserver로 스크롤 시 추가 렌더링 처리
+  //무한 스크롤 선택된 카테고리가 전체가 아니라면 visibleCount 기준으로 추가 로드)
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleCount((prevCount) =>
-              prevCount + 5 > filteredCampaigns.length
-                ? filteredCampaigns.length
-                : prevCount + 5
-            );
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 1.0,
-      }
-    );
-
-    if (sentinelRef.current) {
-      observer.observe(sentinelRef.current);
+    if (querySelectedCategory !== "전체") {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setVisibleCount((prevCount) =>
+                prevCount + 5 > sortedCampaigns.length
+                  ? sortedCampaigns.length
+                  : prevCount + 5
+              );
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 1.0,
+        }
+      );
+      if (sentinelRef.current) observer.observe(sentinelRef.current);
+      return () => {
+        if (sentinelRef.current) observer.unobserve(sentinelRef.current);
+      };
     }
-    return () => {
-      if (sentinelRef.current) {
-        observer.unobserve(sentinelRef.current);
-      }
-    };
-  }, [filteredCampaigns]);
+  }, [sortedCampaigns, querySelectedCategory]);
+
+  // 만약 선택된 카테고리가 "전체"라면 전체 캠페인을, 아니라면 visibleCount 만큼만 출력
+  const campaignsToDisplay =
+    querySelectedCategory === "전체"
+      ? sortedCampaigns
+      : sortedCampaigns.slice(0, visibleCount);
 
   return (
     <>
       <div className="category-list-sort">
-        <span className="category-list-sort-list">날짜순</span>
-        <span className="category-list-sort-list">인기순</span>
-      </div>
-
-      {/* 분류 선택 필터 */}
-      <div style={{ margin: "1rem 0" }}>
-        <label htmlFor="categoryFilter" style={{ marginRight: "0.5rem" }}>
-          분류:
-        </label>
-        <select
-          id="categoryFilter"
-          value={selectedCategory}
-          onChange={handleCategoryChange}
+        <span
+          className={`category-list-sort-list ${
+            sortOption === "date" ? "active" : ""
+          }`}
+          onClick={() => handleSortChange("date")}
+          style={{ cursor: "pointer", marginRight: "1rem" }}
         >
-          <option value="">전체</option>
-          <option value="아동">아동</option>
-          <option value="동물">동물</option>
-          <option value="환경">환경</option>
-          <option value="장애인">장애인</option>
-          <option value="지구촌">지구촌</option>
-          <option value="어르신">어르신</option>
-          <option value="사회">사회</option>
-        </select>
+          날짜순
+        </span>
+        <span
+          className={`category-list-sort-list ${
+            sortOption === "popularity" ? "active" : ""
+          }`}
+          onClick={() => handleSortChange("popularity")}
+          style={{ cursor: "pointer" }}
+        >
+          인기순
+        </span>
       </div>
-
       <div style={{ height: "2rem" }}></div>
-
-      {filteredCampaigns.slice(0, visibleCount).map((campaign) => (
-        <div key={campaign.id} className="main-campaign-list">
-          {/* 배경 이미지 전체를 Link로 감쌉니다. */}
+      {campaignsToDisplay.map((campaign) => (
+        <div key={campaign.project_id} className="main-campaign-list">
           <Link
-            to={`/campaign/${campaign.id}`}
+            to={`/campaign/${campaign.project_id}`}
             style={{ display: "block", textDecoration: "none" }}
           >
             <div
               className="layout__main-campaign-list__content"
               style={{
                 backgroundImage: `url(${
-                  campaign.attachment || "default-image.jpg"
+                  campaign.project_image || "default-image.jpg"
                 })`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                objectFit: "fill",
                 height: "300px",
               }}
             >
@@ -141,7 +147,7 @@ const CategoryList = () => {
                     className="main-campaign-list__beneficiary-text"
                     style={{ color: "#fff" }}
                   >
-                    {campaign.beneficiaryName}
+                    {campaign.user_name}
                   </div>
                 </div>
               </div>
@@ -150,30 +156,35 @@ const CategoryList = () => {
                   className="main-campaign-list__deadline-text"
                   style={{ color: "#fff" }}
                 >
-                  {calculateDaysRemaining(campaign.deadline)}
+                  D-{campaign.d_day}
                 </div>
               </div>
             </div>
           </Link>
           <div className="main-campaign-list__progress-wrapper">
             <div className="main-campaign-list__progress-bar">
-              <div className="main-campaign-list__progress-fill" />
+              <div
+                className="main-campaign-list__progress-fill"
+                style={{ width: `${campaign.progress}%` }}
+              />
             </div>
             <div className="main-campaign-list__progress-info">
-              <div className="main-campaign-list__progress-percent">33%</div>
+              <div className="main-campaign-list__progress-percent">
+                {campaign.progress}%
+              </div>
               <div
                 className="main-campaign-list__amount"
                 style={{ color: "black", fontSize: "2rem" }}
               >
-                {Number(campaign.targetAmount).toLocaleString()} 원
+                {Number(campaign.target_amount).toLocaleString()} 원
               </div>
             </div>
           </div>
         </div>
       ))}
-
-      {/* Sentinel 요소: 화면 하단에 위치하며, 이 요소가 보이면 추가 항목을 로드합니다. */}
-      <div ref={sentinelRef} style={{ height: "20px" }}></div>
+      {querySelectedCategory !== "전체" && (
+        <div ref={sentinelRef} style={{ height: "20px" }}></div>
+      )}
     </>
   );
 };

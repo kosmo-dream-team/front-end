@@ -15,7 +15,16 @@ const Stats1 = () => {
         {/* 월별 기부 차트 */}
         <MonthlyDonationChart />
       </div>
-      <Footer />
+      <div
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Footer />
+      </div>
     </div>
   );
 };

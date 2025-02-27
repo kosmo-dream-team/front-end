@@ -15,6 +15,17 @@ const usePortOneStore = create((set) => ({
     name: "결제 테스트", // 결제 화면에서 보여질 이름
     amount: 1, // 결제 금액
     pg: "kakaopay" // PG사
+},  //아직 미구현
+tossPaymentInfo: { // 토스페이 결제를 위한 별도 정보
+  channelKey: "channel-key-890a0a6b-7bb2-4a13-824b-99e302e1c804",
+  pay_method: "card",
+  merchant_uid: "order_no_0001",
+  name: "토스페이 일반결제 테스트",
+  amount: 1,
+  pg: "tosspay",
+  mid: "tosstest",
+  apiKey: "sk_test_w5lNQylNqa5lNQe013Nq",
+  taxType: "미설정"
 },
   setPaymentInfo: (newPaymentInfo) => set((state) => ({ paymentInfo: { ...state.paymentInfo, ...newPaymentInfo } })) // 결제정보 변경을 위한 함수
 }));
