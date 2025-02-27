@@ -227,7 +227,16 @@ const DonationForm = () => {
 
         <button type="submit">신청하기</button>
       </form>
-      <Footer />
+      <div
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Footer />
+      </div>
     </>
   );
 };

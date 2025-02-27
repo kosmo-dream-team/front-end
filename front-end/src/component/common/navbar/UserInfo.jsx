@@ -13,10 +13,16 @@ function UserMenu({ onLogout }) {
       ? defaultUserImg
       : profile.profile_image;
 
+  // profile.rank가 유효한 값인지 확인합니다.
+  const validRanks = ["브론즈", "실버", "골드", "bronze", "sliver", "gold"];
+  const displayRank = validRanks.includes(profile.rank)
+    ? profile.rank
+    : "브론즈";
+
   return (
     <>
       <div className="nav-list">
-        {profile.rank} 클래스 {profile.user_name} 님 <br />
+        {displayRank} 클래스 {profile.user_name} 님 <br />
         환영합니다
       </div>
       <img
