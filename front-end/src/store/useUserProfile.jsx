@@ -10,7 +10,7 @@ const initialProfile = Cookies.get("userProfile")
   : {
       user_id: null,
       user_name: null,
-      password_hash: null,
+
       email: null,
       phone: null,
       gender: null,

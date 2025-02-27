@@ -1,3 +1,4 @@
+import defaultUserImg from "@/assets/img/default-user-img.svg";
 import useUserProfile from "@/store/useUserProfile";
 import Cookies from "js-cookie";
 import { useState } from "react";
@@ -5,6 +6,12 @@ import { Link } from "react-router-dom";
 
 function UserMenu({ onLogout }) {
   const { profile } = useUserProfile();
+
+  // profile.profile_image가 파일 객체이면 defaultUserImg를 사용합니다.
+  const imageSrc =
+    profile.profile_image instanceof File
+      ? defaultUserImg
+      : profile.profile_image;
 
   return (
     <>
@@ -14,7 +21,7 @@ function UserMenu({ onLogout }) {
       </div>
       <img
         className="login-profile-card-img"
-        src={profile.profile_image}
+        src={imageSrc}
         alt="Profile"
         style={{
           cursor: "pointer",
@@ -55,7 +62,7 @@ export default function UserInfo() {
     setLogin(false);
     // 쿠키 삭제
     Cookies.remove("userProfile", { path: "/" });
-    // 필요하다면 추가적인 로그아웃 작업(예: 토큰 삭제, 서버 로그아웃 요청 등)을 진행합니다.
+    // 필요하다면 추가적인 로그아웃 작업을 진행합니다.
     window.location.reload();
   };
 
